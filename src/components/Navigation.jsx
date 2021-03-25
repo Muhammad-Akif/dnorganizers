@@ -1,5 +1,5 @@
 import React from 'react'
-
+import logo from '../images/abc.png'
 export default function Navigation() {
     return (
         <div id="page">
@@ -7,9 +7,9 @@ export default function Navigation() {
                 <div className="container">
                     <div className="row">
                         <div className="col-xs-2">
-                            <div id="fh5co-logo">SignUp</div>
+                            <div id="fh5co-logo"><img src={logo} width='120px' alt="logo"/></div>
                         </div>
-                        <div className="col-xs-10 text-right menu-1">
+                        <div className="col-xs-10 text-right menu-1 links">
                             <ul>
                                 <li className="active"><a href="#">Home</a></li>
                                 <li><a href="about.html">Story</a></li>
@@ -32,7 +32,8 @@ export default function Navigation() {
                                     </ul>
                                 </li>
                                 <li><a href="">Contact</a></li>
-                                <li><a href="" style={{color:''}}>Login</a></li>
+                                <li><a href="" className="login-signup" >Login</a></li>
+                                <li><a href="" className="login-signup" >Sign-up</a></li>
                             </ul>
 
                         </div>
