@@ -22,8 +22,8 @@ body {
 #page {
   position: relative !important;
   overflow-x: hidden;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -45,23 +45,60 @@ body {
   background: rgba(0, 0, 0, 0.7);
   content: "";
 }
+.corporate-welcome{
+  margin: auto 8%;
+}
+.card-btn{
+  padding: 1rem;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 1rem;
+    width: 50%;
+    border: 2px solid rgb(192, 190, 190);
+    background: transparent;
+    color: rgb(209, 200, 200);
+    transition: background 200ms ease-in, color 200ms ease-in;
+}
+.card-btn:hover{
+  color: #fff;
+  background-color: #F14E95;
+}
+@media screen and (max-width: 768px) {
+  .crd{
+    margin-top: 20px !important;
+    padding-top: 20px !important;
+  }
+  .corporate-welcome{
+    margin: auto 0%;
+  }
+}
 
+
+.service-bg{
+  background-image:url(../images/wg25.jpeg);
+  width: 100vw;
+  height: 100vh;
+  padding-bottom: 20px;
+}
 
 
 
 .login-signup{
-    font-weight: 700 !important;
-  }
-.links{
-  padding-top: 15px;
+  font-size: 16px !important;
+  font-family: "Work Sans", Arial, serif;
+  color: rgb(219, 215, 215) !important;
 }
+/* .links{
+  padding-top: 10px;
+} */
 
 
 
 
 
 a {
-  font-size: 18px !important ;
+  font-size: 14px !important ;
   color: #F14E95 ;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
@@ -105,12 +142,16 @@ h1, h2, h3, h4, h5, h6, figure {
   margin: 0;
   padding: 0;
   width: 100%;
-  padding: 40px 0;
+  padding: 30px 0;
   z-index: 1001;
 }
 @media screen and (max-width: 768px) {
   .fh5co-nav {
     padding: 20px 0;
+  }
+  #fh5co-logo>img{
+    width: 100px;
+    padding-left: 25px;
   }
 }
 .fh5co-nav #fh5co-logo {
@@ -131,7 +172,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .fh5co-nav ul {
   padding: 0;
-  margin: 2px 0 0 0;
+  margin: 15px 0 0 0;
 }
 .fh5co-nav ul li {
   padding: 0;
@@ -233,6 +274,7 @@ h1, h2, h3, h4, h5, h6, figure {
   -moz-box-shadow: 0px 14px 20px -9px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 14px 20px -9px rgba(0, 0, 0, 0.75);
 }
+
 .fh5co-nav ul li.active > a {
   color: #fff !important;
 }
@@ -371,7 +413,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 #fh5co-counter,
 #fh5co-event {
-  height: 850px;
+  height: 900px;
   float: left;
 }
 #fh5co-counter .display-t,
@@ -422,16 +464,26 @@ h1, h2, h3, h4, h5, h6, figure {
   background: rgba(255, 255, 255, 0.1);
   padding: 30px;
   width: 100%;
+  height: 77vh;
   float: left;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   border-radius: 4px;
 }
+.event-wrap:hover{
+  transform: scale(1.02) !important;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 2px 20px #F14E95;
+}
 @media screen and (max-width: 768px) {
   #fh5co-counter .event-wrap,
   #fh5co-event .event-wrap {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+  }
+  .crd{
+    margin-bottom: 40px !important;
   }
 }
 #fh5co-counter .event-wrap h3,
