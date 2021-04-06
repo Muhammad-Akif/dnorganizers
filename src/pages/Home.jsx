@@ -6,6 +6,7 @@ import Welcome from '../components/Welcome'
 import Gallary from '../components/Gallary'
 import Feedback from '../components/Feedback'
 import Contact from '../components/Contact'
+import Contect from '../components/Contect'
 import Topbtn from '../components/Topbtn'
 
 
@@ -22,6 +23,7 @@ export default function Home() {
             <Gallary/>
             <Feedback/>
             <Contact/>
+            <Contect/>
             <Topbtn/>
         </div>
     )

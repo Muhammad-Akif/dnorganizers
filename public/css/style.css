@@ -76,7 +76,6 @@ body {
 
 .contact-item{
   margin: 0 auto;
-  color: white;
 }
 
 .service-bg{
@@ -1071,7 +1070,7 @@ form label {
 #fh5co-couple,
 #fh5co-gallery,
 .fh5co-section {
-  padding: 7em 0;
+  padding: 5em 0;
   clear: both;
 }
 @media screen and (max-width: 768px) {
