@@ -74,6 +74,10 @@ body {
   }
 }
 
+.contact-item{
+  margin: 0 auto;
+  color: white;
+}
 
 .service-bg{
   background-image:url(../images/wg25.jpeg);
@@ -464,7 +468,7 @@ h1, h2, h3, h4, h5, h6, figure {
   background: rgba(255, 255, 255, 0.1);
   padding: 30px;
   width: 100%;
-  height: 77vh;
+  height: 100%;
   float: left;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -480,10 +484,10 @@ h1, h2, h3, h4, h5, h6, figure {
 @media screen and (max-width: 768px) {
   #fh5co-counter .event-wrap,
   #fh5co-event .event-wrap {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   .crd{
-    margin-bottom: 40px !important;
+    margin-bottom: 20x !important;
   }
 }
 #fh5co-counter .event-wrap h3,

@@ -4,7 +4,10 @@ import Navigation from '../components/Navigation'
 import Services from '../components/Services'
 import Welcome from '../components/Welcome'
 import Gallary from '../components/Gallary'
+import Feedback from '../components/Feedback'
+import Contact from '../components/Contact'
 import Topbtn from '../components/Topbtn'
+
 
 export const scroll = new SmoothScroll('a[href*="# "]', {
     speed: 1000,
@@ -17,6 +20,8 @@ export default function Home() {
             <Welcome/>
             <Services/>
             <Gallary/>
+            <Feedback/>
+            <Contact/>
             <Topbtn/>
         </div>
     )
