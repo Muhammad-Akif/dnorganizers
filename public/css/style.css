@@ -87,10 +87,9 @@ body {
 
 
 
-.login-signup{
+.move{
+  font-family:  Arial, sans-serif !important;
   font-size: 16px !important;
-  font-family: "Work Sans", Arial, serif;
-  color: rgb(219, 215, 215) !important;
 }
 /* .links{
   padding-top: 10px;
@@ -185,9 +184,10 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .fh5co-nav ul li a {
   font-size: 14px;
+  font-family:  Arial, sans-serif !important;
   padding: 30px 10px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255);
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -278,9 +278,9 @@ h1, h2, h3, h4, h5, h6, figure {
   box-shadow: 0px 14px 20px -9px rgba(0, 0, 0, 0.75);
 }
 
-.fh5co-nav ul li.active > a {
+/* .fh5co-nav ul li.active > a {
   color: #fff !important;
-}
+} */
 
 #fh5co-counter,
 #fh5co-event,

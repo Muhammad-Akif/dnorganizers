@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import logo from '../images/abc.png'
-import $ from 'jquery';
 
 class Navigation extends Component {
     componentDidMount() {
@@ -23,19 +22,19 @@ class Navigation extends Component {
                             </div>
                             <div className="col-xs-10 text-right menu-1 links">
                                 <ul>
-                                    <li className="active"><a href="# ">Home</a></li>
                                     <li className="has-dropdown">
-                                        <a href="# ">Services</a>
+                                        <a href="#services">Services</a>
                                         <ul className="dropdown">
-                                            <li><a href="# ">Wedding</a></li>
-                                            <li><a href="# ">Birtdays</a></li>
-                                            <li><a href="# ">Corporate Events</a></li>
+                                            <li><a href="#wedding">Wedding</a></li>
+                                            <li><a href="#birthday">Birtdays</a></li>
+                                            <li><a href="#corporate">Corporate Events</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="# ">Gallery</a></li>
+                                    <li><a href="#gallery">Gallery</a></li>
+                                    <li><a href="#testimolials">Testimonials</a></li>
                                     <li><a href="# ">Contact</a></li>
-                                    <li><a href="# " className="login-signup" >Login</a></li>
-                                    <li><a href="# " className="login-signup" >Signup</a></li>
+                                    <li><a href="# " className="move" >Login</a></li>
+                                    <li><a href="# " className="move" >Signup</a></li>
                                 </ul>
 
                             </div>
@@ -51,8 +50,8 @@ class Navigation extends Component {
                                 <div className="col-md-8 col-md-offset-2 text-center">
                                     <div className="display-t">
                                         <div className="display-tc animate-box" data-animate-effect="fadeIn">
-                                            <h1>Event Management &amp; Planning</h1>
-                                            <h2>A goal without a plan is just a goal</h2>
+                                            <h1>{this.props.title}</h1>
+                                            <h2>{this.props.cote}</h2>
                                             <div className="simply-countdown simply-countdown-one"></div>
                                             <p><a href="# " className="btn btn-default btn-sm">Save your memories</a></p>
                                         </div>
@@ -73,20 +72,8 @@ export default Navigation;
 
 
 const simpleCount = () => {
-    /*!
- * Project : simply-countdown
- * File : simplyCountdown
- * Date : 27/06/2015
- * License : MIT
- * Version : 1.3.2
- * Author : Vincent Loy <vincent.loy1@gmail.com>
- * Contributors : 
- *  - Justin Beasley <JustinB@harvest.org>
- *  - Nathan Smith <NathanS@harvest.org>
- */
-    /*global window, document*/
     (function (exports) {
-        'use strict';
+        
 
         var // functions
             extend,
@@ -94,11 +81,7 @@ const simpleCount = () => {
             createCountdownElt,
             simplyCountdown;
 
-        /**
-         * Function that merge user parameters with defaults one.
-         * @param out
-         * @returns {*|{}}
-         */
+      
         extend = function (out) {
             var i,
                 obj,
@@ -124,13 +107,6 @@ const simpleCount = () => {
             return out;
         };
 
-        /**
-         * Function that create a countdown section
-         * @param countdown
-         * @param parameters
-         * @param typeClass
-         * @returns {{full: (*|Element), amount: (*|Element), word: (*|Element)}}
-         */
         createCountdownElt = function (countdown, parameters, typeClass) {
             var innerSectionTag,
                 sectionTag,
@@ -160,12 +136,7 @@ const simpleCount = () => {
             };
         };
 
-        /**
-         * Function that create full countdown DOM elements calling createCountdownElt
-         * @param parameters
-         * @param countdown
-         * @returns {{days: (*|Element), hours: (*|Element), minutes: (*|Element), seconds: (*|Element)}}
-         */
+       
         createElements = function (parameters, countdown) {
             var spanTag;
 
@@ -183,11 +154,6 @@ const simpleCount = () => {
             return spanTag;
         };
 
-        /**
-         * simplyCountdown, create and display the coundtown.
-         * @param elt
-         * @param args (parameters)
-         */
         simplyCountdown = function (elt, args) {
             var parameters = extend({
                 year: 2015,
@@ -312,7 +278,6 @@ const simpleCount = () => {
                         secondWord = parameters.words.seconds;
                     }
 
-                    /* display an inline countdown into a span tag */
                     if (parameters.inline) {
                         countdown.innerHTML =
                             days + ' ' + dayWord + ', ' +
@@ -335,7 +300,6 @@ const simpleCount = () => {
                     }
                 };
 
-                // Refresh immediately to prevent a Flash of Unstyled Content
                 refresh();
                 interval = window.setInterval(refresh, parameters.refresh);
             });
@@ -344,18 +308,10 @@ const simpleCount = () => {
         exports.simplyCountdown = simplyCountdown;
     }(window));
 
-    /*global $, jQuery, simplyCountdown*/
+    /*global jQuery, simplyCountdown*/
     if (window.jQuery) {
-        (function ($, simplyCountdown) {
-            'use strict';
-
-            function simplyCountdownify(el, options) {
-                simplyCountdown(el, options);
-            }
-
-            $.fn.simplyCountdown = function (options) {
-                return simplyCountdownify(this.selector, options);
-            };
+        (function (simplyCountdown) {
+                simplyCountdown();
         }(jQuery, simplyCountdown));
     }
 

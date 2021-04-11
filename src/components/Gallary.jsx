@@ -10,9 +10,9 @@ import img8 from '../images/gallery/wg5.jpg'
 import img9 from '../images/gallery/wg20.jpg'
 
 export default function Gallary() {
-    return (
-        <div id="fh5co-gallery" className="fh5co-section-gray">
-			<div className="container">
+	return (
+		<div id="fh5co-gallery" className="fh5co-section-gray">
+			<div id="gallery" className="container">
 				<div className="row">
 					<div className="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
 						<span>Our Memories</span>
@@ -28,7 +28,7 @@ export default function Gallary() {
 						<ul id="fh5co-gallery-list">
 
 							<li className="one-third animate-box" data-animate-effect="fadeIn"
-								style={{backgroundImage: "url(" + img1 + ")"}}>
+								style={{ backgroundImage: "url(" + img1 + ")" }}>
 								<a href={img1}>
 									<div className="case-studies-summary">
 
@@ -37,7 +37,7 @@ export default function Gallary() {
 								</a>
 							</li>
 							<li className="one-third animate-box" data-animate-effect="fadeIn"
-								style={{backgroundImage: "url(" + img2 + ")"}}>
+								style={{ backgroundImage: "url(" + img2 + ")" }}>
 								<a href={img2} className="color-2">
 									<div className="case-studies-summary">
 
@@ -48,7 +48,7 @@ export default function Gallary() {
 
 
 							<li className="one-third animate-box" data-animate-effect="fadeIn"
-								style={{backgroundImage: "url(" + img3 + ")"}}>
+								style={{ backgroundImage: "url(" + img3 + ")" }}>
 								<a href={img3} className="color-3">
 									<div className="case-studies-summary">
 
@@ -57,7 +57,7 @@ export default function Gallary() {
 								</a>
 							</li>
 							<li className="one-third animate-box" data-animate-effect="fadeIn"
-								style={{backgroundImage: "url(" + img4 + ")"}}>
+								style={{ backgroundImage: "url(" + img4 + ")" }}>
 								<a href={img4} class="color-4">
 									<div className="case-studies-summary">
 
@@ -67,7 +67,7 @@ export default function Gallary() {
 							</li>
 
 							<li className="one-third animate-box" data-animate-effect="fadeIn"
-								style={{backgroundImage: "url(" + img5 + ")"}}>
+								style={{ backgroundImage: "url(" + img5 + ")" }}>
 								<a href={img5} className="color-3">
 									<div className="case-studies-summary">
 
@@ -76,8 +76,8 @@ export default function Gallary() {
 								</a>
 							</li>
 							<li className="one-third animate-box" data-animate-effect="fadeIn"
-								style={{backgroundImage: "url(" + img6 + ")"}}>
-                                <a href={img6} className="color-4">
+								style={{ backgroundImage: "url(" + img6 + ")" }}>
+								<a href={img6} className="color-4">
 									<div className="case-studies-summary">
 
 										<h2>Water Heaven</h2>
@@ -86,7 +86,7 @@ export default function Gallary() {
 							</li>
 
 							<li className="one-third animate-box" data-animate-effect="fadeIn"
-								style={{backgroundImage: "url(" + img7 + ")"}}>
+								style={{ backgroundImage: "url(" + img7 + ")" }}>
 								<a href={img7} className="color-4">
 									<div className="case-studies-summary">
 
@@ -96,7 +96,7 @@ export default function Gallary() {
 							</li>
 
 							<li className="one-third animate-box" data-animate-effect="fadeIn"
-								style={{backgroundImage: "url(" + img8 + ")"}}>
+								style={{ backgroundImage: "url(" + img8 + ")" }}>
 								<a href={img8} className="color-5">
 									<div className="case-studies-summary">
 
@@ -105,7 +105,7 @@ export default function Gallary() {
 								</a>
 							</li>
 							<li className="one-third animate-box" data-animate-effect="fadeIn"
-								style={{backgroundImage: "url(" + img9 + ")"}}>
+								style={{ backgroundImage: "url(" + img9 + ")" }}>
 								<a href={img9} class="color-6">
 									<div className="case-studies-summary">
 
@@ -118,5 +118,5 @@ export default function Gallary() {
 				</div>
 			</div>
 		</div>
-    )
+	)
 }

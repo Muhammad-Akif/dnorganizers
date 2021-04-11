@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Services() {
     return (
-        <div>
+        <div id="services">
             <div id="fh5co-event" className="fh5co-bg service-bg">
                 <div className="overlay"></div>
                 <div className="container-fluid">
@@ -16,7 +16,7 @@ export default function Services() {
                         <div className="display-t">
                             <div className="display-tc">
                                 <div className="col-md-12 col-md-offset">
-                                    <div className="col-md-4 col-sm-6 col-12 text-center mb-2">
+                                    <div id="wedding" className="col-md-4 col-sm-6 col-12 text-center mb-2">
                                         <div className="event-wrap animate-box crd">
                                             <h3>Birthday Parties</h3>
                                             <div className="event-col">
