@@ -11,7 +11,6 @@ import Contect from '../components/Contect'
 import Topbtn from '../components/Topbtn'
 import JsonData from '../data/data.json'
 
-
 export const scroll = new SmoothScroll('a[href*="#"]', {
     speed: 1000,
     speedAsDuration: true,

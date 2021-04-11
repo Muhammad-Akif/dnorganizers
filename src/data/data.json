@@ -15,6 +15,16 @@
         "title": "Birthday Events",
         "paragraph": "Make your new days as you desire. We provide best services and all new & Astonishing themes to make your special days more special & memorable"
     },
+    "wedding": {
+        "img": "../images/wg20.jpg",
+        "title": "wedding Events",
+        "paragraph": "Make your new days as you desire. We provide best services and all new & Astonishing themes to make your special days more special & memorable"
+    },
+    "birthday": {
+        "img": "../images/wg20.jpg",
+        "title": "Birthday Events",
+        "paragraph": "Make your new days as you desire. We provide best services and all new & Astonishing themes to make your special days more special & memorable"
+    },
     "Testimonials": [{
             "img": "img/testimonials/01.jpg",
             "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
