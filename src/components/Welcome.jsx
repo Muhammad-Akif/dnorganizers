@@ -1,15 +1,16 @@
 import React from 'react'
 import birthdayImg from '../images/wg20.jpg'
 
-export default function Welcome() {
+export default function Welcome(props) {
+    {console.log(props)}
     return (
         <div id="fh5co-couple">
             <div className="container">
                 <div className="row">
                     <div className="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-                        <h2>Welcome!</h2>
-                        <h3>An All new Platform To make your Dreams True</h3>
-                        <p>We Present you an Astonishing Platform for Planning your special events</p>
+                        {/* <h2>{props.title}</h2>
+                        <h3>{props.disc}</h3>
+                        <p>{props.paragraph}</p> */}
                     </div>
                 </div>
                 <div className="couple-wrap animate-box">
@@ -18,9 +19,8 @@ export default function Welcome() {
                             <img src={birthdayImg} alt="groom" className="img-responsive" />
                         </div>
                         <div className="desc-groom">
-                            <h3>Birthday Events</h3>
-                            <p> Make your new days as you desire. We provide best services and all new & Astonishing
-								themes to make your special days more special & memorable</p>
+                            <h3>{props.title}</h3>
+                            <p>{props.paragraph}</p>
                         </div>
                     </div>
                     <p className="heart text-center"><i class="icon-heart2"></i></p>
@@ -39,7 +39,7 @@ export default function Welcome() {
                             <img src="wg21.jpg" alt="groom" className="img-responsive" />
                         </div>
                         <div className="desc-groom">
-                            <h3>Wedding Events</h3>
+                            <h3>Corporate Events</h3>
                             <p> We provide Destination Weddings and make your precious days one to never forget. Best
 								services, cattering, Photoshoot and many more. </p>
                         </div>

@@ -24,7 +24,7 @@ export default function Home() {
     return (
         <div>
             <Navigation {...landingPageData.navigation}/>
-            <Welcome/>
+            <Welcome {...landingPageData.birthday}/>
             <Services/>
             <Gallary/>
             <Progress/>
