@@ -31,6 +31,61 @@
             "paragraph": "There is no limit to what can be done. Call us to discuss your objectives and we will provide creative, impressive and cost effective solutions every time."
         }
     ],
+    "services": [
+        {   
+            "id": "birthday",
+            "title": "BIRTHDAY PARTIES",
+            "paragraph": "When someone near and dear to your heart turns another year older, you’ll want to do everything you can to make their day extra memorable. Whether you’re throwing a birthday party, a cocktail party or planning a dinner at the honoree’s favorite restaurant, it’s tradition to give the guest of honor a Happy Birthday"
+        },
+        {
+            "id": "wedding",
+            "title": "WEDDING PARTY",
+            "paragraph": "We provide Destination Weddings and make your precious days one to never forget. Best services, cattering, Photoshoot and many more. A successful marriage requires falling in love many times, always with the same person. `You don't marry the person you can live with—you marry the person you can't live without`"
+        },
+        {
+            "id": "corporate",
+            "title": "CORPORATE EVENTS",
+            "paragraph": "There is no limit to what can be done. Call us to discuss your objectives and we will provide creative, impressive and cost effective solutions every time. you’ll do everything whatever you want, make your precious days one to never forget. Best services, cattering, Photoshoot and many more. We are here to serve'u "
+        }
+    ],
+    "gallery": [
+        {   
+            "img": "../images/gallery/wg1.jpg",
+            "title": "Dream Wedding"
+        },
+        {
+            "img": "../images/gallery/wg14.jpg",
+            "title": "Successful Buiseness"
+        },
+        {
+            "img": "../images/gallery/wg15.jpg",
+            "title": "Black Beauty"
+        },
+        {
+            "img": "../images/gallery/wg8.jpg",
+            "title": "Happy Together"
+        },
+        {
+            "img": "../images/gallery/wg3.jpeg",
+            "title": "Hold my Hand"
+        },
+        {
+            "img": "../images/gallery/wg17.jpg",
+            "title": "Water Heaven"
+        },
+        {
+            "img": "../images/gallery/wg7.jpeg",
+            "title": "Destination Wedding"
+        },
+        {
+            "img": "../images/gallery/wg5.jpg",
+            "title": "Million Dollar Smile"
+        },
+        {
+            "img": "../images/gallery/wg20.jpg",
+            "title": "A new Day"
+        }
+    ],
     "Testimonials": [
         {
             "img": "img/testimonials/01.jpg",
@@ -46,29 +101,6 @@
             "img": "img/testimonials/03.jpg",
             "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
             "name": "John Doe"
-        },
-        {
-            "img": "img/testimonials/04.jpg",
-            "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-            "name": "Johnathan Doe"
-        },
-        {
-            "img": "img/testimonials/05.jpg",
-            "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-            "name": "John Doe"
-        },
-        {
-            "img": "img/testimonials/06.jpg",
-            "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-            "name": "Johnathan Doe"
         }
-    ],
-    "Contact": {
-        "address": "4321 California St, San Francisco, CA 12345 ",
-        "phone": "+92 317 0526868 ",
-        "email": "info@company.com",
-        "facebook": "fb.com",
-        "twitter": "twitter.com",
-        "youtube": "youtube.com"
-    }
+    ]
 }
