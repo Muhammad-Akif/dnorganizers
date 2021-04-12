@@ -1,31 +1,35 @@
 {
     "navigation": {
-
         "title": "Event Management & Planning",
         "cote": "A goal without a plan is just a goal"
-
     },
     "welcome": {
         "title": "Welcome!",
         "disc": "An All new Platform To make your Dreams True",
         "paragraph": "We Present you an Astonishing Platform for Planning your special events"
     },
-    "birthday": {
-        "img": "../images/wg20.jpg",
-        "title": "Birthday Events",
-        "paragraph": "Make your new days as you desire. We provide best services and all new & Astonishing themes to make your special days more special & memorable"
-    },
-    "wedding": {
-        "img": "../images/wg20.jpg",
-        "title": "wedding Events",
-        "paragraph": "Make your new days as you desire. We provide best services and all new & Astonishing themes to make your special days more special & memorable"
-    },
-    "birthday": {
-        "img": "../images/wg20.jpg",
-        "title": "Birthday Events",
-        "paragraph": "Make your new days as you desire. We provide best services and all new & Astonishing themes to make your special days more special & memorable"
-    },
-    "Testimonials": [{
+    "welcomeCards": [
+        {
+            "class": "groom",
+            "classdisc" : "desc-groom", 
+            "title": "Birthday Events",
+            "paragraph": "Make your new days as you desire. We provide best services and all new & Astonishing themes to make your special days more special & memorable"
+        },
+        {
+            "class": "bride",
+            "classdisc" : "desc-bride", 
+            "title": "wedding Events",
+            "paragraph": "We provide Destination Weddings and make your precious days one to never forget. Best services, cattering, Photoshoot and many more."
+        },
+        {
+            "class": "groom",
+            "classdisc" : "desc-groom", 
+            "title": "corporate Events",
+            "paragraph": "There is no limit to what can be done. Call us to discuss your objectives and we will provide creative, impressive and cost effective solutions every time."
+        }
+    ],
+    "Testimonials": [
+        {
             "img": "img/testimonials/01.jpg",
             "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
             "name": "John Doe"
@@ -54,21 +58,6 @@
             "img": "img/testimonials/06.jpg",
             "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
             "name": "Johnathan Doe"
-        }
-    ],
-    "Team": [{
-            "img": "",
-            "name": "John Doe",
-            "job": "Director"
-        },
-        {
-            "img": "img/team/02.jpg",
-            "name": "Mike Doe",
-            "job": "Senior Designer"
-        }, {
-            "img": "img/team/03.jpg",
-            "name": "Jane Doe",
-            "job": "Senior Designer"
         }
     ],
     "Contact": {

@@ -18,13 +18,13 @@ export default function Contact() {
                         <form className="form-inline">
                             <div className="col-md-4 col-sm-4">
                                 <div className="form-group">
-                                    <label for="name" className="sr-only">Name</label>
+                                    <label htmlFor="name" className="sr-only">Name</label>
                                     <input type="name" className="form-control" id="name" placeholder="Name" />
                                 </div>
                             </div>
                             <div className="col-md-4 col-sm-4">
                                 <div className="form-group">
-                                    <label for="email" className="sr-only">Email</label>
+                                    <label htmlFor="email" className="sr-only">Email</label>
                                     <input type="email" className="form-control" id="email" placeholder="Email" />
                                 </div>
                             </div>

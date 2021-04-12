@@ -23,7 +23,7 @@ export default function Home() {
     return (
         <div>
             <Navigation {...landingPageData.navigation}/>
-            <Welcome {...landingPageData.birthday}/>
+            <Welcome welcome={landingPageData.welcome} cardsData={landingPageData.welcomeCards}/>
             <Services/>
             <Gallary/>
             <Progress/>
