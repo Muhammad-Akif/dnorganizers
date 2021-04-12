@@ -9,21 +9,24 @@
         "paragraph": "We Present you an Astonishing Platform for Planning your special events"
     },
     "welcomeCards": [
-        {
+        {   
+            "img": "../images/wg20.jpg",
             "class": "groom",
             "classdisc" : "desc-groom", 
             "title": "Birthday Events",
             "paragraph": "Make your new days as you desire. We provide best services and all new & Astonishing themes to make your special days more special & memorable"
         },
         {
+            "img": "../images/wg21.jpg",
             "class": "bride",
             "classdisc" : "desc-bride", 
             "title": "wedding Events",
             "paragraph": "We provide Destination Weddings and make your precious days one to never forget. Best services, cattering, Photoshoot and many more."
         },
         {
-            "class": "groom",
-            "classdisc" : "desc-groom", 
+            "img": "../images/wg20.jpg",
+            "class": "groom corporate-welcome",
+            "classdisc" : "desc-groom corporate-welcome", 
             "title": "corporate Events",
             "paragraph": "There is no limit to what can be done. Call us to discuss your objectives and we will provide creative, impressive and cost effective solutions every time."
         }

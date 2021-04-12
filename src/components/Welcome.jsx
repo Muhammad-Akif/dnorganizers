@@ -13,7 +13,7 @@ export default function Welcome(props) {
                         <p>{props.welcome?.paragraph}</p>
                     </div>
                 </div>
-                <WelcomeCard {...props.cardsData}/>
+                <WelcomeCard data={props.cardsData}/>
             </div>
         </div>
     )
