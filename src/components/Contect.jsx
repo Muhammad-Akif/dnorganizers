@@ -8,9 +8,9 @@ export default function Contect() {
                     <div className="col-md-12 text-center">
                         <p>
                             <small className="block">&copy; All Rights Reserved.</small>
-                            <small className="block">Designed by <a href="# " target="_blank">Event
+                            {/* <small className="block">Designed by <a href="# " target="_blank">Event
 									Planning</a> Demo Images: <a href=" http://unsplash.co/"
-                                    target="_blank">Unsplash</a></small>
+                                    target="_blank">Unsplash</a></small> */}
                         </p>
                         <p>
                             <ul class="fh5co-social-icons">

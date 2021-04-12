@@ -1,7 +1,6 @@
 import React from 'react'
-import FeedbackCard from "./FeedbackCard"
 
-export default function Feedback(props) {
+export default function Feedback() {
     return (
         <div id="fh5co-testimonial">
             <div className="container">
@@ -17,12 +16,43 @@ export default function Feedback(props) {
                             <div className="wrap-testimony">
                                 <div className="owl-carousel-fullwidth">
                                     <div className="item">
-                                        {props.testimonials ? props.testimonials?.map((v, i) => {
-                                            return (
-                                                <FeedbackCard {...v} />
-                                            )
-                                        }) : "loading"
-                                        }
+                                        <div className="testimony-slide active text-center">
+                                            <figure>
+                                                <img src="../images/gallery/wg2.jpg" alt="user" />
+                                            </figure>
+                                            <span>Jenny Disoza <a href="# " className="twitter">Twitter</a></span>
+                                            <blockquote>
+                                                <p>"Thanks a lot for making my precious day a never-forgettable and
+                                                giving me all the special memories for this beautiful day of my
+													life"</p>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                    <div className="item">
+                                        <div className="testimony-slide active text-center">
+                                            <figure>
+                                                <img src="../images/gallery/wg2.jpg" alt="user" />
+                                            </figure>
+                                            <span>Jenessa Shaw <a href="# " className="twitter">Twitter</a></span>
+                                            <blockquote>
+                                                <p>"I desired of exactly having a pleasant day like this. Thanks a lot
+                                                for all the precious meories f this day. Hearty wishes from core of
+													my heart to make you guys more successful."</p>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                    <div className="item">
+                                        <div className="testimony-slide active text-center">
+                                            <figure>
+                                                <img src="../images/gallery/wg2.jpg" alt="user" />
+                                            </figure>
+                                            <span>Aleena Malik <a href="# " className="twitter">Twitter</a></span>
+                                            <blockquote>
+                                                <p>"Thanks a lot for making my precious day a never-forgettable and
+                                                giving me all the special memories for this beautiful day of my
+													life. May God give You much more Success "</p>
+                                            </blockquote>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
