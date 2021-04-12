@@ -26,7 +26,6 @@ export default function Gallary(props) {
 								)
 							}) : "loading"
 							}
-
 						</ul>
 					</div>
 				</div>

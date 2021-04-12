@@ -1,9 +1,7 @@
 import React from 'react'
-import img2 from '../images/gallery/wg2.jpg'
-import img3 from '../images/gallery/wg10.jpg'
-import img4 from '../images/gallery/wg5.jpg'
+import FeedbackCard from "./FeedbackCard"
 
-export default function Feedback() {
+export default function Feedback(props) {
     return (
         <div id="fh5co-testimonial">
             <div className="container">
@@ -18,45 +16,12 @@ export default function Feedback() {
                         <div className="col-md-12 animate-box">
                             <div className="wrap-testimony">
                                 <div className="owl-carousel-fullwidth">
-                                    <div className="item">
-                                        <div className="testimony-slide active text-center">
-                                            <figure>
-                                                <img src={img2} alt="user" />
-                                            </figure>
-                                            <span>Jenny Disoza <a href="# " className="twitter">Twitter</a></span>
-                                            <blockquote>
-                                                <p>"Thanks a lot for making my precious day a never-forgettable and
-                                                giving me all the special memories for this beautiful day of my
-													life"</p>
-                                            </blockquote>
-                                        </div>
-                                    </div>
-                                    <div className="item">
-                                        <div className="testimony-slide active text-center">
-                                            <figure>
-                                                <img src={img3} alt="user" />
-                                            </figure>
-                                            <span>Jenessa Shaw <a href="# " className="twitter">Twitter</a></span>
-                                            <blockquote>
-                                                <p>"I desired of exactly having a pleasant day like this. Thanks a lot
-                                                for all the precious meories f this day. Hearty wishes from core of
-													my heart to make you guys more successful."</p>
-                                            </blockquote>
-                                        </div>
-                                    </div>
-                                    <div className="item">
-                                        <div className="testimony-slide active text-center">
-                                            <figure>
-                                                <img src={img4} alt="user" />
-                                            </figure>
-                                            <span>Aleena Malik <a href="# " className="twitter">Twitter</a></span>
-                                            <blockquote>
-                                                <p>"Thanks a lot for making my precious day a never-forgettable and
-                                                giving me all the special memories for this beautiful day of my
-													life. May God give You much more Success "</p>
-                                            </blockquote>
-                                        </div>
-                                    </div>
+                                    {props.testimonials ? props.testimonials.map((v, i) => {
+                                        return (
+                                            <FeedbackCard {...v} />
+                                        )
+                                    }) : "loading"
+                                    }
                                 </div>
                             </div>
                         </div>

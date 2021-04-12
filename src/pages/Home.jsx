@@ -4,8 +4,8 @@ import Navigation from '../components/Navigation'
 import Services from '../components/Services'
 import Welcome from '../components/Welcome'
 import Gallary from '../components/Gallary'
-// import Progress from '../components/Progress'
-// import Feedback from '../components/Feedback'
+import Progress from '../components/Progress'
+import Feedback from '../components/Feedback'
 import Contact from '../components/Contact'
 import Contect from '../components/Contect'
 import Topbtn from '../components/Topbtn'
@@ -26,8 +26,8 @@ export default function Home() {
             <Welcome welcome={landingPageData.welcome} cardsData={landingPageData.welcomeCards}/>
             <Services services={landingPageData.services}/>
             <Gallary gallery={landingPageData.gallery}/>
-            {/* <Progress/> */}
-            {/* <Feedback/> */}
+            <Progress progress={landingPageData.progress}/>
+            <Feedback testimonials={landingPageData.testimonials}/>
             <Contact/>
             <Contect/>
             <Topbtn/>
