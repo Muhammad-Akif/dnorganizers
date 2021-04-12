@@ -16,12 +16,14 @@ export default function Feedback(props) {
                         <div className="col-md-12 animate-box">
                             <div className="wrap-testimony">
                                 <div className="owl-carousel-fullwidth">
-                                    {props.testimonials ? props.testimonials.map((v, i) => {
-                                        return (
-                                            <FeedbackCard {...v} />
-                                        )
-                                    }) : "loading"
-                                    }
+                                    <div className="item">
+                                        {props.testimonials ? props.testimonials?.map((v, i) => {
+                                            return (
+                                                <FeedbackCard {...v} />
+                                            )
+                                        }) : "loading"
+                                        }
+                                    </div>
                                 </div>
                             </div>
                         </div>

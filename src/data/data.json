@@ -108,8 +108,7 @@
             "title": "Hours Spent"
         }
     ],
-
-    "Testimonials": [
+    "testimonials": [
         {
             "img": "../images/gallery/wg2.jpg",
             "disc": "Thanks a lot for making my precious day a never-forgettable and giving me all the special memories for this beautiful day of my life",
