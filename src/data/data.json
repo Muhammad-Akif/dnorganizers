@@ -108,21 +108,15 @@
             "title": "Hours Spent"
         }
     ],
-    "testimonials": [
-        {
-            "img": "../images/gallery/wg2.jpg",
-            "disc": "Thanks a lot for making my precious day a never-forgettable and giving me all the special memories for this beautiful day of my life",
-            "title": "Jenny Disoza"
-        },
-        {
-            "img": "../images/gallery/wg10.jpg",
-            "disc": "I desired of exactly having a pleasant day like this. Thanks a lot for all the precious meories f this day. Hearty wishes from core of my heart to make you guys more successful.",
-            "title": "Jenessa Shaw"
-        },
-        {
-            "img": "../images/gallery/wg5.jpg",
-            "disc": "Thanks a lot for making my precious day a never-forgettable and giving me all the special memories for this beautiful day of my life. May God give You much more Success",
-            "name": "Aleena Malik"
-        }
-    ]
+    "feedbacks": {    
+            "img1": "../images/gallery/wg2.jpg",
+            "disc1": "Thanks a lot for making my precious day a never-forgettable and giving me all the special memories for this beautiful day of my life",
+            "title1": "Jenny Disoza",
+            "img2": "../images/gallery/wg10.jpg",
+            "disc2": "I desired of exactly having a pleasant day like this. Thanks a lot for all the precious meories f this day. Hearty wishes from core of my heart to make you guys more successful.",
+            "title2": "Jenessa Shaw",
+            "img3": "../images/gallery/wg5.jpg",
+            "disc3": "Thanks a lot for making my precious day a never-forgettable and giving me all the special memories for this beautiful day of my life. May God give You much more Success",
+            "name3": "Aleena Malik"
+    }
 }

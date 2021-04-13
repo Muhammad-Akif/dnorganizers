@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import logo from '../images/abc.png'
+import {Link} from "react-router-dom"
 
 class Navigation extends Component {
     componentDidMount() {
@@ -32,9 +33,10 @@ class Navigation extends Component {
                                     </li>
                                     <li><a href="#gallery">Gallery</a></li>
                                     <li><a href="#testimolials">Testimonials</a></li>
-                                    <li><a href="# ">Contact</a></li>
-                                    <li><a href="# " className="move" >Login</a></li>
-                                    <li><a href="# " className="move" >Signup</a></li>
+                                    <li><a href="#contact">Contact</a></li>
+                                    <li></li>
+                                    <li><Link to="/login">Login</Link></li>
+                                    <li><Link to="/signup">Signup</Link></li>
                                 </ul>
 
                             </div>

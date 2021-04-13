@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function ServicesCard(props) {
     return (
-        <div className="col-md-4 col-sm-6 col-12 text-center">
+        <div id={props.id} className="col-md-4 col-sm-6 col-12 text-center">
             <div className="event-wrap animate-box crd">
                 <h3>{props.title}</h3>
                 <div className="event-col">

@@ -5,7 +5,7 @@ export default function Contact() {
     return (
 
         <div id="fh5co-started" className="fh5co-bg" style={{ backgroundImage: "url(" + img + ")" }}>
-            <div className="overlay"></div>
+            <div id="contact" className="overlay"></div>
             <div className="container">
                 <div className="row animate-box">
                     <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">

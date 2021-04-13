@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Feedback() {
+export default function Feedback(props) {
     return (
         <div id="fh5co-testimonial">
             <div className="container">
@@ -15,42 +15,36 @@ export default function Feedback() {
                         <div className="col-md-12 animate-box">
                             <div className="wrap-testimony">
                                 <div className="owl-carousel-fullwidth">
-                                    <div className="item">
+                                    <div className="item pt-0">
                                         <div className="testimony-slide active text-center">
                                             <figure>
-                                                <img src="../images/gallery/wg2.jpg" alt="user" />
+                                                <img src={props.img1} alt="user" />
                                             </figure>
-                                            <span>Jenny Disoza <a href="# " className="twitter">Twitter</a></span>
+                                            <span>{props.title1} <a href="# " className="twitter">Twitter</a></span>
                                             <blockquote>
-                                                <p>"Thanks a lot for making my precious day a never-forgettable and
-                                                giving me all the special memories for this beautiful day of my
-													life"</p>
+                                                <p>"Thanks a lot for making my precious day a never-forgettable and giving me all the special memories for this beautiful day of my life"</p>
                                             </blockquote>
                                         </div>
                                     </div>
                                     <div className="item">
                                         <div className="testimony-slide active text-center">
                                             <figure>
-                                                <img src="../images/gallery/wg2.jpg" alt="user" />
+                                                <img src={props.img2} alt="user" />
                                             </figure>
-                                            <span>Jenessa Shaw <a href="# " className="twitter">Twitter</a></span>
+                                            <span>{props.title2} <a href="# " className="twitter">Twitter</a></span>
                                             <blockquote>
-                                                <p>"I desired of exactly having a pleasant day like this. Thanks a lot
-                                                for all the precious meories f this day. Hearty wishes from core of
-													my heart to make you guys more successful."</p>
+                                                <p>{props.disc2}</p>
                                             </blockquote>
                                         </div>
                                     </div>
                                     <div className="item">
                                         <div className="testimony-slide active text-center">
                                             <figure>
-                                                <img src="../images/gallery/wg2.jpg" alt="user" />
+                                                <img src={props.img3} alt="user" />
                                             </figure>
-                                            <span>Aleena Malik <a href="# " className="twitter">Twitter</a></span>
+                                            <span>{props.title3} <a href="# " className="twitter">Twitter</a></span>
                                             <blockquote>
-                                                <p>"Thanks a lot for making my precious day a never-forgettable and
-                                                giving me all the special memories for this beautiful day of my
-													life. May God give You much more Success "</p>
+                                                <p>{props.disc3}</p>
                                             </blockquote>
                                         </div>
                                     </div>

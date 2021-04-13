@@ -22,12 +22,13 @@ export default function Home() {
     }, [])
     return (
         <div>
+            {console.log("testimolials",landingPageData.feedbacks)}
             <Navigation {...landingPageData.navigation}/>
             <Welcome welcome={landingPageData.welcome} cardsData={landingPageData.welcomeCards}/>
             <Services services={landingPageData.services}/>
             <Gallary gallery={landingPageData.gallery}/>
             <Progress progress={landingPageData.progress}/>
-            <Feedback testimonials={landingPageData.testimonials}/>
+            <Feedback {...landingPageData.feedbacks}/>
             <Contact/>
             <Contect/>
             <Topbtn/>
