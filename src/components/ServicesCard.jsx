@@ -1,6 +1,9 @@
 import React from 'react'
+import {useHistory} from "react-router-dom"
+
 
 export default function ServicesCard(props) {
+    const history = useHistory()
     return (
         <div id={props.id} className="col-md-4 col-sm-6 col-12 text-center">
             <div className="event-wrap animate-box crd">
@@ -16,7 +19,9 @@ export default function ServicesCard(props) {
                     <span>Since Nov, 2017</span>
                 </div>
                 <p> {props.paragraph} </p>
-                <button className='card-btn'>View Details</button>
+                <button className='card-btn' onClick={()=>{
+                    history.push(`/${props.id}`)
+                }} >View Details</button>
             </div>
         </div>
     )

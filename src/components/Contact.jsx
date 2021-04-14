@@ -1,10 +1,9 @@
 import React from 'react'
-import img from '../images/all/wg24.jpg'
 
 export default function Contact() {
     return (
 
-        <div id="fh5co-started" className="fh5co-bg" style={{ backgroundImage: "url(" + img + ")" }}>
+        <div id="fh5co-started" className="fh5co-bg" style={{ backgroundImage: "url('../images/all/wg24.jpg')" }}>
             <div id="contact" className="overlay"></div>
             <div className="container">
                 <div className="row animate-box">
