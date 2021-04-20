@@ -1306,6 +1306,12 @@ form label {
 .fh5co-heading {
   margin-bottom: 5em;
 }
+.both{
+  margin-bottom: -1em;
+}
+.both h2{
+  font-size: 40px !important;
+}
 .fh5co-heading.fh5co-heading-sm {
   margin-bottom: 2em;
 }

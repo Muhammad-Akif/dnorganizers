@@ -1,9 +1,10 @@
 import React from 'react'
+import SignupComp from '../components/SignupComp'
 
 export default function Login() {
     return (
-        <div>
-            Signup
+        <div className='login'>
+            <SignupComp/>
         </div>
     )
 }
