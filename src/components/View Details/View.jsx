@@ -4,6 +4,7 @@ import Services from './Services'
 import Gallery from './Gallery'
 import Contact from '../Contact'
 import Contect from '../Contect'
+import Feedback from './Feedback'
 import data from '../../data/services.json'
 import {useParams} from "react-router-dom"
 
@@ -20,6 +21,7 @@ export default function View() {
             <Header {...event}/>
             <Services/>
             <Gallery/>
+            <Feedback/>
             <Contact/>
             <Contect/>
         </div>

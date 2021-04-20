@@ -5,10 +5,12 @@
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.57",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "auto-bind": "^4.0.0",
+    "babel-plugin-polyfill-corejs2": "^0.2.0",
     "bootstrap": "^5.0.0-alpha2",
     "jquery": "^3.6.0",
     "node-sass": "^4.14.1",

@@ -3,17 +3,17 @@
         {
             "name": "birthday",
             "img": "../images/all/2.jpg",
-            "title": "Welcome Birthday Events"
+            "title": "Welcome to Birthday Events"
         },
         {
             "name": "wedding",
             "img": "../images/all/2.jpg",
-            "title": "Welcome Wedding Events"
+            "title": "Welcome to Wedding Events"
         },
         {
             "name": "corporate",
             "img": "../images/all/2.jpg",
-            "title": "Welcome Corporate Events"
+            "title": "Welcome to Corporate Events"
         }
     ]
 }

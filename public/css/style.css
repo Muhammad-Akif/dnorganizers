@@ -19,6 +19,14 @@ body {
   background: #fff;
 }
 
+.login{
+  background-image: url('../images//wg25.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* width: 100%; */
+  height: 100vh;
+}
+
 #page {
   position: relative !important;
   overflow-y: hidden;
@@ -154,6 +162,9 @@ h1, h2, h3, h4, h5, h6, figure {
   #fh5co-logo>img{
     width: 100px;
     padding-left: 25px;
+  }
+  #page{
+  width: 100%;
   }
 }
 .fh5co-nav #fh5co-logo {
@@ -394,23 +405,23 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 }
 .fh5co-cover.fh5co-cover-sm {
-  height: 600px;
+  height: 400px;
 }
 @media screen and (max-width: 768px) {
   .fh5co-cover.fh5co-cover-sm {
-    height: 400px;
+    height: 300px;
   }
 }
 .fh5co-cover.fh5co-cover-sm .display-t,
 .fh5co-cover.fh5co-cover-sm .display-tc {
-  height: 600px;
+  height: 400px;
   display: table;
   width: 100%;
 }
 @media screen and (max-width: 768px) {
   .fh5co-cover.fh5co-cover-sm .display-t,
   .fh5co-cover.fh5co-cover-sm .display-tc {
-    height: 400px;
+    height: 300px;
   }
 }
 

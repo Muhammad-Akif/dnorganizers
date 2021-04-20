@@ -45,9 +45,7 @@ body {
   background: rgba(0, 0, 0, 0.7);
   content: "";
 }
-.corporate-welcome{
-  margin: auto 8%;
-}
+
 .card-btn{
   padding: 1rem;
     font-family: inherit;
@@ -69,8 +67,10 @@ body {
     margin-top: 20px !important;
     padding-top: 20px !important;
   }
+}
+@media screen and (min-width: 768px) {
   .corporate-welcome{
-    margin: auto 0%;
+    display: none;
   }
 }
 
@@ -87,10 +87,9 @@ body {
 
 
 
-.login-signup{
+.move{
+  font-family:  Arial, sans-serif !important;
   font-size: 16px !important;
-  font-family: "Work Sans", Arial, serif;
-  color: rgb(219, 215, 215) !important;
 }
 /* .links{
   padding-top: 10px;
@@ -185,9 +184,10 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .fh5co-nav ul li a {
   font-size: 14px;
+  font-family:  Arial, sans-serif !important;
   padding: 30px 10px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255);
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -207,7 +207,7 @@ h1, h2, h3, h4, h5, h6, figure {
   visibility: hidden;
   opacity: 0;
   position: absolute;
-  top: 40px;
+  top: 20px;
   left: 0;
   text-align: left;
   background: #fff;
@@ -278,9 +278,9 @@ h1, h2, h3, h4, h5, h6, figure {
   box-shadow: 0px 14px 20px -9px rgba(0, 0, 0, 0.75);
 }
 
-.fh5co-nav ul li.active > a {
+/* .fh5co-nav ul li.active > a {
   color: #fff !important;
-}
+} */
 
 #fh5co-counter,
 #fh5co-event,
@@ -357,7 +357,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .fh5co-cover {
   height: 720px;
-  background-image: url(../wg21.jpg);
+  background-image: url(../images/wg21.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
@@ -844,24 +844,34 @@ h1, h2, h3, h4, h5, h6, figure {
   padding-right: 10px;
 }
 .fh5co-social-icons li a i {
-  font-size: 20px;
+  font-size: 24px;
 }
 
+.aligning{
+  margin-left: 50px;
+}
 .fh5co-contact-info ul {
+  display: inline-block;
   padding: 0;
-  margin: 0;
+  margin: 10px;
 }
 .fh5co-contact-info ul li {
-  padding: 0 0 0 50px;
-  margin: 0 0 30px 0;
+  display: inline-block;
+  padding: 15px 30px 15px 20px;
+  margin-left: 0px;
   list-style: none;
   position: relative;
 }
-.fh5co-contact-info ul li:before {
-  color: #F14E95;
+.fh5co-contact-info ul li.address{
+  display: block;
+  padding: 0 0 0 40px !important;
+}
+
+.fh5co-contact-info ul li.address:before {
+  color: #F14E95 ;
   position: absolute;
   left: 0;
-  top: .05em;
+  top: .0em;
   font-family: 'icomoon';
   speak: none;
   font-style: normal;
@@ -872,6 +882,13 @@ h1, h2, h3, h4, h5, h6, figure {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.fh5co-contact-info ul li:before{
+  position: absolute;
+  top: .4em;
+  left: -10px;
+  font-family: 'icomoon';
+  color: #F14E95 ;
 }
 .fh5co-contact-info ul li.address:before {
   font-size: 30px;
@@ -922,6 +939,13 @@ form label {
   #fh5co-counter .display-tc h1,
   .fh5co-cover .display-tc h1 {
     font-size: 40px;
+  }
+
+  .aligning{
+    margin: 0px 0px 0px 25px;
+  }
+  .fh5co-contact-info ul li{
+  padding: 15px 20px 15px 20px;
   }
 }
 @media screen and (max-width: 480px) {

@@ -1,6 +1,6 @@
 import React from 'react'
-
-export default function Feedback(props) {
+import FeedbackRating from './FeedbackRating'
+export default function Feedback() {
     return (
         <div id="fh5co-testimonial">
             <div className="container">
@@ -18,9 +18,10 @@ export default function Feedback(props) {
                                     <div className="item pt-0">
                                         <div className="testimony-slide active text-center">
                                             <figure>
-                                                <img src={props.img1} alt="user" />
+                                                <img src="../images/gallery/wg2.jpg" alt="user" />
                                             </figure>
-                                            <span>{props.title1} <a href="# " className="twitter">Twitter</a></span>
+                                            <span>Jenny Disoza <a href="# " className="twitter">Twitter</a></span>
+                                            <h1><FeedbackRating/></h1>
                                             <blockquote>
                                                 <p>"Thanks a lot for making my precious day a never-forgettable and giving me all the special memories for this beautiful day of my life"</p>
                                             </blockquote>
@@ -29,22 +30,24 @@ export default function Feedback(props) {
                                     <div className="item">
                                         <div className="testimony-slide active text-center">
                                             <figure>
-                                                <img src={props.img2} alt="user" />
+                                                <img src="../images/gallery/wg10.jpg" alt="user" />
                                             </figure>
-                                            <span>{props.title2} <a href="# " className="twitter">Twitter</a></span>
+                                            <span>Jenessa Shaw <a href="# " className="twitter">Twitter</a></span>
+                                            <h1><FeedbackRating/></h1>
                                             <blockquote>
-                                                <p>{props.disc2}</p>
+                                                <p>"I desired of exactly having a pleasant day like this. Thanks a lot for all the precious meories f this day. Hearty wishes from core of my heart to make you guys more successful."</p>
                                             </blockquote>
                                         </div>
                                     </div>
                                     <div className="item">
                                         <div className="testimony-slide active text-center">
                                             <figure>
-                                                <img src={props.img3} alt="user" />
+                                                <img src="../images/gallery/wg5.jpg" alt="user" />
                                             </figure>
-                                            <span>{props.title3} <a href="# " className="twitter">Twitter</a></span>
+                                            <span>Aleena Malik <a href="# " className="twitter">Twitter</a></span>
+                                            <h1><FeedbackRating/></h1>
                                             <blockquote>
-                                                <p>{props.disc3}</p>
+                                                <p>"Thanks a lot for making my precious day a never-forgettable and giving me all the special memories for this beautiful day of my life. May God give You much more Success"</p>
                                             </blockquote>
                                         </div>
                                     </div>
