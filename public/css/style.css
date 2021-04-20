@@ -19,12 +19,39 @@ body {
   background: #fff;
 }
 
+#team {
+	padding-bottom: 20px;
+  background: rgb(255, 250, 250);
+}
+#team h4 {
+	margin: 5px 0;
+}
+#team .team-img {
+	width: 220px;
+}
+#team .thumbnail {
+	background: transparent;
+	border: 0;
+}
+#team .thumbnail .caption {
+	padding: 10px 0 0 0;
+	color: #888;
+}
+
 .login{
-  background-image: url('../images//wg25.jpeg');
+  background-image: url('../images/gallery/wg21.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  /* width: 100%; */
   height: 100vh;
+  opacity: 0.9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-comp{
+  padding: 20px;
+  border-radius: 5%;
+  background-color: #fff;
 }
 
 #page {
@@ -1921,7 +1948,7 @@ form label {
 .form-control:active, .form-control:focus {
   outline: none;
   box-shadow: none;
-  border-color: #F14E95;
+  border-color: #F14E95 !important;
 }
 
 .row-pb-md {

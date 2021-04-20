@@ -5,6 +5,7 @@ import Services from '../components/Services'
 import Welcome from '../components/Welcome'
 import Gallary from '../components/Gallary'
 import Progress from '../components/Progress'
+import { Team } from '../components/Team'
 import Contact from '../components/Contact'
 import Contect from '../components/Contect'
 import Topbtn from '../components/Topbtn'
@@ -36,6 +37,7 @@ export default function Home() {
                 <Gallary gallery={landingPageData.gallery} />
                 <Progress progress={landingPageData.progress} />
                 {/* <Feedback {...landingPageData.feedbacks} /> */}
+                <Team data={landingPageData.Team} />
                 <Contact />
                 <Contect />
                 <Topbtn />

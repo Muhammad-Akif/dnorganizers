@@ -31,7 +31,6 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(0),
     display: 'flex',
-    paddingTop: '200px',
     flexDirection: 'column',
     alignItems: 'center',
   },
@@ -52,12 +51,12 @@ export default function SignIn() {
   const classes = useStyles();
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth="xs" className="login-comp">
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
+        {/* <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
-        </Avatar>
+        </Avatar> */}
           {/* <img src={img} alt="img"/> */}
         <Typography component="h1" variant="h5">
           Sign in
@@ -118,3 +117,7 @@ export default function SignIn() {
     </Container>
   );
 }
+
+
+
+

@@ -108,6 +108,23 @@
             "title": "Hours Spent"
         }
     ],
+    "Team": [
+        {
+            "img": "../images/team/01.jpg",
+            "name": "John Doe",
+            "job": "Director"
+        },
+        {
+            "img": "../images/team/02.jpg",
+            "name": "Mike Doe",
+            "job": "Senior Designer"
+        },
+        {
+            "img": "../images/team/03.jpg",
+            "name": "Jane Doe",
+            "job": "Senior Designer"
+        }
+    ],
     "feedbacks": {
         "img1": "../images/gallery/wg2.jpg",
         "disc1": "Thanks a lot for making my precious day a never-forgettable and giving me all the special memories for this beautiful day of my life",
