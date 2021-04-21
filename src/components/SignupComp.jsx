@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,16 +12,15 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import {NavLink} from "react-router-dom"
-import { useRef } from 'react'
+import { NavLink } from "react-router-dom"
 import firebase from '../config/firebase';
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+      <Link color="inherit">
+        dnorganizers
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -30,51 +29,54 @@ function Copyright() {
 }
 
 const useStyles = makeStyles((theme) => ({
-    paper: {
-      marginTop: theme.spacing(0),
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-    },
-    avatar: {
-      margin: theme.spacing(1),
-      backgroundColor: theme.palette.secondary.main,
-    },
-    form: {
-      width: '100%', // Fix IE 11 issue.
-      marginTop: theme.spacing(2),
-      color: '#F14E95'
-    },
-    submit: {
-      margin: theme.spacing(3, 0, 2),
-      backgroundColor: '#F14E95',
-      padding: "5px",
-      fontSize: "14px",
-      borderRadius: "15px"
-    },
-  }));
+  paper: {
+    marginTop: theme.spacing(0),
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main,
+  },
+  form: {
+    width: '100%', // Fix IE 11 issue.
+    marginTop: theme.spacing(2),
+    color: '#F14E95'
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+    backgroundColor: '#F14E95',
+    padding: "5px",
+    fontSize: "14px",
+    borderRadius: "15px"
+  },
+}));
 
 export default function SignUp() {
   const classes = useStyles();
-  const emailRef = useRef(null);
-  const passwordRef = useRef(null);
+
+  const [email,setemail] = useState(null);
+  const [password,setpassword] = useState(null);
+
   const signUp = e => {
-      e.preventDefault();
-      auth.createUserWithEmailAndPassword(
-          emailRef.current.value,
-          passwordRef.current.value
-      ).then(user => {
-          console.log(user)
-      }).catch(err => {
-          console.log(err)
-      })
+    e.preventDefault();
+    console.log(`Email and Passwords are ==> ${email} & ${password}`)
+    firebase.auth().createUserWithEmailAndPassword(
+      email,
+      password
+    ).then(user => {
+      console.log(user)
+    }).catch(err => {
+      console.log("Error ==> ", err)
+    })
   }
 
   return (
     <Container component="main" maxWidth="xs" className="login-comp">
       <CssBaseline />
       <div className={classes.paper}>
-      <Typography component="h1" variant="h5">
+        <Typography component="h1" variant="h5">
           <div className="fh5co-heading both animate-box">
             <h2>Sign up</h2>
           </div>
@@ -86,55 +88,57 @@ export default function SignUp() {
                 autoComplete="fname"
                 name="firstName"
                 variant="outlined"
-                required
                 fullWidth
                 id="firstName"
                 label="First Name"
                 autoFocus
+                required
               />
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
                 variant="outlined"
-                required
                 fullWidth
                 id="lastName"
                 label="Last Name"
                 name="lastName"
                 autoComplete="lname"
+                required
               />
             </Grid>
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
-                required
                 fullWidth
                 id="email"
-                ref={emailRef}
+                value={email}
+                onChange={(e)=>{setemail(e.target.value)}}
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                required
               />
             </Grid>
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
-                required
                 fullWidth
                 name="password"
                 label="Password"
                 type="password"
-                ref={passwordRef}
+                value={password}
+                onChange={(e)=>{setpassword(e.target.value)}}
                 id="password"
                 autoComplete="current-password"
+                required
               />
             </Grid>
-            <Grid item xs={12}>
+            {/* <Grid item xs={12}>
               <FormControlLabel
                 control={<Checkbox value="allowExtraEmails" color="primary" />}
                 label="I want to receive inspiration, marketing promotions and updates via email."
               />
-            </Grid>
+            </Grid> */}
           </Grid>
           <Button
             type="submit"
@@ -149,7 +153,7 @@ export default function SignUp() {
           <Grid container justify="flex-end">
             <Grid item>
               <NavLink to='/login' variant="body2">
-                Already have an account? Sign in
+                Already have account? Sign in
               </NavLink>
             </Grid>
           </Grid>

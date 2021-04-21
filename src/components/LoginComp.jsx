@@ -61,6 +61,9 @@ export default function SignIn() {
   const passwordRef = useRef(null);
   const signIn = e => {
     e.preventDefault();
+    let email = emailRef.current.value;
+    let pass = passwordRef.current.value;
+    console.log(`Email and Passwords are ==> ${email} & ${pass}`)
     firebase.auth().signInWithEmailAndPassword(
         emailRef.current.value,
         passwordRef.current.value
@@ -74,10 +77,6 @@ export default function SignIn() {
     <Container component="main" maxWidth="xs" className="login-comp">
       <CssBaseline />
       <div className={classes.paper}>
-        {/* <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar> */}
-        {/* <img src={img} alt="img"/> */}
         <Typography component="h1" variant="h5">
           <div className="fh5co-heading both animate-box">
             <h2>Sign in</h2>
@@ -130,7 +129,7 @@ export default function SignIn() {
             </Grid>
             <Grid item>
               <NavLink to="/signup" variant="body2">
-                Don't have an account? Sign Up
+                Don't have account? SignUp
               </NavLink>
             </Grid>
           </Grid>
