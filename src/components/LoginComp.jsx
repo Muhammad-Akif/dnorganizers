@@ -129,7 +129,7 @@ export default function SignIn() {
             </Grid>
             <Grid item>
               <NavLink to="/signup" variant="body2">
-                Don't have account? SignUp
+                No account? Sign Up
               </NavLink>
             </Grid>
           </Grid>

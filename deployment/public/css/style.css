@@ -19,6 +19,41 @@ body {
   background: #fff;
 }
 
+#team {
+	padding-bottom: 20px;
+  background: rgb(255, 250, 250);
+}
+#team h4 {
+	margin: 5px 0;
+}
+#team .team-img {
+	width: 220px;
+}
+#team .thumbnail {
+	background: transparent;
+	border: 0;
+}
+#team .thumbnail .caption {
+	padding: 10px 0 0 0;
+	color: #888;
+}
+
+.login{
+  background-image: url('../images/gallery/wg21.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  opacity: 0.9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-comp{
+  padding: 20px;
+  border-radius: 5%;
+  background-color: #fff;
+}
+
 #page {
   position: relative !important;
   overflow-y: hidden;
@@ -66,6 +101,12 @@ body {
   .crd{
     margin-top: 20px !important;
     padding-top: 20px !important;
+  }
+  .login-comp{
+    padding: 15px;
+    border-radius: 2%;
+    background-color: #fff;
+    width: 90% !important;
   }
 }
 @media screen and (min-width: 768px) {
@@ -154,6 +195,9 @@ h1, h2, h3, h4, h5, h6, figure {
   #fh5co-logo>img{
     width: 100px;
     padding-left: 25px;
+  }
+  #page{
+  width: 100%;
   }
 }
 .fh5co-nav #fh5co-logo {
@@ -394,23 +438,23 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 }
 .fh5co-cover.fh5co-cover-sm {
-  height: 600px;
+  height: 400px;
 }
 @media screen and (max-width: 768px) {
   .fh5co-cover.fh5co-cover-sm {
-    height: 400px;
+    height: 300px;
   }
 }
 .fh5co-cover.fh5co-cover-sm .display-t,
 .fh5co-cover.fh5co-cover-sm .display-tc {
-  height: 600px;
+  height: 400px;
   display: table;
   width: 100%;
 }
 @media screen and (max-width: 768px) {
   .fh5co-cover.fh5co-cover-sm .display-t,
   .fh5co-cover.fh5co-cover-sm .display-tc {
-    height: 400px;
+    height: 300px;
   }
 }
 
@@ -1268,6 +1312,12 @@ form label {
 .fh5co-heading {
   margin-bottom: 5em;
 }
+.both{
+  margin-bottom: -1em;
+}
+.both h2{
+  font-size: 40px !important;
+}
 .fh5co-heading.fh5co-heading-sm {
   margin-bottom: 2em;
 }
@@ -1910,7 +1960,7 @@ form label {
 .form-control:active, .form-control:focus {
   outline: none;
   box-shadow: none;
-  border-color: #F14E95;
+  border-color: #F14E95 !important;
 }
 
 .row-pb-md {
