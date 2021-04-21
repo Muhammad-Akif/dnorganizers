@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -13,8 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import img from "../images/abc.png"
-import {NavLink} from "react-router-dom"
-import { useRef } from 'react'
+import { NavLink } from "react-router-dom"
 import firebase from '../config/firebase';
 
 function Copyright() {
@@ -57,21 +56,23 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignIn() {
   const classes = useStyles();
-  const emailRef = useRef(null);
-  const passwordRef = useRef(null);
+
+  const [email, setemail] = useState(null);
+  const [password, setpassword] = useState(null);
+
   const signIn = e => {
     e.preventDefault();
-    let email = emailRef.current.value;
-    let pass = passwordRef.current.value;
-    console.log(`Email and Passwords are ==> ${email} & ${pass}`)
+    console.log(`Email and Passwords are ==> ${email} & ${password}`)
     firebase.auth().signInWithEmailAndPassword(
-        emailRef.current.value,
-        passwordRef.current.value
+      email,
+      password
     ).then(user => {
-        console.log(user)
+      console.log(user)
     }).catch(err => {
-        console.log(err)
+      console.log(err)
     })
+    setemail('')
+    setpassword('')
   }
   return (
     <Container component="main" maxWidth="xs" className="login-comp">
@@ -91,7 +92,8 @@ export default function SignIn() {
             id="email"
             label="Email Address"
             name="email"
-            ref={emailRef}
+            value={email}
+            onChange={(e) => { setemail(e.target.value) }}
             autoComplete="email"
             autoFocus
           />
@@ -101,7 +103,8 @@ export default function SignIn() {
             required
             fullWidth
             name="password"
-            ref={passwordRef}
+            value={password}
+            onChange={(e) => { setpassword(e.target.value) }}
             label="Password"
             type="password"
             id="password"

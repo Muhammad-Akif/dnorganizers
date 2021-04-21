@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -56,8 +56,10 @@ const useStyles = makeStyles((theme) => ({
 export default function SignUp() {
   const classes = useStyles();
 
-  const [email,setemail] = useState(null);
-  const [password,setpassword] = useState(null);
+  const [fname, setfname] = useState(null);
+  const [lname, setlname] = useState(null);
+  const [email, setemail] = useState(null);
+  const [password, setpassword] = useState(null);
 
   const signUp = e => {
     e.preventDefault();
@@ -70,6 +72,10 @@ export default function SignUp() {
     }).catch(err => {
       console.log("Error ==> ", err)
     })
+    setlname('')
+    setfname('')
+    setemail('')
+    setpassword('')
   }
 
   return (
@@ -90,6 +96,8 @@ export default function SignUp() {
                 variant="outlined"
                 fullWidth
                 id="firstName"
+                value={fname}
+                onChange={(e) => { setfname(e.target.value) }}
                 label="First Name"
                 autoFocus
                 required
@@ -100,6 +108,8 @@ export default function SignUp() {
                 variant="outlined"
                 fullWidth
                 id="lastName"
+                value={lname}
+                onChange={(e) => { setlname(e.target.value) }}
                 label="Last Name"
                 name="lastName"
                 autoComplete="lname"
@@ -112,7 +122,7 @@ export default function SignUp() {
                 fullWidth
                 id="email"
                 value={email}
-                onChange={(e)=>{setemail(e.target.value)}}
+                onChange={(e) => { setemail(e.target.value) }}
                 label="Email Address"
                 name="email"
                 autoComplete="email"
@@ -127,7 +137,7 @@ export default function SignUp() {
                 label="Password"
                 type="password"
                 value={password}
-                onChange={(e)=>{setpassword(e.target.value)}}
+                onChange={(e) => { setpassword(e.target.value) }}
                 id="password"
                 autoComplete="current-password"
                 required
