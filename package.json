@@ -23,7 +23,8 @@
     "web-vitals": "^1.0.1",
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
-    "framer-motion": "^3.2.1"
+    "framer-motion": "^2.6.15",
+    "s": "^1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
