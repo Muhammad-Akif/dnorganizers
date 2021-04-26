@@ -15,6 +15,13 @@ import Invoices from './user UI/componenets/Invoices'
 import Custom from './user UI/componenets/Custom'
 import Logout from './user UI/componenets/Logout.jsx'
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import Main from './components/MainView/Home/Main';
+import About from './components/MainView/About/About';
+import Destinations from './components/MainView/Destinations/Destinations';
+import Country from './components/MainView/Destinations/Country/Country'
+import Blog from './components/MainView/Blog/Blog';
+import Services from './components/MainView/Services/Services';
+import Contacts from './components/MainView/Contacts/Contacts';
 
 function App() {
   return (
@@ -35,7 +42,14 @@ function App() {
             <Route exact path='/userBooked' component={Booked} />
             <Route exact path='/userInvoices' component={Invoices} />
             <Route exact path='/userCustom' component={Custom} />
+            <Route exact path='/main' component={Main} />
+            <Route exact path='/about' component={About} />
+            <Route exact path='/destinations' component={Destinations} />
+            <Route exact path='/blog' component={Blog} />
+            <Route exact path='/services' component={Services} />
+            <Route exact path='/contacts' component={Contacts} />
             <Redirect to='/' />
+            <Route exact path='/destinations/:country' component={Country} />
             <Route exact path='/:name' component={View} />
           </Switch>
         </ScrollToTop>
