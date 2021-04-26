@@ -17,8 +17,8 @@ import Logout from './user UI/componenets/Logout.jsx'
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import Main from './components/MainView/Home/Main';
 import About from './components/MainView/About/About';
-import Destinations from './components/MainView/Destinations/Destinations';
 import Country from './components/MainView/Destinations/Country/Country'
+import Destinations from './components/MainView/Destinations/Destinations';
 import Services from './components/MainView/Services/Services';
 import Blog from './components/MainView/Blog/Blog';
 import Contacts from './components/MainView/Contacts/Contacts';
