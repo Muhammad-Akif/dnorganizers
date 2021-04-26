@@ -1,3 +1,4 @@
+import './App.css';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
@@ -34,8 +35,8 @@ function App() {
             <Route exact path='/userBooked' component={Booked} />
             <Route exact path='/userInvoices' component={Invoices} />
             <Route exact path='/userCustom' component={Custom} />
-            <Route exact path='/:name' component={View} />
             <Redirect to='/' />
+            <Route exact path='/:name' component={View} />
           </Switch>
         </ScrollToTop>
       </Router>
