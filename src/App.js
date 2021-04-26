@@ -43,8 +43,8 @@ function App() {
             <Route exact path='/userInvoices' component={Invoices} />
             <Route exact path='/userCustom' component={Custom} />
             <Route exact path='/main' component={Main} />
-            <Route exact path='/about' component={About} />
             <Route exact path='/destinations' component={Destinations} />
+            <Route exact path='/about' component={About} />
             <Route exact path='/blog' component={Blog} />
             <Route exact path='/services' component={Services} />
             <Route exact path='/contacts' component={Contacts} />
