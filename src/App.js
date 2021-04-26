@@ -45,8 +45,8 @@ function App() {
             <Route exact path='/main' component={Main} />
             <Route exact path='/destinations' component={Destinations} />
             <Route exact path='/about' component={About} />
-            <Route exact path='/blog' component={Blog} />
             <Route exact path='/services' component={Services} />
+            <Route exact path='/blog' component={Blog} />
             <Route exact path='/contacts' component={Contacts} />
             <Redirect to='/' />
             <Route exact path='/destinations/:country' component={Country} />
