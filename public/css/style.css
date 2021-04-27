@@ -5,11 +5,7 @@
   font-weight: normal;
   font-style: normal;
 }
-/* =======================================================
-*
-* 	Template Style 
-*
-* ======================================================= */
+
 body {
   font-family: "Work Sans", Arial, sans-serif;
   font-weight: 400;
@@ -18,13 +14,6 @@ body {
   color: #828282;
   background: #fff;
 }
-
-.d-main{
-  
-}
-
-
-
 
 #team {
 	padding-bottom: 20px;
@@ -46,9 +35,9 @@ body {
 }
 
 .login{
-  background-image: url('../images/gallery/wg21.jpg');
+  background-image: url('../images/gallery/wg21.jpg') !important;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover !important;
   height: 100vh;
   opacity: 0.9;
   display: flex;
@@ -60,6 +49,7 @@ body {
   border-radius: 5%;
   background-color: #fff;
 }
+
 
 #page {
   position: relative !important;
@@ -120,6 +110,9 @@ body {
   .corporate-welcome{
     display: none;
   }
+  .btn-display{
+    display: none;
+  }
 }
 
 .contact-item{
@@ -142,9 +135,6 @@ body {
 /* .links{
   padding-top: 10px;
 } */
-
-
-
 
 
 a {
@@ -424,7 +414,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .fh5co-cover {
-  height: 720px;
+  height: 680px;
   background-image: url(../images/wg21.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -437,6 +427,7 @@ h1, h2, h3, h4, h5, h6, figure {
   position: relative;
   width: 100%;
 }
+/* important black color over image*/
 .fh5co-cover .overlay {
   z-index: 0;
   position: absolute;
@@ -452,9 +443,10 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 @media screen and (max-width: 768px) {
   .fh5co-cover {
-    height: 600px;
+    height: 520px;
   }
 }
+/* also event management planning */
 .fh5co-cover .display-t,
 .fh5co-cover .display-tc{
   height: 900px;
@@ -1112,9 +1104,10 @@ form label {
   margin-left: 3px;
 }
 
+/*     event management and planning wala ki padding top sa       */
 .simply-countdown {
   /* The countdown */
-  margin-bottom: 2em;
+  margin-bottom: 7em;
 }
 
 .simply-countdown > .simply-section {
@@ -1193,6 +1186,10 @@ form label {
   #fh5co-gallery,
   .fh5co-section {
     padding: 3em 0;
+  }
+  .simply-countdown {
+    /* The countdown */
+    margin-bottom: 2em;
   }
 }
 
@@ -1540,15 +1537,13 @@ form label {
   -o-transition: 0.5s;
   transition: 0.5s;
 }
-#fh5co-started .form-control::-webkit-input-placeholder {
+/* #fh5co-started .form-control::-webkit-input-placeholder {
   color: #fff;
 }
 #fh5co-started .form-control:-moz-placeholder {
-  /* Firefox 18- */
   color: #fff;
 }
 #fh5co-started .form-control::-moz-placeholder {
-  /* Firefox 19+ */
   color: #fff;
 }
 #fh5co-started .form-control:-ms-input-placeholder {
@@ -1556,7 +1551,7 @@ form label {
 }
 #fh5co-started .form-control:focus {
   background: rgba(255, 255, 255, 0.3);
-}
+} */
 #fh5co-started .btn {
   height: 54px;
   border: none !important;
@@ -1568,13 +1563,13 @@ form label {
   padding-left: 50px;
   padding-right: 50px;
 }
-#fh5co-started .form-inline .form-group {
+/* #fh5co-started .form-inline .form-group {
   width: 100% !important;
   margin-bottom: 10px;
 }
 #fh5co-started .form-inline .form-group .form-control {
   width: 100%;
-}
+} */
 #fh5co-started .fh5co-heading {
   margin-bottom: 30px;
 }
@@ -1856,7 +1851,7 @@ form label {
   outline: none !important;
 }
 
-.btn-primary {
+/* .btn-primary {
   background: #F14E95;
   color: #fff;
   border: 2px solid #F14E95;
@@ -1961,7 +1956,7 @@ form label {
 }
 .btn-outline:hover, .btn-outline:focus, .btn-outline:active {
   box-shadow: none;
-}
+} */
 
 .btn.with-arrow {
   position: relative;
@@ -1990,7 +1985,7 @@ form label {
   opacity: 1;
 }
 
-.form-control {
+/* .form-control {
   box-shadow: none;
   background: transparent;
   border: 2px solid rgba(0, 0, 0, 0.1);
@@ -1999,10 +1994,10 @@ form label {
   font-weight: 300;
 }
 .form-control:active, .form-control:focus {
-  outline: none;
-  box-shadow: none;
+  outline: none !important;
+  box-shadow: none !important;
   border-color: #F14E95 !important;
-}
+} */
 
 .row-pb-md {
   padding-bottom: 4em !important;
@@ -2025,5 +2020,3 @@ form label {
 .js .animate-box {
   opacity: 0;
 }
-
-/*# sourceMappingURL=style.css.map */

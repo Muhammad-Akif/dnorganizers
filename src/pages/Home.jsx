@@ -26,7 +26,6 @@ export default function Home() {
     }, [])
     useEffect(() => {
         window.scrollTo(0, 0)
-        
     }, [location])
     return (
         <div className="home">
@@ -34,7 +33,7 @@ export default function Home() {
                 <Welcome welcome={landingPageData.welcome} cardsData={landingPageData.welcomeCards} />
                 <Services services={landingPageData.services} />
                 <Gallary gallery={landingPageData.gallery} />
-                <Progress progress={landingPageData.progress} />
+                <Progress progress={landingPageData.progress}/>
                 {/* <Feedback {...landingPageData.feedbacks} /> */}
                 <Team data={landingPageData.Team} />
                 <Contact />

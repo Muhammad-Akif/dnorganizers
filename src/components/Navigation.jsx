@@ -45,7 +45,7 @@ class Navigation extends Component {
                     </div>
                 </nav>
 
-                <header id="fh5co-header" className="fh5co-cover" role="banner" data-stellar-background-ratio="0.5">
+                <header id="fh5co-header" className="fh5co-cover">
                     <div className="overlay">
                         <div className="container">
                             <div className="row">
@@ -55,7 +55,7 @@ class Navigation extends Component {
                                             <h1>{this.props.title}</h1>
                                             <h2>{this.props.cote}</h2>
                                             <div className="simply-countdown simply-countdown-one"></div>
-                                            {/* <p><a href="# " className="btn btn-default btn-sm">Save your memories</a></p> */}
+                                            <p><a className="btn btn-display"><Link to='/login'>Save your memories</Link></a></p>
                                         </div>
                                     </div>
                                 </div>

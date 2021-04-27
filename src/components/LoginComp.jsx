@@ -54,25 +54,53 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+function validateEmail(email) {
+  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
+
 export default function SignIn() {
   const classes = useStyles();
 
   const [email, setemail] = useState(null);
+  const [isEmailValidate, setIsEmailValidate] = useState(false);
+  const [isPasswordValidate, setIsPasswordValidate ] = useState(false);
+  const [showError, setShowError] = useState(false);
   const [password, setpassword] = useState(null);
+
 
   const signIn = e => {
     e.preventDefault();
     console.log(`Email and Passwords are ==> ${email} & ${password}`)
-    firebase.auth().signInWithEmailAndPassword(
-      email,
-      password
-    ).then(user => {
-      console.log(user)
-    }).catch(err => {
-      console.log(err)
-    })
-    setemail('')
-    setpassword('')
+    if (isEmailValidate && isPasswordValidate) {
+      firebase.auth().signInWithEmailAndPassword(
+        email,
+        password
+      ).then(user => {
+        console.log(user)
+      }).catch(err => {
+        console.log(err)
+      })
+      setemail('')
+      setpassword('')
+    } else {
+      setShowError(true)
+    }
+  }
+
+  const onChangeInput = (type, e) => {
+    if (type == 'email') {
+      setemail(e.target.value) 
+      setIsEmailValidate(validateEmail(e.target.value));
+      return
+    }
+    setpassword(e.target.value)
+    if (e.target.value.length >= 6) {
+      setIsPasswordValidate(true);
+    } else {
+      setIsPasswordValidate(false);
+    }
+     
   }
   return (
     <Container component="main" maxWidth="xs" className="login-comp">
@@ -87,16 +115,20 @@ export default function SignIn() {
           <TextField
             variant="outlined"
             margin="normal"
-            required
+            required={true}
+            isRequired={true}
             fullWidth
             id="email"
             label="Email Address"
             name="email"
             value={email}
-            onChange={(e) => { setemail(e.target.value) }}
+            onChange={onChangeInput.bind(null, "email")}
             autoComplete="email"
             autoFocus
           />
+          {showError && (!isEmailValidate && (
+            <div>This is a wrong email</div>
+          ))}
           <TextField
             variant="outlined"
             margin="normal"
@@ -104,12 +136,15 @@ export default function SignIn() {
             fullWidth
             name="password"
             value={password}
-            onChange={(e) => { setpassword(e.target.value) }}
+            onChange={onChangeInput.bind(null, "password")}
             label="Password"
             type="password"
             id="password"
             autoComplete="current-password"
           />
+          {showError && ( !isPasswordValidate && (
+            <div>Password length must be at least 6 characters</div>
+          ))}
           <Button
             type="submit"
             fullWidth
