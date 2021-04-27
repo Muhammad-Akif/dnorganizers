@@ -24,7 +24,7 @@ class Navigation extends Component {
                             <div className="col-xs-10 text-right menu-1 links">
                                 <ul>
                                     <li className="has-dropdown">
-                                        <a href="#services">Services</a>
+                                        <a>Services</a>
                                         <ul className="dropdown">
                                             <li><a href="#wedding">Wedding</a></li>
                                             <li><a href="#birthday">Birtdays</a></li>
