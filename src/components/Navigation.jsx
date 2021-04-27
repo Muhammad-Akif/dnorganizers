@@ -55,7 +55,7 @@ class Navigation extends Component {
                                             <h1>{this.props.title}</h1>
                                             <h2>{this.props.cote}</h2>
                                             <div className="simply-countdown simply-countdown-one"></div>
-                                            <p><a href="# " className="btn btn-default btn-sm">Save your memories</a></p>
+                                            {/* <p><a href="# " className="btn btn-default btn-sm">Save your memories</a></p> */}
                                         </div>
                                     </div>
                                 </div>

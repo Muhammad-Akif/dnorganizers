@@ -14,8 +14,6 @@ import Invoices from './user UI/componenets/Invoices'
 import Logout from './user UI/componenets/Logout.jsx'
 import Main from './components/MainView/Home/Main';
 import About from './components/MainView/About/About';
-import Country from './components/MainView/Destinations/Country/Country'
-import Destinations from './components/MainView/Destinations/Destinations';
 import Services from './components/MainView/Services/Services';
 import Blog from './components/MainView/Blog/Blog';
 import Contacts from './components/MainView/Contacts/Contacts';
@@ -39,14 +37,12 @@ const Routes = () => {
           <Route exact path='/userInvoices' component={Invoices} />
           <Route exact path='/userCustom' component={Custom} />
           <Route exact path='/admin' component={Main} />
-          <Route exact path='/destinations' component={Destinations} />
           <Route exact path='/about' component={About} />
           <Route exact path='/services' component={Services} />
           <Route exact path='/blog' component={Blog} />
           <Route exact path='/contacts' component={Contacts} />
-          <Redirect to='/' />
-          <Route exact path='/destinations/:country' component={Country} />
           <Route exact path='/:name' component={View} />
+          <Redirect to='/' />
         </Switch>
       </ScrollToTop>
     </Router>
