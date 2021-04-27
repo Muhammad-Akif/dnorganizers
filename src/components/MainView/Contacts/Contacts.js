@@ -1,7 +1,11 @@
 import React from 'react';
 
+import Admin from '../../../admin/Admin';
+
 const Contacts = () => {
-  return <h1>Contacts Page</h1>
+  return <Admin>
+  <h1>About</h1>
+</Admin>
 }
 
 export default Contacts

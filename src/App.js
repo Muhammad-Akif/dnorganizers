@@ -33,7 +33,7 @@ function App() {
             <Route exact path='/login' component={Login} />
             <Route exact path='/logout' component={Logout} />
             <Route exact path='/signup' component={Signup} />
-            <Route exact path='/admin' component={Admin} />
+            {/* <Route exact path='/admin' component={Admin} /> */}
             <Route exact path='/user' component={User} />
             <Route exact path='/weddingPackages' component={Wedpack} />
             <Route exact path='/birthdaypackages' component={Birthpack} />
@@ -42,12 +42,14 @@ function App() {
             <Route exact path='/userBooked' component={Booked} />
             <Route exact path='/userInvoices' component={Invoices} />
             <Route exact path='/userCustom' component={Custom} />
-            <Route exact path='/main' component={Main} />
+            {/* ///////////////////////////////////////////////////// */}
+            <Route exact path='/admin' component={Main} />
             <Route exact path='/destinations' component={Destinations} />
             <Route exact path='/about' component={About} />
             <Route exact path='/services' component={Services} />
             <Route exact path='/blog' component={Blog} />
-            <Route exact path='/contacts' component={Contacts} />
+            <Route exact path='/contacts' component={Contacts} />          
+            {/* ///////////////////////////////////////////////////// */}
             <Redirect to='/' />
             <Route exact path='/destinations/:country' component={Country} />
             <Route exact path='/:name' component={View} />

@@ -1,7 +1,11 @@
 import React from 'react';
 
+import Admin from '../../../admin/Admin';
+
 const Services = () => {
-  return <h1>Services Page</h1>
+  return <Admin>
+  <h1>Services</h1>
+</Admin>
 }
 
 export default Services

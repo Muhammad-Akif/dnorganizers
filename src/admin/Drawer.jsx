@@ -1,7 +1,7 @@
 import React from 'react';
 import * as s from '../App.styles';
 import * as Palette from '../colors'
-// import './Global.scss';
+import './Global.scss';
 
 // Components
 import Sidebar from '../components/Sidebar/Sidebar';
