@@ -15,7 +15,7 @@ const Admin = (props) => {
     shortName: 'YO'
   };
   const menuItems = [
-    {name: 'Home', to: '/admin', icon: '/icons/home.svg', subMenuItems: [] },
+    {name: 'Admin', to: '/admin', icon: '/icons/home.svg', subMenuItems: [] },
     {name: 'About', to: '/about', icon: '/icons/about.svg', subMenuItems: [] },
     {name: 'Blog', to: '/blog', icon: '/icons/blog.svg', subMenuItems: [] },
     {name: 'Services', to: '/services', icon: '/icons/services.svg', subMenuItems: [] },
