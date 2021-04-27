@@ -10,6 +10,7 @@ import {useParams} from "react-router-dom"
 
 export default function View() {
     const {name} = useParams()
+
     const event = data.view.filter((e)=>{
         if (e.name==name) {
             return true

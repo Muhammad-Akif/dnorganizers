@@ -5,5 +5,10 @@ export default function User() {
         <UserNav>
             Pakistan Zindabad !!!
         </UserNav>
+            // const logout = (event) => {
+            //     event.preventDefault();
+            //     auth.signOut();
+            //     history.push("/login");
+            // }
     )
 }

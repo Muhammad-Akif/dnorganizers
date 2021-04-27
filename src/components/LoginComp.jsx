@@ -15,6 +15,7 @@ import Container from '@material-ui/core/Container';
 import img from "../images/abc.png"
 import { NavLink } from "react-router-dom"
 import firebase from '../config/firebase';
+import {useHistory} from 'react-router-dom';
 
 function Copyright() {
   return (
@@ -67,6 +68,7 @@ export default function SignIn() {
   const [isPasswordValidate, setIsPasswordValidate ] = useState(false);
   const [showError, setShowError] = useState(false);
   const [password, setpassword] = useState(null);
+  const history = useHistory();
 
 
   const signIn = e => {
@@ -76,8 +78,9 @@ export default function SignIn() {
       firebase.auth().signInWithEmailAndPassword(
         email,
         password
-      ).then(user => {
-        console.log(user)
+      ).then(data => {
+        console.log(data)
+        data?.user.email === "admin@gmail.com" ? history.push("/admin") : history.push("/user")
       }).catch(err => {
         console.log(err)
       })

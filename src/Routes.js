@@ -26,8 +26,9 @@ const Routes = () => {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/login' component={Login} />
-          <Route exact path='/logout' component={Logout} />
           <Route exact path='/signup' component={Signup} />
+          <Route exact path='/event/:name' component={View} />
+          <Route exact path='/logout' component={Logout} />
           <Route exact path='/user' component={User} />
           <Route exact path='/weddingPackages' component={Wedpack} />
           <Route exact path='/birthdaypackages' component={Birthpack} />
@@ -41,7 +42,6 @@ const Routes = () => {
           <Route exact path='/services' component={Services} />
           <Route exact path='/blog' component={Blog} />
           <Route exact path='/contacts' component={Contacts} />
-          <Route exact path='/:name' component={View} />
           <Redirect to='/' />
         </Switch>
       </ScrollToTop>
