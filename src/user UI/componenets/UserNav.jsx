@@ -4,7 +4,6 @@ import { Link } from "react-router-dom"
 export default function UserNav(props) {
     return (
         <div id="page">
-            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle fh5co-nav-white"><i></i></a>
             <nav className="fh5co-nav user-nav" >
                 <div className="container">
                     <div className="row">
