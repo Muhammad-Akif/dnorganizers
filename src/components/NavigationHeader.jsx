@@ -1,9 +1,15 @@
 import React from 'react'
 import logo from '../images/abc.png'
 import {NavLink} from "react-router-dom"
+// import './style.css';
+
 
 export default function NavigationHeader() {
     return (
+        <>
+        {/* <div id="fh5co-offcanvas" className="js-fh5co-nav-toggle fh5co-nav-toggle fh5co-nav-white col-xs-10">
+            <i></i>
+        </div> */}
         <nav className="fh5co-nav" role="navigation">
             <div className="container">
                 <div className="row">
@@ -11,6 +17,7 @@ export default function NavigationHeader() {
                         <div id="fh5co-logo"><img src={logo} width='110px' alt="logo" /></div>
                     </div>
                     <div className="col-xs-10 text-right menu-1 links">
+                        
                         <ul>
                             <li className="has-dropdown">
                                 <a href="# ">Services</a>
@@ -27,11 +34,12 @@ export default function NavigationHeader() {
                             <li><NavLink to="/login">Login</NavLink></li>
                             <li><NavLink to="/signup">Signup</NavLink></li>
                         </ul>
-
+                        
                     </div>
                 </div>
 
             </div>
         </nav>
+    </>
     )
 }

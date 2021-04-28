@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 import NavigationHeader from './NavigationHeader'
 
 class Navigation extends Component {
@@ -15,7 +15,7 @@ class Navigation extends Component {
     render() {
         return (
             <div id="page">
-                <NavigationHeader/>
+                <NavigationHeader />
                 <header id="fh5co-header" className="fh5co-cover">
                     <div className="overlay">
                         <div className="container">
@@ -46,7 +46,7 @@ export default Navigation;
 
 const simpleCount = () => {
     (function (exports) {
-        
+
 
         var // functions
             extend,
@@ -54,7 +54,7 @@ const simpleCount = () => {
             createCountdownElt,
             simplyCountdown;
 
-      
+
         extend = function (out) {
             var i,
                 obj,
@@ -109,7 +109,7 @@ const simpleCount = () => {
             };
         };
 
-       
+
         createElements = function (parameters, countdown) {
             var spanTag;
 
@@ -284,7 +284,7 @@ const simpleCount = () => {
     /*global jQuery, simplyCountdown*/
     if (window.jQuery) {
         (function (simplyCountdown) {
-                simplyCountdown();
+            simplyCountdown();
         }(jQuery, simplyCountdown));
     }
 
