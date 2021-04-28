@@ -422,10 +422,10 @@ h1, h2, h3, h4, h5, h6, figure {
   width: 100%;
 }
 .user-cover{
-  height: 100vh !important;
+  height: auto !important;
   background-image: none;
   position: relative;
-  width: 100%;
+  width: 100% !important;
 }
 /* important black color over image*/
 .fh5co-cover .overlay {
@@ -454,9 +454,8 @@ h1, h2, h3, h4, h5, h6, figure {
   width: 100%;
 }
 .child-content{
-  margin: 100px 0px 0px -280px !important;
+  margin: 100px 0px 0px 0px !important;
   padding: 0px !important;
-
 }
 @media screen and (max-width: 768px) {
   .fh5co-cover .display-t,
@@ -464,9 +463,9 @@ h1, h2, h3, h4, h5, h6, figure {
     height: 600px;
   }
   .child-content{
-    margin: 80px 0px 0px 20px !important;
-    float: left !important;
-    padding: 0 !important;
+    margin: 70px 0px 0px 0px !important;
+    /* float: left !important; */
+    padding: 10px !important;
   }
 
 }
@@ -1610,7 +1609,8 @@ form label {
   top: 0;
   right: 0;
   top: 0;
-  bottom: 0;
+  /* bottom: 0; */
+  height: 100vh !important;
   padding: 45px 40px 40px 40px;
   overflow-y: auto;
   -moz-transform: translateX(270px);

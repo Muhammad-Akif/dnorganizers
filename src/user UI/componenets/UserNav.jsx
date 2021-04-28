@@ -4,7 +4,8 @@ import { Link } from "react-router-dom"
 export default function UserNav(props) {
     return (
         <div id="page">
-            <nav className="fh5co-nav user-nav" role="navigation">
+            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle fh5co-nav-white"><i></i></a>
+            <nav className="fh5co-nav user-nav" >
                 <div className="container">
                     <div className="row">
                         <div className="col-xs-2">
@@ -30,15 +31,15 @@ export default function UserNav(props) {
                     </div>
                 </div>
             </nav>
-            <header className="fh5co-cover user-cover" role="banner" data-stellar-background-ratio="0.5">
-                <div className="container-fluid">
-                    <div className="row">
-                        <div className="child-content col-md-8 col-md-offset-2 text-center">
-                                {props.children}
-                        </div>
+            {/* <header className="fh5co-cover user-cover"> */}
+            <div className="container">
+                <div className="row">
+                    <div className="child-content col-md-12 col-md-offset-2">
+                        {props.children}
                     </div>
                 </div>
-            </header>
+            </div>
+            {/* </header> */}
         </div>
     )
 }

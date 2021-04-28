@@ -10,7 +10,7 @@ import Contact from '../components/Contact'
 import Contect from '../components/Contect'
 import Topbtn from '../components/Topbtn'
 import JsonData from '../data/data.json'
-import { useLocation } from 'react-router-dom'; 
+import { useLocation } from 'react-router-dom';
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
     speed: 1000,
@@ -26,19 +26,20 @@ export default function Home() {
     }, [])
     useEffect(() => {
         window.scrollTo(0, 0)
+        console.log('asdasd', location)
     }, [location])
     return (
         <div className="home">
-                <Navigation {...landingPageData.navigation} />
-                <Welcome welcome={landingPageData.welcome} cardsData={landingPageData.welcomeCards} />
-                <Services services={landingPageData.services} />
-                <Gallary gallery={landingPageData.gallery} />
-                <Progress progress={landingPageData.progress}/>
-                {/* <Feedback {...landingPageData.feedbacks} /> */}
-                <Team data={landingPageData.Team} />
-                <Contact />
-                <Contect />
-                <Topbtn />
+            <Navigation {...landingPageData.navigation} />
+            <Welcome welcome={landingPageData.welcome} cardsData={landingPageData.welcomeCards} />
+            <Services services={landingPageData.services} />
+            <Gallary gallery={landingPageData.gallery} />
+            <Progress progress={landingPageData.progress} />
+            {/* <Feedback {...landingPageData.feedbacks} /> */}
+            <Team data={landingPageData.Team} />
+            <Contact />
+            <Contect />
+            <Topbtn />
         </div>
     )
 }
