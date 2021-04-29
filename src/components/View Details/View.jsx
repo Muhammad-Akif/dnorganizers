@@ -19,11 +19,11 @@ export default function View() {
     })[0]
     return (
         <div>
-            <Header {...event}/>
-            <Services/>
-            <Gallery/>
-            <Feedback/>
-            <Contact/>
+            {/* <Header {...event}/> */}
+            {/* <Services/> */}
+            {/* <Gallery/> */}
+            {/* <Feedback/> */}
+            {/* <Contact/> */}
             <Contect/>
         </div>
     )
