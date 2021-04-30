@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 
 export const SidebarContainer = styled.div`
-  width: ${p => p.isSidebarOpen ? '20%' : '5%'};
+  width: ${p => p.isSidebarOpen ? '20%' : '8%'};
   max-width: 280px;
-  min-width: 80px;
+  min-width: 90px;
   background-image: linear-gradient(
     315deg,
     ${p => p.colorPalette.bgColor1} 0%,
@@ -19,9 +19,10 @@ export const SidebarContainer = styled.div`
 
 export const SidebarHeader = styled.h3`
   padding: 20px 0;
+  color: rgba(255, 255, 255, 0.5);
   text-align: center;
-  margin-bottom: 10px;
-  letter-spacing: 6px;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
   font-family: ${p => p.font}
 `
 
@@ -35,7 +36,7 @@ export const MenuItem = styled.div`
     ${p.selected && `background-color: ${p.colorPalette.selectedBackgroundCollapsedMode === 'dark' ? 'rgba(0, 0, 0, 0.6)' : 'rgba(255, 255, 255, 0.6)'}`};
   `};
 
-  padding: 6px 20px;
+  padding: 6px 0px;
   font-weight: 600;
   color: ${p => p.selected ? p.colorPalette.fontColorSelected : p.colorPalette.fontColor} ;  
   font-family: ${p => p.font};

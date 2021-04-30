@@ -1,59 +1,71 @@
-import React, {useEffect} from 'react'
-import { location } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
 import logo from '../images/abc.png'
-import {NavLink} from "react-router-dom"
+import { NavLink } from "react-router-dom"
 // import './style.css';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useRouteMatch } from 'react-router-dom';
 import $ from 'jquery';
+// import {stellar} from 'jquery'
 
 
 export default function NavigationHeader() {
     const location = useLocation();
+    // const [isShow, setisShow] = useState(0);
+    // const match = useRouteMatch("http://localhost:3000/");
     useEffect(() => {
-        runJquery();
-    },[location])
-    
+    //     console.log("location is ", location.pathname);
+        // if (location.pathName == '/') {
+        //     console.log("Enter")
+        //     setisShow(true);
+        // }
+        // if (location.pathName == '/' && isShow) {
+        //     console.log("Entered")
+        // }
+    // setisShow(isShow + 1);
+    // console.log('-------------------------------', match)
+            runJquery();
+    }, [location])
+
     return (
         <>
-        {/* <div id="fh5co-offcanvas" className="js-fh5co-nav-toggle fh5co-nav-toggle fh5co-nav-white col-xs-10">
+            {/* <div id="fh5co-offcanvas" className="js-fh5co-nav-toggle fh5co-nav-toggle fh5co-nav-white col-xs-10">
             <i></i>
         </div> */}
-        <nav className="fh5co-nav" role="navigation">
-            <div className="container">
-                <div className="row">
-                    <div className="col-xs-2">
-                        <div id="fh5co-logo"><img src={logo} width='110px' alt="logo" /></div>
-                    </div>
-                    <div className="col-xs-10 text-right menu-1 links">
-                        
-                        <ul>
-                            <li className="has-dropdown">
-                                <a href="# ">Services</a>
-                                <ul className="dropdown">
-                                    <li><a href="#wedding">Wedding</a></li>
-                                    <li><a href="#birthday">Birtdays</a></li>
-                                    <li><a href="#corporate">Corporate Events</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#gallery">Gallery</a></li>
-                            <li><a href="#testimolials">Testimonials</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                            <li></li>
-                            <li><NavLink to="/login">Login</NavLink></li>
-                            <li><NavLink to="/signup">Signup</NavLink></li>
-                        </ul>
-                        
-                    </div>
-                </div>
+            <nav className="fh5co-nav" role="navigation">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-xs-2">
+                            <div id="fh5co-logo"><img src={logo} width='110px' alt="logo" /></div>
+                        </div>
+                        <div className="col-xs-10 text-right menu-1 links">
 
-            </div>
-        </nav>
-    </>
+                            <ul>
+                                <li className="has-dropdown">
+                                    <a href="# ">Services</a>
+                                    <ul className="dropdown">
+                                        <li><a href="#wedding">Wedding</a></li>
+                                        <li><a href="#birthday">Birtdays</a></li>
+                                        <li><a href="#corporate">Corporate Events</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#gallery">Gallery</a></li>
+                                <li><a href="#testimolials">Testimonials</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                                <li></li>
+                                <li><NavLink to="/login">Login</NavLink></li>
+                                <li><NavLink to="/signup">Signup</NavLink></li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+        </>
     )
 }
 
 const runJquery = () => {
-    (function () {
+    ;(function () {
 	
         'use strict';
     
@@ -137,41 +149,41 @@ const runJquery = () => {
     
     
     
-        // var contentWayPoint = function() {
-        //     var i = 0;
-        //     $('.animate-box').waypoint( function( direction ) {
+        var contentWayPoint = function() {
+            var i = 0;
+            $('.animate-box').waypoint( function( direction ) {
     
-        //         if( direction === 'down' && !$(this.element).hasClass('animated-fast') ) {
+                if( direction === 'down' && !$(this.element).hasClass('animated-fast') ) {
                     
-        //             i++;
+                    i++;
     
-        //             $(this.element).addClass('item-animate');
-        //             setTimeout(function(){
+                    $(this.element).addClass('item-animate');
+                    setTimeout(function(){
     
-        //                 $('body .animate-box.item-animate').each(function(k){
-        //                     var el = $(this);
-        //                     setTimeout( function () {
-        //                         var effect = el.data('animate-effect');
-        //                         if ( effect === 'fadeIn') {
-        //                             el.addClass('fadeIn animated-fast');
-        //                         } else if ( effect === 'fadeInLeft') {
-        //                             el.addClass('fadeInLeft animated-fast');
-        //                         } else if ( effect === 'fadeInRight') {
-        //                             el.addClass('fadeInRight animated-fast');
-        //                         } else {
-        //                             el.addClass('fadeInUp animated-fast');
-        //                         }
+                        $('body .animate-box.item-animate').each(function(k){
+                            var el = $(this);
+                            setTimeout( function () {
+                                var effect = el.data('animate-effect');
+                                if ( effect === 'fadeIn') {
+                                    el.addClass('fadeIn animated-fast');
+                                } else if ( effect === 'fadeInLeft') {
+                                    el.addClass('fadeInLeft animated-fast');
+                                } else if ( effect === 'fadeInRight') {
+                                    el.addClass('fadeInRight animated-fast');
+                                } else {
+                                    el.addClass('fadeInUp animated-fast');
+                                }
     
-        //                         el.removeClass('item-animate');
-        //                     },  k * 200, 'easeInOutExpo' );
-        //                 });
+                                el.removeClass('item-animate');
+                            },  k * 200, 'easeInOutExpo' );
+                        });
                         
-        //             }, 100);
+                    }, 100);
                     
-        //         }
+                }
     
-        //     } , { offset: '85%' } );
-        // };
+            } , { offset: '85%' } );
+        };
     
     
         var dropdown = function() {
@@ -251,21 +263,21 @@ const runJquery = () => {
             });
         };
     
-        // var counterWayPoint = function() {
-        //     if ($('#fh5co-counter').length > 0 ) {
-        //         $('#fh5co-counter').waypoint( function( direction ) {
+        var counterWayPoint = function() {
+            if ($('#fh5co-counter').length > 0 ) {
+                $('#fh5co-counter').waypoint( function( direction ) {
                                             
-        //             if( direction === 'down' && !$(this.element).hasClass('animated') ) {
-        //                 setTimeout( counter , 400);					
-        //                 $(this.element).addClass('animated');
-        //             }
-        //         } , { offset: '90%' } );
-        //     }
-        // };
+                    if( direction === 'down' && !$(this.element).hasClass('animated') ) {
+                        setTimeout( counter , 400);					
+                        $(this.element).addClass('animated');
+                    }
+                } , { offset: '90%' } );
+            }
+        };
     
         // Parallax
         var parallax = function() {
-            // $(window).stellar();
+            $.stellar();
         };
     
         
@@ -277,8 +289,8 @@ const runJquery = () => {
             // contentWayPoint();
             dropdown();
             // testimonialCarousel();
-            // goToTop();
-            // loaderPage();
+            goToTop();
+            loaderPage();
             // counter();
             // counterWayPoint();
         });

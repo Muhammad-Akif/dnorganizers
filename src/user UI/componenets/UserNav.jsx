@@ -1,7 +1,14 @@
+import React from 'react';
 import logo from '../../images/abc.png'
 import { Link } from "react-router-dom"
+// import { useLocation } from 'react-router-dom'
+// import $ from 'jquery';
 
 export default function UserNav(props) {
+    // const location = useLocation();
+    // useEffect(() => {
+    //             runJquery();
+    //     }, [location])
     return (
         <div id="page">
             <nav className="fh5co-nav user-nav" >
@@ -42,3 +49,29 @@ export default function UserNav(props) {
         </div>
     )
 }
+
+// const runJquery = () => {
+//     (function () {
+//         'use strict';
+//         var dropdown = function() {
+//             $('.has-dropdown').mouseenter(function(){
+//                 var $this = $(this);
+//                 $this
+//                     .find('.dropdown')
+//                     .css('display', 'block')
+//                     .addClass('animated-fast fadeInUpMenu');
+    
+//             }).mouseleave(function(){
+//                 var $this = $(this);
+    
+//                 $this
+//                     .find('.dropdown')
+//                     .css('display', 'none')
+//                     .removeClass('animated-fast fadeInUpMenu');
+//             });
+//         };
+//         $(function(){
+//             dropdown();
+//         });
+//     }());
+// }

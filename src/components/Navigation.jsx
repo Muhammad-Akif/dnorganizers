@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom"
 import NavigationHeader from './NavigationHeader'
 
+
 class Navigation extends Component {
+
     componentDidMount() {
         simpleCount()
         var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);

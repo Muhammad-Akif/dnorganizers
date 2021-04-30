@@ -11,6 +11,7 @@ import Contect from '../components/Contect'
 import Topbtn from '../components/Topbtn'
 import JsonData from '../data/data.json'
 import { useLocation } from 'react-router-dom';
+import Navbar from '../components/Navbar'
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
     speed: 1000,
@@ -19,16 +20,26 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
 
 
 export default function Home() {
-    const [landingPageData, setLandingPageData] = useState({})
+    const [landingPageData, setLandingPageData] = useState({});
+    // const [controlUseEffect, setControlUseEffect] = useState(false);
     const location = useLocation();
     useEffect(() => {
         setLandingPageData(JsonData)
     }, [])
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [location])
+    // useEffect(() => {
+        // window.scrollTo(0, 0)
+        // if (controlUseEffect) {
+        //     console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
+        //     window.location.reload(true);
+        //     setControlUseEffect(false);
+        // } else {
+        //     setControlUseEffect(true);
+        // }
+    // }, [location])
+    // console.log(controlUseEffect);
     return (
         <div className="home">
+            {/* <Navbar/> */}
             <Navigation {...landingPageData.navigation} />
             <Welcome welcome={landingPageData.welcome} cardsData={landingPageData.welcomeCards} />
             <Services services={landingPageData.services} />

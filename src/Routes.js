@@ -37,11 +37,11 @@ const Routes = () => {
           <Route exact path='/userBooked' component={Booked} />
           <Route exact path='/userInvoices' component={Invoices} />
           <Route exact path='/userCustom' component={Custom} />
-          <Route exact path='/admin' component={Main} />
-          <Route exact path='/about' component={About} />
-          <Route exact path='/services' component={Services} />
-          <Route exact path='/blog' component={Blog} />
-          <Route exact path='/contacts' component={Contacts} />
+          <Route exact path='/Packages' component={Main} />
+          <Route exact path='/Rating' component={About} />
+          <Route exact path='/Verify' component={Services} />
+          <Route exact path='/Reviews' component={Blog} />
+          {/* <Route exact path='/contacts' component={Contacts} /> */}
           <Redirect to='/' />
         </Switch>
       </ScrollToTop>
