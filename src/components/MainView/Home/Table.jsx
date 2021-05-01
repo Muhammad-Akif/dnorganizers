@@ -1,28 +1,26 @@
 import React, { useState } from 'react';
 import { DataGrid } from '@material-ui/data-grid';
-import { FormatLineSpacingTwoTone } from '@material-ui/icons';
+// import { FormatLineSpacingTwoTone } from '@material-ui/icons';
 
 const columns = [
     // { field: 'id', headerName: 'ID', width: 70 },
-    { field: 'name', headerName: 'Menu', width: 400 },
+    { field: 'name', headerName: 'Menu', width: 440 },
 ];
 
 export default function DataTable(props) {
-    const {onSelectMenu} = props
-    const [item, setItem] = useState([])
+    const {onSelectMenu, item} = props
     let v = 1;
-    console.log("table ===. ", props.data);
+    // console.log("table ===. ", props.data);
 
     const rows = props.data.map((item) => {
-        console.log('aaaaa', item)
+        // console.log('aaaaa', item)
         return { id: v++, name: item };
     });
 
     const onSelection = (e) => {
-        console.log('event', e)
+        // console.log('event', e)
         if (e.isSelected) {
             console.log(e.isSelected)
-            setItem([...item, e.data.name]);
             onSelectMenu([...item, e.data.name])
         } else {
             const list = item.filter((dat) => {
@@ -31,30 +29,28 @@ export default function DataTable(props) {
                 }
                 return true;
             })
-            setItem(list);
             onSelectMenu(list)
         }
-        console.log(23232323, item)
+        // console.log(23232323, item)
     }
     return (
 
-        <div style={{ height: 300, width: '100%' }}>
-            {console.log('aaaaaaaaaaaaaaa', item)}
+        <div style={{ height: 250, width: '100%' }}>
+            {/* {console.log('aaaaaaaaaaaaaaa', item)} */}
             <DataGrid
                 onColumnHeaderClick={(e) => {
                     if (e.field === '__check__'){
                         if (item.length >=1 ){
-                            setItem([])
                             onSelectMenu([])
                         } else {
                             const list = rows.map((obj) => {
                                 return obj.name
                             });
-                            setItem(list);
                             onSelectMenu(list)
                         }
                     }
                 }}
+                // onCellClick={(e) => {console.log('bbbbbbbbbbbbbbbbb',e)}}
                 rows={rows}
                 columns={columns}
                 checkboxSelection
