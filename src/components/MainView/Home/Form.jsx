@@ -23,44 +23,33 @@ export default function Formtemp(props) {
         }
         firebase.database().ref('/events/wedding/packages').push(item);
         console.log(menu)
-        // setName('');
-        // setTheme('')
-        // setVenu('');
-        // setPrice(0);
-        // setMenu('');
+        setName('');
+        setTheme('')
+        setVenu('');
+        setPrice(0);
+        setMenu([]);
     }
     return (
         <>
-            <form className="row" novalidate>
-
-                <div className="col-md-12 position-relative" style={{ padding: '10px' }}>
+            <form>
+                <div className="col-md-12 col-12 col-sm-12  position-relative" style={{ padding: '10px' }}>
                     <input type="text" className="form-control" value={name} onChange={(e) => { setName(e.target.value) }} id="exampleFormControlInput1" placeholder="Enter Name" required/>
                 </div>
-                <div className="col-md-12 position-relative" style={{ padding: '10px' }}>
+                <div className="col-md-12 col-12 col-sm-12 position-relative" style={{ padding: '10px' }}>
                     <input type="text" className="form-control" value={theme} onChange={(e) => { setTheme(e.target.value) }} placeholder="Add Theme" id="validationTooltip01" required />
                 </div>
-                <div className="col-md-12 position-relative" style={{ padding: '10px' }}>
+                <div className="col-md-12 col-12 col-sm-12 position-relative" style={{ padding: '10px' }}>
                     <input type="text" className="form-control" value={venu} onChange={(e) => { setVenu(e.target.value) }} placeholder="Add Venu" id="validationTooltip01" required />
                 </div>
-                <br />
-
-                <div className="col-md-12 position-relative" style={{ padding: '10px' }}>
+                <div className="col-md-12 col-12 col-sm-12 position-relative" style={{ padding: '10px' }}>
                     <input type="number" className="form-control" value={price} onChange={(e) => { setPrice(e.target.value) }} placeholder="price" id="validationTooltip01" required />
                 </div>
-                <br />
+                <div className="col-md-12 col-12 col-sm-12 position-relative" style={{ padding: '10px' }}>
 
-                {/* <div className="col-md-12 position-relative" style={{ padding: '10px' }}>
-                    <label for="validationTooltip04" className="form-label">State</label>
-                    <select className="form-select" multiple id="validationTooltip04" required>
-                        {props?.data.map((v, i) => { return (<option key={i}> {v} <input type="checkbox"/></option>) })}
-                        <Table/>
-                    </select>
-                </div> */}
                 <Table data={props.data} onSelectMenu={menuSelection}/>
-
-                <br />
+                </div>
                 <div className="col-12 text-right">
-                    <button className="btn btn-primary" type="submit" onClick={handleSubmit}>Add</button>
+                    <button className="btn btn-primary" type="submit">Add</button>
                 </div>
             </form>
         </>
