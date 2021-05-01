@@ -4,7 +4,7 @@ import { DataGrid } from '@material-ui/data-grid';
 
 const columns = [
     // { field: 'id', headerName: 'ID', width: 70 },
-    { field: 'name', headerName: 'Menu', width: 440 },
+    { field: 'name', headerName: 'Menu', width: 200 },
 ];
 
 export default function DataTable(props) {

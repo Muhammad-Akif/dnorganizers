@@ -47,6 +47,11 @@ export default function Modal() {
         firebase.database().ref('/events/wedding/packages').push(item);
         console.log('--------------------------------------->>>>>>>>', item)
         setOpen(false);
+        setName('');
+        setTheme('')
+        setVenu('');
+        setPrice(0);
+        setMenu([]);
     };
 
 
@@ -62,13 +67,13 @@ export default function Modal() {
 
     return (
         <div>
-            <Button onClick={handleClickOpen('paper')}>Add Package</Button>
+            <Button variant="outlined" color="secondary" onClick={handleClickOpen('paper')}>Add Package</Button>
             {/* <Button onClick={handleClickOpen('body')}>scroll=body</Button> */}
             <Dialog
                 open={open}
                 onClose={handleClose}
                 scroll={scroll}
-                // style={{height}}
+                style={{width: "100%",margin: "0 auto",height: "96%"}}
                 aria-labelledby="scroll-dialog-title"
                 aria-describedby="scroll-dialog-description"
             >
@@ -83,7 +88,7 @@ export default function Modal() {
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={()=>{setOpen(false);}} style={{ fontSize: '14px' }} color="primary">
+                    <Button onClick={() => { setOpen(false); }} style={{ fontSize: '14px' }} color="primary">
                         Cancel
                      </Button>
                     <Button onClick={handleClose} style={{ fontSize: '14px' }} color="primary">

@@ -1,13 +1,13 @@
 import React from 'react';
 import Admin from '../../../admin/Admin';
-import Modal from './Modal'
+import Display from './Display'
 
 const Main = () => {
   const [modalShow, setModalShow] = React.useState(false);
 
   return (
     <Admin>
-      <Modal />
+      <Display/>
     </Admin>
   )
 }
