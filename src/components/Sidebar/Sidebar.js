@@ -93,7 +93,7 @@ const Sidebar = props => {
     }
 
     Object.keys(subMenusStates).length === 0 && setSubmenus(newSubmenus);
-  }, [menuItems, subMenusStates]);
+  }, [menuItems]);
 
   const handleMenuItemClick = (name, index) => {
     setSelectedMenuItem(name);

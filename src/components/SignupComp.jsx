@@ -13,6 +13,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { NavLink } from "react-router-dom"
 import firebase from '../config/firebase';
+import { useHistory } from 'react-router-dom';
 
 function Copyright() {
   return (
@@ -55,26 +56,53 @@ const useStyles = makeStyles((theme) => ({
 export default function SignUp() {
   const classes = useStyles();
 
-  const [fname, setfname] = useState(null);
-  const [lname, setlname] = useState(null);
+  // const [fname, setfname] = useState(null);
+  // const [lname, setlname] = useState(null);
   const [email, setemail] = useState(null);
+  const [isEmailValidate, setIsEmailValidate] = useState(false);
+  const [isPasswordValidate, setIsPasswordValidate] = useState(false);
+  const [showError, setShowError] = useState(false);
   const [password, setpassword] = useState(null);
+  const history = useHistory();
 
   const signUp = e => {
     e.preventDefault();
     console.log(`Email and Passwords are ==> ${email} & ${password}`)
-    firebase.auth().createUserWithEmailAndPassword(
-      email,
-      password
-    ).then(user => {
-      console.log(user)
-    }).catch(err => {
-      console.log("Error ==> ", err)
-    })
-    setlname('')
-    setfname('')
-    setemail('')
-    setpassword('')
+    if (isEmailValidate && isPasswordValidate) {
+      firebase.auth().createUserWithEmailAndPassword(
+        email,
+        password
+      ).then(user => {
+        console.log(user)
+        history.push("/login")
+      }).catch(err => {
+        console.log("Error ==> ", err)
+      })
+      // setlname('')
+      // setfname('')
+      setemail('')
+      setpassword('')
+    } else {
+      setShowError(true)
+    }
+  }
+  const onChangeInput = (type, e) => {
+    if (type == 'email') {
+      setemail(e.target.value)
+      setIsEmailValidate(validateEmail(e.target.value));
+      return
+    }
+    setpassword(e.target.value)
+    if (e.target.value.length >= 6) {
+      setIsPasswordValidate(true);
+    } else {
+      setIsPasswordValidate(false);
+    }
+
+  }
+  function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
   }
 
   return (
@@ -88,7 +116,7 @@ export default function SignUp() {
         </Typography>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
+            {/* <Grid item xs={12} sm={6}>
               <TextField
                 autoComplete="fname"
                 name="firstName"
@@ -114,7 +142,7 @@ export default function SignUp() {
                 name="lastName"
                 autoComplete="lname"
               />
-            </Grid>
+            </Grid> */}
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
@@ -122,12 +150,15 @@ export default function SignUp() {
                 id="email"
                 required
                 value={email}
-                onChange={(e) => { setemail(e.target.value) }}
+                onChange={onChangeInput.bind(null, "email")}
                 label="Email Address"
                 name="email"
                 autoComplete="email"
-                />
+              />
             </Grid>
+            {showError && (!isEmailValidate && (
+              <div>This is a wrong email</div>
+            ))}
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
@@ -137,11 +168,14 @@ export default function SignUp() {
                 type="password"
                 required
                 value={password}
-                onChange={(e) => { setpassword(e.target.value) }}
+                onChange={onChangeInput.bind(null, "password")}
                 id="password"
                 autoComplete="current-password"
               />
             </Grid>
+            {showError && (!isPasswordValidate && (
+              <div>Password length must be at least 6 characters</div>
+            ))}
           </Grid>
           <Button
             type="submit"

@@ -80,7 +80,7 @@ export default function SignIn() {
         password
       ).then(data => {
         console.log(data)
-        data?.user.email === "admin@gmail.com" ? history.push("/admin") : history.push("/user")
+        data?.user.email === "admin@gmail.com" ? history.push("/Packages") : history.push("/user")
       }).catch(err => {
         console.log(err)
       })

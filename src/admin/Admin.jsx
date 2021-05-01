@@ -15,9 +15,10 @@ const Admin = (props) => {
     shortName: 'DN'
   };
   const menuItems = [
-    {name: 'Packages', to: '/Packages', icon: '/icons/home.svg', subMenuItems: [] },
-    {name: 'Rating', to: '/Rating', icon: '/icons/about.svg', subMenuItems: [] },
-    {name: 'Verify', to: '/Verify', icon: '/icons/blog.svg', subMenuItems: [] },
+    {name: 'Wedding', to: '/Packages', icon: '/icons/about.svg', subMenuItems: [] },
+    {name: 'Birthday', to: '/Rating', icon: '/icons/blog.svg', subMenuItems: [] },
+    {name: 'Corporate', to: '/Rating', icon: '/icons/destinations.svg', subMenuItems: [] },
+    {name: 'Verify Slip', to: '/Verify', icon: '/icons/contacts.svg', subMenuItems: [] },
     {name: 'Reviews', to: '/Reviews', icon: '/icons/services.svg', subMenuItems: [] },
     // {name: 'Invoices', to: '/contacts', icon: '/icons/contacts.svg', subMenuItems: [] }
   ];
