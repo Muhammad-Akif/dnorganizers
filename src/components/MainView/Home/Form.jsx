@@ -26,6 +26,7 @@ export default function Formtemp(props) {
     const submitHandler = (e) => {
 
         e.preventDefault();
+        console.log('akif')
 
         //     const item = {
         //         name,
@@ -45,11 +46,11 @@ export default function Formtemp(props) {
     }
     return (
         <>
-            <form className={classes.root} noValidate autoComplete="off" onSubmit={submitHandler}>
-                <TextField id="outlined-basic" style={{width: '100%'}} value={name} onChange={(e) => { setName(e.target.value) }} label="Name" variant="outlined" />
-                <TextField id="outlined-basic" style={{width: '100%'}} value={theme} onChange={(e) => { setTheme(e.target.value) }} label="Theme" variant="outlined" />
-                <TextField id="outlined-basic" style={{width: '100%'}} value={venu} onChange={(e) => { setVenu(e.target.value) }} label="Venu" variant="outlined" />
-                <TextField id="outlined-basic" type="number" style={{width: '100%'}} value={price} onChange={(e) => { setPrice(e.target.value) }} label="Price" variant="outlined" />
+            <form className={classes.root} autoComplete="off" onSubmit={submitHandler}>
+                <TextField id="outlined-basic" style={{width: '100%'}} value={name} onChange={(e) => { setName(e.target.value) }} label="Name" variant="outlined" isRequired={true} required/>
+                <TextField id="outlined-basic" style={{width: '100%'}} value={theme} onChange={(e) => { setTheme(e.target.value) }} label="Theme" variant="outlined" required/>
+                <TextField id="outlined-basic" style={{width: '100%'}} value={venu} onChange={(e) => { setVenu(e.target.value) }} label="Venu" variant="outlined" required/>
+                <TextField id="outlined-basic" type="number" style={{width: '100%'}} value={price} onChange={(e) => { setPrice(e.target.value) }} label="Price" variant="outlined" required/>
                 <Table data={props.data} item={menu} onSelectMenu={menuSelection} />
             </form>
             {/* <form onSubmit={submitHandler}>
