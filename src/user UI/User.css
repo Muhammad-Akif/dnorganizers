@@ -7,7 +7,7 @@
 }
 */
 
-.home,
+/* .home,
 .services,
 .products,
 .contact-us,
@@ -82,4 +82,21 @@
   background-repeat: no-repeat;
   color: #fff;
   font-size: 100px;
+} */
+.bottomtabs{
+  display: none;
+}
+.contnt{
+  padding: 0px;
+  margin: 0px;
+ height: 85vh;
+}
+
+@media screen and (max-width: 786px) {
+  .tabs{
+    display: none;
+  }
+  .bottomtabs{
+    display: contents;
+  }
 }

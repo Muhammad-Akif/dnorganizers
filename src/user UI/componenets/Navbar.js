@@ -50,7 +50,8 @@ function Navbar() {
               className='nav-links'
               onClick={closeMobileMenu}
             >
-              PACKAGES <i className='fas fa-caret-down' />
+              PACKAGES 
+              {/* <i className='fas fa-caret-down' /> */}
             </Link>
              {dropdown && <Dropdown />}
           </li>
@@ -91,7 +92,7 @@ function Navbar() {
           <li className='nav-item'>
             <Link
               
-              // to='/login'
+              to='/login'
               className='nav-links bdr'
               onClick={closeMobileMenu}
             >
