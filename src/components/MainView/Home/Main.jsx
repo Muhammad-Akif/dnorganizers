@@ -7,7 +7,7 @@ const Main = () => {
 
   return (
     <Admin>
-      <Display/>
+      <Display title="Wedding"/>
     </Admin>
   )
 }

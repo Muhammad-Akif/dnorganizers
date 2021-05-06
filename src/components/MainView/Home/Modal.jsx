@@ -9,7 +9,8 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 
-export default function Modal() {
+export default function Modal(props) {
+    const getData = props.getData.toLowerCase();
     const [name, setName] = useState('')
     const [theme, setTheme] = useState('')
     const [venu, setVenu] = useState('')
@@ -21,7 +22,7 @@ export default function Modal() {
     const [data, setData] = useState([]);
 
     const handleClickOpen = (scrollType) => () => {
-        firebase.database().ref('/events/birthday/items/menu').on('value', function (snapshot) {
+        firebase.database().ref(`/events/${getData}/items/menu`).on('value', function (snapshot) {
             let items = snapshot.val()
             console.log(items)
             const list = []
@@ -44,7 +45,7 @@ export default function Modal() {
             price,
             menu
         }
-        firebase.database().ref('/events/wedding/packages').push(item);
+        firebase.database().ref(`/events/${getData}/packages`).push(item);
         console.log('--------------------------------------->>>>>>>>', item)
         setOpen(false);
         setName('');

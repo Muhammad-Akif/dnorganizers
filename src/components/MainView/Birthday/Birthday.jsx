@@ -1,11 +1,10 @@
 import React from 'react';
-
 import Admin from '../../../admin/Admin';
 
-const Services = () => {
+const Birthday = () => {
   return <Admin>
-    <h1>Services</h1>
+  <h1>Birthday</h1>
   </Admin>
 }
 
-export default Services
+export default Birthday

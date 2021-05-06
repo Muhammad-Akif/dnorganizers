@@ -1,4 +1,5 @@
-import React from 'react';
+import React,{ useEffect, useState} from 'react';
+import firebase from '../../../config/firebase';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { lighten, makeStyles } from '@material-ui/core/styles';
@@ -19,11 +20,14 @@ import Tooltip from '@material-ui/core/Tooltip';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import DeleteIcon from '@material-ui/icons/Delete';
-import FilterListIcon from '@material-ui/icons/FilterList';
 import Modal from './Modal'
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
+}
+
+const getTableData = () => {
+  console.log('hi')
 }
 
 const rows = [
@@ -69,11 +73,11 @@ function stableSort(array, comparator) {
 }
 
 const headCells = [
-  { id: 'name', numeric: false, disablePadding: true, label: 'Dessert (100g serving)' },
-  { id: 'calories', numeric: true, disablePadding: false, label: 'Calories' },
-  { id: 'fat', numeric: true, disablePadding: false, label: 'Fat (g)' },
-  { id: 'carbs', numeric: true, disablePadding: false, label: 'Carbs (g)' },
-  { id: 'protein', numeric: true, disablePadding: false, label: 'Protein (g)' },
+  { id: 'name', numeric: false, disablePadding: true, label: 'Name' },
+  { id: 'calories', numeric: true, disablePadding: false, label: 'Price' },
+  { id: 'carbs', numeric: false, disablePadding: false, label: 'theme' },
+  { id: 'fat', numeric: false, disablePadding: false, label: 'Venu' },
+  { id: 'protein', numeric: false, disablePadding: false, label: 'Menu' },
 ];
 
 function EnhancedTableHead(props) {
@@ -165,7 +169,7 @@ const EnhancedTableToolbar = (props) => {
         </Typography>
       ) : (
         <Typography className={classes.title} variant="h6" style={{color:"#e53935"}} id="tableTitle" component="div">
-          Wedding Packages
+          {props.title} Packages
         </Typography>
       )}
 
@@ -176,13 +180,6 @@ const EnhancedTableToolbar = (props) => {
           </IconButton>
         </Tooltip>
       ) : 
-    //   (
-    //     <Tooltip style={{fontSize: '16px'}}  title="Filter">
-    //       <IconButton aria-label="filter list">
-    //         <FilterListIcon />
-    //       </IconButton>
-    //     </Tooltip>
-    //   )
     ""
       }
     </Toolbar>
@@ -217,7 +214,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function EnhancedTable() {
+export default function Display(props) {
   const classes = useStyles();
   const [order, setOrder] = React.useState('asc');
   const [orderBy, setOrderBy] = React.useState('calories');
@@ -225,7 +222,22 @@ export default function EnhancedTable() {
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const [data, setData] = useState({});
+  const getData = props.title.toLowerCase();
 
+  useEffect(() => {
+    firebase.database().ref(`/events/${getData}/packages`).on('value', function (snapshot) {
+      let items = snapshot.val()
+      console.log(items)
+      // const list = []
+      // for (let item in items) {
+      //     let itemName = item.name
+      //     console.log("itemName ===> ", itemName)
+      //     list.push(itemName)
+      // }
+      setData(items)
+  });
+  })
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
     setOrder(isAsc ? 'desc' : 'asc');
@@ -280,8 +292,9 @@ export default function EnhancedTable() {
 
   return (
     <div className={classes.root}>
+    {console.log('data =======> ',data)}
       <Paper className={classes.paper}>
-        <EnhancedTableToolbar numSelected={selected.length} />
+        <EnhancedTableToolbar {...props} numSelected={selected.length} />
         <TableContainer>
           <Table
             className={classes.table}
@@ -349,7 +362,7 @@ export default function EnhancedTable() {
           onChangeRowsPerPage={handleChangeRowsPerPage}
         />
       </Paper>
-      <Modal/>
+      <Modal getData={props.title} />
     </div>
   );
 }

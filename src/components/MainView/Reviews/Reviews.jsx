@@ -1,11 +1,10 @@
 import React from 'react';
-
 import Admin from '../../../admin/Admin';
 
-const Contacts = () => {
+const Reviews = () => {
   return <Admin>
-  <h1>About</h1>
-</Admin>
+  <h1>Reviews</h1>
+  </Admin>
 }
 
-export default Contacts
+export default Reviews;

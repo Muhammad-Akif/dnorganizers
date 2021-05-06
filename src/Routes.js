@@ -12,11 +12,11 @@ import Booked from './user UI//componenets/Booked'
 import Custom from './user UI/componenets/Custom'
 import Invoices from './user UI/componenets/Invoices'
 import Logout from './user UI/componenets/Logout.jsx'
-import Main from './components/MainView/Home/Main';
-import About from './components/MainView/About/About';
-import Services from './components/MainView/Services/Services';
-import Blog from './components/MainView/Blog/Blog';
-import Contacts from './components/MainView/Contacts/Contacts';
+import Main from './components/MainView/Home/Main.jsx';
+import Birthday from './components/MainView/Birthday/Birthday'
+import Corporate from './components/MainView/Corporate/Corporate'
+import Reviews from './components/MainView/Reviews/Reviews'
+import VerifySlips from './components/MainView/Verify/VerfySlips.jsx'
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 // import Home from './components/pages/Home';
 // import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -32,24 +32,28 @@ const Routes = () => {
     <Router>
       <ScrollToTop>
         <Switch>
+          {/* main */}
           <Route exact path='/' component={Home} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/signup' component={Signup} />
           <Route exact path='/event/:name' component={View} />
-          <Route exact path='/logout' component={Logout} />
-          <Route exact path='/user' component={User} />
-          <Route exact path='/weddingPackages' component={Wedpack} />
-          <Route exact path='/birthdaypackages' component={Birthpack} />
           <Route exact path='/corporatePackages' component={Corppack} />
+          <Route exact path='/birthdaypackages' component={Birthpack} />
+          <Route exact path='/weddingPackages' component={Wedpack} />
+          {/* user */}
+          <Route exact path='/user' component={User} />
           <Route exact path='/userRatings' component={Ratings} />
           <Route exact path='/userBooked' component={Booked} />
           <Route exact path='/userInvoices' component={Invoices} />
           <Route exact path='/userCustom' component={Custom} />
-          <Route exact path='/Packages' component={Main} />
-          <Route exact path='/Rating' component={About} />
-          <Route exact path='/Verify' component={Services} />
-          <Route exact path='/Reviews' component={Blog} />
-          {/* <Route exact path='/contacts' component={Contacts} /> */}
+          <Route exact path='/logout' component={Logout} />
+          {/* admin */}
+          <Route exact path='/wedding' component={Main} />
+          <Route exact path='/birthday' component={Birthday} />
+          <Route exact path='/corporate' component={Corporate} />
+          <Route exact path='/VerifySlips' component={VerifySlips} />
+          <Route exact path='/Reviews' component={Reviews} />
+
           <Redirect to='/' />
         </Switch>
       </ScrollToTop>
