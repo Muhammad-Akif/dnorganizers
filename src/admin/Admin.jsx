@@ -11,7 +11,7 @@ import MainView from '../components/MainView/MainView'
 const Admin = (props) => {
   const backgroundImage = 'images/mountain.jpg';
   const sidebarHeader = {
-    fullName: 'DN-Org.',
+    fullName: 'DN',
     shortName: 'DN'
   };
   const menuItems = [

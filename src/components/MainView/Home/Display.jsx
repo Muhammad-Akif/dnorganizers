@@ -222,20 +222,20 @@ export default function Display(props) {
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
-  const [data, setData] = useState({});
+  const [data, setData] = useState([]);
   const getData = props.title.toLowerCase();
 
   useEffect(() => {
     firebase.database().ref(`/events/${getData}/packages`).on('value', function (snapshot) {
       let items = snapshot.val()
       console.log(items)
-      // const list = []
-      // for (let item in items) {
-      //     let itemName = item.name
-      //     console.log("itemName ===> ", itemName)
-      //     list.push(itemName)
-      // }
-      setData(items)
+      const list = []
+      for (let item in items) {
+          let obj = {item}
+          console.log("obj ===> ", obj)
+          list.push(obj)
+      }
+      setData(list)
   });
   })
   const handleRequestSort = (event, property) => {
