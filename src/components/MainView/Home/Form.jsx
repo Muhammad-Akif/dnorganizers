@@ -1,6 +1,4 @@
-import { isObject } from '@material-ui/data-grid';
 import React, { useState } from 'react'
-import firebase from '../../../config/firebase'
 import Table from "./Table"
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
@@ -17,16 +15,12 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Formtemp(props) {
     const { getData, name, theme, menu, venu, price, setName, setTheme, setVenu, setMenu, setPrice } = props;
-    // console.log("data ==> ", props)
     const classes = useStyles();
-
     const menuSelection = (list) => {
         setMenu(list);
     }
     const submitHandler = (e) => {
-
         e.preventDefault();
-
     }
     return (
         <>
