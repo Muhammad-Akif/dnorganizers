@@ -24,11 +24,9 @@ export default function Modal(props) {
     const handleClickOpen = (scrollType) => () => {
         firebase.database().ref(`/events/${getData}/items/menu`).on('value', function (snapshot) {
             let items = snapshot.val()
-            console.log(items)
             const list = []
             for (let item in items) {
                 let itemName = items[item].name
-                console.log("itemName ===> ", itemName)
                 list.push(itemName)
             }
             setData(list)
@@ -46,7 +44,6 @@ export default function Modal(props) {
             menu
         }
         firebase.database().ref(`/events/${getData}/packages`).push(item);
-        console.log('--------------------------------------->>>>>>>>', item)
         setOpen(false);
         setName('');
         setTheme('')
@@ -85,7 +82,7 @@ export default function Modal(props) {
                         ref={descriptionElementRef}
                         tabIndex={-1}
                     >
-                        <Formtemp data={data} name={name} theme={theme} menu={menu} venu={venu} price={price} setName={setName} setTheme={setTheme} setVenu={setVenu} setMenu={setMenu} setPrice={setPrice} />
+                        <Formtemp getData={props.getData} data={data} name={name} theme={theme} menu={menu} venu={venu} price={price} setName={setName} setTheme={setTheme} setVenu={setVenu} setMenu={setMenu} setPrice={setPrice} />
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>

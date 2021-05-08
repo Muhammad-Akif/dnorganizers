@@ -1,4 +1,4 @@
-import React,{ useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import firebase from '../../../config/firebase';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
@@ -27,23 +27,24 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 const getTableData = () => {
-  console.log('hi')
+  // console.log('hi')
 }
 
-const rows = [
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Donut', 452, 25.0, 51, 4.9),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Honeycomb', 408, 3.2, 87, 6.5),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Jelly Bean', 375, 0.0, 94, 0.0),
-  createData('KitKat', 518, 26.0, 65, 7.0),
-  createData('Lollipop', 392, 0.2, 98, 0.0),
-  createData('Marshmallow', 318, 0, 81, 2.0),
-  createData('Nougat', 360, 19.0, 9, 37.0),
-  createData('Oreo', 437, 18.0, 63, 4.0),
+
+var rows = [
+  // createData('Cupcake', 305, 3.7, 67, 4.3),
+  // createData('Donut', 452, 25.0, 51, 4.9),
+  // createData('Eclair', 262, 16.0, 24, 6.0),
+  // createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  // createData('Gingerbread', 356, 16.0, 49, 3.9),
+  // createData('Honeycomb', 408, 3.2, 87, 6.5),
+  // createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  // createData('Jelly Bean', 375, 0.0, 94, 0.0),
+  // createData('KitKat', 518, 26.0, 65, 7.0),
+  // createData('Lollipop', 392, 0.2, 98, 0.0),
+  // createData('Marshmallow', 318, 0, 81, 2.0),
+  // createData('Nougat', 360, 19.0, 9, 37.0),
+  // createData('Oreo', 437, 18.0, 63, 4.0),
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -75,8 +76,8 @@ function stableSort(array, comparator) {
 const headCells = [
   { id: 'name', numeric: false, disablePadding: true, label: 'Name' },
   { id: 'calories', numeric: true, disablePadding: false, label: 'Price' },
-  { id: 'carbs', numeric: false, disablePadding: false, label: 'theme' },
-  { id: 'fat', numeric: false, disablePadding: false, label: 'Venu' },
+  { id: 'fat', numeric: true, disablePadding: false, label: 'Theme' },
+  { id: 'carbs', numeric: true, disablePadding: false, label: 'Venu' },
   { id: 'protein', numeric: false, disablePadding: false, label: 'Menu' },
 ];
 
@@ -100,7 +101,7 @@ function EnhancedTableHead(props) {
         {headCells.map((headCell) => (
           <TableCell
             key={headCell.id}
-            align={headCell.numeric ? 'right' : 'left'}
+            align={headCell.numeric ? 'right' : 'center'}
             padding={headCell.disablePadding ? 'none' : 'default'}
             sortDirection={orderBy === headCell.id ? order : false}
           >
@@ -141,13 +142,13 @@ const useToolbarStyles = makeStyles((theme) => ({
   highlight:
     theme.palette.type === 'light'
       ? {
-          color: theme.palette.secondary.main,
-          backgroundColor: lighten(theme.palette.secondary.light, 0.85),
-        }
+        color: theme.palette.secondary.main,
+        backgroundColor: lighten(theme.palette.secondary.light, 0.85),
+      }
       : {
-          color: theme.palette.text.primary,
-          backgroundColor: theme.palette.secondary.dark,
-        },
+        color: theme.palette.text.primary,
+        backgroundColor: theme.palette.secondary.dark,
+      },
   title: {
     flex: '1 1 100%'
   },
@@ -168,7 +169,7 @@ const EnhancedTableToolbar = (props) => {
           {numSelected} selected
         </Typography>
       ) : (
-        <Typography className={classes.title} variant="h6" style={{color:"#e53935"}} id="tableTitle" component="div">
+        <Typography className={classes.title} variant="h6" style={{ color: "#e53935" }} id="tableTitle" component="div">
           {props.title} Packages
         </Typography>
       )}
@@ -179,8 +180,8 @@ const EnhancedTableToolbar = (props) => {
             <DeleteIcon />
           </IconButton>
         </Tooltip>
-      ) : 
-    ""
+      ) :
+        ""
       }
     </Toolbar>
   );
@@ -222,22 +223,26 @@ export default function Display(props) {
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
-  const [data, setData] = useState([]);
+  const [pickData, setpickedData] = useState([]);
   const getData = props.title.toLowerCase();
 
   useEffect(() => {
+    let dataList = []
     firebase.database().ref(`/events/${getData}/packages`).on('value', function (snapshot) {
       let items = snapshot.val()
-      console.log(items)
-      const list = []
+      console.log("items ===> ", items)
       for (let item in items) {
-          let obj = {item}
-          console.log("obj ===> ", obj)
-          list.push(obj)
+        let obj = items[item]
+        rows.push(createData(obj.name, obj.price, obj.theme, obj.venu, obj.menu.join(", ")))
+        dataList.push(obj)
       }
-      setData(list)
-  });
-  })
+      setpickedData(dataList)
+    });
+    console.log("dataList ====> ", dataList)
+  }, []);
+
+
+
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
     setOrder(isAsc ? 'desc' : 'asc');
@@ -292,7 +297,6 @@ export default function Display(props) {
 
   return (
     <div className={classes.root}>
-    {console.log('data =======> ',data)}
       <Paper className={classes.paper}>
         <EnhancedTableToolbar {...props} numSelected={selected.length} />
         <TableContainer>
