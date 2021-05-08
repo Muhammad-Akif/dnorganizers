@@ -1,9 +1,10 @@
 import React from 'react';
 import Admin from '../../../admin/Admin';
+import Display from '../Temp/Display';
 
 const Corporate = () => {
   return <Admin>
-  <h1>Corporate</h1>
+    <Display title='Corporate'/>
   </Admin>
 }
 

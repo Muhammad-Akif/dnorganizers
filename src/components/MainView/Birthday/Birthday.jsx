@@ -1,9 +1,11 @@
 import React from 'react';
 import Admin from '../../../admin/Admin';
+import Display from '../Temp/Display'
+
 
 const Birthday = () => {
   return <Admin>
-  <h1>Birthday</h1>
+    <Display title="Birthday"/>
   </Admin>
 }
 

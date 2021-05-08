@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { DataGrid } from '@material-ui/data-grid';
-// import { FormatLineSpacingTwoTone } from '@material-ui/icons';
 
 const columns = [
     // { field: 'id', headerName: 'ID', width: 70 },
@@ -10,15 +9,12 @@ const columns = [
 export default function DataTable(props) {
     const {onSelectMenu, item} = props
     let v = 1;
-    // console.log("table ===. ", props.data);
 
     const rows = props.data.map((item) => {
-        // console.log('aaaaa', item)
         return { id: v++, name: item };
     });
 
     const onSelection = (e) => {
-        // console.log('event', e)
         if (e.isSelected) {
             console.log(e.isSelected)
             onSelectMenu([...item, e.data.name])
@@ -31,12 +27,10 @@ export default function DataTable(props) {
             })
             onSelectMenu(list)
         }
-        // console.log(23232323, item)
     }
     return (
 
         <div style={{ height: 250, width: '100%' }}>
-            {/* {console.log('aaaaaaaaaaaaaaa', item)} */}
             <DataGrid
                 onColumnHeaderClick={(e) => {
                     if (e.field === '__check__'){
@@ -50,7 +44,6 @@ export default function DataTable(props) {
                         }
                     }
                 }}
-                // onCellClick={(e) => {console.log('bbbbbbbbbbbbbbbbb',e)}}
                 rows={rows}
                 columns={columns}
                 checkboxSelection

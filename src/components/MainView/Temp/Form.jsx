@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Formtemp(props) {
-    const { getData, name, theme, menu, venu, price, setName, setTheme, setVenu, setMenu, setPrice } = props;
+    const { getData, name, menu, venu, price, setName, setVenu, setMenu, setPrice } = props;
     const classes = useStyles();
     const menuSelection = (list) => {
         setMenu(list);

@@ -34,16 +34,18 @@ export default function Modal(props) {
     };
 
     const handleClose = () => {
+
         const item = {
             name,
-            venu,
             price,
+            theme: props.getData,
+            venu,
             menu
         }
         firebase.database().ref(`/events/${getData}/packages`).push(item);
         setOpen(false);
         setName('');
-        // setTheme('')
+        setTheme('')
         setVenu('');
         setPrice(0);
         setMenu([]);
@@ -79,7 +81,7 @@ export default function Modal(props) {
                         ref={descriptionElementRef}
                         tabIndex={-1}
                     >
-                        <Formtemp getData={props.getData} data={data} name={name} theme={theme} menu={menu} venu={venu} price={price} setName={setName} setTheme={setTheme} setVenu={setVenu} setMenu={setMenu} setPrice={setPrice} />
+                        <Formtemp getData={props.getData} data={data} name={name} menu={menu} venu={venu} price={price} setName={setName} setVenu={setVenu} setMenu={setMenu} setPrice={setPrice} />
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>

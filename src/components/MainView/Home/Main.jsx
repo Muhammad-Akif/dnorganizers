@@ -1,9 +1,9 @@
 import React from 'react';
 import Admin from '../../../admin/Admin';
-import Display from './Display'
+import Display from '../Temp/Display'
 
 const Main = () => {
-  const [modalShow, setModalShow] = React.useState(false);
+  // const [modalShow, setModalShow] = React.useState(false);
 
   return (
     <Admin>
