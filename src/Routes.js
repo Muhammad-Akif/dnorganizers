@@ -14,43 +14,58 @@ import Corporate from './components/MainView/Corporate/Corporate'
 import Reviews from './components/MainView/Reviews/Reviews'
 import VerifySlips from './components/MainView/Verify/VerfySlips.jsx'
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
-// import Home from './components/pages/Home';
-// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-// import Services from './components/pages/Services';
-// import Products from './components/pages/Products';
-// import ContactUs from './components/pages/ContactUs';
-// import SignUp from './components/pages/SignUp';
-// import Marketing from './components/pages/Marketing';
-// import Consulting from './components/pages/Consulting';
 
 const Routes = () => {
-  return (
-    <Router>
-      <ScrollToTop>
-        <Switch>
-          {/* main */}
-          <Route exact path='/' component={Home} />
-          <Route exact path='/login' component={Login} />
-          <Route exact path='/signup' component={Signup} />
-          <Route exact path='/event/:name' component={View} />
-          {/* user */}
-          <Route exact path='/packages' component={User} />
-          <Route exact path='/ratings' component={Ratings} />
-          <Route exact path='/booked' component={Booked} />
-          <Route exact path='/invoices' component={Invoices} />
-          <Route exact path='/logout' component={Logout} />
-          {/* admin */}
-          <Route exact path='/wedding' component={Main} />
-          <Route exact path='/birthday' component={Birthday} />
-          <Route exact path='/corporate' component={Corporate} />
-          <Route exact path='/VerifySlips' component={VerifySlips} />
-          <Route exact path='/Reviews' component={Reviews} />
-
-          <Redirect to='/' />
-        </Switch>
-      </ScrollToTop>
-    </Router>
-  )
+  if (!localStorage.getItem("email")) {
+    return (
+      <Router>
+        <ScrollToTop>
+          <Switch>
+            {/* main */}
+            <Route exact path='/' component={Home} />
+            <Route exact path='/login' component={Login} />
+            <Route exact path='/signup' component={Signup} />
+            <Route exact path='/event/:name' component={View} />
+            <Redirect to='/' />
+          </Switch>
+        </ScrollToTop>
+      </Router>
+    )
+  }
+  else if (localStorage.getItem("email") === "admin@gmail.com") {
+    return (
+      <Router>
+        <ScrollToTop>
+          <Switch>
+            {/* admin */}
+            <Route exact path='/wedding' component={Main} />
+            <Route exact path='/birthday' component={Birthday} />
+            <Route exact path='/corporate' component={Corporate} />
+            <Route exact path='/VerifySlips' component={VerifySlips} />
+            <Route exact path='/Reviews' component={Reviews} />
+            <Redirect to='/wedding' />
+          </Switch>
+        </ScrollToTop>
+      </Router>
+    )
+  }
+  else {
+    return (
+      <Router>
+        <ScrollToTop>
+          <Switch>
+            {/* user */}
+            <Route exact path='/packages' component={User} />
+            <Route exact path='/ratings' component={Ratings} />
+            <Route exact path='/booked' component={Booked} />
+            <Route exact path='/invoices' component={Invoices} />
+            <Route exact path='/logout' component={Logout} />
+            <Redirect to='/packages' />
+          </Switch>
+        </ScrollToTop>
+      </Router>
+    )
+  }
 }
 
 export default Routes

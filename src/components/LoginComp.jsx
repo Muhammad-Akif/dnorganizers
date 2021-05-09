@@ -86,6 +86,8 @@ export default function SignIn() {
           history.push("/packages")
           console.log(data)
           localStorage.setItem("email",data.user.email)
+          console.log("localStorage ====> ",localStorage.getItem("email"))
+
           // data?.user.email === "admin@gmail.com" ? history.push("/Packages") : history.push("/user")
         }).catch(err => {
           console.log(err)

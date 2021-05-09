@@ -32,6 +32,7 @@ export default function User() {
         //       setData(list)
         //   });
     })
+    console.log("localStorage ====> ",localStorage.getItem("email"))
     return (
         <>
             <Navbar />
