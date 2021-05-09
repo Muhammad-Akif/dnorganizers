@@ -4,9 +4,6 @@ import Signup from './pages/Signup';
 import ScrollToTop from './config/ScrollToTop';
 import View from './components/View Details/View';
 import User from './user UI/User'
-import Wedpack from './user UI/componenets/Wedpack'
-import Birthpack from './user UI/componenets/Birthpack'
-import Corppack from './user UI/componenets/Corppack'
 import Ratings from './user UI//componenets/Ratings'
 import Booked from './user UI//componenets/Booked'
 import Invoices from './user UI/componenets/Invoices'
@@ -36,9 +33,6 @@ const Routes = () => {
           <Route exact path='/login' component={Login} />
           <Route exact path='/signup' component={Signup} />
           <Route exact path='/event/:name' component={View} />
-          <Route exact path='/corporatePackages' component={Corppack} />
-          <Route exact path='/birthdaypackages' component={Birthpack} />
-          <Route exact path='/weddingPackages' component={Wedpack} />
           {/* user */}
           <Route exact path='/packages' component={User} />
           <Route exact path='/ratings' component={Ratings} />
