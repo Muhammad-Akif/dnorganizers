@@ -1,3 +1,4 @@
+import {useState,useEffect} from 'react';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
@@ -16,7 +17,7 @@ import VerifySlips from './components/MainView/Verify/VerfySlips.jsx'
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 
 const Routes = () => {
-  if (!localStorage.getItem("email")) {
+  if (!sessionStorage.getItem("email")) {
     return (
       <Router>
         <ScrollToTop>
@@ -26,16 +27,15 @@ const Routes = () => {
             <Route exact path='/login' component={Login} />
             <Route exact path='/signup' component={Signup} />
             <Route exact path='/event/:name' component={View} />
-            <Redirect to='/' />
+            {/* <Redirect to='/' /> */}
           </Switch>
         </ScrollToTop>
       </Router>
     )
   }
-  else if (localStorage.getItem("email") === "admin@gmail.com") {
+  else if (sessionStorage.getItem("email") === "admin@gmail.com") {
     return (
       <Router>
-        <ScrollToTop>
           <Switch>
             {/* admin */}
             <Route exact path='/wedding' component={Main} />
@@ -45,14 +45,12 @@ const Routes = () => {
             <Route exact path='/Reviews' component={Reviews} />
             <Redirect to='/wedding' />
           </Switch>
-        </ScrollToTop>
       </Router>
     )
   }
   else {
     return (
       <Router>
-        <ScrollToTop>
           <Switch>
             {/* user */}
             <Route exact path='/packages' component={User} />
@@ -62,7 +60,6 @@ const Routes = () => {
             <Route exact path='/logout' component={Logout} />
             <Redirect to='/packages' />
           </Switch>
-        </ScrollToTop>
       </Router>
     )
   }

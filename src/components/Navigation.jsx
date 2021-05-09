@@ -49,7 +49,6 @@ export default Navigation;
 const simpleCount = () => {
     (function (exports) {
 
-
         var // functions
             extend,
             createElements,

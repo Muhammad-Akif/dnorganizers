@@ -11,12 +11,12 @@ import Contect from '../components/Contect'
 import Topbtn from '../components/Topbtn'
 import JsonData from '../data/data.json'
 import { useLocation } from 'react-router-dom';
+import $ from 'jquery';
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
     speed: 1000,
     speedAsDuration: true,
 })
-
 
 export default function Home() {
     const [landingPageData, setLandingPageData] = useState({});

@@ -76,6 +76,7 @@ export default function SignIn() {
     console.log(`Email and Passwords are ==> ${email} & ${password}`)
     if (isEmailValidate && isPasswordValidate) {
       if (email == "admin@gmail.com" && password == 123456) {
+        sessionStorage.setItem("email",email)
         history.push("/wedding")
       }
       else {
@@ -83,7 +84,7 @@ export default function SignIn() {
           email,
           password
         ).then(data => {
-          localStorage.setItem("email",data.user.email)
+          sessionStorage.setItem("email",data.user.email)
           history.push("/packages")
           // data?.user.email === "admin@gmail.com" ? history.push("/Packages") : history.push("/user")
         }).catch(err => {

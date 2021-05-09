@@ -20,17 +20,6 @@ export default function User() {
             // }
             // setData(snap)
         })
-        //     firebase.database().ref('/events/wedding/packages').on('value', function (snapshot) {
-        //       let items = snapshot.val()
-        //       console.log(items)
-        //       const list = []
-        //       for (let item in items) {
-        //           let itemName = items[item]
-        //           console.log("itemName ===> ", itemName)
-        //           list.push(itemName)
-        //       }
-        //       setData(list)
-        //   });
     })
     console.log("localStorage ====> ",localStorage.getItem("email"))
     return (
