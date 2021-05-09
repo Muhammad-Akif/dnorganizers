@@ -73,9 +73,10 @@ export default function VerticalTabs() {
         aria-label="Vertical tabs example"
         className={classes.tabs}
       >
-        <Tab style={{fontSize:"12px",color:'black',padding:'50% 0%'}} label="Wedding" {...a11yProps(0)} />
-        <Tab style={{fontSize:"12px",color:'black',padding:'50% 0%'}} label="Birthday" {...a11yProps(1)} />
-        <Tab style={{fontSize:"12px",color:'black',padding:'50% 0%'}} label="Corporate" {...a11yProps(2)} />
+        <Tab style={{fontSize:"12px",color:'black',padding:'36% 0%'}} label="Wedding" {...a11yProps(0)} />
+        <Tab style={{fontSize:"12px",color:'black',padding:'36% 0%'}} label="Birthday" {...a11yProps(1)} />
+        <Tab style={{fontSize:"12px",color:'black',padding:'36% 0%'}} label="Corporate" {...a11yProps(2)} />
+        <Tab style={{fontSize:"12px",color:'black',padding:'36% 0%'}} label="Custom" {...a11yProps(3)} />
       </Tabs>
       <TabPanel value={value} index={0}>
         Wedding
@@ -85,6 +86,9 @@ export default function VerticalTabs() {
       </TabPanel>
       <TabPanel value={value} index={2}>
         Corporate
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+        Custom
       </TabPanel>
     </div>
   );

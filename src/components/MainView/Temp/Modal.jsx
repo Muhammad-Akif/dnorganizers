@@ -10,9 +10,10 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 
 export default function Modal(props) {
     const getData = props.getData.toLowerCase();
+    const updateTable = props.updateTable
     const [name, setName] = useState('')
-    const [theme, setTheme] = useState('')
     const [venu, setVenu] = useState('')
+    const [checkValid, setValid] = useState('')
     const [menu, setMenu] = useState([])
     const [price, setPrice] = useState(0)
     const [open, setOpen] = React.useState(false);
@@ -34,21 +35,27 @@ export default function Modal(props) {
     };
 
     const handleClose = () => {
-
-        const item = {
-            name,
-            price,
-            theme: props.getData,
-            venu,
-            menu
+        setValid("")
+        if(name.length > 0 && price.length > 1 && venu.length > 0 && menu.length > 0) {
+            const item = {
+                name,
+                price,
+                theme: props.getData,
+                venu,
+                menu
+            }
+            firebase.database().ref(`/events/${getData}/packages`).push(item);
+            updateTable("updated")
+            setOpen(false);
+            setName('');
+            setVenu('');
+            setPrice(0);
+            setMenu([]);
         }
-        firebase.database().ref(`/events/${getData}/packages`).push(item);
-        setOpen(false);
-        setName('');
-        setTheme('')
-        setVenu('');
-        setPrice(0);
-        setMenu([]);
+        else{
+            setValid("Incomplete Package Information ...")
+        }
+
     };
 
 
@@ -81,11 +88,12 @@ export default function Modal(props) {
                         ref={descriptionElementRef}
                         tabIndex={-1}
                     >
+                        <h5 style={{textAlign: 'center',color: 'red'}}>{checkValid}</h5>
                         <Formtemp getData={props.getData} data={data} name={name} menu={menu} venu={venu} price={price} setName={setName} setVenu={setVenu} setMenu={setMenu} setPrice={setPrice} />
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={() => { setOpen(false); }} style={{ fontSize: '14px' }} color="primary">
+                    <Button onClick={() => { setOpen(false);setValid(""); }} style={{ fontSize: '14px' }} color="primary">
                         Cancel
                      </Button>
                     <Button onClick={handleClose} style={{ fontSize: '14px' }} color="primary">

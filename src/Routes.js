@@ -9,7 +9,6 @@ import Birthpack from './user UI/componenets/Birthpack'
 import Corppack from './user UI/componenets/Corppack'
 import Ratings from './user UI//componenets/Ratings'
 import Booked from './user UI//componenets/Booked'
-import Custom from './user UI/componenets/Custom'
 import Invoices from './user UI/componenets/Invoices'
 import Logout from './user UI/componenets/Logout.jsx'
 import Main from './components/MainView/Home/Main.jsx';
@@ -41,11 +40,10 @@ const Routes = () => {
           <Route exact path='/birthdaypackages' component={Birthpack} />
           <Route exact path='/weddingPackages' component={Wedpack} />
           {/* user */}
-          <Route exact path='/user' component={User} />
-          <Route exact path='/userRatings' component={Ratings} />
-          <Route exact path='/userBooked' component={Booked} />
-          <Route exact path='/userInvoices' component={Invoices} />
-          <Route exact path='/userCustom' component={Custom} />
+          <Route exact path='/packages' component={User} />
+          <Route exact path='/ratings' component={Ratings} />
+          <Route exact path='/booked' component={Booked} />
+          <Route exact path='/invoices' component={Invoices} />
           <Route exact path='/logout' component={Logout} />
           {/* admin */}
           <Route exact path='/wedding' component={Main} />

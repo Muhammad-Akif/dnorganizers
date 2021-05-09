@@ -20,9 +20,11 @@ import Tooltip from '@material-ui/core/Tooltip';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Modal from './Modal'
 
+
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
 }
+
 
 var rows = [];
 
@@ -121,15 +123,15 @@ const useToolbarStyles = makeStyles((theme) => ({
   highlight:
     theme.palette.type === 'light'
       ? {
-        color: theme.palette.secondary.main,
-        backgroundColor: lighten(theme.palette.secondary.light, 0.85),
-      }
+          color: theme.palette.secondary.main,
+          backgroundColor: lighten(theme.palette.secondary.light, 0.85),
+        }
       : {
-        color: theme.palette.text.primary,
-        backgroundColor: theme.palette.secondary.dark,
-      },
+          color: theme.palette.text.primary,
+          backgroundColor: theme.palette.secondary.dark,
+        },
   title: {
-    flex: '1 1 100%'
+    flex: '1 1 100%',
   },
 }));
 
@@ -148,7 +150,7 @@ const EnhancedTableToolbar = (props) => {
           {numSelected} selected
         </Typography>
       ) : (
-        <Typography className={classes.title} variant="h6" style={{ color: "#e53935" }} id="tableTitle" component="div">
+        <Typography className={classes.title} variant="h6" id="tableTitle" component="div">
           {props.title} Packages
         </Typography>
       )}
@@ -203,14 +205,17 @@ export default function Display(props) {
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const [pickData, setpickedData] = useState([]);
+  const [updateComp, setupdateComp] = useState("")
   const getData = props.title.toLowerCase();
-
+  
+  const updateTable = (val)=>{
+    setupdateComp(val)
+  }
   useEffect(() => {
+    rows=[]
     let dataList = []
-    console.log("Dtaa ============> ",getData);
     firebase.database().ref(`/events/${getData}/packages`).on('value', function (snapshot) {
       let items = snapshot.val()
-      console.log("items =======> ",items)
       for (let item in items) {
         let obj = items[item]
         rows.push(createData(obj.name, obj.price, obj.theme, obj.venu, obj.menu.join(", ")))
@@ -218,9 +223,7 @@ export default function Display(props) {
       }
       setpickedData(dataList)
     });
-  }, []);
-
-
+  }, [updateComp]);
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -266,10 +269,6 @@ export default function Display(props) {
     setPage(0);
   };
 
-  const handleChangeDense = (event) => {
-    setDense(event.target.checked);
-  };
-
   const isSelected = (name) => selected.indexOf(name) !== -1;
 
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
@@ -277,7 +276,7 @@ export default function Display(props) {
   return (
     <div className={classes.root}>
       <Paper className={classes.paper}>
-        <EnhancedTableToolbar {...props} numSelected={selected.length} />
+        <EnhancedTableToolbar title = {props.title} numSelected={selected.length} />
         <TableContainer>
           <Table
             className={classes.table}
@@ -345,7 +344,7 @@ export default function Display(props) {
           onChangeRowsPerPage={handleChangeRowsPerPage}
         />
       </Paper>
-      <Modal getData={props.title} />
+      <Modal getData={props.title} updateTable={updateTable}/>
     </div>
   );
 }
