@@ -1,10 +1,8 @@
 import React from 'react'
-import UserNav from "./UserNav"
+import Navbar from "./Navbar"
 
 export default function Ratings() {
     return (
-        <UserNav>
-            Pakistan Zindabad !!!
-        </UserNav>
+        <Navbar/>
     )
 }

@@ -1,8 +1,8 @@
 import React from 'react'
-import UserNav from "./UserNav"
+import Navbar from "./Navbar"
 
 export default function Booked() {
     return (
-            Pakistan Zindabad !!!
+        <Navbar/>
     )
 }
