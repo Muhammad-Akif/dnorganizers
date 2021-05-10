@@ -1,20 +1,21 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import UserCard from './componenets/UserCard'
 
 function TabPanel(props) {
- 
+
   const { children, value, index, ...other } = props;
 
   return (
     <div
       role="tabpanel"
       hidden={value !== index}
-      style={{color:"black"}}
+      style={{ color: "black" }}
       id={`vertical-tabpanel-${index}`}
       aria-labelledby={`vertical-tab-${index}`}
       {...other}
@@ -46,13 +47,18 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
     display: 'flex',
+    flexWrap: 'break',
     height: '85vh',
     padding: '0px',
     margin: '0px'
   },
   tabs: {
+    width: '25vh',
     borderRight: `1px solid ${theme.palette.divider}`,
   },
+  TabPanel: {
+    width: '75vh'
+  }
 }));
 
 export default function VerticalTabs() {
@@ -73,19 +79,31 @@ export default function VerticalTabs() {
         aria-label="Vertical tabs example"
         className={classes.tabs}
       >
-        <Tab style={{fontSize:"12px",color:'black',padding:'36% 0%'}} label="Wedding" {...a11yProps(0)} />
-        <Tab style={{fontSize:"12px",color:'black',padding:'36% 0%'}} label="Birthday" {...a11yProps(1)} />
-        <Tab style={{fontSize:"12px",color:'black',padding:'36% 0%'}} label="Corporate" {...a11yProps(2)} />
-        <Tab style={{fontSize:"12px",color:'black',padding:'36% 0%'}} label="Custom" {...a11yProps(3)} />
+        <Tab style={{ fontSize: "12px", color: 'black', padding: '36% 0%' }} label="Wedding" {...a11yProps(0)} />
+        <Tab style={{ fontSize: "12px", color: 'black', padding: '36% 0%' }} label="Birthday" {...a11yProps(1)} />
+        <Tab style={{ fontSize: "12px", color: 'black', padding: '36% 0%' }} label="Corporate" {...a11yProps(2)} />
+        <Tab style={{ fontSize: "12px", color: 'black', padding: '36% 0%' }} label="Custom" {...a11yProps(3)} />
       </Tabs>
-      <TabPanel value={value} index={0}>
-        Wedding
+      <TabPanel value={value} className={classes.TabPanel} index={0}>
+        <div className='userCards'>
+          <UserCard />
+          <UserCard />
+        
+
+        </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Birthday
+      <div className='userCards'>
+          <UserCard />
+          <UserCard />
+        </div>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Corporate
+      <div className='userCards'>
+          <UserCard />
+          <UserCard />
+
+        </div>
       </TabPanel>
       <TabPanel value={value} index={3}>
         Custom
@@ -93,3 +111,8 @@ export default function VerticalTabs() {
     </div>
   );
 }
+
+// boxShadow: "0 8px 40px -12px rgba(0,0,0,0.3)",
+// "&:hover": {
+//   boxShadow: "0 16px 70px -12.125px rgba(0,0,0,0.3)"
+// }

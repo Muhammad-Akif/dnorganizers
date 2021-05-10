@@ -9,40 +9,42 @@ import Box from '@material-ui/core/Box';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import CakeIcon from '@material-ui/icons/Cake';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import UserCard from './componenets/UserCard'
+
 function TabPanel(props) {
- 
-    const { children, value, index, ...other } = props;
-  
-    return (
-      <div
-        role="tabpanel"
-        hidden={value !== index}
-        style={{overflowY: 'scroll',height: '77vh'}}
-        id={`vertical-tabpanel-${index}`}
-        aria-labelledby={`vertical-tab-${index}`}
-        {...other}
-      >
-        {value === index && (
-          <Box p={3}>
-            <Typography>{children}</Typography>
-          </Box>
-        )}
-      </div>
-    );
-  }
-  
-  TabPanel.propTypes = {
-    children: PropTypes.node,
-    index: PropTypes.any.isRequired,
-    value: PropTypes.any.isRequired,
+
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      style={{ overflowY: 'scroll', height: '77vh' }}
+      id={`vertical-tabpanel-${index}`}
+      aria-labelledby={`vertical-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box p={3}>
+          <Typography>{children}</Typography>
+        </Box>
+      )}
+    </div>
+  );
+}
+
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.any.isRequired,
+  value: PropTypes.any.isRequired,
+};
+
+function a11yProps(index) {
+  return {
+    id: `vertical-tab-${index}`,
+    'aria-controls': `vertical-tabpanel-${index}`,
   };
-  
-  function a11yProps(index) {
-    return {
-      id: `vertical-tab-${index}`,
-      'aria-controls': `vertical-tabpanel-${index}`,
-    };
-  }
+}
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
@@ -54,7 +56,7 @@ const useStyles = makeStyles({
     top: 100,
     left: 0,
     right: 0,
-},
+  },
 });
 
 export default function IconLabelTabs() {
@@ -67,14 +69,47 @@ export default function IconLabelTabs() {
 
   return (
     <Paper square className={classes.root}>
-      <TabPanel  value={value} index={0}>
-        wedding
+      <TabPanel value={value} index={0}>
+        <div className='userCards'>
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <button type="button" className="btn btn-danger" style={{ margin: "0 auto" }}>Customize Package</button>
+        </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Birthday
+        <div className='userCards'>
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <button type="button" className="btn btn-danger" style={{ margin: "0 auto" }}>Customize Package</button>
+        </div>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Corporate
+        <div className='userCards'>
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <button type="button" className="btn btn-danger" style={{ margin: "0 auto" }}>Customize Package</button>
+        </div>
       </TabPanel>
       <Tabs
         value={value}
@@ -84,9 +119,9 @@ export default function IconLabelTabs() {
         textColor="secondary"
         aria-label="icon label tabs example"
       >
-        <Tab icon={<FavoriteIcon />} label="WEDDING" {...a11yProps(0)}/>
-        <Tab icon={<CakeIcon />} label="BIRTHDAY" {...a11yProps(1)}/>
-        <Tab icon={<ThumbUpIcon />} label="CORPORATE" {...a11yProps(2)}/>
+        <Tab icon={<FavoriteIcon />} label="WEDDING" {...a11yProps(0)} />
+        <Tab icon={<CakeIcon />} label="BIRTHDAY" {...a11yProps(1)} />
+        <Tab icon={<ThumbUpIcon />} label="CORPORATE" {...a11yProps(2)} />
       </Tabs>
     </Paper>
   );

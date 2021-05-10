@@ -176,7 +176,25 @@ export default function SignUp() {
             {showError && (!isPasswordValidate && (
               <div>Password length must be at least 6 characters</div>
             ))}
+             {/* <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                fullWidth
+                name="password"
+                label="Confirm Password"
+                type="password"
+                required
+                value={re-password}
+                onChange={onChangeInput.bind(null, "re-password")}
+                id="password"
+                autoComplete="current-password"
+              />
+            </Grid>
+            {showError && (!isPasswordValidate && (
+              <div>Password length must be at least 6 characters</div>
+            ))} */}
           </Grid>
+
           <Button
             type="submit"
             fullWidth

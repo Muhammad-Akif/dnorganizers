@@ -21,7 +21,7 @@ export default function User() {
             // setData(snap)
         })
     })
-    console.log("localStorage ====> ",localStorage.getItem("email"))
+    console.log("localStorage ====> ", localStorage.getItem("email"))
     return (
         <>
             <Navbar />
