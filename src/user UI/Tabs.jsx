@@ -87,22 +87,16 @@ export default function VerticalTabs() {
       <TabPanel value={value} className={classes.TabPanel} index={0}>
         <div className='userCards'>
           <UserCard />
-          <UserCard />
-        
-
         </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
       <div className='userCards'>
-          <UserCard />
           <UserCard />
         </div>
       </TabPanel>
       <TabPanel value={value} index={2}>
       <div className='userCards'>
           <UserCard />
-          <UserCard />
-
         </div>
       </TabPanel>
       <TabPanel value={value} index={3}>
