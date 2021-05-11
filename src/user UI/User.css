@@ -9,9 +9,18 @@
   height: 86vh;
 }
 .Cbtn{
-  width: 80%;
+  width: 50%;
   display: table;
   margin: 10px auto !important;
+}
+.Bbtn{
+  display: table;
+  margin: 10px auto !important;
+  border-radius : 0px !important;
+  width : 90%;
+}
+.Bbtn:hover{
+  transform: scale(1.1)
 }
 .control-width{
   width: 31%; 

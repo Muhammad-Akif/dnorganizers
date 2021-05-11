@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import firebase from '../config/firebase'
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
@@ -62,27 +62,10 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function VerticalTabs() {
+export default function VerticalTabs(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
-  const [weddingPkg, setweddingPkg] = useState([]);
-  const [birthdayPkg, setbirthdayPkg] = useState([]);
-  const [corporatePkg, setcorporatePkg] = useState([]);
-  useEffect(() => {
-    let wedlist = []
-    firebase.database().ref('/events').on('value', function (snapshot) {
-      let snap = snapshot.val()
-      let wedpkg = snap.wedding.packages
-      let birthpkg = snap.birthday.packages
-      let corppkg = snap.corporate.packages
-      for (let item in wedpkg) {
-        let obj = wedpkg[item]
-        wedlist.push(obj)
-      }
-      setweddingPkg(wedlist)
-    })
-    console.log(wedlist)
-  }, [])
+  const {weddingPkg,birthdayPkg,corporatePkg} = props;
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -105,35 +88,35 @@ export default function VerticalTabs() {
       </Tabs>
       <TabPanel value={value} className={classes.TabPanel} index={0}>
         <div className='userCards'>
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
+          {
+            weddingPkg.map((v)=>{
+              return(
+                <UserCard {...v}/>
+              )
+            })
+          }
         </div>
       </TabPanel>
       <TabPanel value={value} className={classes.TabPanel} index={1}>
         <div className='userCards'>
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
+        {
+            birthdayPkg.map((v)=>{
+              return(
+                <UserCard {...v}/>
+              )
+            })
+          }
         </div>
       </TabPanel>
       <TabPanel value={value} className={classes.TabPanel} index={2}>
         <div className='userCards'>
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
+        {
+            corporatePkg.map((v)=>{
+              return(
+                <UserCard {...v}/>
+              )
+            })
+          }
         </div>
       </TabPanel>
       <TabPanel value={value} index={3}>

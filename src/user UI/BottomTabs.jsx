@@ -58,9 +58,10 @@ const useStyles = makeStyles({
   },
 });
 
-export default function IconLabelTabs() {
+export default function IconLabelTabs(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
+  const {weddingPkg,birthdayPkg,corporatePkg} = props;
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -70,43 +71,37 @@ export default function IconLabelTabs() {
     <Paper square className={classes.root}>
       <TabPanel value={value} index={0}>
         <div className='userCards'>
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
+        {
+            weddingPkg.map((v)=>{
+              return(
+                <UserCard {...v}/>
+              )
+            })
+          }
           <button type="button" className="btn btn-danger Cbtn" >Customize Package</button>
         </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
         <div className='userCards'>
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
+        {
+            birthdayPkg.map((v)=>{
+              return(
+                <UserCard {...v}/>
+              )
+            })
+          }
           <button type="button" className="btn btn-danger Cbtn">Customize Package</button>
         </div>
       </TabPanel>
       <TabPanel value={value} index={2}>
         <div className='userCards'>
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
+        {
+            corporatePkg.map((v)=>{
+              return(
+                <UserCard {...v}/>
+              )
+            })
+          }
           <button type="button" className="btn btn-danger Cbtn">Customize Package</button>
         </div>
       </TabPanel>
