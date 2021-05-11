@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import firebase from '../config/firebase'
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
@@ -64,6 +65,24 @@ const useStyles = makeStyles((theme) => ({
 export default function VerticalTabs() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
+  const [weddingPkg, setweddingPkg] = useState([]);
+  const [birthdayPkg, setbirthdayPkg] = useState([]);
+  const [corporatePkg, setcorporatePkg] = useState([]);
+  useEffect(() => {
+    let wedlist = []
+    firebase.database().ref('/events').on('value', function (snapshot) {
+      let snap = snapshot.val()
+      let wedpkg = snap.wedding.packages
+      let birthpkg = snap.birthday.packages
+      let corppkg = snap.corporate.packages
+      for (let item in wedpkg) {
+        let obj = wedpkg[item]
+        wedlist.push(obj)
+      }
+      setweddingPkg(wedlist)
+    })
+    console.log(wedlist)
+  }, [])
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
