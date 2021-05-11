@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function UserCard() {
   return (
-    <div className="card col-md-6" style={{ width: '100vh', margin: "0px 10px 0px 10px" }}>
+    <div className="card control-width">
       <div className="text-center">
         <strong style={{ fontSize: '1.5rem' }}> Featured </strong>
       </div>

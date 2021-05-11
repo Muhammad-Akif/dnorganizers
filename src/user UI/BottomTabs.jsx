@@ -49,13 +49,12 @@ const useStyles = makeStyles({
   root: {
     flexGrow: 1,
     maxWidth: '960px',
-    Height: '100%',
+    width: '100%',
     overflowY: 'hidden',
     position: 'absolute',
-    bottom: 0,
-    top: 100,
-    left: 0,
-    right: 0,
+    bottom: "0px",
+    left: "0px",
+    right: "0px",
   },
 });
 
@@ -80,7 +79,7 @@ export default function IconLabelTabs() {
           <UserCard />
           <UserCard />
           <UserCard />
-          <button type="button" className="btn btn-danger" style={{ margin: "0 auto" }}>Customize Package</button>
+          <button type="button" className="btn btn-danger Cbtn" >Customize Package</button>
         </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
@@ -94,7 +93,7 @@ export default function IconLabelTabs() {
           <UserCard />
           <UserCard />
           <UserCard />
-          <button type="button" className="btn btn-danger" style={{ margin: "0 auto" }}>Customize Package</button>
+          <button type="button" className="btn btn-danger Cbtn">Customize Package</button>
         </div>
       </TabPanel>
       <TabPanel value={value} index={2}>
@@ -108,7 +107,7 @@ export default function IconLabelTabs() {
           <UserCard />
           <UserCard />
           <UserCard />
-          <button type="button" className="btn btn-danger" style={{ margin: "0 auto" }}>Customize Package</button>
+          <button type="button" className="btn btn-danger Cbtn">Customize Package</button>
         </div>
       </TabPanel>
       <Tabs

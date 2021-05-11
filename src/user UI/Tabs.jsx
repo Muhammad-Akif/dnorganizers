@@ -48,16 +48,16 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     display: 'flex',
     flexWrap: 'break',
-    height: '85vh',
+    // height: '85vh',
     padding: '0px',
     margin: '0px'
   },
   tabs: {
-    width: '25vh',
+    width: '13vw',
     borderRight: `1px solid ${theme.palette.divider}`,
   },
   TabPanel: {
-    width: '75vh'
+    width: '87vw'
   }
 }));
 
@@ -87,20 +87,39 @@ export default function VerticalTabs() {
       <TabPanel value={value} className={classes.TabPanel} index={0}>
         <div className='userCards'>
           <UserCard />
-        </div>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-      <div className='userCards'>
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
           <UserCard />
         </div>
       </TabPanel>
-      <TabPanel value={value} index={2}>
-      <div className='userCards'>
+      <TabPanel value={value} className={classes.TabPanel} index={1}>
+        <div className='userCards'>
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+        </div>
+      </TabPanel>
+      <TabPanel value={value} className={classes.TabPanel} index={2}>
+        <div className='userCards'>
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
           <UserCard />
         </div>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        Custom
+        <div className='userCards'>
+        </div>
       </TabPanel>
     </div>
   );
