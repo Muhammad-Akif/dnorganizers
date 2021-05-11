@@ -10,8 +10,9 @@ export default function UserCard(props) {
         <li className="list-group-item">{props.theme}</li>
         <li className="list-group-item">{props.venu}</li>
         <li className="list-group-item">{props.menu}</li>
+        <li className="list-group-item">Rs{props.price}</li>
       </ul>
-      <button type="button" class="btn btn-success Bbtn">Book Now</button>
+      <button type="button" class="btn btn-success Cbtn">BOOK NOW</button>
     </div>
   )
 }

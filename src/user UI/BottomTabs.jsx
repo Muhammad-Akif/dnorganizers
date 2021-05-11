@@ -71,6 +71,7 @@ export default function IconLabelTabs(props) {
     <Paper square className={classes.root}>
       <TabPanel value={value} index={0}>
         <div className='userCards'>
+          <button type="button" className="btn btn-danger Cbtn" >Customize Package</button>
         {
             weddingPkg.map((v)=>{
               return(
@@ -78,7 +79,6 @@ export default function IconLabelTabs(props) {
               )
             })
           }
-          <button type="button" className="btn btn-danger Cbtn" >Customize Package</button>
         </div>
       </TabPanel>
       <TabPanel value={value} index={1}>

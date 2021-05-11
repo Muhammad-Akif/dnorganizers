@@ -8,18 +8,19 @@
 .contnt{
   height: 86vh;
 }
-.Cbtn{
-  width: 50%;
+/* .Cbtn{
+  width: 90%;
   display: table;
+  border-radius : 0px !important;
   margin: 10px auto !important;
-}
-.Bbtn{
+} */
+.Cbtn{
   display: table;
   margin: 10px auto !important;
   border-radius : 0px !important;
   width : 90%;
 }
-.Bbtn:hover{
+.Cbtn:hover{
   transform: scale(1.1)
 }
 .control-width{
