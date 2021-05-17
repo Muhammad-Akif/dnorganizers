@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
 export default function VerticalTabs(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
-  const {weddingPkg,birthdayPkg,corporatePkg} = props;
+  const { weddingPkg, birthdayPkg, corporatePkg } = props;
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -89,9 +89,9 @@ export default function VerticalTabs(props) {
       <TabPanel value={value} className={classes.TabPanel} index={0}>
         <div className='userCards'>
           {
-            weddingPkg.map((v)=>{
-              return(
-                <UserCard {...v}/>
+            weddingPkg.map((v) => {
+              return (
+                <UserCard {...v} />
               )
             })
           }
@@ -99,10 +99,10 @@ export default function VerticalTabs(props) {
       </TabPanel>
       <TabPanel value={value} className={classes.TabPanel} index={1}>
         <div className='userCards'>
-        {
-            birthdayPkg.map((v)=>{
-              return(
-                <UserCard {...v}/>
+          {
+            birthdayPkg.map((v) => {
+              return (
+                <UserCard {...v} />
               )
             })
           }
@@ -110,10 +110,10 @@ export default function VerticalTabs(props) {
       </TabPanel>
       <TabPanel value={value} className={classes.TabPanel} index={2}>
         <div className='userCards'>
-        {
-            corporatePkg.map((v)=>{
-              return(
-                <UserCard {...v}/>
+          {
+            corporatePkg.map((v) => {
+              return (
+                <UserCard {...v} />
               )
             })
           }

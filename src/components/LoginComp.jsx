@@ -3,6 +3,8 @@ import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
+import Backdrop from '@material-ui/core/Backdrop';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
@@ -53,6 +55,10 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "14px",
     borderRadius: "15px"
   },
+  backdrop: {
+    zIndex: theme.zIndex.drawer + 1,
+    color: '#fff',
+  },
 }));
 
 function validateEmail(email) {
@@ -62,7 +68,13 @@ function validateEmail(email) {
 
 export default function SignIn() {
   const classes = useStyles();
-
+  const [open, setOpen] = React.useState(false);
+  const handleClose = () => {
+    setOpen(false);
+  };
+  // const handleToggle = () => {
+  //   setOpen(!open);
+  // };
   const [email, setemail] = useState(null);
   const [isEmailValidate, setIsEmailValidate] = useState(false);
   const [isPasswordValidate, setIsPasswordValidate] = useState(false);
@@ -76,23 +88,23 @@ export default function SignIn() {
     console.log(`Email and Passwords are ==> ${email} & ${password}`)
     if (isEmailValidate && isPasswordValidate) {
       if (email == "admin@gmail.com" && password == 123456) {
-        sessionStorage.setItem("email",email)
+        sessionStorage.setItem("email", email)
         history.push("/wedding")
       }
       else {
+        setOpen(!open);
         firebase.auth().signInWithEmailAndPassword(
           email,
           password
         ).then(data => {
-          sessionStorage.setItem("email",data.user.email)
+          sessionStorage.setItem("email", data.user.email)
           history.push("/packages")
+          setOpen(false);
           // data?.user.email === "admin@gmail.com" ? history.push("/Packages") : history.push("/user")
         }).catch(err => {
           console.log(err)
         })
       }
-      setemail('')
-      setpassword('')
     } else {
       setShowError(true)
     }
@@ -165,6 +177,9 @@ export default function SignIn() {
           >
             Sign In
           </Button>
+          <Backdrop className={classes.backdrop} open={open} onClick={handleClose}>
+            <CircularProgress color="inherit" />
+          </Backdrop>
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
@@ -182,7 +197,7 @@ export default function SignIn() {
       <Box mt={8}>
         <Copyright />
       </Box>
-    </Container>
+    </Container >
   );
 }
 

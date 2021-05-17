@@ -4,6 +4,8 @@ import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Backdrop from '@material-ui/core/Backdrop';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
@@ -51,10 +53,21 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "14px",
     borderRadius: "15px"
   },
+  backdrop: {
+    zIndex: theme.zIndex.drawer + 1,
+    color: '#fff',
+  },
 }));
 
 export default function SignUp() {
   const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+  const handleClose = () => {
+    setOpen(false);
+  };
+  // const handleToggle = () => {
+  //   setOpen(!open);
+  // };
 
   // const [fname, setfname] = useState(null);
   // const [lname, setlname] = useState(null);
@@ -69,19 +82,21 @@ export default function SignUp() {
     e.preventDefault();
     console.log(`Email and Passwords are ==> ${email} & ${password}`)
     if (isEmailValidate && isPasswordValidate) {
+      setOpen(!open);
       firebase.auth().createUserWithEmailAndPassword(
         email,
         password
       ).then(user => {
         console.log(user)
         history.push("/login")
+        setOpen(false);
       }).catch(err => {
         console.log("Error ==> ", err)
       })
       // setlname('')
       // setfname('')
-      setemail('')
-      setpassword('')
+      // setemail('')
+      // setpassword('')
     } else {
       setShowError(true)
     }
@@ -205,6 +220,9 @@ export default function SignUp() {
           >
             Sign Up
           </Button>
+          <Backdrop className={classes.backdrop} open={open} onClick={handleClose}>
+            <CircularProgress color="inherit" />
+          </Backdrop>
           <Grid container justify="flex-end">
             <Grid item>
               <NavLink to='/login' variant="body2">
