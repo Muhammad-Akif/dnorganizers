@@ -41,6 +41,7 @@
 
 .userCards{
   width: 100% !important;
+  margin-top: -40px !important;
 }
 @media screen and (max-width: 1050px) {
   .control-width{
