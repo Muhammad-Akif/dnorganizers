@@ -33,15 +33,17 @@
   width: 31%; 
   box-shadow: 0 8px 40px -12px rgba(0,0,0,0.3);
   margin: 0px 10px 15px 10px;
-  border-radius: 15%  !important;
+  border-radius: 10%  !important;
 }
 .control-width:hover{
   box-shadow: 0 16px 70px -12.125px rgba(0,0,0,0.3);
 }
+.btn-wdth{
+  width: 80% !important;
+}
 
 .userCards{
   width: 100% !important;
-  margin-top: -40px !important;
 }
 @media screen and (max-width: 1050px) {
   .control-width{
@@ -56,6 +58,9 @@
 @media screen and (max-width: 744px) {
   .control-width{
     width: 100%; 
+  }
+  .userCards{
+    margin-top: -40px !important;
   }
 }
 @media screen and (max-width: 960px) {

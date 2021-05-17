@@ -71,7 +71,7 @@ export default function IconLabelTabs(props) {
     <Paper square className={classes.root}>
       <TabPanel value={value} index={0}>
         <div className='userCards'>
-          <button type="button" className="btn Cbtn" >Customize Package</button>
+          <button type="button" className="btn Cbtn btn-wdth" >Customize Package</button>
         {
             weddingPkg.map((v)=>{
               return(
@@ -83,7 +83,7 @@ export default function IconLabelTabs(props) {
       </TabPanel>
       <TabPanel value={value} index={1}>
         <div className='userCards'>
-          <button type="button" className="btn Cbtn">Customize Package</button>
+          <button type="button" className="btn Cbtn btn-wdth">Customize Package</button>
         {
             birthdayPkg.map((v)=>{
               return(
@@ -95,7 +95,7 @@ export default function IconLabelTabs(props) {
       </TabPanel>
       <TabPanel value={value} index={2}>
         <div className='userCards'>
-        <button type="button" className="btn Cbtn">Customize Package</button>
+        <button type="button" className="btn Cbtn btn-wdth">Customize Package</button>
         {
             corporatePkg.map((v)=>{
               return(
