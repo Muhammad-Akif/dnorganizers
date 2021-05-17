@@ -20,7 +20,7 @@
 .Cbtn{
   display: table;
   margin: 20px auto !important;
-  border-radius : 0px !important;
+  border-radius : 5px !important;
   width : 50%;
   color: white;
   background-color: #F14E95;
@@ -40,6 +40,7 @@
 }
 .btn-wdth{
   width: 80% !important;
+  font-weight: bold !important;
 }
 
 .userCards{
