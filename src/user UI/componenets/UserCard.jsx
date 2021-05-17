@@ -12,7 +12,7 @@ export default function UserCard(props) {
         <li className="list-group-item">{props.menu.join(", ")}</li>
         <li className="list-group-item">Rs{props.price}</li>
       </ul>
-      <button type="button" class="btn btn-success Cbtn">BOOK NOW</button>
+      <button type="button" class="btn Cbtn">BOOK NOW</button>
     </div>
   )
 }

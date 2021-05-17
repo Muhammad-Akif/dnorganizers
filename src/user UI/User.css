@@ -19,6 +19,8 @@
   margin: 10px auto !important;
   border-radius : 0px !important;
   width : 90%;
+  color: white;
+  background-color: #F14E95;
 }
 .Cbtn:hover{
   transform: scale(1.1)
