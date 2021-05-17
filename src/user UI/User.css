@@ -14,21 +14,31 @@
   border-radius : 0px !important;
   margin: 10px auto !important;
 } */
+.fld{
+  border: none !important;
+}
 .Cbtn{
   display: table;
-  margin: 10px auto !important;
+  margin: 20px auto !important;
   border-radius : 0px !important;
-  width : 90%;
+  width : 50%;
   color: white;
   background-color: #F14E95;
 }
 .Cbtn:hover{
-  transform: scale(1.1)
+  transform: scale(1.1);
+  color: white;
 }
 .control-width{
   width: 31%; 
-  margin: 0px 10px 10px 10px;
+  box-shadow: 0 8px 40px -12px rgba(0,0,0,0.3);
+  margin: 0px 10px 15px 10px;
+  border-radius: 15%  !important;
 }
+.control-width:hover{
+  box-shadow: 0 16px 70px -12.125px rgba(0,0,0,0.3);
+}
+
 .userCards{
   width: 100% !important;
 }
