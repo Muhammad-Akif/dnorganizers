@@ -7,6 +7,10 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import Backdrop from '@material-ui/core/Backdrop';
 import { makeStyles } from '@material-ui/core/styles';
 import firebase from '../config/firebase'
+import Package from '../Models/models/package';
+import transformIntoPackage from '../bariers/transformIntoPackages';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateBirthday, updateCorporate, updateEvents, updateWedding } from '../redux/actions';
 
 const useStyles = makeStyles((theme) => ({
   backdrop: {
@@ -17,42 +21,39 @@ const useStyles = makeStyles((theme) => ({
 
 export default function User() {
   const classes = useStyles();
-  const [weddingPkg, setweddingPkg] = useState([]);
-  const [birthdayPkg, setbirthdayPkg] = useState([]);
-  const [corporatePkg, setcorporatePkg] = useState([]);
+  // const [weddingPkg, setweddingPkg] = useState([]);
+  // const [birthdayPkg, setbirthdayPkg] = useState([]);
+  // const [corporatePkg, setcorporatePkg] = useState([]);
+  const dispatch = useDispatch();
+  const {wedding, birthday, corporate} = useSelector(state => state.packages);
   const [open, setOpen] = React.useState(false);
   const handleClose = () => {
     setOpen(false);
   };
   useEffect(() => {
-    let wedlist = []
-    let birthlist = []
-    let corplist = []
     setOpen(!open);
     firebase.database().ref('/events').on('value', function (snapshot) {
       let snap = snapshot.val()
+
+      
       let wedpkg = snap.wedding.packages
-      for (let item in wedpkg) {
-        let obj = wedpkg[item]
-        wedlist.push(obj)
-      }
-      setweddingPkg(wedlist)
+
+      // const wedList= transformIntoPackage(wedpkg)
+
+      // console.log("===========>",weddingPkg)
+      
       let birthpkg = snap.birthday.packages
-      for (let item in birthpkg) {
-        let obj = birthpkg[item]
-        birthlist.push(obj)
-      }
-      setbirthdayPkg(birthlist)
+      // const birthList= transformIntoPackage(birthpkg)
+      
       let corppkg = snap.corporate.packages
-      for (let item in corppkg) {
-        let obj = corppkg[item]
-        corplist.push(obj)
-      }
-      setcorporatePkg(corplist)
+      // const corpList= transformIntoPackage(corppkg)
+
+      dispatch(updateEvents({wedpkg, birthpkg, corppkg}));
+
+      // setweddingPkg([...wedList]);
+      // setbirthdayPkg([...birthList]);
+      // setcorporatePkg([...corpList]);
     })
-    console.log(wedlist)
-    console.log(birthlist)
-    console.log(corplist)
     setOpen(false);
   }, [])
   return (
@@ -60,10 +61,10 @@ export default function User() {
       <Navbar />
       <div className="contnt">
         <div className="tabs">
-          <VerticalTabs weddingPkg={weddingPkg} birthdayPkg={birthdayPkg} corporatePkg={corporatePkg} />
+          <VerticalTabs weddingPkg={wedding} birthdayPkg={birthday} corporatePkg={corporate} />
         </div>
         <div className="bottomtabs">
-          <IconLabelTabs weddingPkg={weddingPkg} birthdayPkg={birthdayPkg} corporatePkg={corporatePkg} />
+          <IconLabelTabs weddingPkg={wedding} birthdayPkg={birthday} corporatePkg={corporate} />
         </div>
         <Backdrop className={classes.backdrop} open={open} onClick={handleClose}>
           <CircularProgress color="inherit" />

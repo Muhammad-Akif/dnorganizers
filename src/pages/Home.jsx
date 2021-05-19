@@ -11,6 +11,7 @@ import Contect from '../components/Contect'
 import Topbtn from '../components/Topbtn'
 import JsonData from '../data/data.json'
 import { useLocation } from 'react-router-dom';
+// import BootstrapNavbar from '../components/NewNav'
 import $ from 'jquery';
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
@@ -30,6 +31,7 @@ export default function Home() {
     return (
         <div className="home">
             <Navigation {...landingPageData.navigation} />
+            {/* <BootstrapNavbar/> */}
             <Welcome welcome={landingPageData.welcome} cardsData={landingPageData.welcomeCards} />
             <Services services={landingPageData.services} />
             <Gallary gallery={landingPageData.gallery} />

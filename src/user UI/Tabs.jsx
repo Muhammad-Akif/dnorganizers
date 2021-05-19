@@ -91,7 +91,7 @@ export default function VerticalTabs(props) {
           {
             weddingPkg.map((v) => {
               return (
-                <UserCard {...v} />
+                <UserCard {...v} type={'wedding'}/>
               )
             })
           }
@@ -102,7 +102,7 @@ export default function VerticalTabs(props) {
           {
             birthdayPkg.map((v) => {
               return (
-                <UserCard {...v} />
+                <UserCard {...v} type={'birthday'}/>
               )
             })
           }
@@ -113,7 +113,7 @@ export default function VerticalTabs(props) {
           {
             corporatePkg.map((v) => {
               return (
-                <UserCard {...v} />
+                <UserCard {...v} type={'corporate'}/>
               )
             })
           }

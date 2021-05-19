@@ -3,6 +3,8 @@ import HomeRoute from './Routes/HomeRoute';
 import AdminRoute from './Routes/AdminRoute';
 import UserRoute from './Routes/UserRoute';
 import Routes from './Routes';
+import { Provider, useSelector } from "react-redux";
+import store from './redux/store';
 
 function App() {
   // if(!sessionStorage.getItem("email")){
@@ -16,7 +18,9 @@ function App() {
   //   );
   // }
   return(
-    <Routes/>
+    <Provider store={store}>
+      <Routes/>
+    </Provider>
   );
 }
 
