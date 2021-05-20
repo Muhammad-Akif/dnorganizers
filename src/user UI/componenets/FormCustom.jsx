@@ -68,7 +68,7 @@ export default function Formtemp(props) {
             })}
           </Select>
         </FormControl>
-        <TextField style={{ width: '100%' }} value={getData} readOnly label="Theme" variant="outlined" />
+        <TextField style={{ width: '100%'}} value={getData} readOnly label="Theme" variant="outlined" />
         {/* <TextField style={{ width: '100%' }} value={venu} onChange={(e) => { setVenu(e.target.value) }} label="Venu" variant="outlined" required /> */}
         <TextField type="number" style={{ width: '100%' }} value={price} onChange={(e) => { setPrice(e.target.value) }} readOnly label="Price" variant="outlined" required />
         <Table data={props.data} item={menu} onSelectMenu={menuSelection} />

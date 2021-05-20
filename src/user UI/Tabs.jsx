@@ -86,31 +86,31 @@ export default function VerticalTabs(props) {
         <Tab style={{ fontSize: "12px", color: 'black', padding: '52% 0%' }} label="Corporate" {...a11yProps(2)} />
       </Tabs>
       <TabPanel value={value} className={classes.TabPanel} index={0}>
-        <ModalCustom getData="wedding"/>
+        <ModalCustom clsName="btn Cbtn btn-width" getData="wedding"/>
         <div className='userCards'>
           {
             weddingPkg.map((v) => {
               return (
-                <UserCard {...v} type={'wedding'} />
+                <UserCard {...v} type={'Wedding'} />
               )
             })
           }
         </div>
       </TabPanel>
       <TabPanel value={value} className={classes.TabPanel} index={1}>
-        <ModalCustom getData="birthday"/>
+        <ModalCustom clsName="btn Cbtn btn-width" getData="birthday"/>
         <div className='userCards'>
           {
             birthdayPkg.map((v) => {
               return (
-                <UserCard {...v} type={'birthday'} />
+                <UserCard {...v} type={'Birthday'} />
               )
             })
           }
         </div>
       </TabPanel>
       <TabPanel value={value} className={classes.TabPanel} index={2}>
-        <ModalCustom getData="corporate"/>
+        <ModalCustom clsName="btn Cbtn btn-width" getData="Corporate"/>
         <div className='userCards'>
           {
             corporatePkg.map((v) => {

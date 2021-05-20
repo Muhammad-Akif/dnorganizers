@@ -10,6 +10,8 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import CakeIcon from '@material-ui/icons/Cake';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import UserCard from './componenets/UserCard'
+import ModalCustom from './componenets/ModalCustom'
+
 
 function TabPanel(props) {
 
@@ -61,7 +63,7 @@ const useStyles = makeStyles({
 export default function IconLabelTabs(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
-  const {weddingPkg,birthdayPkg,corporatePkg} = props;
+  const { weddingPkg, birthdayPkg, corporatePkg } = props;
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -70,36 +72,38 @@ export default function IconLabelTabs(props) {
   return (
     <Paper square className={classes.root}>
       <TabPanel value={value} index={0}>
+        <ModalCustom clsName="btn Cbtn btn-wdth" getData="Wedding" />
         <div className='userCards'>
-          <button type="button" className="btn Cbtn btn-wdth" >Customize Package</button>
-        {
-            weddingPkg.map((v)=>{
-              return(
-                <UserCard {...v} type={'wedding'}/>
+          {
+            weddingPkg.map((v) => {
+              return (
+                <UserCard {...v} type={'wedding'} />
               )
             })
           }
         </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
+        <ModalCustom clsName="btn Cbtn btn-wdth" getData="Birthday" />
+
         <div className='userCards'>
-          <button type="button" className="btn Cbtn btn-wdth">Customize Package</button>
-        {
-            birthdayPkg.map((v)=>{
-              return(
-                <UserCard {...v} type={'wedding'}/>
+          {
+            birthdayPkg.map((v) => {
+              return (
+                <UserCard {...v} type={'birthday'} />
               )
             })
           }
         </div>
       </TabPanel>
       <TabPanel value={value} index={2}>
+        <ModalCustom clsName="btn Cbtn btn-wdth" getData="Corporate" />
+
         <div className='userCards'>
-        <button type="button" className="btn Cbtn btn-wdth">Customize Package</button>
-        {
-            corporatePkg.map((v)=>{
-              return(
-                <UserCard {...v} type={'wedding'}/>
+          {
+            corporatePkg.map((v) => {
+              return (
+                <UserCard {...v} type={'corporate'} />
               )
             })
           }

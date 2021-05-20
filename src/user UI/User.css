@@ -45,12 +45,13 @@
   box-shadow: 0 16px 70px -12.125px rgba(0,0,0,0.3);
 }
 .btn-wdth{
-  width: 50% !important;
+  margin: -23px auto 50px auto !important;
+  width: 55% !important;
   font-weight: bold !important;
 }
 .btn-width{
-  margin-top: -10px !important;
   width: 23% !important;
+  margin-top: -10px !important;
 }
 
 .userCards{
