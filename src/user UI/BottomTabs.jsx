@@ -75,7 +75,7 @@ export default function IconLabelTabs(props) {
         {
             weddingPkg.map((v)=>{
               return(
-                <UserCard {...v}/>
+                <UserCard {...v} type={'wedding'}/>
               )
             })
           }
@@ -87,7 +87,7 @@ export default function IconLabelTabs(props) {
         {
             birthdayPkg.map((v)=>{
               return(
-                <UserCard {...v}/>
+                <UserCard {...v} type={'wedding'}/>
               )
             })
           }
@@ -99,7 +99,7 @@ export default function IconLabelTabs(props) {
         {
             corporatePkg.map((v)=>{
               return(
-                <UserCard {...v}/>
+                <UserCard {...v} type={'wedding'}/>
               )
             })
           }

@@ -17,11 +17,7 @@ export default function User() {
   const dispatch = useDispatch();
   const {wedding, birthday, corporate} = useSelector(state => state.packages);
   useEffect(() => {
-    console.log("hi")
-    console.log("firebase",firebase.database())
     firebase.database().ref('/events').on('value', function (snapshot) {
-      console.log("yo")
-      console.log("test =============== > ",snapshot.val())
       let snap = snapshot.val()
       
       let wedpkg = snap.wedding.packages
