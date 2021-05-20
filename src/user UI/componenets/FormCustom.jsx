@@ -29,12 +29,22 @@ export default function Formtemp(props) {
     age: '',
     name: 'hai',
   });
-  
-  const citiesList = ['Islamabad','Karachi','Multan','Faisalabad','Rawalpindi','Peshawar']
+  const [designers, setDesigners] = React.useState({
+    designers: '',
+    name: 'hai',
+  });
+
+  const citiesList = ['Islamabad', 'Karachi', 'Multan', 'Faisalabad', 'Rawalpindi', 'Peshawar']
+  const DesignersList = ['Liam', 'Elijah', 'Lucas', 'Noah', 'Henry', 'Alexander']
+
   const handleChange = (event) => {
     const name = event.target.name;
     setVenu(name)
     setState({
+      ...state,
+      [name]: event.target.value,
+    });
+    setDesigners({
       ...state,
       [name]: event.target.value,
     });
@@ -48,6 +58,17 @@ export default function Formtemp(props) {
   return (
     <>
       <form className={classes.root} autoComplete="off" onSubmit={submitHandler}>
+        <TextField
+          style={{ width: '30%',margin: '0 auto',display:'table'}}
+          id="datetime-local"
+          label="Booking Date"
+          type="datetime-local"
+          defaultValue="2017-05-24T10:30"
+          className={classes.textField}
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
         <TextField style={{ width: '100%' }} value={name} onChange={(e) => { setName(e.target.value) }} label="Name" variant="outlined" required />
         <FormControl style={{ width: '100%' }} variant="outlined" required className={classes.formControl}>
           <InputLabel htmlFor="outlined-age-native-simple" required >Venu</InputLabel>
@@ -63,12 +84,31 @@ export default function Formtemp(props) {
             }}
           >
             <option aria-label="None" value="" />
-            {citiesList.map((v,i)=>{
+            {citiesList.map((v, i) => {
               return <option index={i} value={v} >{v}</option>
             })}
           </Select>
         </FormControl>
-        <TextField style={{ width: '100%'}} value={getData} readOnly label="Theme" variant="outlined" />
+        <FormControl style={{ width: '100%' }} variant="outlined" required className={classes.formControl}>
+          <InputLabel htmlFor="outlined-age-native-simple" required >Designers</InputLabel>
+          <Select
+            native
+            required
+            value={designers.designers}
+            onChange={handleChange}
+            label="Designers"
+            inputProps={{
+              name: 'designers',
+              id: 'outlined-age-native-simple',
+            }}
+          >
+            <option aria-label="None" value="" />
+            {DesignersList.map((v, i) => {
+              return <option index={i} value={v} >{v}</option>
+            })}
+          </Select>
+        </FormControl>
+        <TextField style={{ width: '100%' }} value={getData} readOnly label="Theme" variant="outlined" />
         {/* <TextField style={{ width: '100%' }} value={venu} onChange={(e) => { setVenu(e.target.value) }} label="Venu" variant="outlined" required /> */}
         <TextField type="number" style={{ width: '100%' }} value={price} onChange={(e) => { setPrice(e.target.value) }} readOnly label="Price" variant="outlined" required />
         <Table data={props.data} item={menu} onSelectMenu={menuSelection} />
