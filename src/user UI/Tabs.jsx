@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import firebase from '../config/firebase'
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
@@ -7,6 +6,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import UserCard from './componenets/UserCard'
+import ModalCustom from './componenets/ModalCustom'
 
 function TabPanel(props) {
 
@@ -81,46 +81,45 @@ export default function VerticalTabs(props) {
         aria-label="Vertical tabs example"
         className={classes.tabs}
       >
-        <Tab style={{ fontSize: "12px", color: 'black', padding: '36% 0%' }} label="Wedding" {...a11yProps(0)} />
-        <Tab style={{ fontSize: "12px", color: 'black', padding: '36% 0%' }} label="Birthday" {...a11yProps(1)} />
-        <Tab style={{ fontSize: "12px", color: 'black', padding: '36% 0%' }} label="Corporate" {...a11yProps(2)} />
-        <Tab style={{ fontSize: "12px", color: 'black', padding: '36% 0%' }} label="Custom" {...a11yProps(3)} />
+        <Tab style={{ fontSize: "12px", color: 'black', padding: '52% 0%' }} label="Wedding" {...a11yProps(0)} />
+        <Tab style={{ fontSize: "12px", color: 'black', padding: '52% 0%' }} label="Birthday" {...a11yProps(1)} />
+        <Tab style={{ fontSize: "12px", color: 'black', padding: '52% 0%' }} label="Corporate" {...a11yProps(2)} />
       </Tabs>
       <TabPanel value={value} className={classes.TabPanel} index={0}>
+          <ModalCustom getData="wedding"/>
         <div className='userCards'>
+          <br />
           {
             weddingPkg.map((v) => {
               return (
-                <UserCard {...v} type={'wedding'}/>
+                <UserCard {...v} type={'wedding'} />
               )
             })
           }
         </div>
       </TabPanel>
       <TabPanel value={value} className={classes.TabPanel} index={1}>
+        <ModalCustom getData="birthday"/>
         <div className='userCards'>
           {
             birthdayPkg.map((v) => {
               return (
-                <UserCard {...v} type={'birthday'}/>
+                <UserCard {...v} type={'birthday'} />
               )
             })
           }
         </div>
       </TabPanel>
       <TabPanel value={value} className={classes.TabPanel} index={2}>
+        <ModalCustom getData="corporate"/>
         <div className='userCards'>
           {
             corporatePkg.map((v) => {
               return (
-                <UserCard {...v} type={'corporate'}/>
+                <UserCard {...v} type={'corporate'} />
               )
             })
           }
-        </div>
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        <div className='userCards'>
         </div>
       </TabPanel>
     </div>

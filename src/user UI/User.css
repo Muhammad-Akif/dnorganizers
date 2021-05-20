@@ -1,6 +1,12 @@
 .bottomtabs{
   display: none;
 }
+#ctm{
+  width: 160vh;
+  display: table;
+  margin: 0 auto;
+  box-shadow: 0 8px 40px -12px rgba(0,0,0,0.4);
+}
 .userCards{
   display: flex;
   flex-wrap: wrap ;
@@ -39,8 +45,12 @@
   box-shadow: 0 16px 70px -12.125px rgba(0,0,0,0.3);
 }
 .btn-wdth{
-  width: 80% !important;
+  width: 50% !important;
   font-weight: bold !important;
+}
+.btn-width{
+  margin-top: -10px !important;
+  width: 23% !important;
 }
 
 .userCards{
