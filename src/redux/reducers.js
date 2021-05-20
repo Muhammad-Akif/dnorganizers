@@ -1,9 +1,10 @@
 import { combineReducers } from "redux";
 import transformIntoPackage from "../bariers/transformIntoPackages";
 import transformIntoPendingInvoices from "../bariers/transformIntoPendingInvoices"
+import transformIntoItems from "../bariers/transformIntoItems"
 import PendingInvoices from '../Models/models/pendingInvoices';
 
-import { AUTHENTICATE, UPDATEEVENTS, LOGOUT, SETPENDINGINVOICES, UPDATEBIRTHDAY, UPDATECORPORATE, UPDATEPENDINGINVOICES, UPDATEWEDDING } from "./actions";
+import { AUTHENTICATE, UPDATEEVENTS, LOGOUT, SETPENDINGINVOICES, UPDATEBIRTHDAY, UPDATECORPORATE, UPDATEPENDINGINVOICES, UPDATEWEDDING,SETITEMS } from "./actions";
 
 // const initialAuthState = {
 //     uid: '',
@@ -106,10 +107,30 @@ const invoiceReducer = (state = initialInvoiceState, action) => {
     }
 }
 
+const initialItemState = {
+    weddingItems: [],
+    birthdayItems: [],
+    corporateItems: []
+}
+
+const itemReducer = (state = initialItemState, action) => {
+    switch (action.type) {
+        case SETITEMS:
+            return {
+                weddingItems: transformIntoItems(action.payload.wed),
+                birthdayItems: transformIntoItems(action.payload.birth),
+                corporateItems: transformIntoItems(action.payload.corp)
+            }
+        default:
+            return state;
+    }
+}
+
 const rootReducer = combineReducers({
     // auth: authReducer,
     packages: packageReducer,
-    invoices: invoiceReducer
+    invoices: invoiceReducer,
+    items: itemReducer
 })
 
 export default rootReducer

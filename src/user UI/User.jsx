@@ -4,39 +4,26 @@ import VerticalTabs from './Tabs';
 import IconLabelTabs from './BottomTabs'
 import React, { useEffect } from 'react';
 import firebase from '../config/firebase'
-import Package from '../Models/models/package';
-import transformIntoPackage from '../bariers/transformIntoPackages';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateBirthday, updateCorporate, updateEvents, updateWedding } from '../redux/actions';
-
+import { updateEvents,setItems } from '../redux/actions';
 
 export default function User() {
-  // const [weddingPkg, setweddingPkg] = useState([]);
-  // const [birthdayPkg, setbirthdayPkg] = useState([]);
-  // const [corporatePkg, setcorporatePkg] = useState([]);
+
   const dispatch = useDispatch();
   const {wedding, birthday, corporate} = useSelector(state => state.packages);
   useEffect(() => {
     firebase.database().ref('/events').on('value', function (snapshot) {
       let snap = snapshot.val()
-      
-      let wedpkg = snap.wedding.packages
-
-      // const wedList= transformIntoPackage(wedpkg)
-
-      // console.log("===========>",weddingPkg)
-      
-      let birthpkg = snap.birthday.packages
-      // const birthList= transformIntoPackage(birthpkg)
-      
-      let corppkg = snap.corporate.packages
-      // const corpList= transformIntoPackage(corppkg)
+    
+      const wedpkg = snap.wedding.packages
+      const birthpkg = snap.birthday.packages
+      const corppkg = snap.corporate.packages
+      const wedItems = snap.wedding.items
+      const birthItems = snap.birthday.items
+      const corpItems = snap.corporate.items
 
       dispatch(updateEvents({wedpkg, birthpkg, corppkg}));
-
-      // setweddingPkg([...wedList]);
-      // setbirthdayPkg([...birthList]);
-      // setcorporatePkg([...corpList]);
+      dispatch(setItems(wedItems,birthItems,corpItems))
     })
   }, [])
   return (

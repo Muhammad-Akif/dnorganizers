@@ -6,6 +6,7 @@ export const UPDATECORPORATE = 'UPDATECORPORATE';
 export const UPDATEPENDINGINVOICES = 'UPDATEPENDINGINVOICES';
 export const SETPENDINGINVOICES = 'SETPENDINGINVOICES';
 export const UPDATEEVENTS = 'UPDATEEVENTS';
+export const SETITEMS = 'SETITEMS'
 
 export const authenticate = (uid, email, isAdmin, isAuth) => { // It will take credentials
     return {
@@ -72,6 +73,17 @@ export const setPendingInvoices = (object, email) => {
         payload: {
             object,
             email
+        }
+    }
+}
+
+export const setItems = (wed, birth, corp) => { // obj that returned from firebase
+    return {
+        type: SETITEMS,
+        payload: {
+            wed,
+            birth,
+            corp
         }
     }
 }
