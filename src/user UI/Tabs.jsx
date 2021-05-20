@@ -86,9 +86,8 @@ export default function VerticalTabs(props) {
         <Tab style={{ fontSize: "12px", color: 'black', padding: '52% 0%' }} label="Corporate" {...a11yProps(2)} />
       </Tabs>
       <TabPanel value={value} className={classes.TabPanel} index={0}>
-          <ModalCustom getData="wedding"/>
+        <ModalCustom getData="wedding"/>
         <div className='userCards'>
-          <br />
           {
             weddingPkg.map((v) => {
               return (
