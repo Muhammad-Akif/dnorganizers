@@ -12,12 +12,11 @@ import handleBookPress from './sendToInvoices'
 
 export default function Modal(props) {
     const getData = props.getData.toLowerCase();
-    // const updateTable = props.updateTable
     const [name, setName] = useState('')
     const [venu, setVenu] = useState('')
     const [checkValid, setValid] = useState('')
     const [menu, setMenu] = useState([])
-    const [price, setPrice] = useState(0)
+    const [price, setPrice] = useState('')
     const [open, setOpen] = React.useState(false);
     const [scroll, setScroll] = React.useState('paper');
     const [data, setData] = useState([]);
@@ -26,6 +25,7 @@ export default function Modal(props) {
     const handleClickOpen = (scrollType) => () => {
         firebase.database().ref(`/events/${getData}/items/menu`).on('value', function (snapshot) {
             let items = snapshot.val()
+            console.log(items)
             const list = []
             for (let item in items) {
                 let itemName = items[item].name
@@ -39,19 +39,10 @@ export default function Modal(props) {
 
     const handleClose = () => {
         setValid("")
-        if (name.length > 0 && price.length > 1 && venu.length > 0 && menu.length > 0) {
-            const theme = props.getData;
-            const item = {
-                name,
-                price,
-                theme,
-                venu,
-                menu
-            }
-            // firebase.database().ref('pendingInvoices/').push(invoice)
+        if (name.length > 1 && venu.length > 0 && menu.length > 0) {
             const id = firebase.database().ref('pendingInvoices/').push().key;
-            handleBookPress(id, name, theme, menu, venu, price, getData, dispatch)
-            // updateTable("updated")
+            const name="Custom";
+            handleBookPress(id, name,props.getData, menu, venu, price, getData, dispatch)
             setOpen(false);
             setName('');
             setVenu('');

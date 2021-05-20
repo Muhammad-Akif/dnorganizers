@@ -58,18 +58,7 @@ export default function Formtemp(props) {
   return (
     <>
       <form className={classes.root} autoComplete="off" onSubmit={submitHandler}>
-        <TextField
-          style={{ width: '30%',margin: '0 auto',display:'table'}}
-          id="datetime-local"
-          label="Booking Date"
-          type="datetime-local"
-          defaultValue="2017-05-24T10:30"
-          className={classes.textField}
-          InputLabelProps={{
-            shrink: true,
-          }}
-        />
-        <TextField style={{ width: '100%' }} value={name} onChange={(e) => { setName(e.target.value) }} label="Name" variant="outlined" required />
+        <TextField type="number" style={{ width: '100%' }} value={name} onChange={(e) => { setName(e.target.value) }} label="Peoples" variant="outlined" required />
         <FormControl style={{ width: '100%' }} variant="outlined" required className={classes.formControl}>
           <InputLabel htmlFor="outlined-age-native-simple" required >Venu</InputLabel>
           <Select
@@ -111,6 +100,17 @@ export default function Formtemp(props) {
         <TextField style={{ width: '100%' }} value={getData} readOnly label="Theme" variant="outlined" />
         {/* <TextField style={{ width: '100%' }} value={venu} onChange={(e) => { setVenu(e.target.value) }} label="Venu" variant="outlined" required /> */}
         <TextField type="number" style={{ width: '100%' }} value={price} onChange={(e) => { setPrice(e.target.value) }} readOnly label="Price" variant="outlined" required />
+            <TextField
+              style={{ width: '30%',margin: '0 auto',display:'table'}}
+              id="datetime-local"
+              label="Booking Date"
+              type="datetime-local"
+              defaultValue="2017-05-24T10:30"
+              className={classes.textField}
+              InputLabelProps={{
+                shrink: true,
+              }}
+            />
         <Table data={props.data} item={menu} onSelectMenu={menuSelection} />
       </form>
     </>
