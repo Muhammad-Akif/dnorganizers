@@ -11,48 +11,51 @@ class PrintHtmlTable extends React.Component {
     render() {
         return (
             <>
-                <InvoicesTable />
+                <InvoicesTable obj={this.props.obj}/>
             </>
         )
     }
 }
 
 class Invoices extends React.Component {
-    pullData = () => {
+    pullData = (setPendingInvoices, email) => {
         firebase.database().ref('pendingInvoices').once('value', function (snapshot) {
             console.log(snapshot.val())
-            this.props.setPendingInvoices(snapshot.val(), this.props.email)
+            setPendingInvoices(snapshot.val(), email)
         });
     }
-    conponentDidMount() {
-        this.pullData();
+    componentDidMount() {
+        this.pullData(this.props.setPendingInvoices, this.props.email);
     }
     render() {
         return (
             <>
                 <Navbar />
-                <div>
-                    {/* <ul>
-                    {invoices.map(obj => <li>{obj.eventName}</li>)}
-                </ul> */}
-                    <PrintHtmlTable ref={(el) => (this.componentRef = el)} />
-                    <ReactToPrint
-                        trigger={() => <button className="btn Cbtn btn-wdh">Print out!</button>}
-                        content={() => this.componentRef}
-                    />
-                </div>
+                {
+                    this.props.invoices.map(obj => {
+                        return (
+                            <>
+                                <PrintHtmlTable obj={obj} ref={(el) => (this.componentRef = el)} />
+                                <ReactToPrint
+                                    trigger={() => <button className="btn Cbtn btn-wdh">Print out!</button>}
+                                    content={() => this.componentRef}
+                                />
+                                <hr style={{border: "1px dashed grey"}}/>
+                            </>
+                        )
+                    })
+                }
             </>
         )
     }
 }
-const mapDispatchToProps = (dispatch) => {
-    return {
-        setPendingInvoices: (val, email) => dispatch(setPendingInvoices(val, email))
-    }
+const mapDispatchToProps = {
+    setPendingInvoices: setPendingInvoices
 };
 const mapStateToProps = (state) => {
     return {
-        email: state.auth.email
+        email: state.auth.email,
+        invoices: state.invoices.pendingInvoices
     }
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Invoices)
