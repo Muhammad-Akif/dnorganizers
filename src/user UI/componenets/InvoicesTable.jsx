@@ -187,11 +187,11 @@ EnhancedTableToolbar.propTypes = {
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '95%',
+    backgroundColor: "#fff",
     margin: '10px auto',
   },
   paper: {
     width: '100%',
-    // backgroundColor: "rgba(255,255,255,0.5)",
     boxShadow: "0 8px 40px -12px rgba(0,0,0,0.6)",
     marginBottom: theme.spacing(2),
   },
@@ -283,18 +283,23 @@ export default function EnhancedTable() {
       <div className="text-center">
         <strong style={{ fontSize: '5rem', color: "#F14E95", fontFamily: "'Sacramento', Arial, serif" }}> Invoices </strong>
       </div>
-      <div>
-      {/* <div className='bank-info'> */}
-        <img src={logo} width="15%" alt="Bank-Logo" />
-        <br />
-        Acceptable at any Askari Bank Branch - ACMS
-      {/* </div> */}
-      <br />
-        Challan No. 75058
-        <br />
-        Bank Account: 37405-5668619-7
-        <br />
-        Date: {newdate}
+      <div className="container" style={{ fontSize: '2rem',color:"grey", fontFamily: "serif,Arial" }}>
+        <div className="row" >
+          <div className="col-md-8 .col-lg-8 .col-xl-8 col-sm-6 col-12" style={{paddingTop:"20px"}}>
+            Challan No. 75058
+            <br />
+            Bank Account: 37405-5668619-7
+            <br />
+            Date: {newdate}
+          </div>
+          <div className="col-md-4 .col-lg-4 .col-xl-4 col-sm-6 col-12">
+            <div className='bank-info'>
+              <img src={logo} width="100px" alt="Bank-Logo" />
+              <br />
+              Acceptable at any Askari Bank Branch - ACMS
+            </div>
+          </div>
+        </div>
       </div>
       <Paper className={classes.paper}>
         <EnhancedTableToolbar numSelected={selected.length} />
@@ -370,3 +375,5 @@ export default function EnhancedTable() {
 }
 
 
+
+// style={{ border: '1px solid black'}}
