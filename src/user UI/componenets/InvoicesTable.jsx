@@ -27,19 +27,19 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 const rows = [
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Donut', 452, 25.0, 51, 4.9),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  // createData('Gingerbread', 356, 16.0, 49, 3.9),
-  // createData('Honeycomb', 408, 3.2, 87, 6.5),
-  // createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  // createData('Jelly Bean', 375, 0.0, 94, 0.0),
-  // createData('KitKat', 518, 26.0, 65, 7.0),
-  // createData('Lollipop', 392, 0.2, 98, 0.0),
-  // createData('Marshmallow', 318, 0, 81, 2.0),
-  createData('Nougat', 360, 19.0, 9, 37.0),
-  createData('Oreo', 437, 18.0, 63, 4.0),
+  createData('Cupcake', 305),
+  createData('Donut', 452),
+  createData('Eclair', 262),
+  createData('Frozen yoghurt', 15),
+  // createData('Gingerbread', 356, 9, 3.9),
+  // createData('Honeycomb', 408, 3.6.5),
+  // createData('Ice cream sandwich'9.0, 37, 4.3),
+  // createData('Jelly Bean', 375, 0 0.0),
+  // createData('KitKat', 518, 26.0,0),
+  // createData('Lollipop', 392, 0.2.0),
+  // createData('Marshmallow', 318, 2.0),
+  createData('Nougat', 360),
+  createData('Oreo', 437)
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -71,9 +71,9 @@ function stableSort(array, comparator) {
 const headCells = [
   { id: 'name', numeric: false, disablePadding: true, label: 'Dessert (100g serving)' },
   { id: 'calories', numeric: true, disablePadding: false, label: 'Calories' },
-  { id: 'fat', numeric: true, disablePadding: false, label: 'Fat (g)' },
-  { id: 'carbs', numeric: true, disablePadding: false, label: 'Carbs (g)' },
-  { id: 'protein', numeric: true, disablePadding: false, label: 'Protein (g)' },
+  // { id: 'fat', numeric: true, disablePadding: false, label: 'Fat (g)' },
+  // { id: 'carbs', numeric: true, disablePadding: false, label: 'Carbs (g)' },
+  // { id: 'protein', numeric: true, disablePadding: false, label: 'Protein (g)' },
 ];
 
 function EnhancedTableHead(props) {
@@ -147,6 +147,18 @@ const useToolbarStyles = makeStyles((theme) => ({
   title: {
     flex: '1 1 100%',
   },
+  theme:{
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: '10px 0px',
+  },
+  people:{
+    display: 'flex',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
+    // padding: '10px 0px',
+  }
 }));
 
 const EnhancedTableToolbar = (props) => {
@@ -166,7 +178,11 @@ const EnhancedTableToolbar = (props) => {
         </Typography>
       ) : (
         <Typography className={classes.title} variant="h6" id="tableTitle" component="div">
-          {obj.eventName}
+        <span className={classes.theme}><h3 style={{fontFamily: "serif,'Sacramento', Arial",color:"grey"}}>{obj.theme}</h3></span>
+          <h5 style={{fontFamily: "serif,'Sacramento', Arial",color:"grey"}}>Venu: {obj.venu}</h5>
+          <br />
+          <h5 style={{fontFamily: "serif,'Sacramento', Arial",color:"grey",marginTop:"-15px"}}>Designer: {obj.designerName}</h5>
+          <span className={classes.people}><h4 style={{fontFamily: "serif,'Sacramento', Arial",color:"grey",marginTop:"-20px"}}>{obj.noOfPeople} Peoples</h4></span>
         </Typography>
       )}
 
@@ -210,6 +226,12 @@ const useStyles = makeStyles((theme) => ({
     top: 20,
     width: 1,
   },
+  price: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
+    padding: '0px 10px',
+  }
 }));
 
 export default function EnhancedTable(props) {
@@ -278,7 +300,6 @@ export default function EnhancedTable(props) {
   const year = dateObj.getUTCFullYear();
 
   const newdate = day + "/" + month + "/" + year;
-
   return (
     <div className={classes.root}>
       <div className="text-center">
@@ -286,19 +307,19 @@ export default function EnhancedTable(props) {
       </div>
       <div className="container" style={{ fontSize: '2rem',color:"grey", fontFamily: "serif,Arial" }}>
         <div className="row" >
-          <div className="col-md-8 .col-lg-8 .col-xl-8 col-sm-6 col-12" style={{paddingTop:"20px"}}>
-            Challan No. 75058
-            <br />
-            Bank Account: 37405-5668619-7
-            <br />
-            Date: {newdate}
-          </div>
-          <div className="col-md-4 .col-lg-4 .col-xl-4 col-sm-6 col-12">
+          <div className="col-md-8 .col-lg-8 .col-xl-8 col-sm-6 col-12">
             <div className='bank-info'>
               <img src={logo} width="100px" alt="Bank-Logo" />
               <br />
               Acceptable at any Askari Bank Branch - ACMS
             </div>
+          </div>
+          <div className="col-md-4 .col-lg-4 .col-xl-4 col-sm-6 col-12">
+            Challan No. 75058
+            <br />
+            Bank Account: 37405-5668619-7
+            <br />
+            Date: {newdate}
           </div>
         </div>
       </div>
@@ -347,9 +368,9 @@ export default function EnhancedTable(props) {
                         {row.name}
                       </TableCell>
                       <TableCell align="right">{row.calories}</TableCell>
-                      <TableCell align="right">{row.fat}</TableCell>
-                      <TableCell align="right">{row.carbs}</TableCell>
-                      <TableCell align="right">{row.protein}</TableCell>
+                      {/* <TableCell align="right">{row.fat}</TableCell> */}
+                      {/* <TableCell align="right">{row.carbs}</TableCell> */}
+                      {/* <TableCell align="right">{row.protein}</TableCell> */}
                     </TableRow>
                   );
                 })}
@@ -371,6 +392,7 @@ export default function EnhancedTable(props) {
           onChangeRowsPerPage={handleChangeRowsPerPage}
         /> */}
       </Paper>
+        <span className={classes.price}><h3 style={{fontFamily: "serif,'Sacramento', Arial",color:"grey"}}>Total: {props.obj.price}</h3></span>
     </div>
   );
 }
