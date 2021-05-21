@@ -139,7 +139,7 @@ export default function Formtemp(props) {
           label="Booking Date"
           type="datetime-local"
           onChange={(e) => { setOccuredDate(e.target.value); console.log(e.target.value) }}
-          defaultValue="2017-05-24T10:30"
+          defaultValue="2000-04-04T05:30"
           className={classes.textField}
           InputLabelProps={{
             shrink: true,

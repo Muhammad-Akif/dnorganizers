@@ -8,7 +8,7 @@ import { AUTHENTICATE, UPDATEEVENTS, LOGOUT, SETPENDINGINVOICES, UPDATEBIRTHDAY,
 
 const initialAuthState = {
     uid: '',
-    email: ''
+    email: 'akifmuhammad321@gmail.com'
 }
 
 const authReducer = (state = initialAuthState, action) => {

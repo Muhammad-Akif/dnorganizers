@@ -1,8 +1,9 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch,useSelector } from 'react-redux'
 import handleBookPress from './sendToInvoices'
 export default function UserCard(props) {
   const dispatch = useDispatch();
+  const email = useSelector(state => state.auth.email)
   const {id, name,theme,venu,menu,price, type} = props;
   return (
     <div className="card control-width">
@@ -15,7 +16,7 @@ export default function UserCard(props) {
         <li className="fld list-group-item">{menu.join(", ")}</li>
         <li className="fld list-group-item" style={{ fontSize: '2.2rem',fontFamily: "serif"}}><strong>Rs{price}</strong></li>
       </ul>
-      <button type="button" onClick={()=>handleBookPress(id, name,theme,menu,venu,price, type, dispatch)} class="btn Cbtn">BOOK NOW</button>
+      <button type="button" onClick={()=>handleBookPress(id, name,theme,menu,venu,price, type,email, dispatch)} class="btn Cbtn">BOOK NOW</button>
     </div>
   )
 }

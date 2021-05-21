@@ -13,7 +13,7 @@ import { updatePendingInvoices } from '../../redux/actions';
 
 export default function Modal(props) {
     const getData = props.getData.toLowerCase();
-    const [people, setPeople] = useState(1)
+    const [people, setPeople] = useState(20)
     const [venu, setVenu] = useState('')
     const [venuPrice, setVenuPrice] = useState(0);
     const [data,setData] = useState([])
@@ -81,6 +81,12 @@ export default function Modal(props) {
                 //error callback
                 alert("Can't book package.", 'Please check your internet connection!', [{ text: 'OK', style: 'destructive' }])
             })
+            setMenuPrice(0)
+            setVenuPrice(0)
+            setVenu('')
+            setPrice('')
+            setPeople(20)
+            setOpen(false);
         }
         else {
             setValid("Incomplete Package Information ...")
