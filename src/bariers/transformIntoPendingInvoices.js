@@ -19,6 +19,7 @@ const transformIntoPendingInvoices = (payload) => {
                 response[id].bookDate,
                 response[id].occuredDate,
                 response[id].designerName,
+                response[id].noOfPeople,
                 response[id].status
             )
         )

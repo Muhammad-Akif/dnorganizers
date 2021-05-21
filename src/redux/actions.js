@@ -8,14 +8,12 @@ export const SETPENDINGINVOICES = 'SETPENDINGINVOICES';
 export const UPDATEEVENTS = 'UPDATEEVENTS';
 export const SETITEMS = 'SETITEMS'
 
-export const authenticate = (uid, email, isAdmin, isAuth) => { // It will take credentials
+export const authenticate = (uid, email) => { // It will take credentials
     return {
         type: AUTHENTICATE,
         payload: {
             uid,
-            email,
-            isAdmin,
-            isAuth
+            email
         }
     }
 }
@@ -25,9 +23,7 @@ export const logout = () => {
         type: LOGOUT,
         payload: {
             uid: '',
-            email: '',
-            isAdmin: true,
-            isAuth: true
+            email: ''
         }
     }
 }

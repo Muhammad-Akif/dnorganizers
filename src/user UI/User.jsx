@@ -11,6 +11,14 @@ export default function User() {
 
   const dispatch = useDispatch();
   const {wedding, birthday, corporate} = useSelector(state => state.packages);
+  const { weddingItems, birthdayItems, corporateItems } = useSelector(state => state.items)
+  console.log(weddingItems[2])
+  // const list = []
+  // for (let item in weddingItems[2]) {
+  //   let itemName = weddingItems[2][item].name
+  //   list.push(itemName)
+  // }
+  // console.log("l ====>",list)
   useEffect(() => {
     firebase.database().ref('/events').on('value', function (snapshot) {
       let snap = snapshot.val()
@@ -31,10 +39,10 @@ export default function User() {
       <Navbar />
       <div className="contnt">
         <div className="tabs">
-          <VerticalTabs weddingPkg={wedding} birthdayPkg={birthday} corporatePkg={corporate} />
+          <VerticalTabs weddingPkg={wedding} birthdayPkg={birthday} corporatePkg={corporate} weddingItems={weddingItems[2]} birthdayItems={birthdayItems[2]} corporateItems={corporateItems[2]}/>
         </div>
         <div className="bottomtabs">
-          <IconLabelTabs weddingPkg={wedding} birthdayPkg={birthday} corporatePkg={corporate} />
+          <IconLabelTabs weddingPkg={wedding} birthdayPkg={birthday} corporatePkg={corporate} weddingItems={weddingItems[2]} birthdayItems={birthdayItems[2]} corporateItems={corporateItems[2]}/>
         </div>
       </div>
     </>

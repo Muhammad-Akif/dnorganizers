@@ -63,7 +63,7 @@ const useStyles = makeStyles({
 export default function IconLabelTabs(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
-  const { weddingPkg, birthdayPkg, corporatePkg } = props;
+  const { weddingPkg, birthdayPkg, corporatePkg,weddingItems,birthdayItems,corporateItems } = props;
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -72,7 +72,7 @@ export default function IconLabelTabs(props) {
   return (
     <Paper square className={classes.root}>
       <TabPanel value={value} index={0}>
-        <ModalCustom clsName="btn Cbtn btn-wdth" getData="Wedding" />
+        <ModalCustom clsName="btn Cbtn btn-wdth" Items={weddingItems} getData="Wedding" />
         <div className='userCards'>
           {
             weddingPkg.map((v) => {
@@ -84,7 +84,7 @@ export default function IconLabelTabs(props) {
         </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <ModalCustom clsName="btn Cbtn btn-wdth" getData="Birthday" />
+        <ModalCustom clsName="btn Cbtn btn-wdth" Items={birthdayItems} getData="Birthday" />
 
         <div className='userCards'>
           {
@@ -97,7 +97,7 @@ export default function IconLabelTabs(props) {
         </div>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <ModalCustom clsName="btn Cbtn btn-wdth" getData="Corporate" />
+        <ModalCustom clsName="btn Cbtn btn-wdth" Items={corporateItems} getData="Corporate" />
 
         <div className='userCards'>
           {

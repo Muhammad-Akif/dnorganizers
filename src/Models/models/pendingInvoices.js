@@ -1,5 +1,5 @@
 class PendingInvoices {
-    constructor(price, theme, menu, venu, eventName, isPackage, serPackName, serPackId, userEmail, bookDate, occuredDate, designerName, status) {
+    constructor(price, theme, menu, venu, eventName, isPackage, serPackName, serPackId, userEmail, bookDate, occuredDate, designerName, noOfPeople, status) {
         this.price = price;
         this.theme = theme;
         this.menu = menu;
@@ -12,6 +12,7 @@ class PendingInvoices {
         this.bookDate = bookDate; //when user click the book now button on app
         this.occuredDate = occuredDate; //When user want this function to be held
         this.designerName = designerName;
+        this.noOfPeople = noOfPeople;
         this.status = status; //what's the status of it
     }
 }

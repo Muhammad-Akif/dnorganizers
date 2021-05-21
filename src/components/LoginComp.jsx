@@ -5,8 +5,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import Backdrop from '@material-ui/core/Backdrop';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
@@ -18,6 +16,8 @@ import img from "../images/abc.png"
 import { NavLink } from "react-router-dom"
 import firebase from '../config/firebase';
 import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import {authenticate }from '../redux/actions';
 
 function Copyright() {
   return (
@@ -67,6 +67,7 @@ function validateEmail(email) {
 }
 
 export default function SignIn() {
+  const dispatch = useDispatch();
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const handleClose = () => {
@@ -100,6 +101,8 @@ export default function SignIn() {
           sessionStorage.setItem("email", data.user.email)
           history.push("/packages")
           setOpen(false);
+          dispatch(authenticate(data.user.uid, data.user.email));
+          //-------------------------------------------------------------TODO-
           // data?.user.email === "admin@gmail.com" ? history.push("/Packages") : history.push("/user")
         }).catch(err => {
           console.log(err)

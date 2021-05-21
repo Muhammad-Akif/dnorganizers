@@ -6,35 +6,29 @@ import PendingInvoices from '../Models/models/pendingInvoices';
 
 import { AUTHENTICATE, UPDATEEVENTS, LOGOUT, SETPENDINGINVOICES, UPDATEBIRTHDAY, UPDATECORPORATE, UPDATEPENDINGINVOICES, UPDATEWEDDING,SETITEMS } from "./actions";
 
-// const initialAuthState = {
-//     uid: '',
-//     email: 'akifmuhammad321@gmail.com',
-//     isAdmin: false,
-//     isAuth: false
-// }
+const initialAuthState = {
+    uid: '',
+    email: ''
+}
 
-// const authReducer = (state = initialAuthState, action) => {
-//     switch (action.type) {
-//         case AUTHENTICATE:
-//             return {
-//                 // ...state,
-//                 uid: action.payload.uid,
-//                 email: action.payload.email,
-//                 isAdmin: action.payload.isAdmin,
-//                 isAuth: action.payload.isAuth,
-//             }
-//         case LOGOUT:
-//             return {
-//                 // ...state,
-//                 uid: action.payload.uid,
-//                 email: action.payload.email,
-//                 isAdmin: action.payload.isAdmin,
-//                 isAuth: action.payload.isAuth,
-//             }
-//         default:
-//             return state;
-//     }
-// }
+const authReducer = (state = initialAuthState, action) => {
+    switch (action.type) {
+        case AUTHENTICATE:
+            return {
+                // ...state,
+                uid: action.payload.uid,
+                email: action.payload.email
+            }
+        case LOGOUT:
+            return {
+                // ...state,
+                uid: action.payload.uid,
+                email: action.payload.email
+            }
+        default:
+            return state;
+    }
+}
 
 const initialPackageState = {
     wedding: [],
@@ -94,6 +88,7 @@ const invoiceReducer = (state = initialInvoiceState, action) => {
                         payload.bookDate,
                         payload.occuredDate,
                         payload.designerName,
+                        payload.noOfPeople,
                         payload.status
                     )
                 ]
@@ -127,7 +122,7 @@ const itemReducer = (state = initialItemState, action) => {
 }
 
 const rootReducer = combineReducers({
-    // auth: authReducer,
+    auth: authReducer,
     packages: packageReducer,
     invoices: invoiceReducer,
     items: itemReducer

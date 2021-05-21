@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
 export default function VerticalTabs(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
-  const { weddingPkg, birthdayPkg, corporatePkg } = props;
+  const { weddingPkg, birthdayPkg, corporatePkg,weddingItems,birthdayItems,corporateItems } = props;
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -86,7 +86,7 @@ export default function VerticalTabs(props) {
         <Tab style={{ fontSize: "12px", color: 'black', padding: '52% 0%' }} label="Corporate" {...a11yProps(2)} />
       </Tabs>
       <TabPanel value={value} className={classes.TabPanel} index={0}>
-        <ModalCustom clsName="btn Cbtn btn-width" getData="wedding"/>
+        <ModalCustom clsName="btn Cbtn btn-width" Items={weddingItems} getData="wedding"/>
         <div className='userCards'>
           {
             weddingPkg.map((v) => {
@@ -98,7 +98,7 @@ export default function VerticalTabs(props) {
         </div>
       </TabPanel>
       <TabPanel value={value} className={classes.TabPanel} index={1}>
-        <ModalCustom clsName="btn Cbtn btn-width" getData="birthday"/>
+        <ModalCustom clsName="btn Cbtn btn-width" Items={birthdayItems} getData="birthday"/>
         <div className='userCards'>
           {
             birthdayPkg.map((v) => {
@@ -110,7 +110,7 @@ export default function VerticalTabs(props) {
         </div>
       </TabPanel>
       <TabPanel value={value} className={classes.TabPanel} index={2}>
-        <ModalCustom clsName="btn Cbtn btn-width" getData="Corporate"/>
+        <ModalCustom clsName="btn Cbtn btn-width" Items={corporateItems} getData="Corporate"/>
         <div className='userCards'>
           {
             corporatePkg.map((v) => {
