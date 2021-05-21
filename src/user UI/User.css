@@ -1,6 +1,19 @@
 .bottomtabs{
   display: none;
 }
+.prntbtn{
+  float : right !important;
+  margin-right : 30px !important;
+}
+.bank-info{
+  position: absolute;
+  right: 0;
+  top: 130px;
+  width: 360px;
+}
+.btn-wdh{
+  width: 12% !important;
+}
 .prc{
   float: right !important;
   font-size: 16px;

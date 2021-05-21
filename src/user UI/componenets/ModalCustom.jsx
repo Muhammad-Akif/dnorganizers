@@ -53,7 +53,11 @@ export default function Modal(props) {
         const fullMenu = menu.map(item => {
             // delete item["checked"];
             // price = price + (item.price * peopleCount);
-            return item.name;
+            return {
+                id: item.id,
+                name: item.name,
+                price: parseInt(item.price)
+            };
         })
         setValid("")
         if ( venu.length > 0 && menu.length > 0) {
