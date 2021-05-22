@@ -29,13 +29,7 @@ function Navbar() {
               PACKAGES 
             </Link>
           </li>
-          {/* <li className='nav-item'>
-            <Link 
-            to='/ratings'
-             className='nav-links' onClick={closeMobileMenu}>
-              RATINGS
-            </Link>
-          </li> */}
+
           <li className='nav-item'>
             <Link
               to='/booked'

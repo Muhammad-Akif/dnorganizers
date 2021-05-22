@@ -15,6 +15,11 @@ body {
   background: #fff;
 }
 
+.smNav{
+  display: none;
+}
+
+
 #team {
 	padding-bottom: 20px;
   background: rgb(255, 250, 250);
@@ -32,6 +37,9 @@ body {
 #team .thumbnail .caption {
 	padding: 10px 0 0 0;
 	color: #888;
+}
+.team-pd{
+  padding-top: 30px !important;
 }
 
 .login{
@@ -104,6 +112,15 @@ body {
     border-radius: 2%;
     background-color: #fff;
     width: 90% !important;
+  }
+  .smNav{
+    display:contents;
+  }
+  .lgNav{
+    display: none;
+  }
+  .team-pd{
+    padding-top: 30px !important;
   }
 }
 @media screen and (min-width: 768px) {
@@ -265,7 +282,7 @@ h1, h2, h3, h4, h5, h6, figure {
   visibility: hidden;
   opacity: 0;
   position: absolute;
-  top: 20px;
+  top: 35px;
   left: 0;
   text-align: left;
   background: #fff;

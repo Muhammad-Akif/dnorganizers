@@ -11,8 +11,6 @@ import Contect from '../components/Contect'
 import Topbtn from '../components/Topbtn'
 import JsonData from '../data/data.json'
 import { useLocation } from 'react-router-dom';
-// import BootstrapNavbar from '../components/NewNav'
-import $ from 'jquery';
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
     speed: 1000,
@@ -26,6 +24,13 @@ export default function Home() {
         setLandingPageData(JsonData)
     }, [])
     useEffect(() => {
+        const element = document.getElementById(location.hash.replace("#", ""));
+        setTimeout(() => {
+            window.scrollTo({
+              behavior: element ? "smooth" : "auto",
+              top: element ? element.offsetTop : 0
+            });
+          }, 100);
         window.scrollTo(0, 0)
     }, [location])
     return (

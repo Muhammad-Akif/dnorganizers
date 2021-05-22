@@ -3,25 +3,26 @@ export const Team = (props) => {
     <div id='team' className='text-center'>
       <div className='container'>
         <div className="row">
-                    <div className="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-                        <h2 style={{paddingTop: "50px"}}>Team</h2>
-                        <p>We presents some astonishing clicks from our recent events to give you an insight of our services & our website.</p>
-                    </div>
-                </div>
+          <div id='teams' className="col-md-8 col-sm-6 col-12 col-md-offset-2 text-center fh5co-heading animate-box">
+            <div className="team-pd"></div>
+            <h2>Team</h2>
+            <p>We presents some astonishing clicks from our recent events to give you an insight of our services & our website.</p>
+          </div>
+        </div>
         <div id='row'>
           {props.data
             ? props.data.map((d, i) => (
-                <div key={`${d.name}-${i}`} className='col-md-4 col-sm-6 team'>
-                  <div className='thumbnail'>
-                    {' '}
-                    <img src={d.img} alt='...' className='team-img' />
-                    <div className='caption'>
-                      <h4>{d.name}</h4>
-                      <p>{d.job}</p>
-                    </div>
+              <div key={`${d.name}-${i}`} className='col-md-4 col-sm-6 team'>
+                <div className='thumbnail'>
+                  {' '}
+                  <img src={d.img} alt='...' className='team-img' />
+                  <div className='caption'>
+                    <h4>{d.name}</h4>
+                    <p>{d.job}</p>
                   </div>
                 </div>
-              ))
+              </div>
+            ))
             : 'loading'}
         </div>
       </div>
