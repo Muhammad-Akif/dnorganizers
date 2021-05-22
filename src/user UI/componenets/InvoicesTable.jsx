@@ -164,6 +164,7 @@ const useToolbarStyles = makeStyles((theme) => ({
 const EnhancedTableToolbar = (props) => {
   const classes = useToolbarStyles();
   const { numSelected,obj } = props;
+  const Status = obj.status=="userclear" ? "IsUnderReview..." : obj.status.toUpperCase(); 
 
   return (
     <Toolbar
@@ -181,10 +182,10 @@ const EnhancedTableToolbar = (props) => {
         <span className={classes.theme}><h3 style={{fontFamily: "serif,'Sacramento', Arial",color:"grey"}}>{obj.theme}</h3></span>
           <h5 style={{fontFamily: "serif,'Sacramento', Arial",color:"grey"}}>Venu: {obj.venu}</h5>
           <br />
-          <h5 style={{fontFamily: "serif,'Sacramento', Arial",color:"grey",marginTop:"-15px"}}>{obj.noOfPeople} Peoples</h5>
-          <br />
           <h5 style={{fontFamily: "serif,'Sacramento', Arial",color:"grey",marginTop:"-15px"}}>Designer: {obj.designerName}</h5>
-          <span className={classes.people}><h5 id="status-info" style={{fontFamily: "serif,'Sacramento', Arial",color:"orange",marginTop:"-50px",border: "2px solid orange",padding: "5px"}}> {obj.status.toUpperCase()} </h5></span>
+          <br />
+          <h5 style={{fontFamily: "serif,'Sacramento', Arial",color:"grey",marginTop:"-15px"}}>{obj.noOfPeople} Peoples</h5>
+          <span className={classes.people}><h5 className='status'> {Status} </h5></span>
         </Typography>
       )}
 
@@ -244,7 +245,7 @@ export default function EnhancedTable(props) {
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(rows.length);
-
+  console.log('------------------------',props);
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
     setOrder(isAsc ? 'desc' : 'asc');
@@ -344,12 +345,12 @@ export default function EnhancedTable(props) {
               rowCount={rows.length}
             />
             <TableBody>
-              {stableSort(rows, getComparator(order, orderBy))
+              {stableSort(props.obj.menu, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                .map((row, index) => {
-                  const isItemSelected = isSelected(row.name);
+                .map((menu, index) => {
+                  const isItemSelected = isSelected(menu.name);
                   const labelId = `enhanced-table-checkbox-${index}`;
-
+// -------------------------------------TABLE ROW-------------------------------------------------------
                   return (
                     <TableRow
                       hover
@@ -357,7 +358,7 @@ export default function EnhancedTable(props) {
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
-                      key={row.name}
+                      key={menu.id}
                       selected={isItemSelected}
                     >
                       {/* <TableCell padding="checkbox">
@@ -367,9 +368,9 @@ export default function EnhancedTable(props) {
                         />
                       </TableCell> */}
                       <TableCell style={{fontSize: "12px",paddingLeft:"20px"}} component="th" id={labelId} scope="row" padding="none">
-                        {row.name}
+                        {menu.name}
                       </TableCell>
-                      <TableCell style={{fontSize: "12px"}} align="right">{row.calories}</TableCell>
+                      <TableCell style={{fontSize: "12px"}} align="right">{menu.price}</TableCell>
                       {/* <TableCell align="right">{row.fat}</TableCell> */}
                       {/* <TableCell align="right">{row.carbs}</TableCell> */}
                       {/* <TableCell align="right">{row.protein}</TableCell> */}

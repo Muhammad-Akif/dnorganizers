@@ -6,7 +6,7 @@
   margin-right : 30px !important;
 }
 @media print {
-  #status-info{
+  .status{
     display: none;
   }
 }
@@ -47,6 +47,16 @@
   width : 50%;
   color: white;
   background-color: #F14E95;
+}
+/* style={{fontFamily: "serif,'Sacramento', Arial",color:"orange",fontSize:"16px",marginTop:"-50px",border: "2px solid orange",padding: "8px"}} */
+.status{
+  font-family: serif,'Sacramento', Arial;
+  color:rgb(221, 158, 42);
+  font-size: 16px;
+  margin-top: -50px;
+  font-weight: bold;
+  border: 2px solid rgb(190, 131, 20);
+  padding: 8px;
 }
 .Cbtn:hover{
   transform: scale(1.1);

@@ -3,10 +3,12 @@ export const LOGOUT = "LOGOUT";
 export const UPDATEWEDDING = 'UPDATEWEDDING';
 export const UPDATEBIRTHDAY = 'UPDATEBIRTHDAY';
 export const UPDATECORPORATE = 'UPDATECORPORATE';
-export const UPDATEPENDINGINVOICES = 'UPDATEPENDINGINVOICES';
+export const ADDPENDINGINVOICES = 'ADDPENDINGINVOICES';
 export const SETPENDINGINVOICES = 'SETPENDINGINVOICES';
 export const UPDATEEVENTS = 'UPDATEEVENTS';
 export const SETITEMS = 'SETITEMS'
+export const UPDATEPENDINGINVOICE = 'UPDATEPENDINGINVOICE';
+export const DELETEPENDINGINVOICE = 'DELETEPENDINGINVOICE';
 
 export const authenticate = (uid, email) => { // It will take credentials
     return {
@@ -56,10 +58,17 @@ export const updateEvents = (objRes) => { //in objRes key is a firebase key and 
     }
 }
 
-export const updatePendingInvoices = object => { //{price, theme, menu, venu, eventName, isPackage, serPackName, serPackId, userEmail, bookDate, occuredDate, designerName, status}
+export const addPendingInvoices = object => { //{price, theme, menu, venu, eventName, isPackage, serPackName, serPackId, userEmail, bookDate, occuredDate, designerName, status}
     return {
-        type: UPDATEPENDINGINVOICES,
+        type: ADDPENDINGINVOICES,
         payload: object
+    }
+}
+
+export const deletePendingInvoices = id => { //firebase generated Id
+    return {
+        type: DELETEPENDINGINVOICE,
+        payload: id
     }
 }
 
@@ -69,6 +78,16 @@ export const setPendingInvoices = (object, email) => {
         payload: {
             object,
             email
+        }
+    }
+}
+
+export const updatePendingInvoices = (id, update) => { //id which we want to update and in update we have undated info
+    return {
+        type: UPDATEPENDINGINVOICE,
+        payload: {
+            id,
+            update
         }
     }
 }

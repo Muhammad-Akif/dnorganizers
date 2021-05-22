@@ -1,5 +1,6 @@
 class PendingInvoices {
-    constructor(price, theme, menu, venu, eventName, isPackage, serPackName, serPackId, userEmail, bookDate, occuredDate, designerName, noOfPeople, status) {
+    constructor(id, price, theme, menu, venu, eventName, isPackage, serPackName, serPackId, userEmail, bookDate, occuredDate, designerName, noOfPeople, status) {
+        this.id = id;
         this.price = price;
         this.theme = theme;
         this.menu = menu;

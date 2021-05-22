@@ -7,6 +7,7 @@ const transformIntoPendingInvoices = (payload) => {
         if (response[id].userEmail != payload.email) continue 
         transformData.push(
             new PendingInvoices(
+                id,
                 response[id].price,
                 response[id].theme,
                 response[id].menu,

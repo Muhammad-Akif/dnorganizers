@@ -95,10 +95,11 @@ export default function SignIn() {
           email,
           password
         ).then(data => {
-          sessionStorage.setItem("email", data.user.email)
-          history.push("/packages")
+          // sessionStorage.setItem("email", data.user.email)
           setOpen(false);
           dispatch(authenticate(data.user.uid, data.user.email));
+          localStorage.setItem('user', data.user.email);
+          history.push("/packages")
           //-------------------------------------------------------------TODO-
           // data?.user.email === "admin@gmail.com" ? history.push("/Packages") : history.push("/user")
         }).catch(err => {
