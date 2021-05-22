@@ -22,8 +22,8 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import logo from '../askarilogo.jpg';
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
+function createData(name, calories) {
+  return { name, calories };
 }
 
 const rows = [
@@ -69,8 +69,8 @@ function stableSort(array, comparator) {
 }
 
 const headCells = [
-  { id: 'name', numeric: false, disablePadding: true, label: 'Dessert (100g serving)' },
-  { id: 'calories', numeric: true, disablePadding: false, label: 'Calories' },
+  { id: 'name', numeric: false, disablePadding: true, label: 'Menu Items' },
+  { id: 'calories', numeric: true, disablePadding: false, label: 'Prices' },
   // { id: 'fat', numeric: true, disablePadding: false, label: 'Fat (g)' },
   // { id: 'carbs', numeric: true, disablePadding: false, label: 'Carbs (g)' },
   // { id: 'protein', numeric: true, disablePadding: false, label: 'Protein (g)' },
@@ -85,14 +85,14 @@ function EnhancedTableHead(props) {
   return (
     <TableHead>
       <TableRow>
-        <TableCell padding="checkbox">
+        {/* <TableCell padding="checkbox">
           <Checkbox
             indeterminate={numSelected > 0 && numSelected < rowCount}
             checked={rowCount > 0 && numSelected === rowCount}
             onChange={onSelectAllClick}
             inputProps={{ 'aria-label': 'select all desserts' }}
           />
-        </TableCell>
+        </TableCell> */}
         {headCells.map((headCell) => (
           <TableCell
             key={headCell.id}
@@ -105,7 +105,7 @@ function EnhancedTableHead(props) {
               direction={orderBy === headCell.id ? order : 'asc'}
               onClick={createSortHandler(headCell.id)}
             >
-              {headCell.label}
+              <span style={{fontSize: "14px",paddingLeft:"20px"}}>{headCell.label}</span>
               {orderBy === headCell.id ? (
                 <span className={classes.visuallyHidden}>
                   {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
@@ -181,8 +181,10 @@ const EnhancedTableToolbar = (props) => {
         <span className={classes.theme}><h3 style={{fontFamily: "serif,'Sacramento', Arial",color:"grey"}}>{obj.theme}</h3></span>
           <h5 style={{fontFamily: "serif,'Sacramento', Arial",color:"grey"}}>Venu: {obj.venu}</h5>
           <br />
+          <h5 style={{fontFamily: "serif,'Sacramento', Arial",color:"grey",marginTop:"-15px"}}>{obj.noOfPeople} Peoples</h5>
+          <br />
           <h5 style={{fontFamily: "serif,'Sacramento', Arial",color:"grey",marginTop:"-15px"}}>Designer: {obj.designerName}</h5>
-          <span className={classes.people}><h4 style={{fontFamily: "serif,'Sacramento', Arial",color:"grey",marginTop:"-20px"}}>{obj.noOfPeople} Peoples</h4></span>
+          <span className={classes.people}><h5 id="status-info" style={{fontFamily: "serif,'Sacramento', Arial",color:"orange",marginTop:"-50px",border: "2px solid orange",padding: "5px"}}> {obj.status.toUpperCase()} </h5></span>
         </Typography>
       )}
 
@@ -213,7 +215,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(2),
   },
   table: {
-    minWidth: 750,
+    minWidth: 50,
   },
   visuallyHidden: {
     border: 0,
@@ -351,23 +353,23 @@ export default function EnhancedTable(props) {
                   return (
                     <TableRow
                       hover
-                      onClick={(event) => handleClick(event, row.name)}
+                      // onClick={(event) => handleClick(event, row.name)}
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
                       key={row.name}
                       selected={isItemSelected}
                     >
-                      <TableCell padding="checkbox">
+                      {/* <TableCell padding="checkbox">
                         <Checkbox
                           checked={isItemSelected}
                           inputProps={{ 'aria-labelledby': labelId }}
                         />
-                      </TableCell>
-                      <TableCell component="th" id={labelId} scope="row" padding="none">
+                      </TableCell> */}
+                      <TableCell style={{fontSize: "12px",paddingLeft:"20px"}} component="th" id={labelId} scope="row" padding="none">
                         {row.name}
                       </TableCell>
-                      <TableCell align="right">{row.calories}</TableCell>
+                      <TableCell style={{fontSize: "12px"}} align="right">{row.calories}</TableCell>
                       {/* <TableCell align="right">{row.fat}</TableCell> */}
                       {/* <TableCell align="right">{row.carbs}</TableCell> */}
                       {/* <TableCell align="right">{row.protein}</TableCell> */}

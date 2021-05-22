@@ -6,6 +6,7 @@ import firebase from '../../config/firebase';
 import { setPendingInvoices } from '../../redux/actions';
 import InvoicesTable from './InvoicesTable'
 import ReactToPrint from "react-to-print";
+import FormDialog from './ClearForm';
 
 class PrintHtmlTable extends React.Component {
     render() {
@@ -40,6 +41,8 @@ class Invoices extends React.Component {
                                     trigger={() => <button className="btn Cbtn btn-wdh">Print out!</button>}
                                     content={() => this.componentRef}
                                 />
+                                <button className="btn Cbtn Dbtn btn-wdh">Delete</button>
+                                <FormDialog/>
                                 <hr style={{border: "1px dashed grey"}}/>
                             </>
                         )

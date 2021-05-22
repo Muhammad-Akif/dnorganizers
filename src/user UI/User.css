@@ -5,7 +5,10 @@
   float : right !important;
   margin-right : 30px !important;
 }
-.bank-info{
+@media print {
+  #status-info{
+    display: none;
+  }
 }
 .btn-wdh{
   width: 12% !important;
@@ -48,6 +51,15 @@
 .Cbtn:hover{
   transform: scale(1.1);
   color: white;
+}
+.Dbtn{
+  margin: -60px 0px 0px 40px !important;
+  background-color: rgb(231, 124, 82) !important;
+}
+.Ebtn{
+  float: right !important;
+  margin: -40px 40px 0px 0px !important;
+  background-color: rgb(54, 189, 106) !important;
 }
 .control-width{
   width: 31%; 
@@ -92,6 +104,15 @@
 @media screen and (max-width: 960px) {
   .tabs{
     display: none;
+  }
+  .btn-wdh{
+    width: 30% !important;
+  }
+  .Dbtn{
+    width: 24.95% !important;
+  }
+  .Ebtn{
+    width: 25% !important;
   }
   .bottomtabs{
     display: contents;
