@@ -85,7 +85,7 @@ ul,ol {
   .nav-mn {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 101%;
     height: 90vh;
     position: absolute;
     top: -25px;
