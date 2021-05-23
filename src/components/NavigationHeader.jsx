@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import logo from '../images/abc.png'
-import { NavLink } from "react-router-dom"
+import { NavLink,useHistory } from "react-router-dom"
 import SmallNavbar from './SmallNavbar'
 
 export default function NavigationHeader() {
+    const history = useHistory()
     return (
         <nav className="fh5co-nav" role="navigation">
             <div className="container">
@@ -41,6 +42,7 @@ export default function NavigationHeader() {
     )
 }
 
+{/* <li><button onClick={() => history.push('/abc/login')}>Login</button></li> */}
 
 
 

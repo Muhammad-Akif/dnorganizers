@@ -1,8 +1,8 @@
+import React,{useState,useEffect} from 'react';
 import './User.css'
 import Navbar from './componenets/Navbar';
 import VerticalTabs from './Tabs';
 import IconLabelTabs from './BottomTabs'
-import React, { useEffect } from 'react';
 import firebase from '../config/firebase'
 import { useDispatch, useSelector } from 'react-redux';
 import { updateEvents,setItems, authenticate } from '../redux/actions';
@@ -10,6 +10,7 @@ import { updateEvents,setItems, authenticate } from '../redux/actions';
 export default function User() {
   const email = useSelector(state => state.auth.email)
   const dispatch = useDispatch();
+  const [open,setOpen]=useState(false);
   const {wedding, birthday, corporate} = useSelector(state => state.packages);
   const { weddingItems, birthdayItems, corporateItems } = useSelector(state => state.items)
   console.log(weddingItems[2])
@@ -21,13 +22,13 @@ export default function User() {
   // console.log("l ====>",list)
   useEffect(() => {
     // localStorage.setItem("user", JSON.stringify(this.state.activeUser));
-    const user = localStorage.getItem('user');
-    if (user){ 
-      dispatch(authenticate('', user))
-    }
+    // const user = localStorage.getItem('user');
+    // if (user){ 
+    //   dispatch(authenticate('', user))
+    // }
     firebase.database().ref('/events').on('value', function (snapshot) {
       let snap = snapshot.val()
-    
+      setOpen(true)
       const wedpkg = snap.wedding.packages
       const birthpkg = snap.birthday.packages
       const corppkg = snap.corporate.packages
@@ -46,10 +47,10 @@ export default function User() {
       <Navbar />
       <div className="contnt">
         <div className="tabs">
-          <VerticalTabs weddingPkg={wedding} birthdayPkg={birthday} corporatePkg={corporate} weddingItems={weddingItems[2]} birthdayItems={birthdayItems[2]} corporateItems={corporateItems[2]}/>
+          <VerticalTabs open={open} weddingPkg={wedding} birthdayPkg={birthday} corporatePkg={corporate} weddingItems={weddingItems[2]} birthdayItems={birthdayItems[2]} corporateItems={corporateItems[2]}/>
         </div>
         <div className="bottomtabs">
-          <IconLabelTabs weddingPkg={wedding} birthdayPkg={birthday} corporatePkg={corporate} weddingItems={weddingItems[2]} birthdayItems={birthdayItems[2]} corporateItems={corporateItems[2]}/>
+          <IconLabelTabs open={open} weddingPkg={wedding} birthdayPkg={birthday} corporatePkg={corporate} weddingItems={weddingItems[2]} birthdayItems={birthdayItems[2]} corporateItems={corporateItems[2]}/>
         </div>
       </div>
     </>

@@ -11,6 +11,7 @@ import CakeIcon from '@material-ui/icons/Cake';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import UserCard from './componenets/UserCard'
 import ModalCustom from './componenets/ModalCustom'
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 
 function TabPanel(props) {
@@ -58,12 +59,16 @@ const useStyles = makeStyles({
     left: "0px",
     right: "0px",
   },
+  circle : {
+    width: '100%',
+    margin: "35vh 45vw"
+  }
 });
 
 export default function IconLabelTabs(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
-  const { weddingPkg, birthdayPkg, corporatePkg,weddingItems,birthdayItems,corporateItems } = props;
+  const { weddingPkg, birthdayPkg, corporatePkg,weddingItems,birthdayItems,corporateItems,open } = props;
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -71,7 +76,7 @@ export default function IconLabelTabs(props) {
 
   return (
     <Paper square className={classes.root}>
-      <TabPanel value={value} index={0}>
+      {open && <TabPanel value={value} index={0}>
         <ModalCustom clsName="btn Cbtn btn-wdth" Items={weddingItems} getData="Wedding" />
         <div className='userCards'>
           {
@@ -82,8 +87,9 @@ export default function IconLabelTabs(props) {
             })
           }
         </div>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
+      </TabPanel>}
+      {open || <CircularProgress className={classes.circle} color="secondary" />}
+      {open && <TabPanel value={value} index={1}>
         <ModalCustom clsName="btn Cbtn btn-wdth" Items={birthdayItems} getData="Birthday" />
 
         <div className='userCards'>
@@ -95,8 +101,8 @@ export default function IconLabelTabs(props) {
             })
           }
         </div>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
+      </TabPanel>}
+      {open && <TabPanel value={value} index={2}>
         <ModalCustom clsName="btn Cbtn btn-wdth" Items={corporateItems} getData="Corporate" />
 
         <div className='userCards'>
@@ -108,7 +114,7 @@ export default function IconLabelTabs(props) {
             })
           }
         </div>
-      </TabPanel>
+      </TabPanel>}
       <Tabs
         value={value}
         onChange={handleChange}
