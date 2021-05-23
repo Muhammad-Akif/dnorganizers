@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import './SmallNavbar.css';
 import logo from '../images/abc.png'
 
-function Navbar() {
+function Navbar(props) {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -25,29 +25,31 @@ function Navbar() {
               <i className={click ? 'fas fa-times tms' : ''} />
             </div>
           </li>
-          <li className='nav-item'>
-            {/* <Link
+          {props.name === 'main' ?
+            <>
+              <li className='nav-item'>
+                {/* <Link
               to='gallery'
               className='nav-lnks'
               onClick={closeMobileMenu}
             >
               SERVICES 
             </Link> */}
-            <a href="#services" className='nav-lnks' onClick={closeMobileMenu}>SERVICES</a>
-          </li>
+                <a href="#services" className='nav-lnks' onClick={closeMobileMenu}>SERVICES</a>
+              </li>
 
-          <li className='nav-item'>
-            {/* <Link
+              <li className='nav-item'>
+                {/* <Link
               // to=''
               className='nav-lnks'
               onClick={closeMobileMenu}
             >
               GALLERY
             </Link> */}
-            <a href="#gallery" className='nav-lnks' onClick={closeMobileMenu}>GALLERY</a>
-          </li>
-          <li className='nav-item'>
-            {/* <Link
+                <a href="#gallery" className='nav-lnks' onClick={closeMobileMenu}>GALLERY</a>
+              </li>
+              <li className='nav-item'>
+                {/* <Link
               
               // to=''
               className='nav-lnks'
@@ -55,10 +57,10 @@ function Navbar() {
             >
               TESTIMONIALS
             </Link> */}
-            <a href="#teams" className='nav-lnks' onClick={closeMobileMenu}>OUR-TEAM</a>
-          </li>
-          <li className='nav-item'>
-            {/* <Link
+                <a href="#teams" className='nav-lnks' onClick={closeMobileMenu}>OUR-TEAM</a>
+              </li>
+              <li className='nav-item'>
+                {/* <Link
               
               // to='contact'
               className='nav-lnks'
@@ -66,26 +68,86 @@ function Navbar() {
             >
               CONTACT
             </Link> */}
-            <a href="#contact" className='nav-lnks' onClick={closeMobileMenu}>CONTACT</a>
-          </li>
-          <li className='nav-item'>
-            <Link
-              to='/login'
-              className='nav-lnks bdr'
+                <a href="#contact" className='nav-lnks' onClick={closeMobileMenu}>CONTACT</a>
+              </li>
+              <li className='nav-item'>
+                <Link
+                  to='/login'
+                  className='nav-lnks bdr'
+                  onClick={closeMobileMenu}
+                >
+                  LOGIN
+            </Link>
+              </li>
+              <li className='nav-item'>
+                <Link
+                  to='signup'
+                  className='nav-lnks bdr'
+                  onClick={closeMobileMenu}
+                >
+                  SIGNUP
+            </Link>
+              </li>
+            </> :
+            <>
+              <li className='nav-item'>
+                {/* <Link
+              to='gallery'
+              className='nav-lnks'
               onClick={closeMobileMenu}
             >
-              LOGIN
-            </Link>
-          </li>
-          <li className='nav-item'>
-            <Link
-              to='signup'
-              className='nav-lnks bdr'
+              SERVICES 
+            </Link> */}
+                <a href="#svc" className='nav-lnks' onClick={closeMobileMenu}>SERVICES</a>
+              </li>
+              <li className='nav-item'>
+                <a href="#designer" className='nav-lnks' onClick={closeMobileMenu}>DesignerName</a>
+              </li>
+
+              <li className='nav-item'>
+                {/* <Link
+              // to=''
+              className='nav-lnks'
               onClick={closeMobileMenu}
             >
-              SIGNUP
+              GALLERY
+            </Link> */}
+                <a href="#gallary" className='nav-lnks' onClick={closeMobileMenu}>GALLERY</a>
+              </li>
+              <li className='nav-item'>
+                {/* <Link
+              
+              // to=''
+              className='nav-lnks'
+              onClick={closeMobileMenu}
+            >
+              TESTIMONIALS
+            </Link> */}
+                <a href="#feedback" className='nav-lnks' onClick={closeMobileMenu}>OUR-TEAM</a>
+              </li>
+              <li className='nav-item'>
+                {/* <Link
+              
+              // to='contact'
+              className='nav-lnks'
+              onClick={closeMobileMenu}
+            >
+              CONTACT
+            </Link> */}
+                <a href="#contact" className='nav-lnks' onClick={closeMobileMenu}>CONTACT</a>
+              </li>
+              <li className='nav-item'>
+                <Link
+                  to='signup'
+                  style={{fontFamily: "serif,'Sacramento', Arial",fontSize:"16px"}}
+                  className='nav-lnks bdr'
+                  onClick={closeMobileMenu}
+                >
+                  SIGNUP
             </Link>
-          </li>
+              </li>
+            </>
+          }
         </ul>
       </nav>
     </>
