@@ -12,7 +12,7 @@ export default function NavigationHeader(props) {
                     <div className="container">
                         <div className="row">
                             <div className="smNav">
-                                <SmallNavbar {...props.name} />
+                                <SmallNavbar {...props} />
                             </div>
                             <div className="lgNav col-xs-2">
                                 <div id="fh5co-logo"><img src={logo} width='110px' alt="logo" /></div>

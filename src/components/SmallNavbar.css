@@ -104,7 +104,8 @@ ul,ol {
 
   .nav-lnks {
     text-align: center;
-    margin-top: 50px !important;
+    margin-top: 40px !important;
+    padding: 2.5rem !important;
     width: 100%;
     display: table;
     font-size: 16px !important;

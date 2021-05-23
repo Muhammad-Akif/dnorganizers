@@ -3,15 +3,15 @@ import FeedbackRating from './FeedbackRating'
 export default function Feedback() {
     return (
         <div id="fh5co-testimonial">
-            <div id="feedback" className="container">
+            <div id="feedback" className="container-fluid">
                 <div className="row">
-                    <div className="row animate-box">
+                    <div className="animate-box">
                         <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">
                             <span>Best Wishes</span>
                             <h2>Some feedbacks</h2>
                         </div>
                     </div>
-                    <div className="row">
+                    <div>
                         <div className="col-md-12 animate-box">
                             <div className="wrap-testimony">
                                 <div className="owl-carousel-fullwidth">

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './SmallNavbar.css';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import logo from '../images/abc.png'
 
 function Navbar(props) {
@@ -10,23 +11,24 @@ function Navbar(props) {
 
   return (
     <>
-      <nav className=''>
-        <Link
-          // to=''
-          className='nav-logo' onClick={closeMobileMenu}>
-          <img src={logo} width='90' alt="logo" />
-        </Link>
-        <div className='mn-icon' onClick={handleClick}>
-          <i className={click ? '' : 'fas fa-bars'} />
-        </div>
-        <ul className={click ? 'nav-mn active' : 'nav-mn'}>
-          <li>
+    {console.log("cheeclkdsf",props.name)}
+      {props.name == 'main' ?
+        <>
+          <nav className=''>
+            <Link
+              // to=''
+              className='nav-logo' onClick={closeMobileMenu}>
+              <img src={logo} width='90' alt="logo" />
+            </Link>
             <div className='mn-icon' onClick={handleClick}>
-              <i className={click ? 'fas fa-times tms' : ''} />
+              <i className={click ? '' : 'fas fa-bars'} />
             </div>
-          </li>
-          {props.name === 'main' ?
-            <>
+            <ul className={click ? 'nav-mn active' : 'nav-mn'}>
+              <li>
+                <div className='mn-icon' onClick={handleClick}>
+                  <i className={click ? 'fas fa-times tms' : ''} />
+                </div>
+              </li>
               <li className='nav-item'>
                 {/* <Link
               to='gallery'
@@ -88,8 +90,27 @@ function Navbar(props) {
                   SIGNUP
             </Link>
               </li>
-            </> :
-            <>
+            </ul>
+          </nav>
+        </>
+        :
+        <>
+          <nav className=''>
+            <Link
+              to='/'
+              className='nav-logo' onClick={closeMobileMenu}>
+                <ArrowBackIcon style={{ color: "white", fontSize: "30px",marginTop:"15px", fontWeight: "bold" }} />
+              {/* <img src={logo} width='90' alt="logo" /> */}
+            </Link>
+            <div className='mn-icon' onClick={handleClick}>
+              <i className={click ? '' : 'fas fa-bars'} />
+            </div>
+            <ul className={click ? 'nav-mn active' : 'nav-mn'}>
+              <li>
+                <div className='mn-icon' onClick={handleClick}>
+                  <i className={click ? 'fas fa-times tms' : ''} />
+                </div>
+              </li>
               <li className='nav-item'>
                 {/* <Link
               to='gallery'
@@ -101,7 +122,7 @@ function Navbar(props) {
                 <a href="#svc" className='nav-lnks' onClick={closeMobileMenu}>SERVICES</a>
               </li>
               <li className='nav-item'>
-                <a href="#designer" className='nav-lnks' onClick={closeMobileMenu}>DesignerName</a>
+                <a href="#designer" className='nav-lnks' onClick={closeMobileMenu}>Designer</a>
               </li>
 
               <li className='nav-item'>
@@ -134,22 +155,22 @@ function Navbar(props) {
             >
               CONTACT
             </Link> */}
-                <a href="#contact" className='nav-lnks' onClick={closeMobileMenu}>CONTACT</a>
+                <a href="#contact" className='nav-lnks bdr' onClick={closeMobileMenu}>CONTACT</a>
               </li>
               <li className='nav-item'>
                 <Link
                   to='signup'
-                  style={{fontFamily: "serif,'Sacramento', Arial",fontSize:"16px"}}
+                  style={{ fontFamily: "serif,'Sacramento', Arial", fontSize: "16px" }}
                   className='nav-lnks bdr'
                   onClick={closeMobileMenu}
                 >
                   SIGNUP
             </Link>
               </li>
-            </>
-          }
-        </ul>
-      </nav>
+            </ul>
+          </nav>
+        </>
+      }
     </>
   );
 }

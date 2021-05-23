@@ -1,11 +1,9 @@
 import React from 'react';
 import Rating from '@material-ui/lab/Rating';
-import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
 export default function FeedbackRating() {
   const [value, setValue] = React.useState(5);
-
   return (
     <div>
       <Box component="fieldset" mb={3} borderColor="transparent">
@@ -15,38 +13,17 @@ export default function FeedbackRating() {
   );
 }
 
-// import React from 'react';
-// import Rating from '@material-ui/lab/Rating';
-// import Typography from '@material-ui/core/Typography';
-// import Box from '@material-ui/core/Box';
+export function DesignerRatings() {
+  const [value, setValue] = React.useState(5);
+  return (
+    <div>
+      <Box component="fieldset" mb={3} borderColor="transparent" style={{display: 'flex'}}>
+        <Rating style={{display: 'flex',justifyContent: 'flex-start'}} name="read-only" value={value} readOnly />
+        <span style={{fontSize:"11px"}}> (5.0)</span>
+      </Box>
+    </div>
+  );
+}
 
-// export default function FeedbackRating() {
-//   const [value, setValue] = React.useState(2);
 
-//   return (
-//     <div>
-//       <Box component="fieldset" mb={3} borderColor="transparent">
-//         <Typography component="legend">Controlled</Typography>
-//         <Rating
-//           name="simple-controlled"
-//           value={value}
-//           onChange={(event, newValue) => {
-//             setValue(newValue);
-//           }}
-//         />
-//       </Box>
-//       <Box component="fieldset" mb={3} borderColor="transparent">
-//         <Typography component="legend">Read only</Typography>
-//         <Rating name="read-only" value={value} readOnly />
-//       </Box>
-//       <Box component="fieldset" mb={3} borderColor="transparent">
-//         <Typography component="legend">Disabled</Typography>
-//         <Rating name="disabled" value={value} disabled />
-//       </Box>
-//       <Box component="fieldset" mb={3} borderColor="transparent">
-//         <Typography component="legend">Pristine</Typography>
-//         <Rating name="pristine" value={null} />
-//       </Box>
-//     </div>
-//   );
-// }
+

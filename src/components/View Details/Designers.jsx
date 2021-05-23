@@ -1,3 +1,4 @@
+import {DesignerRatings} from './FeedbackRating'
 export const Designers = (props) => {
   console.log("testtimonials ====> ", props)
   return (
@@ -24,6 +25,7 @@ export const Designers = (props) => {
                 </div>
                 <div className='testimonial-content'>
                   <p>"{d.text}"</p>
+                  <DesignerRatings/>
                   <div className='testimonial-meta'> - {d.name} </div>
                 </div>
               </div>
