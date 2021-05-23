@@ -136,12 +136,3 @@ export default function VerticalTabs(props) {
 // }
 
 
-
-
-// import CircularProgress from '@material-ui/core/CircularProgress';
-// {this.props.invoices.length >=1 ?
-// :   
-                // <CircularProgress style={{ display: "table", margin: "30vh auto" }} color="secondary" />} }
-
-
-

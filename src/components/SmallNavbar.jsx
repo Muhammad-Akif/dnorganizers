@@ -14,7 +14,7 @@ function Navbar() {
         <Link 
         // to=''
          className='nav-logo' onClick={closeMobileMenu}>
-          <img src={logo} width='110' alt="logo"/>
+          <img src={logo} width='90' alt="logo"/>
         </Link>
         <div className='mn-icon' onClick={handleClick}>
           <i className={click ? 'fas fa-times tms' : 'fas fa-bars'} />

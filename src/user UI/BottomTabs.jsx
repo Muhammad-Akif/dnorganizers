@@ -52,10 +52,11 @@ const useStyles = makeStyles({
   root: {
     flexGrow: 1,
     maxWidth: '960px',
+    height: "88vh",
     width: '100%',
     overflowY: 'hidden',
     position: 'absolute',
-    bottom: "0px",
+    bottom: "-10px",
     left: "0px",
     right: "0px",
   },

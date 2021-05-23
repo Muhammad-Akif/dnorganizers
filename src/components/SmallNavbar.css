@@ -16,7 +16,7 @@
 }
 .nav-logo {
   justify-self: start;
-  margin-left: 10px;
+  margin: 20px;
   cursor: pointer;
 }
 
@@ -78,6 +78,7 @@ ul,ol {
 
   .navbar-logo{
     justify-self: start;
+    margin-top: -30px !important;
     cursor: pointer;
   }
   .bdr{
