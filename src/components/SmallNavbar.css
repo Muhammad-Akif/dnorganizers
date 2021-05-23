@@ -1,14 +1,9 @@
 .navbar {
-  /* background: linear-gradient(90deg, rgb(138, 50, 50) 0%, rgb(230, 10, 10) 100%); */
-  /* background-color: rgb(233, 25, 25) !important; */
-  /* background: transparent !important; */
-  /* height: 40px; */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* font-size: 1.2rem; */
-  /* margin: 0px !important; */
   border-radius: 0px !important;
+  z-index: 1 !important;
 }
 
 .bdr{
@@ -45,7 +40,6 @@
 .nav-lnks {
   color: white !important;
   text-decoration: none;
-  /* padding: 0.5rem 1rem; */
 }
 
 .nav-lnks:hover {
@@ -74,6 +68,7 @@ ul,ol {
   }
   .navbar {
     margin: 0px !important;
+    
   }
 
   .navbar-logo{
@@ -88,21 +83,20 @@ ul,ol {
   }
 
   .nav-mn {
-    /* padding-top: 0px !important; */
     display: flex;
     flex-direction: column;
     width: 50%;
     height: 90vh;
     position: absolute;
     top: -25px;
-    left: -100%;
+    right: -100% ;
     opacity: 1;
     transition: all 0.5s ease;
   }
 
   .nav-mn.active {
     background: #f14495 !important;
-    left: 0;
+    right: 0 ;
     opacity: 0.95;
     transition: all 0.5s ease;
     z-index: 1;
@@ -110,8 +104,7 @@ ul,ol {
 
   .nav-lnks {
     text-align: center;
-    /* padding-top: -50px !important; */
-    margin-top: 20px !important;
+    margin-top: 80px !important;
     width: 100%;
     display: table;
     font-size: 16px !important;
@@ -119,7 +112,6 @@ ul,ol {
   }
 
   .nav-lnks:hover {
-    /* background-color: white; */
     border-radius: 0;
   }
 
@@ -142,6 +134,7 @@ ul,ol {
 
   .tms {
     color: #fff;
+    z-index: 1 !important;
     font-size: 2.8rem !important;
   }
 

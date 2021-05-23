@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link,NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './SmallNavbar.css';
 import logo from '../images/abc.png'
 
@@ -11,15 +11,20 @@ function Navbar() {
   return (
     <>
       <nav className=''>
-        <Link 
-        // to=''
-         className='nav-logo' onClick={closeMobileMenu}>
-          <img src={logo} width='90' alt="logo"/>
+        <Link
+          // to=''
+          className='nav-logo' onClick={closeMobileMenu}>
+          <img src={logo} width='90' alt="logo" />
         </Link>
         <div className='mn-icon' onClick={handleClick}>
           <i className={click ? 'fas fa-times tms' : 'fas fa-bars'} />
         </div>
         <ul className={click ? 'nav-mn active' : 'nav-mn'}>
+          <li>
+            <div className='mn-icon' onClick={handleClick}>
+              <i className={click ? 'fas fa-times tms' : 'fas fa-bars'} />
+            </div>
+          </li>
           <li className='nav-item'>
             {/* <Link
               to='gallery'
