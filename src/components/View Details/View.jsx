@@ -7,6 +7,7 @@ import Contect from '../Contect'
 import Feedback from './Feedback'
 import data from '../../data/services.json'
 import {useParams} from "react-router-dom"
+import {Designers} from './Designers'
 
 export default function View() {
     const {name} = useParams()
@@ -21,6 +22,7 @@ export default function View() {
         <div>
             <Header {...event}/>
             <Services/>
+            <Designers {...event} data={data.Designers}/>
             <Gallery/>
             <Feedback/>
             <Contact/>
