@@ -17,12 +17,12 @@ function Navbar() {
           <img src={logo} width='90' alt="logo" />
         </Link>
         <div className='mn-icon' onClick={handleClick}>
-          <i className={click ? 'fas fa-times tms' : 'fas fa-bars'} />
+          <i className={click ? '' : 'fas fa-bars'} />
         </div>
         <ul className={click ? 'nav-mn active' : 'nav-mn'}>
           <li>
             <div className='mn-icon' onClick={handleClick}>
-              <i className={click ? 'fas fa-times tms' : 'fas fa-bars'} />
+              <i className={click ? 'fas fa-times tms' : ''} />
             </div>
           </li>
           <li className='nav-item'>
