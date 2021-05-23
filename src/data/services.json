@@ -2,18 +2,21 @@
     "view": [
         {
             "name": "birthday",
+            "cote": "Our goal: \"to make your Event remarkable & full of joy...\"",
             "img": "../images/all/2.jpg",
-            "title": "Welcome to Birthday Events"
+            "title": "Birthday Events"
         },
         {
             "name": "wedding",
+            "cote": "Our goal: \"to make your Event remarkable & full of joy...\"",
             "img": "../images/all/2.jpg",
-            "title": "Welcome to Wedding Events"
+            "title": "Wedding Events"
         },
         {
             "name": "corporate",
+            "cote": "Our goal: \"to make your Event remarkable & full of joy...\"",
             "img": "../images/all/2.jpg",
-            "title": "Welcome to Corporate Events"
+            "title": "Corporate Events"
         }
     ]
 }

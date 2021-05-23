@@ -3,7 +3,7 @@ import FeedbackRating from './FeedbackRating'
 export default function Feedback() {
     return (
         <div id="fh5co-testimonial">
-            <div className="container">
+            <div id="feedback" className="container">
                 <div className="row">
                     <div className="row animate-box">
                         <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">

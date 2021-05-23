@@ -17,7 +17,7 @@ class Navigation extends Component {
     render() {
         return (
             <div id="page">
-                <NavigationHeader />
+                <NavigationHeader name="main"/>
                 <header id="fh5co-header" className="fh5co-cover">
                     <div className="overlay">
                         <div className="container">

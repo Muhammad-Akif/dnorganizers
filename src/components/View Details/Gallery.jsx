@@ -4,7 +4,7 @@ import GalleryCard from './GalleryCard'
 export default function Gallery() {
     return (
         <div id="fh5co-gallery">
-            <div className="container">
+            <div id="gallary" className="container">
                 <div className="row">
                     <div className="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
                         <span>Our Memories</span>

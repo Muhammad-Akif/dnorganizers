@@ -24,13 +24,13 @@ const Routes = () => {
             <Route exact path='/' component={Home} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/signup' component={Signup} />
-            <Route exact path='/event/:name' component={View} />
+            <Route exact path='/:name' component={View} />
             {/* admin */}
-            <Route exact path='/wedding' component={Main} />
+            {/* <Route exact path='/wedding' component={Main} />
             <Route exact path='/birthday' component={Birthday} />
             <Route exact path='/corporate' component={Corporate} />
             <Route exact path='/VerifySlips' component={VerifySlips} />
-            <Route exact path='/Reviews' component={Reviews} />
+            <Route exact path='/Reviews' component={Reviews} /> */}
              {/* user */}
              <Route exact path='/packages' component={User} />
             <Route exact path='/ratings' component={Ratings} />

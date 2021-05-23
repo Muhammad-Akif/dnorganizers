@@ -486,24 +486,24 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 
 }
-.fh5co-cover.fh5co-cover-sm {
-  height: 400px;
-}
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .fh5co-cover.fh5co-cover-sm {
     height: 300px;
   }
-}
+} */
 .fh5co-cover.fh5co-cover-sm .display-t,
 .fh5co-cover.fh5co-cover-sm .display-tc {
-  height: 400px;
+  height: 750px;
   display: table;
   width: 100%;
 }
 @media screen and (max-width: 768px) {
   .fh5co-cover.fh5co-cover-sm .display-t,
   .fh5co-cover.fh5co-cover-sm .display-tc {
-    height: 300px;
+    height: 600px;
+  }
+  .viewTitle{
+    font-size: 60px !important;
   }
 }
 
