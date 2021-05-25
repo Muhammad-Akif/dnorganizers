@@ -12,10 +12,10 @@ export default function SlipCards(props) {
         <li className="fld list-group-item">Date: 25/5/2021</li>
       <div className="row">
         <div className="col-md-6 col-6 rbtn">
-          <button type="button" style={{width:"120%"}} class="btn Cbtn">Verify</button>
+          <button type="button" style={{width:"80%"}} class="btn Cbtn Vbtn">Verify</button>
         </div>
         <div className="col-md-6 col-6 rbtn">
-          <button type="button" style={{width:"120%"}} class="btn Cbtn">Reject</button>
+          <button type="button" style={{width:"80%"}} class="btn Cbtn Vbtn">Reject</button>
         </div>
       </div>
       </ul>

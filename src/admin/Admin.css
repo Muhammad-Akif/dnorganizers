@@ -21,12 +21,21 @@
         width: 40% !important;
         display: inline-block;
     }
+    .Vbtn{
+        width: 120% !important;
+    }
+}
+
+@media (max-width: 450px) {
+    .Vbtn{
+        width: 120% !important;
+    }
 }
 
 .Review{
-    border: 1px dashed grey;
-    margin: 1%;
-    width: 48%;
+    border: 1px solid grey;
+    margin: 2%;
+    width: 46%;
 }
 .ReviewsCard{
     padding: 20px;

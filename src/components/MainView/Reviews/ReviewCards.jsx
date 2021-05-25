@@ -29,7 +29,7 @@ export default function ReviewCards(props) {
         <div className="col-md-12" style={{}}>* * * * *</div>
       </div>
       <div className="row text-center">
-        <div className="col-md-12">
+        <div className="col-md-12" style={{fontSize:"15px"}}>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit.
       </div>
       </div>
