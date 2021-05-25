@@ -1,7 +1,10 @@
 import React from 'react';
-import * as s from '../App.styles';
-import * as Palette from '../colors'
+import * as l from '../AdminAppLg.styles';
+import * as s from '../AdminAppSm.styles';
+import * as Palette from '../colors';
+import AdminNavbar from './AdminNavbar'
 import './Global.scss';
+import "./Admin.css"
 
 // Components
 import Sidebar from '../components/Sidebar/Sidebar';
@@ -15,11 +18,11 @@ const Admin = (props) => {
     shortName: 'DN'
   };
   const menuItems = [
-    {name: 'Wedding', to: '/wedding', icon: '/icons/about.svg', subMenuItems: [] },
-    {name: 'Birthday', to: '/birthday', icon: '/icons/blog.svg', subMenuItems: [] },
-    {name: 'Corporate', to: '/corporate', icon: '/icons/destinations.svg', subMenuItems: [] },
-    {name: 'VerifySlips', to: '/VerifySlips', icon: '/icons/contacts.svg', subMenuItems: [] },
-    {name: 'Reviews', to: '/Reviews', icon: '/icons/services.svg', subMenuItems: [] },
+    { name: 'Wedding', to: '/wedding', icon: '/icons/about.svg', subMenuItems: [] },
+    { name: 'Birthday', to: '/birthday', icon: '/icons/blog.svg', subMenuItems: [] },
+    { name: 'Corporate', to: '/corporate', icon: '/icons/destinations.svg', subMenuItems: [] },
+    { name: 'VerifySlips', to: '/VerifySlips', icon: '/icons/contacts.svg', subMenuItems: [] },
+    { name: 'Reviews', to: '/Reviews', icon: '/icons/services.svg', subMenuItems: [] },
   ];
 
   const fonts = {
@@ -28,18 +31,30 @@ const Admin = (props) => {
   }
 
   return (
-    <s.App>
-      <Sidebar
-        backgroundImage={backgroundImage}
-        sidebarHeader={sidebarHeader}
-        menuItems={menuItems}
-        fonts={fonts}
-        colorPalette={Palette.brown}
-      />
-      <MainView>
-        {props.children}
+    <>
+    <div className="AdminSidebarfull">
+      <l.AppLg>
+        <Sidebar
+          backgroundImage={backgroundImage}
+          sidebarHeader={sidebarHeader}
+          menuItems={menuItems}
+          fonts={fonts}
+          colorPalette={Palette.brown}
+        />
+        <MainView>
+          {props.children}
         </MainView>
-    </s.App>
+      </l.AppLg>
+    </div>
+     <div className="AdminSidebarsmall">
+       <AdminNavbar/>
+     <s.AppSm>
+       <MainView>
+         {props.children}
+       </MainView>
+     </s.AppSm>
+   </div>
+   </>
   );
 }
 

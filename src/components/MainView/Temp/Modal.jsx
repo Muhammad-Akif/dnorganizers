@@ -72,7 +72,7 @@ export default function Modal(props) {
     return (
         <div>
             {console.log("menu ====> ",data)}
-            <Button variant="outlined" color="secondary" onClick={handleClickOpen('paper')}>Add Package</Button>
+            <Button variant="outlined" color="secondary" style={{marginBottom:"10px",padding:"10px 50px",fontSize:"12px"}} onClick={handleClickOpen('paper')}>Add Package</Button>
             {/* <Button onClick={handleClickOpen('body')}>scroll=body</Button> */}
             <Dialog
                 open={open}

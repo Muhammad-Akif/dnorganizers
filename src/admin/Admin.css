@@ -1,0 +1,38 @@
+.AdminSidebarsmall{
+    display: none;
+}
+@media (max-width: 768px) {
+    .venuDelete{
+        margin: 10px 10px 20px 5px !important;
+    }
+    .venuDropdown{
+        width: 45vw;
+    }
+    .AdminSidebarfull{
+        display: none !important;
+    }
+    .AdminSidebarsmall{
+        display: contents;
+    }
+    .Review{
+        width: 100% !important;
+    }
+    .rbtn{
+        width: 40% !important;
+        display: inline-block;
+    }
+}
+
+.Review{
+    border: 1px dashed grey;
+    margin: 1%;
+    width: 48%;
+}
+.ReviewsCard{
+    padding: 20px;
+    width: 31%; 
+    box-shadow: 0 8px 40px -12px rgba(210, 214, 214, 0.3);
+  }
+.ReviewsCard:hover{
+    box-shadow: 0 16px 70px -12.125px rgba(245, 33, 245, 0.3);
+  }

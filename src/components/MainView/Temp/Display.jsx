@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import firebase from '../../../config/firebase';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'; 
+import AddMenuVenu from './AddMenuVenu'
 import clsx from 'clsx';
 import { lighten, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -150,7 +151,7 @@ const EnhancedTableToolbar = (props) => {
           {numSelected} selected
         </Typography>
       ) : (
-        <Typography className={classes.title} variant="h6" id="tableTitle" component="div">
+        <Typography className={classes.title} style={{fontSize:"14px"}} variant="h6" id="tableTitle" component="div">
           {props.title} Packages
         </Typography>
       )}
@@ -181,7 +182,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(2),
   },
   table: {
-    minWidth: 750,
+    minWidth: 50,
   },
   visuallyHidden: {
     border: 0,
@@ -268,13 +269,20 @@ export default function Display(props) {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
-
+  
   const isSelected = (name) => selected.indexOf(name) !== -1;
-
+  
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
-
+  
   return (
     <div className={classes.root}>
+       <div className="row">
+        <div style={{marginBottom:"0px",paddingBottom:"0px"}} className="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+          {/* <span>We Love Our Customers</span> */}
+          <h2>Welcome to {props.title} Event</h2>
+          <p style={{marginTop:"-10px",paddingBottom:"5px"}}>We'll Help you to Manage your Business Successfully</p>
+        </div>
+      </div>
       <Paper className={classes.paper}>
         <EnhancedTableToolbar title = {props.title} numSelected={selected.length} />
         <TableContainer>
@@ -316,13 +324,13 @@ export default function Display(props) {
                           inputProps={{ 'aria-labelledby': labelId }}
                         />
                       </TableCell>
-                      <TableCell component="th" id={labelId} scope="row" padding="none">
+                      <TableCell  component="th" style={{fontSize:"11px"}} id={labelId} scope="row" padding="none">
                         {row.name}
                       </TableCell>
-                      <TableCell align="right">{row.calories}</TableCell>
-                      <TableCell align="right">{row.fat}</TableCell>
-                      <TableCell align="right">{row.carbs}</TableCell>
-                      <TableCell align="right">{row.protein}</TableCell>
+                      <TableCell align="right" style={{fontSize:"11px"}}>{row.calories}</TableCell>
+                      <TableCell align="right" style={{fontSize:"11px"}}>{row.fat}</TableCell>
+                      <TableCell align="right" style={{fontSize:"11px"}}>{row.carbs}</TableCell>
+                      <TableCell align="right" style={{fontSize:"11px"}}>{row.protein}</TableCell>
                     </TableRow>
                   );
                 })}
@@ -335,7 +343,7 @@ export default function Display(props) {
           </Table>
         </TableContainer>
         <TablePagination
-          rowsPerPageOptions={[3, 5, 7]}
+          rowsPerPageOptions={[5, 7, 9]}
           component="div"
           count={rows.length}
           rowsPerPage={rowsPerPage}
@@ -345,6 +353,16 @@ export default function Display(props) {
         />
       </Paper>
       <Modal getData={props.title} updateTable={updateTable}/>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-md-6 col-12">
+            <AddMenuVenu title="menu" />
+          </div>
+          <div className="col-md-6 col-12">
+            <AddMenuVenu title="venu" />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

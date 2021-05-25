@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
 
-export const App = styled.div`
+export const AppSm = styled.div`
   background: #ecf0f1;
-  height: 100vh;
+  height: 88vh;
+  overflow-y: hidden;
   display: flex
 `
 

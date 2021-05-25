@@ -20,7 +20,7 @@ export default function ServicesCard(props) {
                 </div>
                 <p> {props.paragraph} </p>
                 <button className='card-btn' onClick={()=>{
-                    history.push(`/${props.id}`)
+                    history.push(`/event/${props.id}`)
                 }} >View Details</button>
             </div>
         </div>

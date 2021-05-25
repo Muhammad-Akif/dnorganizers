@@ -30,7 +30,6 @@ const Sidebar = props => {
   const [isSidebarOpen, setSidebarState] = useState(true);
   const [header, setHeader] = useState(sidebarHeader.fullName);
   const [subMenusStates, setSubmenus] = useState({})
-
   // Effects
 
   // Set selected menu item based on URL pathname
@@ -51,16 +50,16 @@ const Sidebar = props => {
 
 
   // Update of sidebar state
-  useEffect(() => {
-    const updateWindowWidth = () => {
-      if (window.innerWidth < 1280) setSidebarState(false);
-      else setSidebarState(true)
-    }
+  // useEffect(() => {
+  //   const updateWindowWidth = () => {
+  //     if (window.innerWidth < 1280) setSidebarState(false);
+  //     else setSidebarState(true)
+  //   }
 
-    window.addEventListener('resize', updateWindowWidth);
+  //   window.addEventListener('resize', updateWindowWidth);
 
-    return () => window.removeEventListener('resize', updateWindowWidth);
-  }, [isSidebarOpen]);
+  //   return () => window.removeEventListener('resize', updateWindowWidth);
+  // }, [isSidebarOpen]);
 
 
   // Add index of items that contain sub menu items
@@ -156,14 +155,14 @@ const Sidebar = props => {
           >
             <s.Icon isSidebarOpen={isSidebarOpen} src={item.icon} />
             <s.Text isSidebarOpen={isSidebarOpen}>{item.name}</s.Text>
-            {hasSubmenus && isSidebarOpen && (
+            {/* {hasSubmenus && isSidebarOpen && (
               <s.DropdownIcon selected={isItemSelected} isOpen={isOpen} colorPalette={colorPalette} />
-            )}
+            )} */}
           </s.MenuItem>
         </Link>
 
         {/* Display submenus if they exist  */}
-        <AnimatePresence>
+        {/* <AnimatePresence>
           {hasSubmenus && isOpen && (
             <motion.nav 
               initial={{ opacity: 0, y: -15 }}
@@ -174,7 +173,7 @@ const Sidebar = props => {
               <s.SubMenuItemContainer isSidebarOpen={isSidebarOpen} colorPalette={colorPalette}>{subMenusJSX}</s.SubMenuItemContainer>
             </motion.nav>
           )}
-        </AnimatePresence>
+        </AnimatePresence> */}
       </s.ItemContainer>
     )
   });
