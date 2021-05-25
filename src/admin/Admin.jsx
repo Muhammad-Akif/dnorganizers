@@ -23,6 +23,7 @@ const Admin = (props) => {
     { name: 'Corporate', to: '/corporate', icon: '/icons/destinations.svg', subMenuItems: [] },
     { name: 'VerifySlips', to: '/VerifySlips', icon: '/icons/contacts.svg', subMenuItems: [] },
     { name: 'Reviews', to: '/Reviews', icon: '/icons/services.svg', subMenuItems: [] },
+    { name: 'Logout', to: '/', subMenuItems: [] }
   ];
 
   const fonts = {
