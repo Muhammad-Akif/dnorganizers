@@ -2,11 +2,13 @@ import React from 'react';
 import Admin from '../../../admin/Admin';
 import Display from '../Temp/Display'
 
-const Main = () => {
+import { useSelector } from 'react-redux';
 
+const Main = () => {
+  const { weddingItems } = useSelector(state => state.items)
   return (
     <Admin>
-      <Display title="Wedding" />
+      <Display title="Wedding" Items={weddingItems}/>
     </Admin>
   )
 }

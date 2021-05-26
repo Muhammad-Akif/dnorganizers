@@ -352,7 +352,7 @@ export default function Display(props) {
           onChangeRowsPerPage={handleChangeRowsPerPage}
         />
       </Paper>
-      <Modal getData={props.title} updateTable={updateTable}/>
+      <Modal getData={props.title} Items={props.Items} updateTable={updateTable}/>
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-6 col-12">
@@ -366,3 +366,5 @@ export default function Display(props) {
     </div>
   );
 }
+
+

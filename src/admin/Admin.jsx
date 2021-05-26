@@ -1,10 +1,18 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import * as l from '../AdminAppLg.styles';
 import * as s from '../AdminAppSm.styles';
 import * as Palette from '../colors';
 import AdminNavbar from './AdminNavbar'
 import './Global.scss';
 import "./Admin.css"
+import firebase from '../config/firebase'
+import { useDispatch } from 'react-redux';
+import { setItems, authenticate } from '../redux/actions';
+
+
+
+
+
 
 // Components
 import Sidebar from '../components/Sidebar/Sidebar';
@@ -12,6 +20,37 @@ import MainView from '../components/MainView/MainView'
 
 
 const Admin = (props) => {
+  // const { weddingItems, birthdayItems, corporateItems } = useSelector(state => state.items)
+  // console.log(weddingItems[2])
+  // const list = []
+  // for (let item in weddingItems[2]) {
+  //   let itemName = weddingItems[2][item].name
+  //   list.push(itemName)
+  // }
+  // console.log("l ====>",list)
+  const dispatch = useDispatch();
+  useEffect(() => {
+    // localStorage.setItem("user", JSON.stringify(this.state.activeUser));
+    // const user = localStorage.getItem('user');
+    // if (user){ 
+    //   dispatch(authenticate('', user))
+    // }
+    firebase.database().ref('/events').on('value', function (snapshot) {
+      let snap = snapshot.val()
+      const wedItems = snap.wedding.items
+      const birthItems = snap.birthday.items
+      const corpItems = snap.corporate.items
+      dispatch(setItems(wedItems,birthItems,corpItems))
+    })
+
+  }, [])
+
+
+
+
+
+
+
   const backgroundImage = 'images/mountain.jpg';
   const sidebarHeader = {
     fullName: 'DN',
