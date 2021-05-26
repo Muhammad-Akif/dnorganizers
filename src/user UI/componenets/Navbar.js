@@ -2,11 +2,20 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../../images/abc.png'
+import {useDispatch} from 'react-redux';
+import { logout } from '../../redux/actions';
 
 function Navbar() {
+  const disptach = useDispatch();
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
+  const closeMobileMenu = () => {
+    // localStorage.setItem('user', null);
+    localStorage.removeItem("user");
+    setClick(false);
+    disptach(logout())
+    // console.log('=========================================')
+  }
 
   return (
     <>
@@ -64,5 +73,6 @@ function Navbar() {
     </>
   );
 }
+
 
 export default Navbar;

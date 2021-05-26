@@ -195,22 +195,23 @@ import {
 
 const initialAuthState = {
     uid: '',
-    email: 'akifmuhammad321@gmail.com'
+    email: '',
+    logout: false
 }
 
 const authReducer = (state = initialAuthState, action) => {
     switch (action.type) {
         case AUTHENTICATE:
             return {
-                // ...state,
+                logout: false,
                 uid: action.payload.uid,
                 email: action.payload.email
             }
         case LOGOUT:
             return {
-                // ...state,
-                uid: action.payload.uid,
-                email: action.payload.email
+                logout: true,
+                uid: '',
+                email: ''
             }
         default:
             return state;

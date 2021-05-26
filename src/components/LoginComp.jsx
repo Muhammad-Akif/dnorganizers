@@ -100,6 +100,7 @@ export default function SignIn() {
           dispatch(authenticate(data.user.uid, data.user.email));
           localStorage.setItem('user', data.user.email);
           history.push("/packages")
+          console.log('user has set', localStorage.getItem('user'))
           //-------------------------------------------------------------TODO-
           // data?.user.email === "admin@gmail.com" ? history.push("/Packages") : history.push("/user")
         }).catch(err => {

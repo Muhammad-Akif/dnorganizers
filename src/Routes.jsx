@@ -14,8 +14,24 @@ import Corporate from './components/MainView/Corporate/Corporate'
 import Reviews from './components/MainView/Reviews/Reviews'
 import VerifySlips from './components/MainView/Verify/VerfySlips.jsx'
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import {useSelector} from 'react-redux';
 
 const Routes = () => {
+  // if (localStorage.getItem('user')) {
+    const {email, logout} = useSelector(state => state.auth);
+
+    let isShowUser = false;
+    if ( logout || email.length > 2){
+      isShowUser = true;
+      console.log('inside ===++++++++')
+    }
+
+    if (localStorage.getItem('user')) {
+      isShowUser = true;
+    }
+
+    console.log('routes===================>', email, localStorage.getItem('user'))
+
     return (
       <Router>
         <ScrollToTop>
@@ -31,17 +47,27 @@ const Routes = () => {
             <Route exact path='/corporate' component={Corporate} />
             <Route exact path='/VerifySlips' component={VerifySlips} />
             <Route exact path='/Reviews' component={Reviews} />
-             {/* user */}
-             <Route exact path='/packages' component={User} />
-            <Route exact path='/ratings' component={Ratings} />
-            <Route exact path='/booked' component={Booked} />
-            <Route exact path='/invoices' component={Invoices} />
-            <Route exact path='/logout' component={Logout} />
+            {/* user */}
+            {
+              isShowUser ? (
+                <>
+                  <Route exact path='/packages' component={User} />
+                  <Route exact path='/ratings' component={Ratings} />
+                  <Route exact path='/booked' component={Booked} />
+                  <Route exact path='/invoices' component={Invoices} />
+                  <Route exact path='/logout' component={Logout} />
+                </>
+              ): (
+                <>
+                </>
+              )
+             }
+
             <Redirect to='/' />
           </Switch>
         </ScrollToTop>
       </Router>
     )
-}
+  }
 
-export default Routes
+  export default Routes;

@@ -127,13 +127,7 @@ export const authenticate = (uid, email) => { // It will take credentials
 
 export const logout = () => {
     return {
-        type: LOGOUT,
-        payload: {
-            uid: '',
-            email: '',
-            isAdmin: true,
-            isAuth: true
-        }
+        type: LOGOUT
     }
 }
 
