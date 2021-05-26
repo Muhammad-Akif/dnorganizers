@@ -10,15 +10,16 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import { useDispatch, useSelector } from 'react-redux'
 import Item from '../../../Models/models/item';
 import { addPendingInvoices } from '../../../redux/actions';
+import uploadToFirebase from '../../../functions/uploadToFirebase';
 
 export default function Modal(props) {
     const getData = props.getData.toLowerCase();
-    const [name,setName] = useState('')
+    const [name, setName] = useState('')
     const [people, setPeople] = useState(20)
     const [venu, setVenu] = useState('')
     const [venuPrice, setVenuPrice] = useState(0);
-    const [data,setData] = useState([])
-    const [designerName,setDesignerName] = useState('')
+    const [data, setData] = useState([])
+    const [designerName, setDesignerName] = useState('')
     // const [name, setName] = useState('')
 
     const [checkValid, setValid] = useState('')
@@ -38,7 +39,7 @@ export default function Modal(props) {
             console.log(items)
             const list = []
             for (let key in items) {
-                let {name, price} = items[key]
+                let { name, price } = items[key]
                 list.push(new Item(key, name, price))
             }
             setData(list)
@@ -61,6 +62,7 @@ export default function Modal(props) {
     }
     const handleClose = () => {
         //here we are submitting to firebase;
+        // props.getData //differentiating what event package we are getting
         const fullMenu = menu.map(item => {
             // delete item["checked"];
             // price = price + (item.price * peopleCount);
@@ -71,42 +73,54 @@ export default function Modal(props) {
             };
         })
         setValid("")
-        if ( venu.length > 0 && menu.length > 0) {
-            const objData = {
+        if (venu.length > 0 && menu.length > 0) {
+            const pushData = {
                 name,
-                people,
-                prices,
+                noOfPeople: people,
+                price: prices,
                 occuredDate: new Date(occuredDate).toString(),
                 venu,
                 designerName,
-                menu: fullMenu
+                menu: fullMenu,
+                theme: 'birthday'
             }
-            console.log("Submit Object", objData)
+            console.log("Submit Object", pushData)
             console.log("full menu", fullMenu)
-            // const invoice = {
-            //     theme: getData,//----
-            //     menu: fullMenu,//---
-            //     venu, //---
-            //     price: venuPrice + (menuPrice * people),
-            //     eventName: getData.toLowerCase(), //----
-            //     isPackage: false,
-            //     serPackName: 'custom',
-            //     serPackId: 'no id', // there will be no service id so setting it to 'no id';
-            //     userEmail: email,
-            //     bookDate: new Date().toString(),
-            //     occuredDate: new Date(occuredDate).toString(), //---
-            //     designerName, //---
-            //     noOfPeople: people, //---
-            //     status: 'inprogress'
-            // }
-            // firebase.database().ref('pendingInvoices/').push(invoice).then((data) => {
-            //     //success callback
-            //     dispatch(addPendingInvoices({ ...invoice, id: data.key }))
-            //     alert('Successfully added to Invoices', 'Please go to invoice section to clear first and continue.', [{ text: 'Ok' }])
-            // }).catch((error) => {
-            //     //error callback
-            //     alert("Can't book package.", 'Please check your internet connection!', [{ text: 'OK', style: 'destructive' }])
-            // })
+            if (props.getData == "Wedding") {
+                uploadToFirebase(
+                    'events/wedding/packages/',
+                    pushData,
+                    'Package Added successfully!',
+                    'Everyone can see this package and approach.',
+                    'Something Went Wrong!',
+                    'Please check your network.',
+                    dispatch,
+                    'addPackage'
+                )
+            } else if (props.getData == 'Corporate') {
+                uploadToFirebase(
+                    'events/corporate/packages/',
+                    pushData,
+                    'Package Added successfully!',
+                    'Everyone can see this package and approach.',
+                    'Something Went Wrong!',
+                    'Please check your network.',
+                    dispatch,
+                    'corAddPackage'
+                )
+            } else if (props.getData == 'Birthday') {
+                uploadToFirebase(
+                    'events/birthday/packages/',
+                    pushData,
+                    'Package Added successfully!',
+                    'Everyone can see this package and approach.',
+                    'Something Went Wrong!',
+                    'Please check your network.',
+                    dispatch,
+                    'birAddPackage'
+                )
+            }
+
             setState();
         }
         else {
@@ -128,9 +142,9 @@ export default function Modal(props) {
 
     return (
         <>
-        {/* {console.log(`Designer: ${designerName} Date: ${occuredDate} `)} */}
+            {/* {console.log(`Designer: ${designerName} Date: ${occuredDate} `)} */}
             {/* <Button variant="outlined" color="secondary" >Add Package</Button> */}
-            <Button variant="outlined" color="secondary" style={{marginBottom:"10px",padding:"10px 50px",fontSize:"12px"}} onClick={handleClickOpen('paper')}>Add Package</Button>
+            <Button variant="outlined" color="secondary" style={{ marginBottom: "10px", padding: "10px 50px", fontSize: "12px" }} onClick={handleClickOpen('paper')}>Add Package</Button>
             {/* <button type="button" className={props.clsName} onClick={handleClickOpen('paper')}>Customize Package</button> */}
             {/* <Button onClick={handleClickOpen('body')}>scroll=body</Button> */}
             <Dialog
@@ -149,7 +163,7 @@ export default function Modal(props) {
                         tabIndex={-1}
                     >
                         <h5 style={{ textAlign: 'center', color: 'red' }}>{checkValid}</h5>
-                        {/* {console.log("gogopanmasla ==> ",props.Items[2].venu)} */}
+                        {/* {console.log("gogopanmasla ==> ",props?.Items[2])} */}
                         <Formtemp name={name} designerName={designerName} setName={setName} setVenuPrice={setVenuPrice} setOccuredDate={setOccuredDate} setMenuPrice={setMenuPrice} Items={props?.Items[2]?.venu} setDesignerName={setDesignerName} getData={props.getData} data={data} setPeople={setPeople} menu={menu} venu={venu} prices={prices} people={people} setVenu={setVenu} setMenu={setMenu} setPrices={setPrices} />
                     </DialogContentText>
                 </DialogContent>

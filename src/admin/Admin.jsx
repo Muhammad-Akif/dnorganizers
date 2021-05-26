@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React, { useEffect } from 'react';
 import * as l from '../AdminAppLg.styles';
 import * as s from '../AdminAppSm.styles';
 import * as Palette from '../colors';
@@ -7,7 +7,7 @@ import './Global.scss';
 import "./Admin.css"
 import firebase from '../config/firebase'
 import { useDispatch } from 'react-redux';
-import { setItems, authenticate } from '../redux/actions';
+import { setItems, authenticate, updateEvents } from '../redux/actions';
 
 
 
@@ -37,10 +37,15 @@ const Admin = (props) => {
     // }
     firebase.database().ref('/events').on('value', function (snapshot) {
       let snap = snapshot.val()
+      const wedpkg = snap.wedding.packages
+      const birthpkg = snap.birthday.packages
+      const corppkg = snap.corporate.packages
       const wedItems = snap.wedding.items
       const birthItems = snap.birthday.items
       const corpItems = snap.corporate.items
-      dispatch(setItems(wedItems,birthItems,corpItems))
+      dispatch(setItems(wedItems, birthItems, corpItems))
+      dispatch(updateEvents({ wedpkg, birthpkg, corppkg }));
+
     })
 
   }, [])
@@ -72,29 +77,29 @@ const Admin = (props) => {
 
   return (
     <>
-    <div className="AdminSidebarfull">
-      <l.AppLg>
-        <Sidebar
-          backgroundImage={backgroundImage}
-          sidebarHeader={sidebarHeader}
-          menuItems={menuItems}
-          fonts={fonts}
-          colorPalette={Palette.brown}
-        />
-        <MainView>
-          {props.children}
-        </MainView>
-      </l.AppLg>
-    </div>
-     <div className="AdminSidebarsmall">
-       <AdminNavbar/>
-     <s.AppSm>
-       <MainView>
-         {props.children}
-       </MainView>
-     </s.AppSm>
-   </div>
-   </>
+      <div className="AdminSidebarfull">
+        <l.AppLg>
+          <Sidebar
+            backgroundImage={backgroundImage}
+            sidebarHeader={sidebarHeader}
+            menuItems={menuItems}
+            fonts={fonts}
+            colorPalette={Palette.brown}
+          />
+          <MainView>
+            {props.children}
+          </MainView>
+        </l.AppLg>
+      </div>
+      <div className="AdminSidebarsmall">
+        <AdminNavbar />
+        <s.AppSm>
+          <MainView>
+            {props.children}
+          </MainView>
+        </s.AppSm>
+      </div>
+    </>
   );
 }
 

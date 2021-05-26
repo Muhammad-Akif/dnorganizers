@@ -9,7 +9,7 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { useDispatch, useSelector } from 'react-redux'
 import Item from '../../Models/models/item';
-import { addPendingInvoices } from '../../redux/actions';
+import { addPendingInvoice } from '../../redux/actions';
 
 export default function Modal(props) {
     const getData = props.getData.toLowerCase();
@@ -79,7 +79,7 @@ export default function Modal(props) {
             }
             firebase.database().ref('pendingInvoices/').push(invoice).then((data) => {
                 //success callback
-                dispatch(addPendingInvoices({ ...invoice, id: data.key }))
+                dispatch(addPendingInvoice({ ...invoice, id: data.key }))
                 alert('Successfully added to Invoices', 'Please go to invoice section to clear first and continue.', [{ text: 'Ok' }])
             }).catch((error) => {
                 //error callback

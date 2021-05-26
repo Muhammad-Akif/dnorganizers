@@ -5,7 +5,15 @@ const transformIntoPackage = (payload) => {
     const response = payload;
     for (let id in response) {
         transformData.push(
-            new Package(id, response[id].name, response[id].price, response[id].theme, response[id].menu, response[id].venu)
+            new Package(id, 
+                response[id].name, 
+                response[id].price, 
+                response[id].theme, 
+                response[id].menu, 
+                response[id].venu,
+                response[id].occuredDate,
+                response[id].noOfPeople
+            )
         )
     }
     return transformData;

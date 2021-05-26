@@ -87,6 +87,16 @@ export default function Formtemp(props) {
   const submitHandler = (e) => {
     e.preventDefault();
   }
+
+  // Doing this in order to get unique venu
+  const venuObj = {} //{id: name,....}
+  Items.forEach(item => {
+    venuObj[item.id] = item.name;
+  })
+  const renderVenu = [] //[{id, name},.........]
+  for (let id in venuObj) {
+    renderVenu.push({id, name: venuObj[id]})
+  }
   return (
     <>
       <form className={classes.root} autoComplete="off" onSubmit={submitHandler}>
@@ -107,8 +117,9 @@ export default function Formtemp(props) {
             }}
           >
             <option aria-label="None" value="" />
-            {Items?.map((v, i) => {
-              console.log('--------------------',v)
+            
+            {renderVenu?.map((v, i) => {
+              console.log('--------------------=====================',v)
               return <option index={i} value={v.name} >{v.name}</option>
             })}
           </Select>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import firebase from '../../../config/firebase';
-import PropTypes from 'prop-types'; 
+import PropTypes from 'prop-types';
 import AddMenuVenu from './AddMenuVenu'
 import clsx from 'clsx';
 import { lighten, makeStyles } from '@material-ui/core/styles';
@@ -124,13 +124,13 @@ const useToolbarStyles = makeStyles((theme) => ({
   highlight:
     theme.palette.type === 'light'
       ? {
-          color: theme.palette.secondary.main,
-          backgroundColor: lighten(theme.palette.secondary.light, 0.85),
-        }
+        color: theme.palette.secondary.main,
+        backgroundColor: lighten(theme.palette.secondary.light, 0.85),
+      }
       : {
-          color: theme.palette.text.primary,
-          backgroundColor: theme.palette.secondary.dark,
-        },
+        color: theme.palette.text.primary,
+        backgroundColor: theme.palette.secondary.dark,
+      },
   title: {
     flex: '1 1 100%',
   },
@@ -151,7 +151,7 @@ const EnhancedTableToolbar = (props) => {
           {numSelected} selected
         </Typography>
       ) : (
-        <Typography className={classes.title} style={{fontSize:"14px"}} variant="h6" id="tableTitle" component="div">
+        <Typography className={classes.title} style={{ fontSize: "14px" }} variant="h6" id="tableTitle" component="div">
           {props.title} Packages
         </Typography>
       )}
@@ -208,23 +208,34 @@ export default function Display(props) {
   const [pickData, setpickedData] = useState([]);
   const [updateComp, setupdateComp] = useState("")
   const getData = props.title.toLowerCase();
-  
-  const updateTable = (val)=>{
+
+  const updateTable = (val) => {
     setupdateComp(val)
   }
   useEffect(() => {
-    rows=[]
+    rows = []
     let dataList = []
-    firebase.database().ref(`/events/${getData}/packages`).on('value', function (snapshot) {
-      let items = snapshot.val()
-      for (let item in items) {
-        let obj = items[item]
-        rows.push(createData(obj.name, obj.price, obj.theme, obj.venu, obj.menu.join(", ")))
-        dataList.push(obj)
-      }
-      setpickedData(dataList)
-    });
-  }, [updateComp]);
+    // firebase.database().ref(`/events/${getData}/packages`).on('value', function (snapshot) {
+    //   let items = snapshot.val()
+    //   for (let item in items) {
+    //     let obj = items[item]
+    // props.packages
+    // console.log('====>', props.packages)
+    props.packages.forEach(obj => {
+      const menuss = obj.menu.map(item => {
+        return item.name;
+      })
+      rows.push(createData(obj.name, obj.price, obj.theme, obj.venu, menuss.join(", ")))
+      dataList.push(obj)
+    })
+    // rows.push(createData(obj.name, obj.price, obj.theme, obj.venu, menuss.join(", ")))
+    // props.packages.forEach(item => {
+    // })
+    // rows.push()
+    // }
+    setpickedData(dataList)
+    // });
+  }, []);
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -269,22 +280,22 @@ export default function Display(props) {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
-  
+
   const isSelected = (name) => selected.indexOf(name) !== -1;
-  
+
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
-  
+
   return (
     <div className={classes.root}>
-       <div className="row">
-        <div style={{marginBottom:"0px",paddingBottom:"0px"}} className="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+      <div className="row">
+        <div style={{ marginBottom: "0px", paddingBottom: "0px" }} className="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
           {/* <span>We Love Our Customers</span> */}
           <h2>Welcome to {props.title} Event</h2>
-          <p style={{marginTop:"-10px",paddingBottom:"5px"}}>We'll Help you to Manage your Business Successfully</p>
+          <p style={{ marginTop: "-10px", paddingBottom: "5px" }}>We'll Help you to Manage your Business Successfully</p>
         </div>
       </div>
       <Paper className={classes.paper}>
-        <EnhancedTableToolbar title = {props.title} numSelected={selected.length} />
+        <EnhancedTableToolbar title={props.title} numSelected={selected.length} />
         <TableContainer>
           <Table
             className={classes.table}
@@ -324,13 +335,13 @@ export default function Display(props) {
                           inputProps={{ 'aria-labelledby': labelId }}
                         />
                       </TableCell>
-                      <TableCell  component="th" style={{fontSize:"11px"}} id={labelId} scope="row" padding="none">
+                      <TableCell component="th" style={{ fontSize: "11px" }} id={labelId} scope="row" padding="none">
                         {row.name}
                       </TableCell>
-                      <TableCell align="right" style={{fontSize:"11px"}}>{row.calories}</TableCell>
-                      <TableCell align="right" style={{fontSize:"11px"}}>{row.fat}</TableCell>
-                      <TableCell align="right" style={{fontSize:"11px"}}>{row.carbs}</TableCell>
-                      <TableCell align="right" style={{fontSize:"11px"}}>{row.protein}</TableCell>
+                      <TableCell align="right" style={{ fontSize: "11px" }}>{row.calories}</TableCell>
+                      <TableCell align="right" style={{ fontSize: "11px" }}>{row.fat}</TableCell>
+                      <TableCell align="right" style={{ fontSize: "11px" }}>{row.carbs}</TableCell>
+                      <TableCell align="right" style={{ fontSize: "11px" }}>{row.protein}</TableCell>
                     </TableRow>
                   );
                 })}
@@ -352,14 +363,14 @@ export default function Display(props) {
           onChangeRowsPerPage={handleChangeRowsPerPage}
         />
       </Paper>
-      <Modal getData={props.title} Items={props.Items} updateTable={updateTable}/>
+      <Modal getData={props.title} Items={props.Items} updateTable={updateTable} />
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-6 col-12">
-            <AddMenuVenu title="menu" />
+            <AddMenuVenu title="menu" Items={props.Items[0]} eventTitle={props.title} />
           </div>
           <div className="col-md-6 col-12">
-            <AddMenuVenu title="venu" />
+            <AddMenuVenu title="venu" Items={props.Items[2]} eventTitle={props.title} />
           </div>
         </div>
       </div>
