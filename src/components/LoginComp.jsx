@@ -14,7 +14,7 @@ import { NavLink } from "react-router-dom"
 import firebase from '../config/firebase';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import {authenticate }from '../redux/actions';
+import { authenticate } from '../redux/actions';
 
 function Copyright() {
   return (
@@ -114,6 +114,15 @@ export default function SignIn() {
     }
   }
 
+  const forgotPassword = (Email) => {
+    firebase.auth().sendPasswordResetEmail(Email)
+      .then(function () {
+        alert('Please check your email...')
+      }).catch(function (e) {
+        console.log(e)
+      })
+  }
+
   const onChangeInput = (type, e) => {
     if (type == 'email') {
       setemail(e.target.value)
@@ -186,8 +195,13 @@ export default function SignIn() {
           </Backdrop>
           <Grid container>
             <Grid item xs>
-              <Link href="#" variant="body2">
+              <button style={{ border: "none", fontSize: "14px", backgroundColor: "white" }} onClick={(e) => {
+                e.preventDefault();
+                forgotPassword(email);
+              }}>
                 Forgot password?
+                </button>
+              <Link href="#" variant="body2">
               </Link>
             </Grid>
             <Grid item>
