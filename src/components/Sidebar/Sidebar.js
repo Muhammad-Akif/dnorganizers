@@ -2,10 +2,12 @@ import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import * as s from './Sidebar.styles';
+import {useDispatch} from 'react-redux'
+import { logout } from '../../redux/actions';
 
 const Sidebar = props => {
-  const { 
-    backgroundImage = '', 
+  const {
+    backgroundImage = '',
     sidebarHeader = {
       fullName: '',
       shortName: ''
@@ -31,6 +33,8 @@ const Sidebar = props => {
   const [header, setHeader] = useState(sidebarHeader.fullName);
   const [subMenusStates, setSubmenus] = useState({})
   // Effects
+
+  const dispatch = useDispatch();
 
   // Set selected menu item based on URL pathname
   useLayoutEffect(() => {
@@ -99,8 +103,8 @@ const Sidebar = props => {
 
     const subMenusCopy = JSON.parse(JSON.stringify(subMenusStates));
 
-    if (subMenusStates.hasOwnProperty(index)) { 
-      subMenusCopy[index]['isOpen'] = !subMenusStates[index]['isOpen'] 
+    if (subMenusStates.hasOwnProperty(index)) {
+      subMenusCopy[index]['isOpen'] = !subMenusStates[index]['isOpen']
       setSubmenus(subMenusCopy)
     }
     else {
@@ -144,22 +148,48 @@ const Sidebar = props => {
 
     return (
       <s.ItemContainer key={index}>
-        <Link to={item.to} style={{ textDecoration: 'none' }}>
-          <s.MenuItem           
-            font={fonts.menu}
-            selected={isItemSelected}
-            onClick={() => handleMenuItemClick(item.name, index)}
-            isSidebarOpen={isSidebarOpen}
-            isOpen={isOpen}
-            colorPalette={colorPalette}
-          >
-            <s.Icon isSidebarOpen={isSidebarOpen} src={item.icon} />
-            <s.Text isSidebarOpen={isSidebarOpen}>{item.name}</s.Text>
-            {/* {hasSubmenus && isSidebarOpen && (
+        {
+          item.to == '/' ? (
+            <Link to={item.to} onClick={() => {
+              localStorage.removeItem('admin');
+              dispatch(logout());
+            }} style={{ textDecoration: 'none' }}>
+              <s.MenuItem
+                font={fonts.menu}
+                selected={isItemSelected}
+                onClick={() => handleMenuItemClick(item.name, index)}
+                isSidebarOpen={isSidebarOpen}
+                isOpen={isOpen}
+                colorPalette={colorPalette}
+              >
+                <s.Icon isSidebarOpen={isSidebarOpen} src={item.icon} />
+                <s.Text isSidebarOpen={isSidebarOpen}>{item.name}</s.Text>
+                {/* {hasSubmenus && isSidebarOpen && (
               <s.DropdownIcon selected={isItemSelected} isOpen={isOpen} colorPalette={colorPalette} />
             )} */}
-          </s.MenuItem>
-        </Link>
+              </s.MenuItem>
+            </Link>
+
+          ) : (
+
+            <Link to={item.to} style={{ textDecoration: 'none' }}>
+              <s.MenuItem
+                font={fonts.menu}
+                selected={isItemSelected}
+                onClick={() => handleMenuItemClick(item.name, index)}
+                isSidebarOpen={isSidebarOpen}
+                isOpen={isOpen}
+                colorPalette={colorPalette}
+              >
+                <s.Icon isSidebarOpen={isSidebarOpen} src={item.icon} />
+                <s.Text isSidebarOpen={isSidebarOpen}>{item.name}</s.Text>
+                {/* {hasSubmenus && isSidebarOpen && (
+              <s.DropdownIcon selected={isItemSelected} isOpen={isOpen} colorPalette={colorPalette} />
+            )} */}
+              </s.MenuItem>
+            </Link>
+          )
+        }
 
         {/* Display submenus if they exist  */}
         {/* <AnimatePresence>

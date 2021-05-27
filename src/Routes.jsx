@@ -19,6 +19,10 @@ import { useSelector } from 'react-redux';
 const Routes = () => {
   // if (localStorage.getItem('user')) {
   const { email, logout } = useSelector(state => state.auth);
+  let isShowAdmin = false;
+  if (localStorage.getItem('admin')) {
+    isShowAdmin = true;
+  }
 
   let isShowUser = false;
   if (logout || email.length > 2) {
@@ -29,6 +33,7 @@ const Routes = () => {
   if (localStorage.getItem('user')) {
     isShowUser = true;
   }
+
 
   console.log('routes===================>', email, localStorage.getItem('user'))
 
@@ -42,14 +47,19 @@ const Routes = () => {
           <Route exact path='/signup' component={Signup} />
           <Route exact path='/event/:name' component={View} />
           {/* admin */}
-          <Route exact path='/wedding' component={Main} />
-          <Route exact path='/birthday' component={Birthday} />
-          <Route exact path='/corporate' component={Corporate} />
-          <Route exact path='/VerifySlips' component={VerifySlips} />
-          <Route exact path='/Reviews' component={Reviews} />
+
           {/* user */}
           {
-            isShowUser ? (
+            isShowAdmin ? (
+              <>
+                <Route exact path='/wedding' component={Main} />
+                <Route exact path='/birthday' component={Birthday} />
+                <Route exact path='/corporate' component={Corporate} />
+                <Route exact path='/VerifySlips' component={VerifySlips} />
+                <Route exact path='/Reviews' component={Reviews} />
+              </>
+            ) : isShowUser ? (
+
               <>
                 <Route exact path='/packages' component={User} />
                 <Route exact path='/ratings' component={Ratings} />
@@ -58,16 +68,23 @@ const Routes = () => {
                 <Route exact path='/logout' component={Logout} />
               </>
             ) : (
-              <>
-                <Redirect to='/' />
-              </>
+              <Redirect to='/' />
+
             )
+          }
+          {
+            // isShowUser ? (
+            // ): (
+            //     <>
+            //     {/* <Redirect to='/' /> */ }
+            //   </>
+            // )
           }
 
           <Redirect to='/' />
         </Switch>
       </ScrollToTop>
-    </Router>
+    </Router >
   )
 }
 

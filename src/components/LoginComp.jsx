@@ -87,6 +87,8 @@ export default function SignIn() {
     if (isEmailValidate && isPasswordValidate) {
       if (email == "admin@gmail.com" && password == 123456) {
         sessionStorage.setItem("email", email)
+        localStorage.setItem('admin', email);
+        dispatch(authenticate('', email));
         history.push("/wedding")
       }
       else {

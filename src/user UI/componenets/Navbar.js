@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../../images/abc.png'
-import {useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { logout } from '../../redux/actions';
 
 function Navbar() {
@@ -11,19 +11,17 @@ function Navbar() {
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => {
     // localStorage.setItem('user', null);
-    localStorage.removeItem("user");
     setClick(false);
-    disptach(logout())
     // console.log('=========================================')
   }
 
   return (
     <>
       <nav className='navbar'>
-        <Link 
-        to='/packages'
-         className='navbar-logo' onClick={closeMobileMenu}>
-          <img src={logo} width='100' alt="logo"/>
+        <Link
+          to='/packages'
+          className='navbar-logo' onClick={closeMobileMenu}>
+          <img src={logo} width='100' alt="logo" />
         </Link>
         <div className='menu-icon' onClick={handleClick}>
           <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
@@ -35,7 +33,7 @@ function Navbar() {
               className='nav-links'
               onClick={closeMobileMenu}
             >
-              PACKAGES 
+              PACKAGES
             </Link>
           </li>
 
@@ -50,7 +48,7 @@ function Navbar() {
           </li>
           <li className='nav-item'>
             <Link
-              
+
               to='/invoices'
               className='nav-links'
               onClick={closeMobileMenu}
@@ -60,10 +58,13 @@ function Navbar() {
           </li>
           <li className='nav-item'>
             <Link
-              
+
               to='/'
               className='nav-links bdr'
-              onClick={closeMobileMenu}
+              onClick={() => {
+                localStorage.removeItem("user");
+                disptach(logout())
+              }}
             >
               LOGOUT
             </Link>
