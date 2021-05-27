@@ -36,30 +36,34 @@ class Invoices extends React.Component {
         
     }
     componentDidMount() {
-        this.pullData(this.props.setPendingInvoices, this.props.email);
+        this.pullData(this.props.setPendingInvoices, localStorage.getItem('user'));
     }
-    componentDidUpdate(prevProps) {
-        if (prevProps.invoices.length == this.length) {
-            return
-        } else {
-            this.length = prevProps.invoices.length;
-            this.referenceContent = [];
-            for (let i = 0; i < this.length; i++) {
-                this.referenceContent.push(`i${i}`);
-            }
-        }
-    }
+    // componentDidUpdate(prevProps) {
+    //     console.log('componentDidUpdate',prevProps)
+    //     if (prevProps.invoices.length == this.length) {
+    //         console.log('======>',prevProps, this.length)
+    //         return
+    //     } else {
+    //         console.log('else stattement')
+    //         this.length = prevProps.invoices.length;
+    //         this.referenceContent = [];
+    //         for (let i = 0; i < this.length; i++) {
+    //             this.referenceContent.push(`i${i}`);
+    //         }
+    //     }
+    // }
     render() {
         // const email = useSelector(state => state.auth.email)
         return (
             <>
-            {console.log('---------------------',this.props.email)}
+            {/* {console.log('---------------------',this.props.email)} */}
                 <Navbar />
-                {this.props.invoices.length >=1 ?
+                {console.log("Email Invoices",localStorage.getItem('user'))}
+                {this.props.invoices.length > 0 ?
                     this.props.invoices.map((obj, i) => {
+                        {console.log('invoices length =>', this.props.invoices)}
                         return (
                             <>
-                                {console.log("-=-=-=",obj.status)}
                                 {obj.status === "inprogress" ? this.clearbtn=true : this.clearbtn=false}
                                 <PrintHtmlTable obj={obj} ref={(el) => (this.referenceContent[i] = el)} />
                                 <ReactToPrint
@@ -99,7 +103,7 @@ const mapDispatchToProps = {
 };
 const mapStateToProps = (state) => {
     return {
-        email: state.auth.email,
+        // email: state.auth.email,
         invoices: state.invoices.pendingInvoices
     }
 };
@@ -107,7 +111,37 @@ export default connect(mapStateToProps, mapDispatchToProps)(Invoices)
 
 
 
+// import React from 'react'
+// class MyPrintableComponent extends React.Component {
+//     render () {
+//         return (
+//             <div id={this.props.printableId}>
+//                 <h1>IM GUNNA PRINT</h1>
+//             </div>
+//         )
+//     }
+// }
 
+// export default class Invoices extends React.Component {
+//     printOrder = () => {
+//         const printableElements = document.getElementById('printme').innerHTML;
+//         const orderHTML = '<html><head><title></title></head><body>' + printableElements + '</body></html>'
+//         const oldPage = document.body.innerHTML;
+//         document.body.innerHTML = orderHTML;
+//         window.print();
+//         document.body.innerHTML = oldPage
+//     }
+//     render () {
+//         return (
+//             <div className='container'>
+//                 <div onClick={() => this.printOrder()}>
+//                     Print Order
+//                 </div>
+//                 <MyPrintableComponent printableId='printme'/>
+//             </div>
+//         )
+//     }
+// }
 
 
 

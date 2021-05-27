@@ -4,7 +4,7 @@ const transformIntoPendingInvoices = (payload) => {
     const transformData = [];
     const response = payload.object;
     for (let id in response) {
-        if (response[id].userEmail != payload.email) continue 
+        if (response[id].userEmail != localStorage.getItem('user')) continue 
         transformData.push(
             new PendingInvoices(
                 id,

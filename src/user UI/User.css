@@ -1,3 +1,12 @@
+#printme {
+  display: none;
+}
+@media print {
+  #printme {
+      display: block;
+  }
+}
+
 .bottomtabs{
   display: none;
 }

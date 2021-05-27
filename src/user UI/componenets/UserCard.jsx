@@ -3,7 +3,8 @@ import { useDispatch,useSelector } from 'react-redux'
 import handleBookPress from './sendToInvoices'
 export default function UserCard(props) {
   const dispatch = useDispatch();
-  const email = useSelector(state => state.auth.email)
+  // const email = useSelector(state => state.auth.email)
+  const email = localStorage.getItem('user')
   const {id, name,theme,venu,menu,price, type} = props;
   return (
     <div className="card control-width">
