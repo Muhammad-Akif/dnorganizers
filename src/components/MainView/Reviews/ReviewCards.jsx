@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from '@material-ui/core/Button';
 export default function ReviewCards(props) {
+  const { item } = props
   return (
     // <div style={{backgroundColor:"white",borderRadius:"none",margin:"10px",width:"31%"}} className="card ReviewsCard">
     //   <div style={{padding:"5px 0px",borderBottom:"1px solid black"}} className="text-center">
@@ -23,26 +24,38 @@ export default function ReviewCards(props) {
     // </div>
     <div className="container-fluid" className="Review">
       <div className="row">
-        <div className="col-md-12" style={{ marginTop: "2%", fontSize: "16px", color: "black" }}>akifmuhammad321@gmail.com</div>
+        <div className="col-md-12" style={{ marginTop: "2%", fontSize: "16px", color: "black" }}>{item.userEmail}</div>
       </div>
       <div className="row">
         <div className="col-md-12" style={{}}>* * * * *</div>
+        {/* {
+          // item.ratings.ratingNumber
+          rating.map((number, index) => {
+            if (index < item.ratings.ratingNumber) {
+              return <Ionicons key={index} name={'star'} size={23} color={'red'} />
+            } return <Ionicons key={index} name={'star-outline'} size={23} color={'red'} />
+          })
+        } */}
       </div>
       <div className="row text-center">
-        <div className="col-md-12" style={{fontSize:"15px"}}>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-      </div>
+        <div className="col-md-12" style={{ fontSize: "15px" }}>
+          {item.ratings.ratingDesc}
+        </div>
       </div>
       <div className="row" >
         <div className="col-6 col-sm-6 col-md-6 rbtn">
           {/* <button type="button" style={{ width: "45%", color: "#F14E95" }} class="btn">Accept</button> */}
-          <Button variant="outlined" color="secondary" style={{ padding: "5px",margin: "5px",border: "none", fontSize: "13px" }}>
+          <Button variant="outlined" color="secondary" style={{ padding: "5px", margin: "5px", border: "none", fontSize: "13px" }} onClick={(e) => {
+            props.acceptReview()
+          }}>
             Accept
           </Button>
         </div>
         <div className="col-6 col-sm-6 col-md-6 rbtn">
           {/* <button type="button" style={{ width: "45%", color: "red" }} class="btn">Discord</button> */}
-          <Button variant="outlined" color="secondary" style={{ padding: "5px",margin: "5px",border: "none", fontSize: "13px" }}>
+          <Button variant="outlined" color="secondary" style={{ padding: "5px", margin: "5px", border: "none", fontSize: "13px" }} onClick={(e) => {
+            props.rejectReview()
+          }}>
             Discord
           </Button>
         </div>

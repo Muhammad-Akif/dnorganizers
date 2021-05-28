@@ -73,7 +73,7 @@ export default function Modal(props) {
             };
         })
         setValid("")
-        if (venu.length > 0 && menu.length > 0) {
+        if (name.length > 0 && venu.length > 0 && menu.length > 0 && occuredDate.length > 0 && people > 0 && designerName.length >0) {
             const pushData = {
                 name,
                 noOfPeople: people,

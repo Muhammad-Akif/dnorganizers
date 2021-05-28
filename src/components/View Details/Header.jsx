@@ -1,6 +1,6 @@
 import React from 'react'
 import NavigationHeader from '../NavigationHeader'
-// import { Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import Carousel from "../Carousel"
 
 export default function Header(props) {
@@ -31,6 +31,7 @@ export default function Header(props) {
 		{/* style={{backgroundColor:"rgb(230, 114, 78)"}} */}
 		<header id="fh5co-header" className="fh5co-cover" style={{backgroundImage:"none"}}>
 			<div className="overlay" style={{backgroundColor:"white"}}>
+			<button type="button" class="btn  viewSliderBtn"><Link to='/login'><strong style={{fontSize:"16px",padding:"10px",fontFamily:"sans-serif",color:"white"}}>Book Now</strong></Link></button>									
 				<Carousel {...props}/>
 				{/* <div className="container">
 					<div className="row">

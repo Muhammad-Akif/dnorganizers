@@ -60,7 +60,15 @@ export default function Modal(props) {
             };
         })
         setValid("")
-        if ( venu.length > 0 && menu.length > 0) {
+        const verifyObj={
+            venu: venu.length,
+            menu: menu.length,
+            occuredDate: occuredDate.length,
+            people:people.length,
+            designerName:designerName.length
+        }
+        console.log("verifyObj ====> ",verifyObj)
+        if ( venu.length > 0 && menu.length > 0 && occuredDate.length > 0 && people > 0 && designerName.length >0) {
             const invoice = {
                 theme: getData,//----
                 menu: fullMenu,//---

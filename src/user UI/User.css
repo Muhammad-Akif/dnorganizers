@@ -36,6 +36,7 @@
 .userCards{
   display: flex;
   flex-wrap: wrap ;
+  justify-content: center;
 }
 .contnt{
   height: 86vh;
@@ -105,7 +106,7 @@
   box-shadow: 0 16px 70px -12.125px rgba(0,0,0,0.3);
 }
 .btn-wdth{
-  margin: 5px auto 50px auto !important;
+  margin: 15px auto 50px auto !important;
   width: 70% !important;
   font-weight: bold !important;
 }

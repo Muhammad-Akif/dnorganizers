@@ -1,8 +1,54 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Admin from '../../../admin/Admin';
 import ReviewCards from "./ReviewCards"
+import { useDispatch, useSelector } from 'react-redux';
+import firebase from '../../../config/firebase';
+import {setBookedEventWithRatings} from '../../../redux/actions';
 
 const Reviews = () => {
+  const events = useSelector(state => state.bookedEvents.bookedEvents)
+  const dispatch = useDispatch();
+
+  const acceptReview = (ratings, eventName, designerName, bookedEventId, userEmail) => {
+    // console.log(ratings, eventName, designerName, bookedEventId)
+    Promise.all([
+      firebase.database().ref('acceptedRatings/').push({ userEmail, eventName, ratings, designerName }),
+      firebase.database().ref(`bookedEvents/${bookedEventId}`).update({ status: 'accepted' })
+    ]).then((data) => {
+      // console.log("Operations Successful", data)
+      alert('Accepted!', 'This is now visible.', [{ text: 'Ok', style: 'destructive' }])
+    }).catch((e) => {
+      alert('Something went wrong!', 'Check your network.', [{ text: 'Ok', style: 'destructive' }])
+    })
+  }
+
+  const rejectReview = (bookedEventId) => {
+    Promise.all([
+      firebase.database().ref(`bookedEvents/${bookedEventId}`).update({ status: 'rejected' })
+    ]).then((data) => {
+      // console.log("Operations Successful", data)
+      alert('Accepted!', 'This is now visible.', [{ text: 'Ok', style: 'destructive' }])
+    }).catch((e) => {
+      alert('Something went wrong!', 'Check your network.', [{ text: 'Ok', style: 'destructive' }])
+    })
+  }
+
+  useEffect(() => {
+    // getData();
+    const ref = firebase.database().ref('bookedEvents/')
+    ref.on('value', function (snapshot) {
+      dispatch(setBookedEventWithRatings(snapshot.val()));
+      console.log('done', snapshot.val())
+    }, function (err) {
+      console.log('failed to fetch', err)
+    });
+
+    //remove listener
+    return () => ref.off('value');
+  }, [])
+
+  const rating = [1, 2, 3, 4, 5];
+
   return <Admin>
     <div className="row">
       <div style={{ marginBottom: "0px", paddingBottom: "0px" }} className="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
@@ -13,10 +59,13 @@ const Reviews = () => {
       </div>
     </div>
     <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", margin: "20px 0px" }}>
-      <ReviewCards />
-      <ReviewCards />
-      <ReviewCards />
-      <ReviewCards />
+      {
+        events.map(item => {
+          return <ReviewCards acceptReview={acceptReview.bind(null , item.ratings, item.eventName, item.designerName, item.id, item.userEmail)} rejectReview={rejectReview.bind(null, item.id)} item={item}/>;
+        })
+      }
+      
+      
     </div>
   </Admin>
 }

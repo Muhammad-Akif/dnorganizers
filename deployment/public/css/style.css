@@ -5,6 +5,10 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'book';
+  src: local('book'), url(../fonts/main-headings.ttf) format('truetype');
+}
 
 body {
   font-family: "Work Sans", Arial, sans-serif;
@@ -1593,14 +1597,15 @@ form label {
 #fh5co-started .form-control {
   background: rgba(255, 255, 255, 0.2);
   border: none !important;
-  color: #fff;
+  padding: 25px;
+  color: #fff !important;
   font-size: 16px !important;
   width: 100%;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
 }
-/* #fh5co-started .form-control::-webkit-input-placeholder {
+#fh5co-started .form-control::-webkit-input-placeholder {
   color: #fff;
 }
 #fh5co-started .form-control:-moz-placeholder {
@@ -1614,7 +1619,7 @@ form label {
 }
 #fh5co-started .form-control:focus {
   background: rgba(255, 255, 255, 0.3);
-} */
+}
 #fh5co-started .btn {
   height: 54px;
   border: none !important;

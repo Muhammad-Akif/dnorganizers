@@ -47,11 +47,11 @@ const useStyles = makeStyles({
   },
 });
 
-export function HoverRating() {
+export function HoverRating(props) {
   const [value, setValue] = React.useState(2);
   const [hover, setHover] = React.useState(-1);
   const classes = useStyles();
-
+  const {getRatings} = props;
   return (
     <div className={classes.root}>
     {value !== null && <Box style={{color:"#ffb400",fontWeight:"bold"}}>{labels[hover !== -1 ? hover : value]}</Box>}
@@ -63,6 +63,7 @@ export function HoverRating() {
         
         onChange={(event, newValue) => {
           setValue(newValue);
+          getRatings(newValue)
         }}
         onChangeActive={(event, newHover) => {
           setHover(newHover);

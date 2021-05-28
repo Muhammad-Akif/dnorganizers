@@ -37,7 +37,7 @@ function Navbar(props) {
             >
               SERVICES 
             </Link> */}
-                <a href="#services" className='nav-lnks' onClick={closeMobileMenu}>SERVICES</a>
+                <a href="#services" className='nav-lnks' onClick={closeMobileMenu}><span style={{fontFamily:"book"}}>SERVICES</span></a>
               </li>
 
               <li className='nav-item'>
@@ -45,10 +45,10 @@ function Navbar(props) {
               // to=''
               className='nav-lnks'
               onClick={closeMobileMenu}
-            >
+<span>        </span>    >
               GALLERY
             </Link> */}
-                <a href="#gallery" className='nav-lnks' onClick={closeMobileMenu}>GALLERY</a>
+                <a href="#gallery" className='nav-lnks' onClick={closeMobileMenu}> <span style={{fontFamily:"book"}}>GALLERY</span></a>
               </li>
               <li className='nav-item'>
                 {/* <Link
@@ -59,7 +59,7 @@ function Navbar(props) {
             >
               TESTIMONIALS
             </Link> */}
-                <a href="#teams" className='nav-lnks' onClick={closeMobileMenu}>OUR-TEAM</a>
+                <a href="#teams" className='nav-lnks' onClick={closeMobileMenu}> <span style={{fontFamily:"book"}}>OUR-TEAM</span></a>
               </li>
               <li className='nav-item'>
                 {/* <Link
@@ -70,7 +70,7 @@ function Navbar(props) {
             >
               CONTACT
             </Link> */}
-                <a href="#contact" className='nav-lnks' onClick={closeMobileMenu}>CONTACT</a>
+                <a href="#contact" className='nav-lnks' onClick={closeMobileMenu}><span style={{fontFamily:"book"}}>CONTACT</span></a>
               </li>
               <li className='nav-item'>
                 <Link
@@ -78,7 +78,7 @@ function Navbar(props) {
                   className='nav-lnks bdr'
                   onClick={closeMobileMenu}
                 >
-                  LOGIN
+                    <span style={{fontFamily:"book"}}> LOGIN </span>
             </Link>
               </li>
               <li className='nav-item'>
@@ -87,7 +87,7 @@ function Navbar(props) {
                   className='nav-lnks bdr'
                   onClick={closeMobileMenu}
                 >
-                  SIGNUP
+                   <span style={{fontFamily:"book"}}>SIGNUP</span>
             </Link>
               </li>
             </ul>

@@ -168,9 +168,12 @@ import transformIntoBookedEvents from "../bariers/transformIntoBookedEvents";
 import transformIntoItems from "../bariers/transformIntoItems";
 import transformIntoPackage from "../bariers/transformIntoPackages";
 import transformIntoPendingInvoices from "../bariers/transformIntoPendingInvoices";
+import BookedEvents from "../Models/models/bookedEvents";
 import Item from "../Models/models/item";
 import Package from "../Models/models/package";
 import PendingInvoices from "../Models/models/pendingInvoices";
+import BookedEventRatings from '../Models/models/BookedEventRatings';
+
 import {
     AUTHENTICATE,
     DELETEPENDINGINVOICE,
@@ -190,7 +193,9 @@ import {
     DELETEITEM,
     ADDITEM,
     SETBOOKEDEVENTS,
-    UPDATEEVENTS
+    UPDATEEVENTS,
+    UPDATEBOOKEDEVENTS,
+    SETONLYWITHRATINGS
 } from "./actions";
 
 const initialAuthState = {
@@ -415,6 +420,38 @@ const bookedEventsReducer = (state = initialBookedEventsState, action) => {
         case SETBOOKEDEVENTS:
             return {
                 bookedEvents: transformIntoBookedEvents(action.payload)
+            }
+        case UPDATEBOOKEDEVENTS:
+            return {
+                bookedEvents: state.bookedEvents.map((item) => {
+                    console.log('item', item)
+                    if (item.id == action.payload.id) {
+                        return (
+                            new BookedEvents(
+                                item.id,
+                                item.price,
+                                item.theme,
+                                item.menu,
+                                item.venu,
+                                item.eventName,
+                                item.isPackage,
+                                item.serPackName,
+                                item.serPackId,
+                                item.userEmail,
+                                item.bookDate,
+                                item.occuredDate,
+                                item.designerName,
+                                item.noOfPeople,
+                                action.payload.status,
+                                action.payload.ratings
+                            )
+                        )
+                    } return item;
+                })
+            }
+        case SETONLYWITHRATINGS:
+            return {
+                bookedEvents: BookedEventRatings(action.payload)
             }
         default:
             return state;
