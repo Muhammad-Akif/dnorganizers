@@ -86,10 +86,10 @@ export default function SignIn() {
     console.log(`Email and Passwords are ==> ${email} & ${password}`)
     if (isEmailValidate && isPasswordValidate) {
       if (email == "admin@gmail.com" && password == 123456) {
-        sessionStorage.setItem("email", email)
         localStorage.setItem('admin', email);
         dispatch(authenticate('', email));
         history.push("/wedding")
+        localStorage.removeItem('user')
       }
       else {
         setOpen(!open);
@@ -98,19 +98,32 @@ export default function SignIn() {
           password
         ).then(data => {
           // sessionStorage.setItem("email", data.user.email)
+          const user = firebase.auth().currentUser;
+          const emailVerified = user.emailVerified;
+          if (!emailVerified) {
+            alert('First confirm your email address!')
+            setOpen(false);
+            return;
+          }
+
           setOpen(false);
           dispatch(authenticate(data.user.uid, data.user.email));
-          localStorage.setItem('user', data.user.email);
+          localStorage.setItem('user', data.user.email.toLowerCase());
           history.push("/packages")
+          localStorage.removeItem('admin')
           console.log('user has set', localStorage.getItem('user'))
           //-------------------------------------------------------------TODO-
           // data?.user.email === "admin@gmail.com" ? history.push("/Packages") : history.push("/user")
         }).catch(err => {
           console.log(err)
+          alert("Incorrect Credentials")
+          setOpen(false);
+
         })
       }
     } else {
       setShowError(true)
+      setOpen(false);
     }
   }
 

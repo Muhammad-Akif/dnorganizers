@@ -65,6 +65,7 @@ export default function NavigationHeader(props) {
                                     <li><a href="#feedback">Testimonials</a></li>
                                     <li><a href="#contact">Contact</a></li>
                                     <li></li>
+                                    <li><NavLink to="/login"><strong style={{fontFamily: "serif,'Sacramento', Arial",fontSize:"16px"}}>Login</strong></NavLink></li>
                                     <li><NavLink to="/signup"><strong style={{fontFamily: "serif,'Sacramento', Arial",fontSize:"16px"}}>Signup</strong></NavLink></li>
                                 </ul>
                             </div>

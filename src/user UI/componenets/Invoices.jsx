@@ -19,7 +19,7 @@ class PrintHtmlTable extends React.Component {
 }
 
 class Invoices extends React.Component {
-    
+
     constructor(props) {
         super()
         this.referenceContent = [];
@@ -30,13 +30,19 @@ class Invoices extends React.Component {
         firebase.database().ref('pendingInvoices').once('value', function (snapshot) {
             console.log(snapshot.val())
             setPendingInvoices(snapshot.val(), email)
-            
+
         });
         // const a = this.props.invoices.length;
-        
+
     }
     componentDidMount() {
+        this.isShowActivity = true
         this.pullData(this.props.setPendingInvoices, localStorage.getItem('user'));
+        this.p = setInterval(() => {
+           if (this.props.invoices.length == 0) {
+                this.isShowActivity = false;
+            }
+        }, 5000)
     }
     // componentDidUpdate(prevProps) {
     //     console.log('componentDidUpdate',prevProps)
@@ -56,42 +62,43 @@ class Invoices extends React.Component {
         // const email = useSelector(state => state.auth.email)
         return (
             <>
-            {/* {console.log('---------------------',this.props.email)} */}
+                {/* {console.log('---------------------',this.props.email)} */}
                 <Navbar />
-                {console.log("Email Invoices",localStorage.getItem('user'))}
+                {console.log("Email Invoices", localStorage.getItem('user'))}
                 {this.props.invoices.length > 0 ?
                     this.props.invoices.map((obj, i) => {
-                        {console.log('invoices length =>', this.props.invoices)}
+                        { console.log('invoices length =>', this.props.invoices) }
                         return (
                             <>
-                                {obj.status === "inprogress" ? this.clearbtn=true : this.clearbtn=false}
+                                {obj.status === "inprogress" ? this.clearbtn = true : this.clearbtn = false}
                                 <PrintHtmlTable obj={obj} ref={(el) => (this.referenceContent[i] = el)} />
                                 <ReactToPrint
                                     trigger={() => <button className="btn Cbtn btn-wdh">Print out!</button>}
                                     content={() => this.referenceContent[i]}
                                 />
-                                {this.clearbtn && 
-                                <button className="btn Cbtn Dbtn btn-wdh" onClick={event => {
-                                    // this.props.updatePendingInvoices()
-                                    firebase.database().ref(`pendingInvoices/${obj.id}`).remove().then((data) => {
-                                        this.props.deletePendingInvoices(obj.id)
-                                        alert('Successfully Deleted', 'You have successfully deleted invoice.', [{ text: 'Ok' }])
-                                    }).catch((error) => {
-                                        alert('Unable to Delete Invoice', 'Please check your network connection.', [{ text: 'Ok' }])
-                                        // setIsDeleting(false);
-                                    })
-                                    // console.log('++++++++++++++',obj)
-                                }}>
-                                    Delete
+                                {this.clearbtn &&
+                                    <button className="btn Cbtn Dbtn btn-wdh" onClick={event => {
+                                        // this.props.updatePendingInvoices()
+                                        firebase.database().ref(`pendingInvoices/${obj.id}`).remove().then((data) => {
+                                            this.props.deletePendingInvoices(obj.id)
+                                            alert('Successfully Deleted', 'You have successfully deleted invoice.', [{ text: 'Ok' }])
+                                        }).catch((error) => {
+                                            alert('Unable to Delete Invoice', 'Please check your network connection.', [{ text: 'Ok' }])
+                                            // setIsDeleting(false);
+                                        })
+                                        // console.log('++++++++++++++',obj)
+                                    }}>
+                                        Delete
                                 </button>}
                                 {this.clearbtn && <FormDialog obj={obj} />}
                                 <hr style={{ border: "1px dashed grey" }} />
                             </>
                         )
                     })
-                    :
-                <CircularProgress style={{ display: "table", margin: "30vh auto" }} color="secondary" /> 
-            }
+                    : !this.isShowActivity ? <CircularProgress style={{ display: "table", margin: "30vh auto" }} color="secondary" />: (
+                        <div style={{margin: '15% auto', color: 'red', display: 'table', fontSize: '30px'}} >Add Atleast one package</div>
+                    )
+                }
             </>
         )
     }
@@ -175,7 +182,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Invoices)
 // }
 
 // class Invoices extends React.Component {
-    
+
 //     constructor(props) {
 //         super()
 //         this.referenceContent = [];
@@ -186,7 +193,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Invoices)
 //         firebase.database().ref('pendingInvoices').once('value', function (snapshot) {
 //             console.log(snapshot.val())
 //             setPendingInvoices(snapshot.val(), email)
-            
+
 //         });
 //         // const a = this.props.invoices.length;
 

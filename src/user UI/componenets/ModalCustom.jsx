@@ -46,7 +46,7 @@ export default function Modal(props) {
         setScroll(scrollType);
     };
 
-    const email = useSelector(state => state.auth.email)
+    const email = localStorage.getItem('user')
 
     const handleClose = () => {
         //here we are submitting to firebase;

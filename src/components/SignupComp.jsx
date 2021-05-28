@@ -76,22 +76,33 @@ export default function SignUp() {
   const [isPasswordValidate, setIsPasswordValidate] = useState(false);
   const [showError, setShowError] = useState(false);
   const [password, setpassword] = useState(null);
+  const [confirmPassword, setConfirmPassword] = useState(null)
   const history = useHistory();
 
   const signUp = e => {
     e.preventDefault();
+    if (confirmPassword != password) return;
     console.log(`Email and Passwords are ==> ${email} & ${password}`)
     if (isEmailValidate && isPasswordValidate) {
       setOpen(!open);
       firebase.auth().createUserWithEmailAndPassword(
         email,
         password
-      ).then(user => {
-        console.log(user)
+      ).then(userCredential => {
+        // console.log('=====', user)
+        userCredential.user.sendEmailVerification();
+        firebase.auth().signOut();
+        alert("Verify your email address for login");
+        
         history.push("/login")
         setOpen(false);
+
+        
       }).catch(err => {
-        console.log("Error ==> ", err)
+        // console.log("Error ==> ", err)
+        alert(err.message)
+        setOpen(false);
+
       })
       // setlname('')
       // setfname('')
@@ -101,10 +112,13 @@ export default function SignUp() {
       setShowError(true)
     }
   }
-  const onChangeInput = (type, e) => {
+  const onChangeInput = (type, e) => { // confirm
     if (type == 'email') {
       setemail(e.target.value)
       setIsEmailValidate(validateEmail(e.target.value));
+      return
+    } else if (type == 'confirm') {
+      setConfirmPassword(e.target.value)
       return
     }
     setpassword(e.target.value)
@@ -191,6 +205,23 @@ export default function SignUp() {
             {showError && (!isPasswordValidate && (
               <div>Password length must be at least 6 characters</div>
             ))}
+             <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                fullWidth
+                name="password"
+                label="Confirn Password"
+                type="password"
+                required
+                value={confirmPassword}
+                onChange={onChangeInput.bind(null, "confirm")}
+                id="password"
+                autoComplete="current-password"
+              />
+            </Grid>
+            {password != confirmPassword && (
+              <div>Password Not Match with each other</div>
+            )}
              {/* <Grid item xs={12}>
               <TextField
                 variant="outlined"

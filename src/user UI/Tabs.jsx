@@ -8,6 +8,8 @@ import Box from '@material-ui/core/Box';
 import UserCard from './componenets/UserCard'
 import ModalCustom from './componenets/ModalCustom'
 import CircularProgress from '@material-ui/core/CircularProgress';
+import { useSelector } from 'react-redux'
+
 
 function TabPanel(props) {
 
@@ -61,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
   TabPanel: {
     width: '87vw'
   },
-  circle : {
+  circle: {
     width: '100%',
     margin: "30vh auto"
   }
@@ -71,6 +73,17 @@ export default function VerticalTabs(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
   const { weddingPkg, birthdayPkg, corporatePkg, weddingItems, birthdayItems, corporateItems, open } = props;
+  // const pendingInvoices = useSelector(state => state.invoices.pendingInvoices)
+
+  // const newWedPackages = []
+  // console.log('pending invoices ====>', pendingInvoices)
+  // weddingPkg.forEach(item => {
+  //   pendingInvoices.forEach(items => {
+  //     if (item.id != items.serPackId) {
+  //       newWedPackages.push(item);
+  //     }
+  //   })
+  // })
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -135,4 +148,14 @@ export default function VerticalTabs(props) {
 //   boxShadow: "0 16px 70px -12.125px rgba(0,0,0,0.3)"
 // }
 
-
+{/* <div className="card control-width" style={{ margin: "20px",overflow:"hidden"  }}>
+            <div style={{ backgroundColor: "green",overflow:"hidden", height: "8vh", color: "white", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                <div style={{ position: "relative",left:"-35px", width:"23%", transform: "rotate(-55deg)",overflow:"hidden"  }}>
+                    <h5 style={{padding:"7px 0px",textAlign:"center",color:"white",border:"none", backgroundColor: "blue", transform: [{ rotate: '-55deg' }] }}>
+                        Custom
+                </h5>
+                </div>
+                <h4 style={{color:"white",margin:"0px 0px 0px -40px"}}>
+                    Event Booked Successfully!
+                </h4>
+            </div> */}

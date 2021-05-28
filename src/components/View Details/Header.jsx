@@ -1,6 +1,7 @@
 import React from 'react'
 import NavigationHeader from '../NavigationHeader'
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
+import Carousel from "../Carousel"
 
 export default function Header(props) {
 
@@ -25,9 +26,13 @@ export default function Header(props) {
 		// </div>
 		<div id="page">
 		<NavigationHeader name="event"/>
-		<header id="fh5co-header" className="fh5co-cover fh5co-cover-sm" style={{ backgroundImage: "url(" + props.img + ")" }}>
-			<div className="overlay">
-				<div className="container">
+		{/* style={{ backgroundImage: "url(" + props.img + ")" }} */}
+		{/* <div style={{paddingTop:"12vh",backgroundColor:"black"}}/> */}
+		{/* style={{backgroundColor:"rgb(230, 114, 78)"}} */}
+		<header id="fh5co-header" className="fh5co-cover" style={{backgroundImage:"none"}}>
+			<div className="overlay" style={{backgroundColor:"white"}}>
+				<Carousel {...props}/>
+				{/* <div className="container">
 					<div className="row">
 						<div className="col-md-8 col-md-offset-2 text-center">
 							<div className="display-t">
@@ -39,7 +44,7 @@ export default function Header(props) {
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> */}
 			</div>
 		</header>
 	</div >

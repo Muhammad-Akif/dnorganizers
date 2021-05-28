@@ -53,8 +53,6 @@ const rejectSlip = (pendingInvoiceId, userClearId) => {
 }
 
 
-
-
   return <Admin>
     <div className="row">
       <div style={{ marginBottom: "0px", paddingBottom: "0px" }} className="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">

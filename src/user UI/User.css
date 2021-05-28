@@ -82,11 +82,26 @@
 }
 .control-width{
   width: 31%; 
+  /* height: 50%; */
   box-shadow: 0 8px 40px -12px rgba(0,0,0,0.3);
   margin: 0px 10px 15px 10px;
   border-radius: 10%  !important;
 }
 .control-width:hover{
+  box-shadow: 0 16px 70px -12.125px rgba(0,0,0,0.3);
+}
+.control-Bwidth{
+  width: 31%; 
+  height: 50%;
+  background-color: rgb(250, 250, 250);
+  box-shadow: 0 8px 40px -12px rgba(0,0,0,0.3);
+  margin: 0px 10px 15px 10px;
+  /* border-radius: 15%  !important; */
+}
+.control-Bwidth > ul>li{
+  background-color: rgb(250, 250, 250);
+}
+.control-Bwidth:hover{
   box-shadow: 0 16px 70px -12.125px rgba(0,0,0,0.3);
 }
 .btn-wdth{
@@ -106,14 +121,23 @@
   .control-width{
     width: 47%; 
   }
+  .control-Bwidth{
+    width: 47%; 
+  }
 }
 @media screen and (max-width: 1050px) {
   .control-width{
     width: 47%; 
   }
+  .control-Bwidth{
+    width: 47%; 
+  }
 }
 @media screen and (max-width: 744px) {
   .control-width{
+    width: 100%; 
+  }
+  .control-Bwidth{
     width: 100%; 
   }
   .userCards{
