@@ -62,8 +62,18 @@ body {
 	font-size: 14px;
 	font-style: italic;
 }
+
+.testimonial-contnt {
+	position: relative;
+	overflow: hidden;
+}
+.testimonial-contnt p {
+	margin-bottom: 0;
+	font-size: 14px;
+	font-style: italic;
+}
+
 .testimonial-meta {
-	margin-top: 10px;
 	font-size: 15px;
 	font-weight: 600;
 	color: #666;

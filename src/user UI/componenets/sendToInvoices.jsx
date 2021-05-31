@@ -1,6 +1,6 @@
 import { addPendingInvoice } from '../../redux/actions'
 import firebase from '../../config/firebase';
-const handleBookPress = (id, name, theme, menu, venu, price, type,email, dispatch) => {
+const handleBookPress = (id, name, theme, menu, venu, price, type,email,noOfPeople, dispatch) => {
     const invoice = {
         theme,
         menu,
@@ -9,6 +9,7 @@ const handleBookPress = (id, name, theme, menu, venu, price, type,email, dispatc
         eventName: type,
         isPackage: true,
         serPackName: name,
+        noOfPeople:noOfPeople,
         serPackId: id,
         userEmail: email,
         bookDate: new Date().toString(),

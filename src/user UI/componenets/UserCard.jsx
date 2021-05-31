@@ -5,7 +5,7 @@ import MaxWidthDialog from './DesignerModel'
 import  data from "../../data/services.json"
 export default function UserCard(props) {
   const dispatch = useDispatch();
-  const { id, name, theme, venu, menu, designerName,occuredDate, price, type } = props;
+  const { id, name, theme, venu, menu, designerName,occuredDate,noOfPeople, price, type } = props;
 
   const pendingInvoices = useSelector(state => state.invoices.pendingInvoices)
   const email = localStorage.getItem('user')
@@ -30,11 +30,12 @@ export default function UserCard(props) {
         <li className="fld list-group-item">{venu}</li>
         <li className="fld list-group-item">{menuss.join(", ")}</li>
         <li className="fld list-group-item" style={{fontSize:"16px"}}>{occuredDate}</li>
+        <li className="fld list-group-item" style={{fontSize:"14px"}}>Peoples: <span style={{fontFamily:"book"}}>{noOfPeople}</span></li>
         <li className="fld list-group-item" style={{ fontSize: '2.2rem', fontFamily: "serif" }}><strong>Rs{price}</strong></li>
       </ul>
       {
 
-        <button type="button" onClick={() => handleBookPress(id, name, theme, menu, venu, price, type, email, dispatch)} class="btn Cbtn">BOOK NOW</button>
+        <button type="button" onClick={() => handleBookPress(id, name, theme, menu, venu, price, type, email,noOfPeople, dispatch)} class="btn Cbtn">BOOK NOW</button>
       }
     </div>
   )

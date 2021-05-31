@@ -164,6 +164,7 @@ const useToolbarStyles = makeStyles((theme) => ({
 const EnhancedTableToolbar = (props) => {
   const classes = useToolbarStyles();
   const { numSelected,obj } = props;
+  console.log("props invoice abc asjasbfkjbaskjsbfjk ", props)
   const Status = obj.status=="userclear" ? "IsUnderReview..." : obj.status.toUpperCase(); 
 
   return (

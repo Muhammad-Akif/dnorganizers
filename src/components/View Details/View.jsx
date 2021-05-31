@@ -23,7 +23,7 @@ export default function View() {
             <Header {...event}/>
             <Services/>
             <Designers {...event} data={data.Designers}/>
-            <Gallery/>
+            <Gallery {...event}/>
             <Feedback/>
             <Contact/>
             <Contect/>

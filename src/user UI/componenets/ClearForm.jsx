@@ -62,8 +62,8 @@ export default function FormDialog(props) {
                     dispatch(updatePendingInvoices(props.obj.id, { status: 'userclear' }))
                     // Alert.alert('Successfully added to Invoices', 'Please go to invoice section to clear first and continue.', [{ text: 'Ok' }])
                 }).catch((error) => {
-                    //error callback
-                    alert("Something went wrong.")
+                    // error callback
+                    alert("Something went wrong.",error)
                 })
             }).catch((error) => {
                 alert("Something went wrong. !!")

@@ -1,7 +1,8 @@
 import React from 'react'
 import GalleryCard from './GalleryCard'
 
-export default function Gallery() {
+export default function Gallery(props) {
+    console.log("event now ", props)
     return (
         <div id="fh5co-gallery">
             <div id="gallary" className="container">
@@ -13,7 +14,11 @@ export default function Gallery() {
                     </div>
                 </div>
                 <div className="row row-bottom-padded-md">
-                    <GalleryCard/>
+                    <div className="col-md-12">
+                        <ul id="fh5co-gallery-list">
+                            {props.gallery.map((v) => <GalleryCard {...v} />)}
+						</ul>
+                    </div>
                 </div>
             </div>
         </div>

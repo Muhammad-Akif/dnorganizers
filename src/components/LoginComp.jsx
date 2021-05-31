@@ -156,7 +156,7 @@ export default function SignIn() {
       <div className={classes.paper}>
         <Typography component="h1" variant="h5">
           <div className="fh5co-heading both animate-box">
-            <h2>Sign in</h2>
+            <h2>Login</h2>
           </div>
         </Typography>
         <form className={classes.form} noValidate>

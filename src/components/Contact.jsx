@@ -1,6 +1,19 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 export default function Contact() {
+    const [email,setEmail]= useState('')
+    const [message,setMessage] = useState('')
+    const handleSubmit = (e)=>{
+        e.preventDefault();
+        if(email.length > 5 && message.length > 5){
+            alert("Thanks for Joining us")
+            setEmail('')
+            setMessage('')
+        }
+        else{
+            alert("Write complete info ...")
+        }
+    }
     return (
 
         <div id="fh5co-started" className="fh5co-bg" style={{ backgroundImage: "url('../images/all/wg24.jpg')" }}>
@@ -17,18 +30,18 @@ export default function Contact() {
                         <form className="form-inline">
                             <div className="col-md-4 col-sm-4">
                                 <div className="form-group">
-                                    <label htmlFor="name" className="sr-only">Name</label>
-                                    <input type="name" className="form-control" id="name" placeholder="Name" />
+                                    <label htmlFor="email" className="sr-only" >Email</label>
+                                    <input type="email" onChange={(e)=> setEmail(e.target.value)} value={email} className="form-control" id="email" required placeholder="Email" />
                                 </div>
                             </div>
                             <div className="col-md-4 col-sm-4">
                                 <div className="form-group">
-                                    <label htmlFor="email" className="sr-only" >Email</label>
-                                    <input type="email" className="form-control" id="email" placeholder="Email" />
+                                    <label htmlFor="name" className="sr-only">Message</label>
+                                    <input type="name" onChange={(e)=> setMessage(e.target.value)} value={message} className="form-control" id="name" required placeholder="Message" />
                                 </div>
                             </div>
                             <div className="col-md-4 col-sm-4">
-                                <button type="submit" className="btn btn-default btn-block">Join Us</button>
+                                <button type="submit" onClick={handleSubmit} className="btn btn-default btn-block">Submit</button>
                             </div>
                         </form>
                     </div>

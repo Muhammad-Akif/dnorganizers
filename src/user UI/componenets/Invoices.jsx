@@ -96,7 +96,7 @@ class Invoices extends React.Component {
                         )
                     })
                     : !this.isShowActivity ? <CircularProgress style={{ display: "table", margin: "30vh auto" }} color="secondary" />: (
-                        <div style={{margin: '15% auto', color: 'red', display: 'table', fontSize: '30px'}} >Add Atleast one package</div>
+                        <div style={{margin: '15% auto', color: 'red', display: 'table', fontSize: '30px',fontFamily:"book"}} >Add Atleast one package</div>
                     )
                 }
             </>

@@ -10,10 +10,10 @@ export default function Contect() {
                         <div className="fh5co-contact-info">
                             <ul>
                                 <div className="aligning">
-                                <li className="phone"><a href="tel://1234567920">+ 1235 2355 98</a></li>
-                                <li className="email"><a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
+                                <li className="phone"><a href="tel://1234567920">+92 315 5336569</a></li>
+                                <li className="email"><a href="mailto:info@yoursite.com">alirmish512@gmail.com</a></li>
                                 </div>
-                                <li class="address">198 West 21th Street, Suite 721 New York NY 10016</li>
+                                <li class="address">House 14, Street 17. F7/2 Islamabad P.O. Box 1016. Pakistan</li>
                             </ul>
                         </div>
                         <p style={{padding:"10px"}}>

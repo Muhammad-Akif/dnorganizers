@@ -4,242 +4,320 @@
             "name": "birthday",
             "cote": "Our goal: \"to make your Event remarkable & full of joy...\"",
             "img": "../images/all/2.jpg",
-            "title": "Birthday Events"
+            "title": "Birthday Events",
+            "gallery": [
+                {
+                    "img": "../images/wedding/7.jpeg",
+                    "title": "Dream Wedding"
+                },
+                {
+                    "img": "../images/wedding/8.jpeg",
+                    "title": "Successful Event"
+                },
+                {
+                    "img": "../images/wedding/9.jpeg",
+                    "title": "Black Beauty"
+                },
+                {
+                    "img": "../images/wedding/10.jpeg",
+                    "title": "Happy Together"
+                },
+                {
+                    "img": "../images/wedding/11.jpeg",
+                    "title": "Hold my Hand"
+                },
+                {
+                    "img": "../images/wedding/12.jpeg",
+                    "title": "Water Heaven"
+                }
+            ]
         },
         {
             "name": "wedding",
             "cote": "Our goal: \"to make your Event remarkable & full of joy...\"",
-            "img": "../images/all/2.jpg",
-            "title": "Wedding Events"
+            "img": "../images/all/4.jpg",
+            "title": "Wedding Events",
+            "gallery": [
+                {
+                    "img": "../images/birthday/7.jpeg",
+                    "title": "Dream Wedding"
+                },
+                {
+                    "img": "../images/birthday/8.jpeg",
+                    "title": "Successful Event"
+                },
+                {
+                    "img": "../images/birthday/9.jpeg",
+                    "title": "Black Beauty"
+                },
+                {
+                    "img": "../images/birthday/10.jpeg",
+                    "title": "Happy Together"
+                },
+                {
+                    "img": "../images/birthday/11.jpeg",
+                    "title": "Hold my Hand"
+                },
+                {
+                    "img": "../images/birthday/12.jpeg",
+                    "title": "Water Heaven"
+                }
+            ]
         },
         {
             "name": "corporate",
             "cote": "Our goal: \"to make your Event remarkable & full of joy...\"",
-            "img": "../images/all/2.jpg",
-            "title": "Corporate Events"
+            "img": "../images/all/6.jpg",
+            "title": "Corporate Events",
+            "gallery": [
+                {
+                    "img": "../images/corporate/8.jpeg",
+                    "title": "Dream Wedding"
+                },
+                {
+                    "img": "../images/corporate/9.jpeg",
+                    "title": "Successful Event"
+                },
+                {
+                    "img": "../images/corporate/10.jpeg",
+                    "title": "Black Beauty"
+                },
+                {
+                    "img": "../images/corporate/11.jpeg",
+                    "title": "Happy Together"
+                },
+                {
+                    "img": "../images/corporate/7.jpeg",
+                    "title": "Hold my Hand"
+                },
+                {
+                    "img": "../images/corporate/12.jpeg",
+                    "title": "Water Heaven"
+                }
+            ]
         }
     ],
     "Designers": [
         {
             "img": "../images/Designer/01.jpg",
             "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-            "name": "John Doe"
+            "name": "Ramish Ali"
         },
         {
             "img": "../images/Designer/02.jpg",
             "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-            "name": "Johnathan Doe"
+            "name": "Muhammad Rafeh"
         },
         {
             "img": "../images/Designer/03.jpg",
             "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-            "name": "John Doe"
+            "name": "Rabia Imtiyaz"
         },
         {
             "img": "../images/Designer/04.jpg",
             "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-            "name": "Johnathan Doe"
+            "name": "Aleshba Asif"
         },
         {
             "img": "../images/Designer/05.jpg",
             "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-            "name": "John Doe"
+            "name": "Muhammad Akif"
         },
         {
             "img": "../images/Designer/06.jpg",
             "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-            "name": "Johnathan Doe"
+            "name": "Halima Sultan"
         }
     ],
     "DesignersProfile": [
         {
             "img": "../images/Designer/01.jpg",
-            "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+            "text": "\"Perhaps, it is not fair to say that through all these ages no people ever had a fascination of clothes as in our time… But we must agree that we have set giant strides in the business of clothing; from the head-aching prices of some clothes to the worldwide appeals of some brands and the vivacity with which these brands are patronized. Welcome to the world of Designer Clothing.\"",
             "name": "Ramish Ali",
             "price": "7000",
             "gallery": [
                 {
-                    "img": "../images/gallery/wg1.jpg",
+                    "img": "../images/wedding/12.jpeg",
                     "title": "Dream Wedding"
                 },
                 {
-                    "img": "../images/gallery/wg14.jpg",
-                    "title": "Successful Buiseness"
+                    "img": "../images/wedding/3.jpeg",
+                    "title": "Million Dollar Smile"
                 },
                 {
-                    "img": "../images/gallery/wg15.jpg",
+                    "img": "../images/birthday/12.jpeg",
                     "title": "Black Beauty"
                 },
                 {
-                    "img": "../images/Dr.Ramish/img3.jpg",
+                    "img": "../images/birthday/10.jpeg",
                     "title": "Happy Together"
                 },
                 {
-                    "img": "../images/Dr.Ramish/img4.jpg",
-                    "title": "Hold my Hand"
+                    "img": "../images/corporate/9.jpeg",
+                    "title": "A new Day"
                 },
                 {
-                    "img": "../images/Dr.Ramish/img5.jpg",
+                    "img": "../images/corporate/4.jpeg",
                     "title": "Water Heaven"
                 }
             ]
         },
         {
             "img": "../images/Designer/02.jpg",
-            "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+            "text": "\"Perhaps, it is not fair to say that through all these ages no people ever had a fascination of clothes as in our time… But we must agree that we have set giant strides in the business of clothing; from the head-aching prices of some clothes to the worldwide appeals of some brands and the vivacity with which these brands are patronized. Welcome to the world of Designer Clothing.\"",
             "name": "Muhammad Rafeh",
             "price": "6000",
             "gallery": [
                 {
-                    "img": "../images/gallery/wg1.jpg",
+                    "img": "../images/wedding/9.jpeg",
                     "title": "Dream Wedding"
                 },
                 {
-                    "img": "../images/gallery/wg14.jpg",
-                    "title": "Successful Buiseness"
+                    "img": "../images/wedding/2.jpeg",
+                    "title": "Million Dollar Smile"
                 },
                 {
-                    "img": "../images/gallery/wg15.jpg",
+                    "img": "../images/birthday/8.jpeg",
                     "title": "Black Beauty"
                 },
                 {
-                    "img": "../images/Dr.Ramish/img3.jpg",
+                    "img": "../images/birthday/3.jpeg",
                     "title": "Happy Together"
                 },
                 {
-                    "img": "../images/Dr.Ramish/img4.jpg",
-                    "title": "Hold my Hand"
+                    "img": "../images/corporate/10.jpeg",
+                    "title": "A new Day"
                 },
                 {
-                    "img": "../images/Dr.Ramish/img5.jpg",
+                    "img": "../images/corporate/4.jpeg",
                     "title": "Water Heaven"
                 }
             ]
         },
         {
             "img": "../images/Designer/03.jpg",
-            "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+            "text": "\"Perhaps, it is not fair to say that through all these ages no people ever had a fascination of clothes as in our time… But we must agree that we have set giant strides in the business of clothing; from the head-aching prices of some clothes to the worldwide appeals of some brands and the vivacity with which these brands are patronized. Welcome to the world of Designer Clothing.\"",
             "name": "Rabia Imtiyaz",
             "price": "6500",
             "gallery": [
                 {
-                    "img": "../images/gallery/wg1.jpg",
+                    "img": "../images/wedding/7.jpeg",
                     "title": "Dream Wedding"
                 },
                 {
-                    "img": "../images/gallery/wg14.jpg",
-                    "title": "Successful Buiseness"
+                    "img": "../images/wedding/8.jpeg",
+                    "title": "Million Dollar Smile"
                 },
                 {
-                    "img": "../images/gallery/wg15.jpg",
+                    "img": "../images/birthday/7.jpeg",
                     "title": "Black Beauty"
                 },
                 {
-                    "img": "../images/Dr.Ramish/img3.jpg",
+                    "img": "../images/birthday/8.jpeg",
                     "title": "Happy Together"
                 },
                 {
-                    "img": "../images/Dr.Ramish/img4.jpg",
-                    "title": "Hold my Hand"
+                    "img": "../images/corporate/7.jpeg",
+                    "title": "A new Day"
                 },
                 {
-                    "img": "../images/Dr.Ramish/img5.jpg",
+                    "img": "../images/corporate/8.jpeg",
                     "title": "Water Heaven"
                 }
             ]
         },
         {
             "img": "../images/Designer/04.jpg",
-            "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+            "text": "\"Perhaps, it is not fair to say that through all these ages no people ever had a fascination of clothes as in our time… But we must agree that we have set giant strides in the business of clothing; from the head-aching prices of some clothes to the worldwide appeals of some brands and the vivacity with which these brands are patronized. Welcome to the world of Designer Clothing.\"",
             "name": "Aleshba Asif",
             "price": "4500",
             "gallery": [
                 {
-                    "img": "../images/gallery/wg1.jpg",
+                    "img": "../images/wedding/3.jpeg",
                     "title": "Dream Wedding"
                 },
                 {
-                    "img": "../images/gallery/wg14.jpg",
-                    "title": "Successful Buiseness"
+                    "img": "../images/wedding/4.jpeg",
+                    "title": "Million Dollar Smile"
                 },
                 {
-                    "img": "../images/gallery/wg15.jpg",
+                    "img": "../images/birthday/3.jpeg",
                     "title": "Black Beauty"
                 },
                 {
-                    "img": "../images/Dr.Ramish/img3.jpg",
+                    "img": "../images/birthday/4.jpeg",
                     "title": "Happy Together"
                 },
                 {
-                    "img": "../images/Dr.Ramish/img4.jpg",
-                    "title": "Hold my Hand"
+                    "img": "../images/corporate/5.jpeg",
+                    "title": "A new Day"
                 },
                 {
-                    "img": "../images/Dr.Ramish/img5.jpg",
+                    "img": "../images/corporate/6.jpeg",
                     "title": "Water Heaven"
                 }
             ]
         },
         {
             "img": "../images/Designer/05.jpg",
-            "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+            "text": "\"Perhaps, it is not fair to say that through all these ages no people ever had a fascination of clothes as in our time… But we must agree that we have set giant strides in the business of clothing; from the head-aching prices of some clothes to the worldwide appeals of some brands and the vivacity with which these brands are patronized. Welcome to the world of Designer Clothing.\"",
             "name": "Muhammad Akif",
             "price": "5500",
             "gallery": [
                 {
-                    "img": "../images/gallery/wg1.jpg",
+                    "img": "../images/wedding/1.jpeg",
                     "title": "Dream Wedding"
                 },
                 {
-                    "img": "../images/gallery/wg14.jpg",
-                    "title": "Successful Buiseness"
+                    "img": "../images/wedding/2.jpeg",
+                    "title": "Million Dollar Smile"
                 },
                 {
-                    "img": "../images/gallery/wg15.jpg",
+                    "img": "../images/birthday/1.jpeg",
                     "title": "Black Beauty"
                 },
                 {
-                    "img": "../images/Dr.Ramish/img3.jpg",
+                    "img": "../images/birthday/2.jpeg",
                     "title": "Happy Together"
                 },
                 {
-                    "img": "../images/Dr.Ramish/img4.jpg",
-                    "title": "Hold my Hand"
+                    "img": "../images/corporate/1.jpeg",
+                    "title": "A new Day"
                 },
                 {
-                    "img": "../images/Dr.Ramish/img5.jpg",
+                    "img": "../images/corporate/2.jpeg",
                     "title": "Water Heaven"
                 }
             ]
         },
         {
             "img": "../images/Designer/06.jpg",
-            "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+            "text": "\"Perhaps, it is not fair to say that through all these ages no people ever had a fascination of clothes as in our time… But we must agree that we have set giant strides in the business of clothing; from the head-aching prices of some clothes to the worldwide appeals of some brands and the vivacity with which these brands are patronized. Welcome to the world of Designer Clothing.\"",
             "name": "Halima Sultan",
             "price": "3500",
             "gallery": [
                 {
-                    "img": "../images/gallery/wg1.jpg",
+                    "img": "../images/wedding/5.jpeg",
                     "title": "Dream Wedding"
                 },
                 {
-                    "img": "../images/gallery/wg14.jpg",
-                    "title": "Successful Buiseness"
+                    "img": "../images/wedding/6.jpeg",
+                    "title": "Million Dollar Smile"
                 },
                 {
-                    "img": "../images/gallery/wg15.jpg",
+                    "img": "../images/birthday/5.jpeg",
                     "title": "Black Beauty"
                 },
                 {
-                    "img": "../images/Dr.Ramish/img3.jpg",
+                    "img": "../images/birthday/6.jpeg",
                     "title": "Happy Together"
                 },
                 {
-                    "img": "../images/Dr.Ramish/img4.jpg",
-                    "title": "Hold my Hand"
+                    "img": "../images/corporate/5.jpeg",
+                    "title": "A new Day"
                 },
                 {
-                    "img": "../images/Dr.Ramish/img5.jpg",
+                    "img": "../images/corporate/1.jpeg",
                     "title": "Water Heaven"
                 }
             ]

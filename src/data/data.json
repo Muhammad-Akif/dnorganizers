@@ -1,7 +1,7 @@
 {
     "navigation": {
         "title": "Event Management & Planning",
-        "cote": "A goal without a plan is just a goal"
+        "cote": "New Updates Comming In ..."
     },
     "welcome": {
         "title": "Welcome!",
@@ -50,40 +50,40 @@
     ],
     "gallery": [
         {
-            "img": "../images/gallery/wg1.jpg",
+            "img": "../images/wedding/1.jpeg",
             "title": "Dream Wedding"
         },
         {
-            "img": "../images/gallery/wg14.jpg",
-            "title": "Successful Buiseness"
-        },
-        {
-            "img": "../images/gallery/wg15.jpg",
-            "title": "Black Beauty"
-        },
-        {
-            "img": "../images/Dr.Ramish/img3.jpg",
-            "title": "Happy Together"
-        },
-        {
-            "img": "../images/Dr.Ramish/img4.jpg",
-            "title": "Hold my Hand"
-        },
-        {
-            "img": "../images/Dr.Ramish/img5.jpg",
-            "title": "Water Heaven"
-        },
-        {
-            "img": "../images/Dr.Ramish/img2.jpg",
-            "title": "Destination Wedding"
-        },
-        {
-            "img": "../images/Dr.Ramish/img1.jpg",
+            "img": "../images/wedding/2.jpeg",
             "title": "Million Dollar Smile"
         },
         {
-            "img": "../images/gallery/wg20.jpg",
+            "img": "../images/wedding/3.jpeg",
+            "title": "Black Beauty"
+        },
+        {
+            "img": "../images/birthday/1.jpeg",
+            "title": "Happy Together"
+        },
+        {
+            "img": "../images/birthday/5.jpeg",
             "title": "A new Day"
+        },
+        {
+            "img": "../images/birthday/3.jpeg",
+            "title": "Water Heaven"
+        },
+        {
+            "img": "../images/corporate/2.jpeg",
+            "title": "Destination Wedding"
+        },
+        {
+            "img": "../images/corporate/6.jpeg",
+            "title": "Successful Buiseness"
+        },
+        {
+            "img": "../images/corporate/4.jpeg",
+            "title": "Hold my Hand"
         }
     ],
     "progress": [
@@ -110,18 +110,18 @@
     ],
     "Team": [
         {
-            "img": "../images/team/01.jpg",
-            "name": "John Doe",
-            "job": "Director"
+            "img": "../images/team/03.jpg",
+            "name": "Aleshba Asif",
+            "job": "Chief Organizer"
         },
         {
             "img": "../images/team/02.jpg",
-            "name": "Mike Doe",
-            "job": "Senior Designer"
+            "name": "Ramish Ali",
+            "job": "C.E.O"
         },
         {
             "img": "../images/team/03.jpg",
-            "name": "Jane Doe",
+            "name": "Rabbiya Imtiaz",
             "job": "Senior Designer"
         }
     ],
