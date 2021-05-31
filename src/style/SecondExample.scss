@@ -1,0 +1,30 @@
+@import 'global';
+
+
+.SecondExample
+{
+    margin: 0 auto !important;
+    width: 100vw;
+    border-radius: none;
+    height: 100%;
+
+    .Project
+    {
+        position: relative;
+        height: 101vh;
+        overflow: hidden;
+        background-color: rgb(230, 114, 78) !important;
+        // background-color: rgb(255, 255, 255) !important;
+
+        .img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .Carousel-indicators-2{
+        margin-top: -35px;
+    }
+    // .Carousel-button-10 {
+    //     margin: 0px 33px 0px 10px !important;
+    // }
+}

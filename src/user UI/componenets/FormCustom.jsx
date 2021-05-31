@@ -44,7 +44,7 @@ export default function Formtemp(props) {
     name: 'hai',
   });
 
-  const DesignersList = ['Liam', 'Elijah', 'Lucas', 'Noah', 'Henry', 'Alexander']
+  const DesignersList = ['Ramish Ali', 'Muhammad Rafeh', 'Rabia Imtiyaz', 'Aleshba Asif', 'Muhammad Akif', 'Halima Sultan']
 
   const handleChange = (event) => {
     const name = event.target.name;

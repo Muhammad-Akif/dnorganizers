@@ -5,6 +5,7 @@ import BookedCards from "./BookedCards"
 import {setBookedEvents ,updateBookedEvents} from '../../redux/actions'
 import firebase from '../../config/firebase';
 
+
 export default function Booked() {
     const dispatch = useDispatch();
     const events = useSelector(state => state.bookedEvents.bookedEvents)

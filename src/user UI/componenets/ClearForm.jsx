@@ -43,15 +43,32 @@ export default function FormDialog(props) {
                 code,
                 date
             }
+            const userClear = {
+                invoiceData: props.obj,
+                date: date.toString(),
+                branchCode: code,
+                bankAddress: address,
+                pendingInvoiceId: props.obj.id,
+                userEmail: localStorage.getItem('user')
+            }
+            console.log("userClear ===> ", userClear)
             firebase.database().ref(`pendingInvoices/${props.obj.id}`).update({
                 status: 'userclear'
             }).then((response) => {
-                dispatch(updatePendingInvoices(props.obj.id, { status: 'userclear' }))
                 console.log('asdasdasd')
+                firebase.database().ref('userClear/').push(userClear).then((data) => {
+                    //success callback
+                    // dispatch(addPendingInvoice({ ...invoice, id: data.key }))
+                    dispatch(updatePendingInvoices(props.obj.id, { status: 'userclear' }))
+                    // Alert.alert('Successfully added to Invoices', 'Please go to invoice section to clear first and continue.', [{ text: 'Ok' }])
+                }).catch((error) => {
+                    //error callback
+                    alert("Something went wrong.")
+                })
             }).catch((error) => {
+                alert("Something went wrong. !!")
                 console.log(error)
             });
-            console.log(dataObj)
             setAddress('')
             setCode('')
             setDate('')

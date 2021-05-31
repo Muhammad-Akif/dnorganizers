@@ -44,7 +44,7 @@ export default function Formtemp(props) {
     name: 'hai',
   });
 
-  const DesignersList = ['Liam', 'Elijah', 'Lucas', 'Noah', 'Henry', 'Alexander']
+  const DesignersList = ['Ramish Ali', 'Muhammad Rafeh', 'Rabia Imtiyaz', 'Aleshba Asif', 'Muhammad Akif', 'Halima Sultan']
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -124,7 +124,7 @@ export default function Formtemp(props) {
             })}
           </Select>
         </FormControl>
-        {/* <FormControl style={{ width: '100%' }} variant="outlined" required className={classes.formControl}>
+        <FormControl style={{ width: '100%' }} variant="outlined" required className={classes.formControl}>
           <InputLabel htmlFor="outlined-age-native-simple" required >Designers</InputLabel>
           <Select
             native
@@ -142,8 +142,8 @@ export default function Formtemp(props) {
               return <option index={i} value={v} >{v}</option>
             })}
           </Select>
-        </FormControl> */}
-        <TextField style={{ width: '100%' }} value={designerName} onChange={(e) => { setDesignerName(e.target.value) }} label="Designer" variant="outlined" required />
+        </FormControl>
+        {/* <TextField style={{ width: '100%' }} value={designerName} onChange={(e) => { setDesignerName(e.target.value) }} label="Designer" variant="outlined" required /> */}
         <TextField type="number" style={{ width: '100%' }} value={prices} onChange={(e) => { setPrices(e.target.value) }} readOnly label="Price" variant="outlined" required />
         <TextField
           style={{ width: '30%', margin: '0 auto', display: 'table' }}

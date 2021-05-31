@@ -1,12 +1,21 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import handleBookPress from './sendToInvoices'
+import MaxWidthDialog from './DesignerModel'
+import  data from "../../data/services.json"
 export default function UserCard(props) {
   const dispatch = useDispatch();
+  const { id, name, theme, venu, menu, designerName,occuredDate, price, type } = props;
 
   const pendingInvoices = useSelector(state => state.invoices.pendingInvoices)
   const email = localStorage.getItem('user')
-  const { id, name, theme, venu, menu, price, type } = props;
+  const designerDetails = data.DesignersProfile.filter((e) => {
+    if (e.name == designerName) {
+      return true
+    }
+    return false
+  })[0]
+  console.log("props ====>", props)
   const menuss = menu.map(item => {
     return item.name;
   })
@@ -17,8 +26,10 @@ export default function UserCard(props) {
       </div>
       <ul className="list-group list-group-flush text-center" style={{ fontSize: '1.35rem' }}>
         <li className="fld list-group-item">{theme}</li>
+        <li className="fld list-group-item">Designer: {designerName} (<MaxWidthDialog designerDetails={designerDetails}/>)</li>
         <li className="fld list-group-item">{venu}</li>
         <li className="fld list-group-item">{menuss.join(", ")}</li>
+        <li className="fld list-group-item" style={{fontSize:"16px"}}>{occuredDate}</li>
         <li className="fld list-group-item" style={{ fontSize: '2.2rem', fontFamily: "serif" }}><strong>Rs{price}</strong></li>
       </ul>
       {

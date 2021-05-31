@@ -28,6 +28,7 @@ export default function User() {
     // }
     firebase.database().ref('/events').on('value', function (snapshot) {
       let snap = snapshot.val()
+      console.log("Snapshot ===> ",snap)
       setOpen(true)
       const wedpkg = snap.wedding.packages
       const birthpkg = snap.birthday.packages
@@ -43,7 +44,7 @@ export default function User() {
   }, [])
   return (
     <>
-      {console.log('++++++++++++++++++++',email)}
+      {console.log('main weddingPkg',wedding)}
       <Navbar />
       <div className="contnt">
         <div className="tabs">

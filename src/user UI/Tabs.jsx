@@ -105,6 +105,7 @@ export default function VerticalTabs(props) {
       {open && <TabPanel value={value} className={classes.TabPanel} index={0}>
         <ModalCustom clsName="btn Cbtn btn-width" Items={weddingItems} getData="wedding" />
         <div className='userCards'>
+        {console.log("weddingPkg ",weddingPkg)}
           {
             weddingPkg.map((v) => {
               return (

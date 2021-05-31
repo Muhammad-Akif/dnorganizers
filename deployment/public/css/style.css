@@ -18,7 +18,14 @@ body {
   color: #828282;
   background: #fff;
 }
-
+.viewSliderBtn{
+  position: absolute;
+  color: #fff !important;
+  background-color: #F14E95;
+  top: 82%;
+  left: 45.3%;
+  z-index: 1;
+}
 
 
 /* Testimonials Section */
@@ -158,6 +165,12 @@ body {
     margin-top: 20px !important;
     padding-top: 20px !important;
   }
+  .viewSliderBtn{
+    position: absolute;
+    top: 82%;
+    left: 35%;
+    z-index: 1;
+  }  
   .login-comp{
     padding: 15px;
     border-radius: 2%;

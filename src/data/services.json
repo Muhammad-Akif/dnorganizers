@@ -19,7 +19,8 @@
             "title": "Corporate Events"
         }
     ],
-    "Designers": [{
+    "Designers": [
+        {
             "img": "../images/Designer/01.jpg",
             "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
             "name": "John Doe"
@@ -48,6 +49,200 @@
             "img": "../images/Designer/06.jpg",
             "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
             "name": "Johnathan Doe"
+        }
+    ],
+    "DesignersProfile": [
+        {
+            "img": "../images/Designer/01.jpg",
+            "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+            "name": "Ramish Ali",
+            "price": "7000",
+            "gallery": [
+                {
+                    "img": "../images/gallery/wg1.jpg",
+                    "title": "Dream Wedding"
+                },
+                {
+                    "img": "../images/gallery/wg14.jpg",
+                    "title": "Successful Buiseness"
+                },
+                {
+                    "img": "../images/gallery/wg15.jpg",
+                    "title": "Black Beauty"
+                },
+                {
+                    "img": "../images/Dr.Ramish/img3.jpg",
+                    "title": "Happy Together"
+                },
+                {
+                    "img": "../images/Dr.Ramish/img4.jpg",
+                    "title": "Hold my Hand"
+                },
+                {
+                    "img": "../images/Dr.Ramish/img5.jpg",
+                    "title": "Water Heaven"
+                }
+            ]
+        },
+        {
+            "img": "../images/Designer/02.jpg",
+            "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+            "name": "Muhammad Rafeh",
+            "price": "6000",
+            "gallery": [
+                {
+                    "img": "../images/gallery/wg1.jpg",
+                    "title": "Dream Wedding"
+                },
+                {
+                    "img": "../images/gallery/wg14.jpg",
+                    "title": "Successful Buiseness"
+                },
+                {
+                    "img": "../images/gallery/wg15.jpg",
+                    "title": "Black Beauty"
+                },
+                {
+                    "img": "../images/Dr.Ramish/img3.jpg",
+                    "title": "Happy Together"
+                },
+                {
+                    "img": "../images/Dr.Ramish/img4.jpg",
+                    "title": "Hold my Hand"
+                },
+                {
+                    "img": "../images/Dr.Ramish/img5.jpg",
+                    "title": "Water Heaven"
+                }
+            ]
+        },
+        {
+            "img": "../images/Designer/03.jpg",
+            "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+            "name": "Rabia Imtiyaz",
+            "price": "6500",
+            "gallery": [
+                {
+                    "img": "../images/gallery/wg1.jpg",
+                    "title": "Dream Wedding"
+                },
+                {
+                    "img": "../images/gallery/wg14.jpg",
+                    "title": "Successful Buiseness"
+                },
+                {
+                    "img": "../images/gallery/wg15.jpg",
+                    "title": "Black Beauty"
+                },
+                {
+                    "img": "../images/Dr.Ramish/img3.jpg",
+                    "title": "Happy Together"
+                },
+                {
+                    "img": "../images/Dr.Ramish/img4.jpg",
+                    "title": "Hold my Hand"
+                },
+                {
+                    "img": "../images/Dr.Ramish/img5.jpg",
+                    "title": "Water Heaven"
+                }
+            ]
+        },
+        {
+            "img": "../images/Designer/04.jpg",
+            "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+            "name": "Aleshba Asif",
+            "price": "4500",
+            "gallery": [
+                {
+                    "img": "../images/gallery/wg1.jpg",
+                    "title": "Dream Wedding"
+                },
+                {
+                    "img": "../images/gallery/wg14.jpg",
+                    "title": "Successful Buiseness"
+                },
+                {
+                    "img": "../images/gallery/wg15.jpg",
+                    "title": "Black Beauty"
+                },
+                {
+                    "img": "../images/Dr.Ramish/img3.jpg",
+                    "title": "Happy Together"
+                },
+                {
+                    "img": "../images/Dr.Ramish/img4.jpg",
+                    "title": "Hold my Hand"
+                },
+                {
+                    "img": "../images/Dr.Ramish/img5.jpg",
+                    "title": "Water Heaven"
+                }
+            ]
+        },
+        {
+            "img": "../images/Designer/05.jpg",
+            "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+            "name": "Muhammad Akif",
+            "price": "5500",
+            "gallery": [
+                {
+                    "img": "../images/gallery/wg1.jpg",
+                    "title": "Dream Wedding"
+                },
+                {
+                    "img": "../images/gallery/wg14.jpg",
+                    "title": "Successful Buiseness"
+                },
+                {
+                    "img": "../images/gallery/wg15.jpg",
+                    "title": "Black Beauty"
+                },
+                {
+                    "img": "../images/Dr.Ramish/img3.jpg",
+                    "title": "Happy Together"
+                },
+                {
+                    "img": "../images/Dr.Ramish/img4.jpg",
+                    "title": "Hold my Hand"
+                },
+                {
+                    "img": "../images/Dr.Ramish/img5.jpg",
+                    "title": "Water Heaven"
+                }
+            ]
+        },
+        {
+            "img": "../images/Designer/06.jpg",
+            "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+            "name": "Halima Sultan",
+            "price": "3500",
+            "gallery": [
+                {
+                    "img": "../images/gallery/wg1.jpg",
+                    "title": "Dream Wedding"
+                },
+                {
+                    "img": "../images/gallery/wg14.jpg",
+                    "title": "Successful Buiseness"
+                },
+                {
+                    "img": "../images/gallery/wg15.jpg",
+                    "title": "Black Beauty"
+                },
+                {
+                    "img": "../images/Dr.Ramish/img3.jpg",
+                    "title": "Happy Together"
+                },
+                {
+                    "img": "../images/Dr.Ramish/img4.jpg",
+                    "title": "Hold my Hand"
+                },
+                {
+                    "img": "../images/Dr.Ramish/img5.jpg",
+                    "title": "Water Heaven"
+                }
+            ]
         }
     ]
 }

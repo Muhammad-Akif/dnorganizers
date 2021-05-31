@@ -264,6 +264,7 @@ const packageReducer = (state = initialPackageState, action) => {
                 [action.payload.type]: [...state[action.payload.type],
                 new Package(
                     action.payload.package.id,
+                    action.payload.package.designerName,
                     action.payload.package.name,
                     action.payload.package.price,
                     action.payload.package.theme,

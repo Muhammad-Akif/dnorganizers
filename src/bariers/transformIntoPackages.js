@@ -6,6 +6,7 @@ const transformIntoPackage = (payload) => {
     for (let id in response) {
         transformData.push(
             new Package(id, 
+                response[id].designerName, 
                 response[id].name, 
                 response[id].price, 
                 response[id].theme, 
