@@ -34,7 +34,7 @@ function CV() {
             data.email, data.msg, check
         )
         if (data.event.length > 0 && data.workas.length > 0) {
-            firebase.database().ref("/cv").push(cvData)
+            firebase.database().ref("viewInfo/cv").push(cvData)
                 .then(() => alert("Thanks! You will get back to you soon..."))
                 .catch(() => "Something went Wrong! check your Internet")
         }

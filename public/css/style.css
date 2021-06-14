@@ -963,6 +963,9 @@ h1, h2, h3, h4, h5, h6, figure {
     font-size: 20px;
   }
 }
+.newone{
+  width: 100%;
+}
 #fh5co-gallery-list li.one-third {
   width: 32.3%;
 }

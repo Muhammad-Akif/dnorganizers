@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import firebase from "../config/firebase"
 
 export default function Contact() {
     const [email,setEmail]= useState('')
@@ -6,7 +7,9 @@ export default function Contact() {
     const handleSubmit = (e)=>{
         e.preventDefault();
         if(email.length > 5 && message.length > 5){
-            alert("Thanks for Joining us")
+            firebase.database().ref("viewInfo/joinUs").push({email,message})
+            .then(()=>alert("Thanks for Joining us"))
+            .catch(()=>alert("Check your Internet connection!"))
             setEmail('')
             setMessage('')
         }

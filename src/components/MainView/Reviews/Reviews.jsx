@@ -59,13 +59,14 @@ const Reviews = () => {
       </div>
     </div>
     <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", margin: "20px 0px" }}>
-      {
+      { events.length > 0 ?
         events.map(item => {
           return <ReviewCards acceptReview={acceptReview.bind(null , item.ratings, item.eventName, item.designerName, item.id, item.userEmail)} rejectReview={rejectReview.bind(null, item.id)} item={item}/>;
         })
+        :
+        <div style={{margin: '15% auto', color: 'red', display: 'table', fontSize: '30px',fontFamily:"book"}} >No Reviews to Filter...</div>
       }
-      
-      
+
     </div>
   </Admin>
 }

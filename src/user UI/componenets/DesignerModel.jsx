@@ -5,15 +5,9 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-// import FormControl from '@material-ui/core/FormControl';
-// import FormControlLabel from '@material-ui/core/FormControlLabel';
-// import InputLabel from '@material-ui/core/InputLabel';
-// import MenuItem from '@material-ui/core/MenuItem';
-// import Select from '@material-ui/core/Select';
-// import Switch from '@material-ui/core/Switch';
 import DesignerGallery from "./DesignerGallery"
 import DesignerRatings from "../../components/View Details/FeedbackRating"
+import DesignerCards from "./DesignerCards"
 const useStyles = makeStyles((theme) => ({
   form: {
     display: 'flex',
@@ -36,7 +30,7 @@ export default function MaxWidthDialog(props) {
   const [fullWidth, setFullWidth] = React.useState(true);
   const [maxWidth, setMaxWidth] = React.useState('lg');
   const d = props.designerDetails;
-  console.log("designerDetails ===> ",props)
+  console.log("designerDetails ===> ", props)
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -56,7 +50,7 @@ export default function MaxWidthDialog(props) {
 
   return (
     <React.Fragment>
-      <button className="DesignerBtn" onClick={handleClickOpen}>View Profile</button>
+      <button className="DesignerBtn" onClick={handleClickOpen}>{props.title === "profile" ? "View Profile" : "View Details"}</button>
       <Dialog
         fullWidth={fullWidth}
         maxWidth={maxWidth}
@@ -64,29 +58,35 @@ export default function MaxWidthDialog(props) {
         onClose={handleClose}
         aria-labelledby="max-width-dialog-title"
       >
-        {/* <DialogTitle id="max-width-dialog-title">Optional sizes</DialogTitle> */}
-        <DialogContent>
-          <DialogContentText>
-          <div className='row' style={{ marginTop: '10px' }}>
-            <div  className='col-md-12'>
-              <div className='testimonial'>
-                <div className='testimonial-image'>
-                  {' '}
-                  <img src={d.img} alt='' />{' '}
-                </div>
-                <div className='testimonial-contnt'>
-                  <p>"{d.text}"</p>
-                  <DesignerRatings pkgDesigner={d.name}/>
-                  <div className='testimonial-meta'> - {d.name} </div>
+        {props.title === "profile" ?
+          <DialogContent>
+            <DialogContentText>
+              <div className='row' style={{ marginTop: '10px' }}>
+                <div className='col-md-12'>
+                  <div className='testimonial'>
+                    <div className='testimonial-image'>
+                      {' '}
+                      <img src={d.img} alt='' />{' '}
+                    </div>
+                    <div className='testimonial-contnt'>
+                      <p>"{d.text}"</p>
+                      <DesignerRatings pkgDesigner={d.name} />
+                      <div className='testimonial-meta'> - {d.name} </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-        </div>
-          </DialogContentText>
-          <DesignerGallery Gallery={d.gallery}/>
-        </DialogContent>
+            </DialogContentText>
+            <DesignerGallery Gallery={d.gallery} />
+          </DialogContent>
+          :
+          <>
+            <DialogContent style={{paddingTop:"5%"}}>
+              <DesignerCards Gallery={d.gallery} />
+            </DialogContent>
+          </>}
         <DialogActions>
-          <Button onClick={handleClose} style={{fontSize:"12px"}} color="primary">
+          <Button onClick={handleClose} style={{ fontSize: "12px" }} color="primary">
             Close
           </Button>
         </DialogActions>

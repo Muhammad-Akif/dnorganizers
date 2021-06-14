@@ -62,8 +62,11 @@ const rejectSlip = (pendingInvoiceId, userClearId) => {
       </div>
     </div>
     <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", margin: "20px 0px" }}>
-      {
+      { 
+        slips.length > 0 ?
         slips.map((item, index) => <SlipCards key={item.id} title={index+1} item={item} reject={rejectSlip.bind(null, item.pendingInvoiceId, item.id)} verify={verifySlip.bind(null, item.pendingInvoiceId, item.id, item.invoiceData)}  />)
+        :
+        <div style={{margin: '15% auto', color: 'red', display: 'table', fontSize: '30px',fontFamily:"book"}} >No Slips to Verify...</div>
       }
     </div>
   </Admin>

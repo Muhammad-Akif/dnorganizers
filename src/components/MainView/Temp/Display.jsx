@@ -72,14 +72,14 @@ function EnhancedTableHead(props) {
   return (
     <TableHead>
       <TableRow>
-        <TableCell padding="checkbox">
+        {/* <TableCell padding="checkbox">
           <Checkbox
             indeterminate={numSelected > 0 && numSelected < rowCount}
             checked={rowCount > 0 && numSelected === rowCount}
             onChange={onSelectAllClick}
             inputProps={{ 'aria-label': 'select all desserts' }}
           />
-        </TableCell>
+        </TableCell> */}
         {headCells.map((headCell) => (
           <TableCell
             key={headCell.id}
@@ -329,13 +329,13 @@ export default function Display(props) {
                       key={row.name}
                       selected={isItemSelected}
                     >
-                      <TableCell padding="checkbox">
+                      {/* <TableCell padding="checkbox">
                         <Checkbox
                           checked={isItemSelected}
                           inputProps={{ 'aria-labelledby': labelId }}
                         />
-                      </TableCell>
-                      <TableCell component="th" style={{ fontSize: "11px" }} id={labelId} scope="row" padding="none">
+                      </TableCell> */}
+                      <TableCell component="th" style={{ fontSize: "11px" }} id={labelId} scope="row" >
                         {row.name}
                       </TableCell>
                       <TableCell align="right" style={{ fontSize: "11px" }}>{row.calories}</TableCell>

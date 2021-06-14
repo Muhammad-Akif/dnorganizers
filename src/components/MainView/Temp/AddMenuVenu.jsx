@@ -248,10 +248,16 @@ export default function ColorTextFields(props) {
                     color="secondary"
                     type="number"
                     fullWidth
-                />
+                />{
+                    name.length>1 && price.length>1 ?
                 <Button variant="outlined" onClick={handleSubmit} color="secondary" style={{ padding: "8px", fontSize: "12px" }}>
                     Add {props.title}
                 </Button>
+                :
+                <Button variant="outlined" disabled onClick={handleSubmit} color="secondary" style={{ padding: "8px", fontSize: "12px" }}>
+                    Add {props.title}
+                </Button>
+                }
             </form>
             <div>
                 <FormControl className={classes.formControl}>

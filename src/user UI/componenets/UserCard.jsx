@@ -15,7 +15,7 @@ export default function UserCard(props) {
     }
     return false
   })[0]
-  console.log("props ====>", props)
+  console.log("designerDetails ====>", designerDetails)
   const menuss = menu.map(item => {
     return item.name;
   })
@@ -26,8 +26,9 @@ export default function UserCard(props) {
       </div>
       <ul className="list-group list-group-flush text-center" style={{ fontSize: '1.35rem' }}>
         <li className="fld list-group-item">{theme}</li>
-        <li className="fld list-group-item">Designer: {designerName} (<MaxWidthDialog designerDetails={designerDetails}/>)</li>
+        <li className="fld list-group-item">Designer: {designerName} (<MaxWidthDialog designerDetails={designerDetails} title="profile"/>)</li>
         <li className="fld list-group-item">{venu}</li>
+        <li className="fld list-group-item">Cards: (<MaxWidthDialog designerDetails={designerDetails} title="card"/>)</li>
         <li className="fld list-group-item">{menuss.join(", ")}</li>
         <li className="fld list-group-item" style={{fontSize:"16px"}}>{occuredDate}</li>
         <li className="fld list-group-item" style={{fontSize:"14px"}}>Peoples: <span style={{fontFamily:"book"}}>{noOfPeople}</span></li>
