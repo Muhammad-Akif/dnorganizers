@@ -13,6 +13,7 @@ import Birthday from './components/MainView/Birthday/Birthday'
 import Corporate from './components/MainView/Corporate/Corporate'
 import Reviews from './components/MainView/Reviews/Reviews'
 import VerifySlips from './components/MainView/Verify/VerfySlips.jsx'
+import CV from "./user UI/componenets/CV"
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
@@ -65,6 +66,7 @@ const Routes = () => {
                 <Route exact path='/ratings' component={Ratings} />
                 <Route exact path='/booked' component={Booked} />
                 <Route exact path='/invoices' component={Invoices} />
+                <Route exact path='/cv' component={CV} />
                 <Route exact path='/logout' component={Logout} />
               </>
             ) : (

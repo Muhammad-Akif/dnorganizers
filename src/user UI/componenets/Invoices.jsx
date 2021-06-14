@@ -35,6 +35,7 @@ class Invoices extends React.Component {
         // const a = this.props.invoices.length;
 
     }
+    
     componentDidMount() {
         this.isShowActivity = true
         this.pullData(this.props.setPendingInvoices, localStorage.getItem('user'));

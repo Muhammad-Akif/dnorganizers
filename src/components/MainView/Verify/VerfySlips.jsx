@@ -21,7 +21,6 @@ const VerifySlips = () => {
           }
           setSlips([...transformedData]);
       });
-
       //remove listener
       return () => ref.off('value');
   }, [])

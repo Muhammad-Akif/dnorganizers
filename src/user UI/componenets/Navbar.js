@@ -60,6 +60,16 @@ function Navbar() {
           <li className='nav-item'>
             <Link
 
+              to='/cv'
+              className='nav-links'
+              onClick={closeMobileMenu}
+            >
+              CV
+            </Link>
+          </li>
+          <li className='nav-item'>
+            <Link
+
               to='/'
               className='nav-links bdr'
               onClick={() => {

@@ -1,6 +1,19 @@
 #printme {
   display: none;
 }
+.cvtitle{
+  margin-top: 1%;
+  overflow-x: hidden;
+}
+.cv{
+  margin: -6% auto;
+  width: 80%;
+  background-color: rgb(250, 221, 221);
+  padding: 2% 2% 0% 2%;
+  margin-bottom: 2%;
+  overflow-x: hidden;
+}
+/* style={{ margin: "-5% auto", display: "table", width: "80%",backgroundColor:"#eee",padding:"3%" }} */
 @media print {
   #printme {
       display: block;
@@ -151,6 +164,11 @@
   }
   .userCards{
     margin-top: -40px !important;
+  }
+  .cv{
+    margin-top: -19%;
+    width: 95%;
+    margin-bottom: 4%;
   }
 }
 @media screen and (max-width: 960px) {
