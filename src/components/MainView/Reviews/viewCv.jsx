@@ -14,18 +14,27 @@ export default function ViewCv() {
         })
     }, [])
     return (
-        <div style={{ height: "78vh" }}>
-            <div className="container-fluid" className="Review">
-                <div className="row">
-                    {
-                        data.map((item) => {
-                            return (
-                                <div className="col-md-12" style={{ marginTop: "2%", fontSize: "16px", color: "black" }}>{item.CNIC}</div>
-                            )
-                        })
-                    }
-                </div>
-            </div>
+        <div style={{ display: "flex", height: "78vh", overflowY:"scroll",justifyContent: "center", flexWrap: "wrap",padding:"10px" }}>
+            {
+                data.map((item, index) => {
+                    return (
+                        <div style={{ backgroundColor:  "rgb(254, 254, 254)", padding: "20px" }} className="card control-width">
+                            <div style={{ padding: "5px 0px", borderBottom: "1px solid black" }} className="text-center">
+                                <strong style={{ fontSize: '3rem', fontFamily: "'Sacramento', Arial, serif",color:"#F14E95" }}> CV: #{index+1} </strong>
+                            </div>
+                            <ul className="list-group list-group-flush text-center" style={{ fontSize: '1.35rem' }}>
+                                <li className="fld list-group-item" style={{backgroundColor: "rgb(254, 254, 254)", color:"black"}}>{item.firstName} {item.lastName}</li>
+                                <li className="fld list-group-item" style={{backgroundColor: "rgb(254, 254, 254)", color:"black"}}>Mail: {item.email}</li>
+                                <li className="fld list-group-item" style={{backgroundColor: "rgb(254, 254, 254)", color:"black"}}>Phone: {item.phone}</li>
+                                <li className="fld list-group-item" style={{backgroundColor: "rgb(254, 254, 254)", color:"black"}}>CNIC: {item.CNIC}</li>
+                                <li className="fld list-group-item" style={{backgroundColor: "rgb(254, 254, 254)", color:"black"}}>As: {item.workAs}</li>
+                                <li className="fld list-group-item" style={{backgroundColor: "rgb(254, 254, 254)", color:"black"}}>{item.message}</li>
+                                <li className="fld list-group-item" style={{backgroundColor: "rgb(254, 254, 254)", color:"black"}}>Pakistan: {item.pakistan ? "Yes" : "No"}</li>
+                            </ul>
+                        </div>
+                    )
+                })
+            }
         </div>
     )
 }

@@ -71,8 +71,8 @@ export default function ViewTabs() {
           aria-label="scrollable auto tabs example"
         >
           <Tab style={{fontSize: "13px",fontFamily:"book",fontWeight:"bold"}} label="Reviews" {...a11yProps(0)} />
-          <Tab style={{fontSize: "13px",fontFamily:"book",fontWeight:"bold"}} label="GetTouch" {...a11yProps(1)} />
-          <Tab style={{fontSize: "13px",fontFamily:"book",fontWeight:"bold"}} label="ViewCv" {...a11yProps(2)} />
+          <Tab style={{fontSize: "13px",fontFamily:"book",fontWeight:"bold"}} label="Get-Touch" {...a11yProps(1)} />
+          <Tab style={{fontSize: "13px",fontFamily:"book",fontWeight:"bold"}} label="View-Cv's" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} style={{backgroundColor:"transparent",boxShadow:"none"}} index={0}>

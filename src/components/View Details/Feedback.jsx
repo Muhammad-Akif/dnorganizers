@@ -1,6 +1,26 @@
-import React from 'react'
-import FeedbackRating from './FeedbackRating'
+import React, { useEffect, useState } from 'react'
+import FeedbackCards from './FeedbackCards'
+import firebase from "../../config/firebase"
 export default function Feedback() {
+    const [data, setData] = useState([])
+    useEffect(() => {
+        // getData();
+        const ref = firebase.database().ref('acceptedRatings')
+        ref.on('value', function (snapshot) {
+            let snap = snapshot.val()
+            const arr = []
+            console.log("Snapshot ===> ", snap)
+            for (const item in snap) {
+                arr.push(snap[item])
+            }
+            setData(arr)
+        }, function (err) {
+            console.log('failed to fetch', err)
+        });
+
+        //remove listener
+        return () => ref.off('value');
+    }, [])
     return (
         <div id="fh5co-testimonial">
             <div id="feedback" className="container-fluid">
@@ -16,40 +36,9 @@ export default function Feedback() {
                             <div className="wrap-testimony">
                                 <div className="owl-carousel-fullwidth">
                                     <div className="item pt-0">
-                                        <div className="testimony-slide active text-center">
-                                            <figure>
-                                                <img src="../images/gallery/wg2.jpg" alt="user" />
-                                            </figure>
-                                            <span>Jenny Disoza <a href="# " className="twitter">Twitter</a></span>
-                                            {/* <h1><FeedbackRating/></h1> */}
-                                            <blockquote>
-                                                <p>"Thanks a lot for making my precious day a never-forgettable and giving me all the special memories for this beautiful day of my life"</p>
-                                            </blockquote>
-                                        </div>
-                                    </div>
-                                    <div className="item">
-                                        <div className="testimony-slide active text-center">
-                                            <figure>
-                                                <img src="../images/gallery/wg10.jpg" alt="user" />
-                                            </figure>
-                                            <span>Jenessa Shaw <a href="# " className="twitter">Twitter</a></span>
-                                            {/* <h1><FeedbackRating/></h1> */}
-                                            <blockquote>
-                                                <p>"I desired of exactly having a pleasant day like this. Thanks a lot for all the precious meories f this day. Hearty wishes from core of my heart to make you guys more successful."</p>
-                                            </blockquote>
-                                        </div>
-                                    </div>
-                                    <div className="item">
-                                        <div className="testimony-slide active text-center">
-                                            <figure>
-                                                <img src="../images/gallery/wg5.jpg" alt="user" />
-                                            </figure>
-                                            <span>Aleena Malik <a href="# " className="twitter">Twitter</a></span>
-                                            {/* <h1><FeedbackRating/></h1> */}
-                                            <blockquote>
-                                                <p>"Thanks a lot for making my precious day a never-forgettable and giving me all the special memories for this beautiful day of my life. May God give You much more Success"</p>
-                                            </blockquote>
-                                        </div>
+                                        {
+                                            data.slice(0,3).map((item)=> <FeedbackCards {...item}/>)
+                                        }
                                     </div>
                                 </div>
                             </div>
