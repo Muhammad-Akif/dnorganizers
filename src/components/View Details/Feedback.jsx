@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import FeedbackCards from './FeedbackCards'
 import firebase from "../../config/firebase"
-export default function Feedback() {
+export default function Feedback(props) {
+    console.log("yoyo",props.name)
     const [data, setData] = useState([])
     useEffect(() => {
         // getData();
         const ref = firebase.database().ref('acceptedRatings')
         ref.on('value', function (snapshot) {
             let snap = snapshot.val()
-            const arr = []
+            const arr = [] //[{eventName},[]]
             console.log("Snapshot ===> ", snap)
             for (const item in snap) {
                 arr.push(snap[item])
             }
-            setData(arr)
+            // props.event
+            const newArr = arr.filter((item) => item.eventName==props.name)
+            setData([...newArr])
         }, function (err) {
             console.log('failed to fetch', err)
         });
@@ -32,17 +35,14 @@ export default function Feedback() {
                         </div>
                     </div>
                     <div>
-                        <div className="col-md-12 animate-box">
-                            <div className="wrap-testimony">
-                                <div className="owl-carousel-fullwidth">
-                                    <div className="item pt-0">
-                                        {
-                                            data.slice(0,3).map((item)=> <FeedbackCards {...item}/>)
-                                        }
-                                    </div>
-                                </div>
+                        {
+                            data.length > 0 ?
+                            data.slice(0, 3).map((item) => <FeedbackCards {...item} />)
+                            :
+                            <div className="col-md-12 text-center" style={{color:"red",fontFamily:"book",fontSize:"26px"}}>
+                                No Reviews...
                             </div>
-                        </div>
+                        }
                     </div>
                 </div>
             </div>

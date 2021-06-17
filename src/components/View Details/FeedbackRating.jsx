@@ -19,6 +19,7 @@ export default function FeedbackRating(props) {
 
 export function Review(props) {
   const [value, setValue] = React.useState(props.rate);
+  console.log("yup===>",props)
   return (
     <div>
       <Box component="fieldset" mb={3} borderColor="transparent">

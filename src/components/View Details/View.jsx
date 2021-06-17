@@ -24,7 +24,7 @@ export default function View() {
             <Services/>
             <Designers {...event} data={data.Designers}/>
             <Gallery {...event}/>
-            <Feedback/>
+            <Feedback {...event}/>
             <Contact/>
             <Contect/>
         </div>
