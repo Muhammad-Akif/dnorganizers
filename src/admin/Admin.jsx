@@ -11,9 +11,6 @@ import { setItems, authenticate, updateEvents } from '../redux/actions';
 
 
 
-
-
-
 // Components
 import Sidebar from '../components/Sidebar/Sidebar';
 import MainView from '../components/MainView/MainView'
@@ -58,8 +55,8 @@ const Admin = (props) => {
 
   const backgroundImage = 'images/mountain.jpg';
   const sidebarHeader = {
-    fullName: 'DN',
-    shortName: 'DN'
+    fullName: 'Admin',
+    shortName: 'Admin'
   };
   const menuItems = [
     { name: 'Wedding', to: '/wedding', icon: '/icons/about.svg', subMenuItems: [] },
@@ -67,13 +64,14 @@ const Admin = (props) => {
     { name: 'Corporate', to: '/corporate', icon: '/icons/destinations.svg', subMenuItems: [] },
     { name: 'VerifySlips', to: '/VerifySlips', icon: '/icons/contacts.svg', subMenuItems: [] },
     { name: 'Reviews', to: '/Reviews', icon: '/icons/services.svg', subMenuItems: [] },
-    { name: 'Logout', to: '/', subMenuItems: [] }
+    { name: 'Logout', to: '/', icon: '/icons/birthday.svg', subMenuItems: [] }
   ];
 
   const fonts = {
     header: 'ZCOOL KuaiLe',
     menu: 'Poppins'
   }
+
 
   return (
     <>

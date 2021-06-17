@@ -2,7 +2,7 @@ import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import * as s from './Sidebar.styles';
-import {useDispatch} from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { logout } from '../../redux/actions';
 
 const Sidebar = props => {
@@ -162,7 +162,7 @@ const Sidebar = props => {
                 isOpen={isOpen}
                 colorPalette={colorPalette}
               >
-                <s.Icon isSidebarOpen={isSidebarOpen} src={item.icon} />
+                <s.Icon isSidebarOpen={isSidebarOpen}/>
                 <s.Text isSidebarOpen={isSidebarOpen}>{item.name}</s.Text>
                 {/* {hasSubmenus && isSidebarOpen && (
               <s.DropdownIcon selected={isItemSelected} isOpen={isOpen} colorPalette={colorPalette} />
