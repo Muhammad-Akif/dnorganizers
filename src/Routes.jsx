@@ -11,7 +11,7 @@ import Logout from './user UI/componenets/Logout.jsx'
 import Main from './components/MainView/Home/Main.jsx';
 import Birthday from './components/MainView/Birthday/Birthday'
 import Corporate from './components/MainView/Corporate/Corporate'
-import Reviews from './components/MainView/Reviews/Reviews'
+import Filter from './components/MainView/Reviews/Filter'
 import VerifySlips from './components/MainView/Verify/VerfySlips.jsx'
 import CV from "./user UI/componenets/CV"
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
@@ -57,7 +57,7 @@ const Routes = () => {
                 <Route exact path='/birthday' component={Birthday} />
                 <Route exact path='/corporate' component={Corporate} />
                 <Route exact path='/VerifySlips' component={VerifySlips} />
-                <Route exact path='/Reviews' component={Reviews} />
+                <Route exact path='/filter' component={Filter} />
               </>
             ) : isShowUser ? (
 

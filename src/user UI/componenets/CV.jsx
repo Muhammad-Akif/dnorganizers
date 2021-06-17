@@ -122,7 +122,7 @@ function CV() {
                                     <textarea class="form-control" id="exampleFormControlTextarea1" name="msg" value={data.msg} placeholder="Enter your past experience" onChange={InputEvent} required rows="2"></textarea>
                                 </div>
                                 <div className="form-check">
-                                    <input type="checkbox" className="form-check-input" checked={check} value={check} onClick={(e) => setCheck(true)} id="exampleCheck1" />
+                                    <input type="checkbox" className="form-check-input" checked={check} value={check} onClick={(e) => setCheck(!check)} id="exampleCheck1" />
                                     <label className="form-check-label" style={{ paddingLeft: "10px" }} for="exampleCheck1">Are You From Pakistan</label>
                                 </div>
                                 <button type="submit" className="btn Cbtn">Submit</button>
