@@ -47,11 +47,11 @@ export default function NavigationHeader(props) {
                                 <SmallNavbar {...props.name} />
                             </div>
                             <div className="lgNav col-xs-2">
-                                <NavLink to="/"><ArrowBackIcon style={{ color: "white", fontSize: "30px", fontWeight: "bold" }} /></NavLink>
+                                {/* <NavLink to="/"><ArrowBackIcon style={{ color: "white", fontSize: "30px", fontWeight: "bold" }} /></NavLink> */}
                             </div>
                             <div className="col-xs-10 text-right menu-1 links">
-
                                 <ul>
+                                    <li><NavLink to="/"><a href="#designer" style={{marginRight:"-13px"}}>Home</a></NavLink></li>
                                     <li className="has-dropdown">
                                         <a href="#svc">Services</a>
                                         <ul className="dropdown">
@@ -65,8 +65,8 @@ export default function NavigationHeader(props) {
                                     <li><a href="#feedback">Testimonials</a></li>
                                     <li><a href="#contact">Contact</a></li>
                                     <li></li>
-                                    <li><NavLink to="/login"><strong style={{fontFamily: "serif,'Sacramento', Arial",fontSize:"16px"}}>Login</strong></NavLink></li>
-                                    <li><NavLink to="/signup"><strong style={{fontFamily: "serif,'Sacramento', Arial",fontSize:"16px"}}>Signup</strong></NavLink></li>
+                                    <li><NavLink to="/login"><strong style={{ fontFamily: "serif,'Sacramento', Arial", fontSize: "16px" }}>Login</strong></NavLink></li>
+                                    <li><NavLink to="/signup"><strong style={{ fontFamily: "serif,'Sacramento', Arial", fontSize: "16px" }}>Signup</strong></NavLink></li>
                                 </ul>
                             </div>
                         </div>
