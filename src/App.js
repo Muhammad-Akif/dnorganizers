@@ -7,16 +7,6 @@ import { Provider, useSelector } from "react-redux";
 import store from './redux/store';
 
 function App() {
-  // if(!sessionStorage.getItem("email")){
-  // return (
-  //       <HomeRoute/> 
-  // );
-  // }
-  // else{
-  //   return(
-  //     <AdminRoute/>
-  //   );
-  // }
   return(
     <Provider store={store}>
       <Routes/>
