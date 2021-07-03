@@ -44,8 +44,8 @@ const Routes = () => {
         <Switch>
           {/* main */}
           <Route exact path='/' component={Home} />
-          <Route exact path='/login' component={Login} />
-          <Route exact path='/signup' component={Signup} />
+          <Route path='/login' component={Login} />
+          <Route path='/signup' component={Signup} />
           <Route exact path='/event/:name' component={View} />
           {/* admin */}
 
@@ -53,21 +53,21 @@ const Routes = () => {
           {
             isShowAdmin ? (
               <>
-                <Route exact path='/wedding' component={Main} />
-                <Route exact path='/birthday' component={Birthday} />
-                <Route exact path='/corporate' component={Corporate} />
-                <Route exact path='/VerifySlips' component={VerifySlips} />
-                <Route exact path='/filter' component={Filter} />
+                <Route path='/wedding' component={Main} />
+                <Route path='/birthday' component={Birthday} />
+                <Route path='/corporate' component={Corporate} />
+                <Route path='/VerifySlips' component={VerifySlips} />
+                <Route path='/filter' component={Filter} />
               </>
             ) : isShowUser ? (
 
               <>
-                <Route exact path='/packages' component={User} />
-                <Route exact path='/ratings' component={Ratings} />
-                <Route exact path='/booked' component={Booked} />
-                <Route exact path='/invoices' component={Invoices} />
-                <Route exact path='/cv' component={CV} />
-                <Route exact path='/logout' component={Logout} />
+                <Route path='/packages' component={User} />
+                <Route path='/ratings' component={Ratings} />
+                <Route path='/booked' component={Booked} />
+                <Route path='/invoices' component={Invoices} />
+                <Route path='/cv' component={CV} />
+                <Route path='/logout' component={Logout} />
               </>
             ) : (
               <Redirect to='/' />

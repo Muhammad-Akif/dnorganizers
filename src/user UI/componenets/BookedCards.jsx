@@ -15,7 +15,7 @@ export default function UserCard(props) {
     }
     return (
         <div className="card control-Bwidth">
-            <div style={{ backgroundColor: "green", height: "10vh", border: "none", color: "white", display: "flex", overflow: "hidden", justifyContent: "center", alignItems: "center", borderRadius: "10px" }}>
+            <div style={{ backgroundColor: "#F14E95", height: "10vh", border: "none", color: "white", display: "flex", overflow: "hidden", justifyContent: "center", alignItems: "center", borderRadius: "10px" }}>
                 <div style={{ position: "relative", top: "0px", border: "none", left: "0px", right: "0px", overflow: "hidden", width: "30%", transform: "rotate(-55deg)", overflow: "hidden" }}>
                     <h5 style={{ position: "relative", border: "none", padding: "5px", textAlign: "center", overflow: "hidden", color: "white", fontSize: "16px", fontFamily: "book", fontWeight: "bold", backgroundColor: "blue", transform: [{ rotate: '-55deg' }] }}>
                         {item.isPackage ? 'Package' : 'Custom'}
@@ -61,16 +61,6 @@ export default function UserCard(props) {
             <div style={{ margin: "0px 30px" }}>
                 Package <span style={{ float: "right" }}><h5>{item.serPackName}</h5></span>
             </div>
-            {/* <div style={{ display: "flex", flexDirection: "column", padding: "15px", margin: '10px', justifyContent: "center", alignItems: "center", backgroundColor: "grey", borderRadius: "10px" }}>
-                <h5 style={{ color: "white", fontWeight: "bold" }}>Your Event has been Passed!</h5>
-                <br />
-                <div style={{ fontSize: "18px" }}><HoverRating getRatings={getRatings} /></div>
-                <form style={{ display: "flex", flexDirection: "column" }} onSubmit={onSubmitReviews}>
-                    <textarea style={{ fontSize: "12px", padding: "5px" }} cols="35" rows="3" value={bookedComment} onChange={(e) => setBookedComment(e.target.value)} placeholder="Write Review ..."></textarea>
-                    {console.log(bookedComment)}
-                    <input type="Submit" style={{ color: "white", backgroundColor: "inherit", border: "none" }} value="Submit" />
-                </form>
-            </div> */}
 
             { //here checking if event has passed/done taking review then;
                 (new Date(item.occuredDate).getTime() < new Date().getTime() && item.status == 'inprogress') ? (
@@ -89,15 +79,15 @@ export default function UserCard(props) {
                         <div style={{ textAlign: 'center', color: 'white' }}>Thanks for giving Rating! under review now...</div>
                     </div>
                 ) : item.status == 'accepted' ? (
-                    <div style={{ backgroundColor: 'green', marginTop: 10, padding: 10, borderRadius: 10 }}>
+                    <div style={{ backgroundColor: '#1bad3a', marginTop: 10, padding: 10, borderRadius: 10 }}>
                         <div style={{ textAlign: 'center', color: 'white' }}>Your review has been accepted by Admin!</div>
                     </div>
                 ) : item.status == 'rejected' ? (
-                    <div style={{ backgroundColor: 'red', marginTop: 10, padding: 10, borderRadius: 10 }}>
+                    <div style={{ backgroundColor: '#ea093d', marginTop: 10, padding: 10, borderRadius: 10 }}>
                         <div style={{ textAlign: 'center', color: 'white' }}>Your review is rejected by Admin!</div>
                     </div>
                 ) : item.status == 'inprogress' && (
-                    <div style={{ backgroundColor: 'grey', marginTop: 10, padding: 10, borderRadius: 10 }}>
+                    <div style={{ backgroundColor: '#17948e', marginTop: 10, padding: 10, borderRadius: 10 }}>
                         <div style={{ textAlign: 'center', color: 'white' }}>We wish you the best for Event!</div>
                     </div>
                 )
@@ -105,20 +95,3 @@ export default function UserCard(props) {
         </div>
     )
 }
-
-{/* <div style={{ backgroundColor: "green", height: "8vh", color: "white", display: "flex",overflow:"hidden", justifyContent: "center", alignItems: "center" }}>
-                <div style={{ position: "relative",top:"0px",left:"-10px",right:"0px",zIndex: 1,overflow:"hidden", width: "20%", transform: "rotate(-55deg)", overflow: "hidden" }}>
-                    <h5 style={{ position: "relative", padding: "5px", textAlign: "center",overflow:"hidden", color: "white",fontSize:"16px",fontFamily:"book",fontWeight:"bold", backgroundColor: "blue", transform: [{ rotate: '-55deg' }] }}>
-                        Custom
-                </h5>
-                </div>
-                <h4 style={{ color: "white",marginRight:"60px",fontFamily:"book" }}>
-                    Event Booked Successfully!
-                </h4>
-            </div>
-            <ul className="list-group list-group-flush text-center" style={{ fontSize: '1.35rem' }}>
-                <li className="fld list-group-item">abc</li>
-                <li className="fld list-group-item">def</li>
-                <li className="fld list-group-item">ghi</li>
-                <li className="fld list-group-item" style={{ fontSize: '2.2rem', fontFamily: "serif" }}><strong>Rs5000</strong></li>
-            </ul> */}
