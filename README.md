@@ -9,9 +9,9 @@ User and Admin have their own dashboards, Like from User's Dashbord he can Book 
 
 ## Technologies
 Project is created with 
-* React, Firebase Database 
-* Firebase Hosting (Deployment)
-* Firebase Auth (Verification)
+* React, Hooks, Redux 
+* Material UI
+* Firebase Hosting, Database, Authentications. 
 
 ## Setup:
 $ run `npm i && npm start || yarn i && yarn start` for starting the application.
