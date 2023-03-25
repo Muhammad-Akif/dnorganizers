@@ -1,6 +1,6 @@
 # Event Management System (dnorganizers)
 
-[![Screenshot-from-2023-03-25-19-55-01.png](https://i.postimg.cc/qB5BPQdV/Screenshot-from-2023-03-25-19-55-01.png)](https://postimg.cc/XX90FfJQ)
+[Screenshot-from-2023-03-25-19-55-01.png](https://postimg.cc/XX90FfJQ)
 
 # Introduction
 This App is known as "dnorganizers" [Live](https://dnorganizers.web.app).
